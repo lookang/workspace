@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <title> Home page for debug</title>
+    <link rel="stylesheet" type="text/css" href="../_ejs_library/css/ejss.css"></link>
+  </head>
+  <body > 
+    <div class="appletSection">
+      <h3><b>The simulation's view should appear right under this line:</b></h3>
+      <applet code="kahhean.debug_pkg.debugApplet.class"
+              codebase="../" archive="common.jar,kahhean/debug.jar"
+              name="debug"  id="debug"
+              width="500" height="500">
+        <param name="draggable" value="true" />
+        <param name="permissions" value="sandbox" />
+      </applet>
+    </div>
+    <div class="jsSection">
+      <h3><b>You can control it using JavaScript:</b></h3>
+      <a href="javascript:document.debug._play();document.debug._simulation.update();">Play</a> 
+      <a href="javascript:document.debug._pause();document.debug._simulation.update();">Pause</a> 
+      <a href="javascript:document.debug._reset();document.debug._simulation.update();">Reset</a> 
+      <a href="javascript:document.debug._step();document.debug._simulation.update();">Step</a> 
+      <a href="javascript:document.debug._setDelay(1000);document.debug._simulation.update();">Slow</a> 
+      <a href="javascript:document.debug._setDelay(100);document.debug._simulation.update();">Fast</a> 
+      <a href="javascript:document.debug._setDelay(10);document.debug._simulation.update();">Faster</a> 
+    </div>
+  </body>
+</html>

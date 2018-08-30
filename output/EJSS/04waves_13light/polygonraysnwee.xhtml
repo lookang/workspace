@@ -1,0 +1,1620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet"  type="text/css" href="file:///Users/lookang/Google Drive/PublicLawrence/workspace/output/_ejs_library/css/ejss.css" />
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/scripts/common_script.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/scripts/textresizedetector.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/ejsS.v1.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+/* _inputParameters: an object with different values for the model parameters */
+function polygonraysnwee(_topFrame,_libraryPath,_codebasePath, _inputParameters) {
+  var _model = EJSS_CORE.createAnimationLMS();
+  var _view;
+  var _isPlaying = false;
+  var _isPaused = true;
+  var _isMobile = (navigator===undefined) ? false : navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i);
+
+var _stringProperties = {};
+  var _tools = {
+    showInputDialog : EJSS_INTERFACE.BoxPanel.showInputDialog,
+    showOkDialog : EJSS_INTERFACE.BoxPanel.showOkDialog,
+    showOkCancelDialog : EJSS_INTERFACE.BoxPanel.showOkCancelDialog,
+    downloadText: EJSS_TOOLS.File.downloadText,
+    uploadText: function(action) { EJSS_TOOLS.File.uploadText(_model,action); } 
+  };
+
+  function _play()  { _isPaused = false; _isPlaying = true;  _model.play();  }
+  function _pause() { _isPaused = true;  _isPlaying = false; _model.pause(); }
+  function _step()  { _pause();  _model.step(); }
+  function _reset() { _model.reset();  _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); }
+  _model._play  = _play;
+  _model._pause = _pause;
+  _model._step  = _step;
+  _model._reset = _reset;
+  function _update() { _model.update(); }
+  function _initialize() { _model.initialize(); }
+  function _setFPS(_fps) { _model.setFPS(_fps); }
+  function _setDelay(_delay) { _model.setDelay(_delay); }
+  function _setStepsPerDisplay(_spd) { _model.setStepsPerDisplay(_spd); }
+  function _setUpdateView(_updateView) { _model.setUpdateView(_updateView); }
+  function _setAutoplay(_auto) { _model.setAutoplay(_auto); }
+  function _println(_message) { console.log(_message); }
+
+  function _breakAfterThisPage() { _model.setShouldBreak(true); }
+
+  function _resetSolvers() { if (_model.resetSolvers) _model.resetSolvers(); }
+
+  function _saveText(name,type,content) { if (_model.saveText) _model.saveText(name,type,content); }
+
+  function _saveState(name) { if (_model.saveState) _model.saveState(name); }
+
+  function _saveImage(name,panelname) { if (_model.saveImage) _model.saveImage(name,panelname); }
+
+  function _readState(url,type) { if (_model.readState) _model.readState(url,type); }
+
+  function _readText(url,type,varname) { if (_model.readText) _model.readText(url,type,varname); }
+
+  function _getStringProperty(propertyName) {
+    var _value = _stringProperties[propertyName];
+    if (_value===undefined) return propertyName;
+    else return _value;
+  }
+  var __pagesEnabled = [];
+  function _setPageEnabled(pageName,enabled) { __pagesEnabled[pageName] = enabled; }
+
+  var range; // EjsS Model.Variables.spacetime.range
+  var xmin; // EjsS Model.Variables.spacetime.xmin
+  var xmax; // EjsS Model.Variables.spacetime.xmax
+  var ymin; // EjsS Model.Variables.spacetime.ymin
+  var ymax; // EjsS Model.Variables.spacetime.ymax
+  var t; // EjsS Model.Variables.spacetime.t
+  var dt; // EjsS Model.Variables.spacetime.dt
+  var size; // EjsS Model.Variables.spacetime.size
+  var size2; // EjsS Model.Variables.spacetime.size2
+  var stroke; // EjsS Model.Variables.spacetime.stroke
+  var pi; // EjsS Model.Variables.spacetime.pi
+  var pi2; // EjsS Model.Variables.spacetime.pi2
+  var index0; // EjsS Model.Variables.spacetime.index0
+  var index; // EjsS Model.Variables.spacetime.index
+  var indexr; // EjsS Model.Variables.spacetime.indexr
+  var R; // EjsS Model.Variables.spacetime.R
+  var twopi; // EjsS Model.Variables.spacetime.twopi
+  var min; // EjsS Model.Variables.spacetime.min
+  var max; // EjsS Model.Variables.spacetime.max
+  var debug; // EjsS Model.Variables.spacetime.debug
+  var a2c; // EjsS Model.Variables.spacetime.a2c
+
+  var n0; // EjsS Model.Variables.particle 2.n0
+  var n; // EjsS Model.Variables.particle 2.n
+  var nt0; // EjsS Model.Variables.particle 2.nt0
+  var nt; // EjsS Model.Variables.particle 2.nt
+  var it; // EjsS Model.Variables.particle 2.it
+  var px; // EjsS Model.Variables.particle 2.px
+  var py; // EjsS Model.Variables.particle 2.py
+  var nx2; // EjsS Model.Variables.particle 2.nx2
+  var pxy; // EjsS Model.Variables.particle 2.pxy
+  var ny2; // EjsS Model.Variables.particle 2.ny2
+  var ndx; // EjsS Model.Variables.particle 2.ndx
+  var ndy; // EjsS Model.Variables.particle 2.ndy
+  var ncount; // EjsS Model.Variables.particle 2.ncount
+  var showN; // EjsS Model.Variables.particle 2.showN
+  var cs; // EjsS Model.Variables.particle 2.cs
+  var sx; // EjsS Model.Variables.particle 2.sx
+  var sy; // EjsS Model.Variables.particle 2.sy
+  var sc; // EjsS Model.Variables.particle 2.sc
+  var ns; // EjsS Model.Variables.particle 2.ns
+  var xs; // EjsS Model.Variables.particle 2.xs
+  var ys; // EjsS Model.Variables.particle 2.ys
+  var d; // EjsS Model.Variables.particle 2.d
+  var c; // EjsS Model.Variables.particle 2.c
+  var ca; // EjsS Model.Variables.particle 2.ca
+  var c1; // EjsS Model.Variables.particle 2.c1
+  var dxs; // EjsS Model.Variables.particle 2.dxs
+  var dys; // EjsS Model.Variables.particle 2.dys
+  var id; // EjsS Model.Variables.particle 2.id
+  var id1; // EjsS Model.Variables.particle 2.id1
+  var In; // EjsS Model.Variables.particle 2.In
+  var cx; // EjsS Model.Variables.particle 2.cx
+  var cy; // EjsS Model.Variables.particle 2.cy
+  var idr; // EjsS Model.Variables.particle 2.idr
+  var np; // EjsS Model.Variables.particle 2.np
+  var m; // EjsS Model.Variables.particle 2.m
+  var m1; // EjsS Model.Variables.particle 2.m1
+  var xt; // EjsS Model.Variables.particle 2.xt
+  var yt; // EjsS Model.Variables.particle 2.yt
+  var x; // EjsS Model.Variables.particle 2.x
+  var y; // EjsS Model.Variables.particle 2.y
+  var ids; // EjsS Model.Variables.particle 2.ids
+  var b; // EjsS Model.Variables.particle 2.b
+  var b1; // EjsS Model.Variables.particle 2.b1
+  var xs1; // EjsS Model.Variables.particle 2.xs1
+  var ys1; // EjsS Model.Variables.particle 2.ys1
+  var r; // EjsS Model.Variables.particle 2.r
+  var r1; // EjsS Model.Variables.particle 2.r1
+  var rmax; // EjsS Model.Variables.particle 2.rmax
+  var cid; // EjsS Model.Variables.particle 2.cid
+  var id2; // EjsS Model.Variables.particle 2.id2
+  var c2a; // EjsS Model.Variables.particle 2.c2a
+  var dc; // EjsS Model.Variables.particle 2.dc
+  var maxnt; // EjsS Model.Variables.particle 2.maxnt
+  var ntc; // EjsS Model.Variables.particle 2.ntc
+  var sizep; // EjsS Model.Variables.particle 2.sizep
+  var Imin; // EjsS Model.Variables.particle 2.Imin
+  var nl; // EjsS Model.Variables.particle 2.nl
+  var rx2; // EjsS Model.Variables.particle 2.rx2
+  var ry2; // EjsS Model.Variables.particle 2.ry2
+  var csr; // EjsS Model.Variables.particle 2.csr
+  var scr; // EjsS Model.Variables.particle 2.scr
+  var nd; // EjsS Model.Variables.particle 2.nd
+
+  var dx; // EjsS Model.Variables.rays.dx
+  var dy; // EjsS Model.Variables.rays.dy
+  var ytop; // EjsS Model.Variables.rays.ytop
+  var clr; // EjsS Model.Variables.rays.clr
+  var I; // EjsS Model.Variables.rays.I
+  var out; // EjsS Model.Variables.rays.out
+  var iv; // EjsS Model.Variables.rays.iv
+  var dv; // EjsS Model.Variables.rays.dv
+  var ci; // EjsS Model.Variables.rays.ci
+  var cp; // EjsS Model.Variables.rays.cp
+  var cr; // EjsS Model.Variables.rays.cr
+  var c2; // EjsS Model.Variables.rays.c2
+  var m2; // EjsS Model.Variables.rays.m2
+  var dragid; // EjsS Model.Variables.rays.dragid
+  var nid; // EjsS Model.Variables.rays.nid
+  var dv1; // EjsS Model.Variables.rays.dv1
+  var showall; // EjsS Model.Variables.rays.showall
+  var drag; // EjsS Model.Variables.rays.drag
+  var pdx; // EjsS Model.Variables.rays.pdx
+  var pdy; // EjsS Model.Variables.rays.pdy
+  var msg; // EjsS Model.Variables.rays.msg
+  var checkit; // EjsS Model.Variables.rays.checkit
+  var rc; // EjsS Model.Variables.rays.rc
+  var rca; // EjsS Model.Variables.rays.rca
+  var test2; // EjsS Model.Variables.rays.test2
+
+  var cs1; // EjsS Model.Variables.misc.cs1
+  var sc1; // EjsS Model.Variables.misc.sc1
+  var cs2; // EjsS Model.Variables.misc.cs2
+  var sc2; // EjsS Model.Variables.misc.sc2
+  var xp; // EjsS Model.Variables.misc.xp
+  var yp; // EjsS Model.Variables.misc.yp
+  var adb; // EjsS Model.Variables.misc.adb
+  var rx; // EjsS Model.Variables.misc.rx
+  var ry; // EjsS Model.Variables.misc.ry
+  var nx; // EjsS Model.Variables.misc.nx
+  var ny; // EjsS Model.Variables.misc.ny
+  var nmode; // EjsS Model.Variables.misc.nmode
+  var showcontrol; // EjsS Model.Variables.misc.showcontrol
+  var traceid; // EjsS Model.Variables.misc.traceid
+
+  var cname; // EjsS Model.Variables.table.cname
+  var cformat; // EjsS Model.Variables.table.cformat
+  var nr; // EjsS Model.Variables.table.nr
+  var nr2; // EjsS Model.Variables.table.nr2
+  var rows; // EjsS Model.Variables.table.rows
+  var columnName; // EjsS Model.Variables.table.columnName
+
+  var font; // EjsS Model.Variables.varfrem.font
+  var fontb; // EjsS Model.Variables.varfrem.fontb
+  var combo; // EjsS Model.Variables.varfrem.combo
+  var specialN; // EjsS Model.Variables.varfrem.specialN
+  var tableinput; // EjsS Model.Variables.varfrem.tableinput
+
+  _model.getOdes = function() { return []; };
+
+  _model.removeEvents = function(){
+  };
+
+  function _serialize() { return _model.serialize(); }
+
+  _model._userSerialize = function() {
+    return {
+      range : range,
+      xmin : xmin,
+      xmax : xmax,
+      ymin : ymin,
+      ymax : ymax,
+      t : t,
+      dt : dt,
+      size : size,
+      size2 : size2,
+      stroke : stroke,
+      pi : pi,
+      pi2 : pi2,
+      index0 : index0,
+      index : index,
+      indexr : indexr,
+      R : R,
+      twopi : twopi,
+      min : min,
+      max : max,
+      debug : debug,
+      a2c : a2c,
+      n0 : n0,
+      n : n,
+      nt0 : nt0,
+      nt : nt,
+      it : it,
+      px : px,
+      py : py,
+      nx2 : nx2,
+      pxy : pxy,
+      ny2 : ny2,
+      ndx : ndx,
+      ndy : ndy,
+      ncount : ncount,
+      showN : showN,
+      cs : cs,
+      sx : sx,
+      sy : sy,
+      sc : sc,
+      ns : ns,
+      xs : xs,
+      ys : ys,
+      d : d,
+      c : c,
+      ca : ca,
+      c1 : c1,
+      dxs : dxs,
+      dys : dys,
+      id : id,
+      id1 : id1,
+      In : In,
+      cx : cx,
+      cy : cy,
+      idr : idr,
+      np : np,
+      m : m,
+      m1 : m1,
+      xt : xt,
+      yt : yt,
+      x : x,
+      y : y,
+      ids : ids,
+      b : b,
+      b1 : b1,
+      xs1 : xs1,
+      ys1 : ys1,
+      r : r,
+      r1 : r1,
+      rmax : rmax,
+      cid : cid,
+      id2 : id2,
+      c2a : c2a,
+      dc : dc,
+      maxnt : maxnt,
+      ntc : ntc,
+      sizep : sizep,
+      Imin : Imin,
+      nl : nl,
+      rx2 : rx2,
+      ry2 : ry2,
+      csr : csr,
+      scr : scr,
+      nd : nd,
+      dx : dx,
+      dy : dy,
+      ytop : ytop,
+      clr : clr,
+      I : I,
+      out : out,
+      iv : iv,
+      dv : dv,
+      ci : ci,
+      cp : cp,
+      cr : cr,
+      c2 : c2,
+      m2 : m2,
+      dragid : dragid,
+      nid : nid,
+      dv1 : dv1,
+      showall : showall,
+      drag : drag,
+      pdx : pdx,
+      pdy : pdy,
+      msg : msg,
+      checkit : checkit,
+      rc : rc,
+      rca : rca,
+      test2 : test2,
+      cs1 : cs1,
+      sc1 : sc1,
+      cs2 : cs2,
+      sc2 : sc2,
+      xp : xp,
+      yp : yp,
+      adb : adb,
+      rx : rx,
+      ry : ry,
+      nx : nx,
+      ny : ny,
+      nmode : nmode,
+      showcontrol : showcontrol,
+      traceid : traceid,
+      cname : cname,
+      cformat : cformat,
+      nr : nr,
+      nr2 : nr2,
+      rows : rows,
+      columnName : columnName,
+      font : font,
+      fontb : fontb,
+      combo : combo,
+      specialN : specialN,
+      tableinput : tableinput
+    };
+  };
+
+  _model._readParameters = function(json) {
+    if(typeof json.range != "undefined") range = json.range;
+    if(typeof json.xmin != "undefined") xmin = json.xmin;
+    if(typeof json.xmax != "undefined") xmax = json.xmax;
+    if(typeof json.ymin != "undefined") ymin = json.ymin;
+    if(typeof json.ymax != "undefined") ymax = json.ymax;
+    if(typeof json.t != "undefined") t = json.t;
+    if(typeof json.dt != "undefined") dt = json.dt;
+    if(typeof json.size != "undefined") size = json.size;
+    if(typeof json.size2 != "undefined") size2 = json.size2;
+    if(typeof json.stroke != "undefined") stroke = json.stroke;
+    if(typeof json.pi != "undefined") pi = json.pi;
+    if(typeof json.pi2 != "undefined") pi2 = json.pi2;
+    if(typeof json.index0 != "undefined") index0 = json.index0;
+    if(typeof json.index != "undefined") index = json.index;
+    if(typeof json.indexr != "undefined") indexr = json.indexr;
+    if(typeof json.R != "undefined") R = json.R;
+    if(typeof json.twopi != "undefined") twopi = json.twopi;
+    if(typeof json.min != "undefined") min = json.min;
+    if(typeof json.max != "undefined") max = json.max;
+    if(typeof json.debug != "undefined") debug = json.debug;
+    if(typeof json.a2c != "undefined") a2c = json.a2c;
+    if(typeof json.n0 != "undefined") n0 = json.n0;
+    if(typeof json.n != "undefined") n = json.n;
+    if(typeof json.nt0 != "undefined") nt0 = json.nt0;
+    if(typeof json.nt != "undefined") nt = json.nt;
+    if(typeof json.it != "undefined") it = json.it;
+    if(typeof json.px != "undefined") px = json.px;
+    if(typeof json.py != "undefined") py = json.py;
+    if(typeof json.nx2 != "undefined") nx2 = json.nx2;
+    if(typeof json.pxy != "undefined") pxy = json.pxy;
+    if(typeof json.ny2 != "undefined") ny2 = json.ny2;
+    if(typeof json.ndx != "undefined") ndx = json.ndx;
+    if(typeof json.ndy != "undefined") ndy = json.ndy;
+    if(typeof json.ncount != "undefined") ncount = json.ncount;
+    if(typeof json.showN != "undefined") showN = json.showN;
+    if(typeof json.cs != "undefined") cs = json.cs;
+    if(typeof json.sx != "undefined") sx = json.sx;
+    if(typeof json.sy != "undefined") sy = json.sy;
+    if(typeof json.sc != "undefined") sc = json.sc;
+    if(typeof json.ns != "undefined") ns = json.ns;
+    if(typeof json.xs != "undefined") xs = json.xs;
+    if(typeof json.ys != "undefined") ys = json.ys;
+    if(typeof json.d != "undefined") d = json.d;
+    if(typeof json.c != "undefined") c = json.c;
+    if(typeof json.ca != "undefined") ca = json.ca;
+    if(typeof json.c1 != "undefined") c1 = json.c1;
+    if(typeof json.dxs != "undefined") dxs = json.dxs;
+    if(typeof json.dys != "undefined") dys = json.dys;
+    if(typeof json.id != "undefined") id = json.id;
+    if(typeof json.id1 != "undefined") id1 = json.id1;
+    if(typeof json.In != "undefined") In = json.In;
+    if(typeof json.cx != "undefined") cx = json.cx;
+    if(typeof json.cy != "undefined") cy = json.cy;
+    if(typeof json.idr != "undefined") idr = json.idr;
+    if(typeof json.np != "undefined") np = json.np;
+    if(typeof json.m != "undefined") m = json.m;
+    if(typeof json.m1 != "undefined") m1 = json.m1;
+    if(typeof json.xt != "undefined") xt = json.xt;
+    if(typeof json.yt != "undefined") yt = json.yt;
+    if(typeof json.x != "undefined") x = json.x;
+    if(typeof json.y != "undefined") y = json.y;
+    if(typeof json.ids != "undefined") ids = json.ids;
+    if(typeof json.b != "undefined") b = json.b;
+    if(typeof json.b1 != "undefined") b1 = json.b1;
+    if(typeof json.xs1 != "undefined") xs1 = json.xs1;
+    if(typeof json.ys1 != "undefined") ys1 = json.ys1;
+    if(typeof json.r != "undefined") r = json.r;
+    if(typeof json.r1 != "undefined") r1 = json.r1;
+    if(typeof json.rmax != "undefined") rmax = json.rmax;
+    if(typeof json.cid != "undefined") cid = json.cid;
+    if(typeof json.id2 != "undefined") id2 = json.id2;
+    if(typeof json.c2a != "undefined") c2a = json.c2a;
+    if(typeof json.dc != "undefined") dc = json.dc;
+    if(typeof json.maxnt != "undefined") maxnt = json.maxnt;
+    if(typeof json.ntc != "undefined") ntc = json.ntc;
+    if(typeof json.sizep != "undefined") sizep = json.sizep;
+    if(typeof json.Imin != "undefined") Imin = json.Imin;
+    if(typeof json.nl != "undefined") nl = json.nl;
+    if(typeof json.rx2 != "undefined") rx2 = json.rx2;
+    if(typeof json.ry2 != "undefined") ry2 = json.ry2;
+    if(typeof json.csr != "undefined") csr = json.csr;
+    if(typeof json.scr != "undefined") scr = json.scr;
+    if(typeof json.nd != "undefined") nd = json.nd;
+    if(typeof json.dx != "undefined") dx = json.dx;
+    if(typeof json.dy != "undefined") dy = json.dy;
+    if(typeof json.ytop != "undefined") ytop = json.ytop;
+    if(typeof json.clr != "undefined") clr = json.clr;
+    if(typeof json.I != "undefined") I = json.I;
+    if(typeof json.out != "undefined") out = json.out;
+    if(typeof json.iv != "undefined") iv = json.iv;
+    if(typeof json.dv != "undefined") dv = json.dv;
+    if(typeof json.ci != "undefined") ci = json.ci;
+    if(typeof json.cp != "undefined") cp = json.cp;
+    if(typeof json.cr != "undefined") cr = json.cr;
+    if(typeof json.c2 != "undefined") c2 = json.c2;
+    if(typeof json.m2 != "undefined") m2 = json.m2;
+    if(typeof json.dragid != "undefined") dragid = json.dragid;
+    if(typeof json.nid != "undefined") nid = json.nid;
+    if(typeof json.dv1 != "undefined") dv1 = json.dv1;
+    if(typeof json.showall != "undefined") showall = json.showall;
+    if(typeof json.drag != "undefined") drag = json.drag;
+    if(typeof json.pdx != "undefined") pdx = json.pdx;
+    if(typeof json.pdy != "undefined") pdy = json.pdy;
+    if(typeof json.msg != "undefined") msg = json.msg;
+    if(typeof json.checkit != "undefined") checkit = json.checkit;
+    if(typeof json.rc != "undefined") rc = json.rc;
+    if(typeof json.rca != "undefined") rca = json.rca;
+    if(typeof json.test2 != "undefined") test2 = json.test2;
+    if(typeof json.cs1 != "undefined") cs1 = json.cs1;
+    if(typeof json.sc1 != "undefined") sc1 = json.sc1;
+    if(typeof json.cs2 != "undefined") cs2 = json.cs2;
+    if(typeof json.sc2 != "undefined") sc2 = json.sc2;
+    if(typeof json.xp != "undefined") xp = json.xp;
+    if(typeof json.yp != "undefined") yp = json.yp;
+    if(typeof json.adb != "undefined") adb = json.adb;
+    if(typeof json.rx != "undefined") rx = json.rx;
+    if(typeof json.ry != "undefined") ry = json.ry;
+    if(typeof json.nx != "undefined") nx = json.nx;
+    if(typeof json.ny != "undefined") ny = json.ny;
+    if(typeof json.nmode != "undefined") nmode = json.nmode;
+    if(typeof json.showcontrol != "undefined") showcontrol = json.showcontrol;
+    if(typeof json.traceid != "undefined") traceid = json.traceid;
+    if(typeof json.cname != "undefined") cname = json.cname;
+    if(typeof json.cformat != "undefined") cformat = json.cformat;
+    if(typeof json.nr != "undefined") nr = json.nr;
+    if(typeof json.nr2 != "undefined") nr2 = json.nr2;
+    if(typeof json.rows != "undefined") rows = json.rows;
+    if(typeof json.columnName != "undefined") columnName = json.columnName;
+    if(typeof json.font != "undefined") font = json.font;
+    if(typeof json.fontb != "undefined") fontb = json.fontb;
+    if(typeof json.combo != "undefined") combo = json.combo;
+    if(typeof json.specialN != "undefined") specialN = json.specialN;
+    if(typeof json.tableinput != "undefined") tableinput = json.tableinput;
+  };
+
+  _model._inputAndPublicParameters = ["range",  "xmin",  "xmax",  "ymin",  "ymax",  "t",  "dt",  "size",  "size2",  "stroke",  "pi",  "pi2",  "index0",  "index",  "indexr",  "R",  "twopi",  "min",  "max",  "debug",  "a2c",  "n0",  "n",  "nt0",  "nt",  "it",  "px",  "py",  "nx2",  "pxy",  "ny2",  "ndx",  "ndy",  "ncount",  "showN",  "cs",  "sx",  "sy",  "sc",  "ns",  "xs",  "ys",  "d",  "c",  "ca",  "c1",  "dxs",  "dys",  "id",  "id1",  "In",  "cx",  "cy",  "idr",  "np",  "m",  "m1",  "xt",  "yt",  "x",  "y",  "ids",  "b",  "b1",  "xs1",  "ys1",  "r",  "r1",  "rmax",  "cid",  "id2",  "c2a",  "dc",  "maxnt",  "ntc",  "sizep",  "Imin",  "nl",  "rx2",  "ry2",  "csr",  "scr",  "nd",  "dx",  "dy",  "ytop",  "clr",  "I",  "out",  "iv",  "dv",  "ci",  "cp",  "cr",  "c2",  "m2",  "dragid",  "nid",  "dv1",  "showall",  "drag",  "pdx",  "pdy",  "msg",  "checkit",  "rc",  "rca",  "test2",  "cs1",  "sc1",  "cs2",  "sc2",  "xp",  "yp",  "adb",  "rx",  "ry",  "nx",  "ny",  "nmode",  "showcontrol",  "traceid",  "cname",  "cformat",  "nr",  "nr2",  "rows",  "columnName",  "font",  "fontb",  "combo",  "specialN",  "tableinput"]; 
+
+  _model._outputAndPublicParameters = ["range",  "xmin",  "xmax",  "ymin",  "ymax",  "t",  "dt",  "size",  "size2",  "stroke",  "pi",  "pi2",  "index0",  "index",  "indexr",  "R",  "twopi",  "min",  "max",  "debug",  "a2c",  "n0",  "n",  "nt0",  "nt",  "it",  "px",  "py",  "nx2",  "pxy",  "ny2",  "ndx",  "ndy",  "ncount",  "showN",  "cs",  "sx",  "sy",  "sc",  "ns",  "xs",  "ys",  "d",  "c",  "ca",  "c1",  "dxs",  "dys",  "id",  "id1",  "In",  "cx",  "cy",  "idr",  "np",  "m",  "m1",  "xt",  "yt",  "x",  "y",  "ids",  "b",  "b1",  "xs1",  "ys1",  "r",  "r1",  "rmax",  "cid",  "id2",  "c2a",  "dc",  "maxnt",  "ntc",  "sizep",  "Imin",  "nl",  "rx2",  "ry2",  "csr",  "scr",  "nd",  "dx",  "dy",  "ytop",  "clr",  "I",  "out",  "iv",  "dv",  "ci",  "cp",  "cr",  "c2",  "m2",  "dragid",  "nid",  "dv1",  "showall",  "drag",  "pdx",  "pdy",  "msg",  "checkit",  "rc",  "rca",  "test2",  "cs1",  "sc1",  "cs2",  "sc2",  "xp",  "yp",  "adb",  "rx",  "ry",  "nx",  "ny",  "nmode",  "showcontrol",  "traceid",  "cname",  "cformat",  "nr",  "nr2",  "rows",  "columnName",  "font",  "fontb",  "combo",  "specialN",  "tableinput"];
+
+  function _unserialize(json) { return _model.unserialize(json); }
+
+  _model._userUnserialize = function(json) {
+    _model._readParameters(json);
+   _resetSolvers();
+   _model.update();
+  };
+
+  _model.addToReset(function() {
+    __pagesEnabled["Init Page"] = true;
+    __pagesEnabled["svg"] = true;
+    __pagesEnabled["calculateRays"] = true;
+  });
+
+  _model.addToReset(function() {
+    range = 100; // EjsS Model.Variables.spacetime.range
+    xmin = -range/2; // EjsS Model.Variables.spacetime.xmin
+    xmax = range/2; // EjsS Model.Variables.spacetime.xmax
+    ymin = -range/2; // EjsS Model.Variables.spacetime.ymin
+    ymax = range/2; // EjsS Model.Variables.spacetime.ymax
+    t = 0; // EjsS Model.Variables.spacetime.t
+    dt = 0.05; // EjsS Model.Variables.spacetime.dt
+    size = range/40; // EjsS Model.Variables.spacetime.size
+    size2 = size/2; // EjsS Model.Variables.spacetime.size2
+    stroke = 2; // EjsS Model.Variables.spacetime.stroke
+    pi = Math.PI; // EjsS Model.Variables.spacetime.pi
+    pi2 = pi/2; // EjsS Model.Variables.spacetime.pi2
+    index0 = 1.0; // EjsS Model.Variables.spacetime.index0
+    index = 1.5; // EjsS Model.Variables.spacetime.index
+    indexr = index/index0; // EjsS Model.Variables.spacetime.indexr
+    R = xmax/2; // EjsS Model.Variables.spacetime.R
+    twopi = 2*pi; // EjsS Model.Variables.spacetime.twopi
+    min = 1.e-6; // EjsS Model.Variables.spacetime.min
+    max = 1.e6; // EjsS Model.Variables.spacetime.max
+    a2c = pi/180; // EjsS Model.Variables.spacetime.a2c
+  });
+
+  _model.addToReset(function() {
+    n0 = 32; // EjsS Model.Variables.particle 2.n0
+    n = 6; // EjsS Model.Variables.particle 2.n
+    nt0 = 100; // EjsS Model.Variables.particle 2.nt0
+    nt = 1; // EjsS Model.Variables.particle 2.nt
+    it = 0; // EjsS Model.Variables.particle 2.it
+    px = new Array(n0+1); // EjsS Model.Variables.particle 2.px
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0+1; _i0+=1) {  // EjsS Model.Variables.particle 2.px
+        px[_i0] = 0;  // EjsS Model.Variables.particle 2.px
+      }
+    }());
+    py = new Array(n0+1); // EjsS Model.Variables.particle 2.py
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0+1; _i0+=1) {  // EjsS Model.Variables.particle 2.py
+        py[_i0] = 0;  // EjsS Model.Variables.particle 2.py
+      }
+    }());
+    nx2 = new Array(n0); // EjsS Model.Variables.particle 2.nx2
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.nx2
+        nx2[_i0] = 0;  // EjsS Model.Variables.particle 2.nx2
+      }
+    }());
+    pxy = new Array(n0+1); // EjsS Model.Variables.particle 2.pxy
+    (function () {
+      var _i0,_i1;
+      for (_i0=0; _i0<n0+1; _i0+=1) {  // EjsS Model.Variables.particle 2.pxy
+        pxy[_i0] = [];
+        for (_i1=0; _i1<2; _i1+=1) {  // EjsS Model.Variables.particle 2.pxy
+          pxy[_i0][_i1] = 0;  // EjsS Model.Variables.particle 2.pxy
+        }
+      }
+    }());
+    ny2 = new Array(n0); // EjsS Model.Variables.particle 2.ny2
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.ny2
+        ny2[_i0] = 0;  // EjsS Model.Variables.particle 2.ny2
+      }
+    }());
+    ndx = new Array(n0); // EjsS Model.Variables.particle 2.ndx
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.ndx
+        ndx[_i0] = 0;  // EjsS Model.Variables.particle 2.ndx
+      }
+    }());
+    ndy = new Array(n0); // EjsS Model.Variables.particle 2.ndy
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.ndy
+        ndy[_i0] = 0;  // EjsS Model.Variables.particle 2.ndy
+      }
+    }());
+    ncount = 0; // EjsS Model.Variables.particle 2.ncount
+    showN = true; // EjsS Model.Variables.particle 2.showN
+    cs = new Array(n0); // EjsS Model.Variables.particle 2.cs
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.cs
+        cs[_i0] = 0;  // EjsS Model.Variables.particle 2.cs
+      }
+    }());
+    sx = new Array(n0); // EjsS Model.Variables.particle 2.sx
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.sx
+        sx[_i0] = 0;  // EjsS Model.Variables.particle 2.sx
+      }
+    }());
+    sy = new Array(n0); // EjsS Model.Variables.particle 2.sy
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.sy
+        sy[_i0] = 0;  // EjsS Model.Variables.particle 2.sy
+      }
+    }());
+    sc = new Array(nt0); // EjsS Model.Variables.particle 2.sc
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.particle 2.sc
+        sc[_i0] = 0;  // EjsS Model.Variables.particle 2.sc
+      }
+    }());
+    ns = 1; // EjsS Model.Variables.particle 2.ns
+    xs = xmin+size*2; // EjsS Model.Variables.particle 2.xs
+    ys = size; // EjsS Model.Variables.particle 2.ys
+    d = size*3; // EjsS Model.Variables.particle 2.d
+    c = 0; // EjsS Model.Variables.particle 2.c
+    ca = 0; // EjsS Model.Variables.particle 2.ca
+    c1 = 0; // EjsS Model.Variables.particle 2.c1
+    dxs = d*Math.cos(c); // EjsS Model.Variables.particle 2.dxs
+    dys = d*Math.sin(c); // EjsS Model.Variables.particle 2.dys
+    id = 0; // EjsS Model.Variables.particle 2.id
+    id1 = 0; // EjsS Model.Variables.particle 2.id1
+    In = false; // EjsS Model.Variables.particle 2.In
+    cx = new Array(nt0); // EjsS Model.Variables.particle 2.cx
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.particle 2.cx
+        cx[_i0] = 0;  // EjsS Model.Variables.particle 2.cx
+      }
+    }());
+    cy = new Array(nt0); // EjsS Model.Variables.particle 2.cy
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.particle 2.cy
+        cy[_i0] = 0;  // EjsS Model.Variables.particle 2.cy
+      }
+    }());
+    idr = new Array(nt0); // EjsS Model.Variables.particle 2.idr
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.particle 2.idr
+        idr[_i0] = -1;  // EjsS Model.Variables.particle 2.idr
+      }
+    }());
+    np = 0; // EjsS Model.Variables.particle 2.np
+    m = 0; // EjsS Model.Variables.particle 2.m
+    m1 = 0; // EjsS Model.Variables.particle 2.m1
+    xt = 0; // EjsS Model.Variables.particle 2.xt
+    yt = 0; // EjsS Model.Variables.particle 2.yt
+    x = new Array(n0); // EjsS Model.Variables.particle 2.x
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.x
+        x[_i0] = 0;  // EjsS Model.Variables.particle 2.x
+      }
+    }());
+    y = new Array(n0); // EjsS Model.Variables.particle 2.y
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.y
+        y[_i0] = 0;  // EjsS Model.Variables.particle 2.y
+      }
+    }());
+    ids = new Array(n0); // EjsS Model.Variables.particle 2.ids
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n0; _i0+=1) {  // EjsS Model.Variables.particle 2.ids
+        ids[_i0] = 0;  // EjsS Model.Variables.particle 2.ids
+      }
+    }());
+    b = 0; // EjsS Model.Variables.particle 2.b
+    b1 = 0; // EjsS Model.Variables.particle 2.b1
+    xs1 = 0; // EjsS Model.Variables.particle 2.xs1
+    ys1 = 0; // EjsS Model.Variables.particle 2.ys1
+    r = 0; // EjsS Model.Variables.particle 2.r
+    r1 = 0; // EjsS Model.Variables.particle 2.r1
+    rmax = 5*xmax*5*xmax; // EjsS Model.Variables.particle 2.rmax
+    cid = 0; // EjsS Model.Variables.particle 2.cid
+    id2 = 0; // EjsS Model.Variables.particle 2.id2
+    c2a = 180/pi; // EjsS Model.Variables.particle 2.c2a
+    dc = 0; // EjsS Model.Variables.particle 2.dc
+    maxnt = 10; // EjsS Model.Variables.particle 2.maxnt
+    ntc = 0; // EjsS Model.Variables.particle 2.ntc
+    sizep = size/n; // EjsS Model.Variables.particle 2.sizep
+    Imin = 3.e-2; // EjsS Model.Variables.particle 2.Imin
+    nl = 0; // EjsS Model.Variables.particle 2.nl
+    rx2 = 0; // EjsS Model.Variables.particle 2.rx2
+    ry2 = 0; // EjsS Model.Variables.particle 2.ry2
+    csr = 0; // EjsS Model.Variables.particle 2.csr
+    scr = 0; // EjsS Model.Variables.particle 2.scr
+    nd = size*2; // EjsS Model.Variables.particle 2.nd
+  });
+
+  _model.addToReset(function() {
+    dx = new Array(nt0); // EjsS Model.Variables.rays.dx
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.rays.dx
+        dx[_i0] = 0;  // EjsS Model.Variables.rays.dx
+      }
+    }());
+    dy = new Array(nt0); // EjsS Model.Variables.rays.dy
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.rays.dy
+        dy[_i0] = 0;  // EjsS Model.Variables.rays.dy
+      }
+    }());
+    ytop = 2*ymax; // EjsS Model.Variables.rays.ytop
+    clr = new Array(nt0); // EjsS Model.Variables.rays.clr
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.rays.clr
+        clr[_i0] = "";  // EjsS Model.Variables.rays.clr
+      }
+    }());
+    I = new Array(nt0); // EjsS Model.Variables.rays.I
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.rays.I
+        I[_i0] = 1;  // EjsS Model.Variables.rays.I
+      }
+    }());
+    out = new Array(nt0); // EjsS Model.Variables.rays.out
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<nt0; _i0+=1) {  // EjsS Model.Variables.rays.out
+        out[_i0] = true;  // EjsS Model.Variables.rays.out
+      }
+    }());
+    iv = 0; // EjsS Model.Variables.rays.iv
+    dv = 0; // EjsS Model.Variables.rays.dv
+    ci = 0; // EjsS Model.Variables.rays.ci
+    cp = 0; // EjsS Model.Variables.rays.cp
+    cr = 0; // EjsS Model.Variables.rays.cr
+    c2 = 0; // EjsS Model.Variables.rays.c2
+    m2 = 0; // EjsS Model.Variables.rays.m2
+    dragid = 0; // EjsS Model.Variables.rays.dragid
+    nid = 0; // EjsS Model.Variables.rays.nid
+    dv1 = 0; // EjsS Model.Variables.rays.dv1
+    showall = false; // EjsS Model.Variables.rays.showall
+    drag = false; // EjsS Model.Variables.rays.drag
+    pdx = 0; // EjsS Model.Variables.rays.pdx
+    pdy = 0; // EjsS Model.Variables.rays.pdy
+    msg = ""; // EjsS Model.Variables.rays.msg
+    checkit = true; // EjsS Model.Variables.rays.checkit
+    rc = 0; // EjsS Model.Variables.rays.rc
+    rca = 0; // EjsS Model.Variables.rays.rca
+    test2 = false; // EjsS Model.Variables.rays.test2
+  });
+
+  _model.addToReset(function() {
+    cs1 = 0; // EjsS Model.Variables.misc.cs1
+    sc1 = 0; // EjsS Model.Variables.misc.sc1
+    cs2 = 0; // EjsS Model.Variables.misc.cs2
+    sc2 = 0; // EjsS Model.Variables.misc.sc2
+    xp = 0; // EjsS Model.Variables.misc.xp
+    yp = 0; // EjsS Model.Variables.misc.yp
+    adb = 0; // EjsS Model.Variables.misc.adb
+    rx = 0; // EjsS Model.Variables.misc.rx
+    ry = 0; // EjsS Model.Variables.misc.ry
+    nx = 0; // EjsS Model.Variables.misc.nx
+    ny = 0; // EjsS Model.Variables.misc.ny
+    nmode = false; // EjsS Model.Variables.misc.nmode
+    showcontrol = true; // EjsS Model.Variables.misc.showcontrol
+    traceid = 0; // EjsS Model.Variables.misc.traceid
+  });
+
+  _model.addToReset(function() {
+    cname = ["#","x","y","I"]; // EjsS Model.Variables.table.cname
+    cformat = ["0","0.00","0.00","0.000"]; // EjsS Model.Variables.table.cformat
+    nr = 21; // EjsS Model.Variables.table.nr
+    nr2 = 0; // EjsS Model.Variables.table.nr2
+    rows = new Array(4); // EjsS Model.Variables.table.rows
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<4; _i0+=1) {  // EjsS Model.Variables.table.rows
+        rows[_i0] = 0;  // EjsS Model.Variables.table.rows
+      }
+    }());
+    columnName = ["i","px","py"]; // EjsS Model.Variables.table.columnName
+  });
+
+  _model.addToReset(function() {
+    font = "normal normal 2vw"; // EjsS Model.Variables.varfrem.font
+    fontb = "normal bold 2vw"; // EjsS Model.Variables.varfrem.fontb
+    combo = 1; // EjsS Model.Variables.varfrem.combo
+    specialN = 6; // EjsS Model.Variables.varfrem.specialN
+    tableinput = [11,nx2[ncount],ny2[ncount],0.038]; // EjsS Model.Variables.varfrem.tableinput
+  });
+
+  if (_inputParameters) {
+    _inputParameters = _model.parseInputParameters(_inputParameters);
+    if (_inputParameters) _model.addToReset(function() { _model._readParameters(_inputParameters); });
+  }
+
+  _model.addToReset(function() {
+    _model.setAutoplay(false);
+    _model.setFPS(20);
+    _model.setStepsPerDisplay(1);
+  });
+
+  function findnext(j, c){ // global m, id2,xt,yt,cp  // > CustomCode.findnext:1
+  //System.out.println("j="+j+",I="+I[j]+",c="+c+",x="+cx[j]+",y="+cy[j]);  // > CustomCode.findnext:2
+    np=0;  // > CustomCode.findnext:3
+    m=Math.tan(c);  // > CustomCode.findnext:4
+    cs1=Math.cos(c);  // > CustomCode.findnext:5
+    sc1=Math.sin(c);  // > CustomCode.findnext:6
+    clr[j]=getColor(I[j]);  // > CustomCode.findnext:7
+    b=cy[j]-m*cx[j];  // > CustomCode.findnext:8
+    id=idr[j];  // > CustomCode.findnext:9
+   for(var i=0;i<n;i++){  // > CustomCode.findnext:10
+    if(i==id)continue; // itself  // > CustomCode.findnext:11
+    m1=Math.tan(cs[i]);  // > CustomCode.findnext:12
+    if(Math.abs(m)>max){// vertical line  // > CustomCode.findnext:13
+      if(Math.abs(m1)>max)continue;// also vertical , parallel , no contact   // > CustomCode.findnext:14
+      xt=cx[j];  // > CustomCode.findnext:15
+      yt=m1*(xt-px[i])+py[i];  // > CustomCode.findnext:16
+    }else if(px[i+1]==px[i]){// vertically line  // > CustomCode.findnext:17
+      xt=px[i];  // > CustomCode.findnext:18
+      yt=m*xt+b;  // > CustomCode.findnext:19
+    }else {  // > CustomCode.findnext:20
+      if(Math.abs(m-m1)<min)continue;// parallel   // > CustomCode.findnext:21
+      b1=py[i]-m1*px[i];  // > CustomCode.findnext:22
+      xt=(b-b1)/(m1-m);  // > CustomCode.findnext:23
+      yt=m*xt+b;  // > CustomCode.findnext:24
+    }  // > CustomCode.findnext:25
+    if(((xt-cx[j])*cs1+(yt-cy[j])*sc1>0)&& (xt-px[i])*(xt-px[i+1])+(yt-py[i])*(yt-py[i+1])<0){  // > CustomCode.findnext:26
+     x[np]=xt;  // > CustomCode.findnext:27
+     y[np]=yt;  // > CustomCode.findnext:28
+     ids[np]=i;  // > CustomCode.findnext:29
+     np++;  // > CustomCode.findnext:30
+    }  // > CustomCode.findnext:31
+   }  // > CustomCode.findnext:32
+  if(np==0){// can not find contact point, draw ray  // > CustomCode.findnext:33
+   if(Math.abs(Math.cos(c))>Math.abs(Math.sin(c))){  // > CustomCode.findnext:34
+     if(Math.cos(c)>0)dx[j]=2*xmax-cx[j];  // > CustomCode.findnext:35
+     else dx[j]=2*xmin-cx[j];  // > CustomCode.findnext:36
+     dy[j]=dx[j]*m;//Math.tan(c);  // > CustomCode.findnext:37
+   }else{  // > CustomCode.findnext:38
+     if(Math.sin(c)>0)dy[j]=2*ymax-cy[j];  // > CustomCode.findnext:39
+     else dy[j]=2*ymin-cy[j];  // > CustomCode.findnext:40
+     dx[j]=dy[j]/m;//Math.tan(c);  // > CustomCode.findnext:41
+   }  // > CustomCode.findnext:42
+   return false;  // > CustomCode.findnext:43
+  }  // > CustomCode.findnext:44
+  id2=-1;  // > CustomCode.findnext:45
+  r=rmax;  // > CustomCode.findnext:46
+   for(var i=0;i<np;i++){// find shortest distance  // > CustomCode.findnext:47
+    r1=(cx[j]-x[i])*(cx[j]-x[i])+(cy[j]-y[i])*(cy[j]-y[i]);   // > CustomCode.findnext:48
+    if(r1<r){  // > CustomCode.findnext:49
+      id2=ids[i];  // > CustomCode.findnext:50
+      xt=x[i];  // > CustomCode.findnext:51
+      yt=y[i];  // > CustomCode.findnext:52
+      cp=cs[id2];  // > CustomCode.findnext:53
+      r=r1;  // > CustomCode.findnext:54
+    }//if  // > CustomCode.findnext:55
+   }//for  // > CustomCode.findnext:56
+   dx[j]=xt-cx[j];  // > CustomCode.findnext:57
+   dy[j]=yt-cy[j];  // > CustomCode.findnext:58
+   return true;  // > CustomCode.findnext:59
+  }  // > CustomCode.findnext:60
+
+  function getColor (v) {  // > CustomCode.getColor:1
+    if(showall)return "rgba(0,0,255,1)";  // > CustomCode.getColor:2
+    iv=Math.round(v*255);  // > CustomCode.getColor:3
+    if(iv<0){//should not happened  // > CustomCode.getColor:4
+      iv=0;  // > CustomCode.getColor:5
+    }else if(iv>255){  // > CustomCode.getColor:6
+      iv=255;  // > CustomCode.getColor:7
+    }  // > CustomCode.getColor:8
+    return "rgba(0,0,"+iv+","+iv/255+")";  // > CustomCode.getColor:9
+  }  // > CustomCode.getColor:10
+
+  function getreflections(c1, c2){  // > CustomCode.getreflections:1
+   if(Math.abs(Math.sin(c1+c2))<min)dv1=(index-1)/(index+1);  // > CustomCode.getreflections:2
+   else dv1=Math.sin(c1-c2)/Math.sin(c1+c2);  // > CustomCode.getreflections:3
+   return dv1*dv1;  // > CustomCode.getreflections:4
+  }  // > CustomCode.getreflections:5
+
+  function getreflectionp(c1, c2){  // > CustomCode.getreflectionp:1
+   if(Math.abs(Math.sin(c1+c2))<min)dv1=(index-1)/(index+1);  // > CustomCode.getreflectionp:2
+   else dv=Math.tan(c1-c2)/Math.tan(c1+c2);  // > CustomCode.getreflectionp:3
+   return dv1*dv1;  // > CustomCode.getreflectionp:4
+  }  // > CustomCode.getreflectionp:5
+
+  function setdydx(i, c){  // > CustomCode.setdydx:1
+   if(Math.abs(Math.sin(c))<min){  // > CustomCode.setdydx:2
+    if(Math.cos(c)>0)dx[i]=2*xmax-dx[i];  // > CustomCode.setdydx:3
+    else dx[i]=2*xmin-dx[i];  // > CustomCode.setdydx:4
+    dy[i]=dx[i]*Math.tan(c);  // > CustomCode.setdydx:5
+   }else{  // > CustomCode.setdydx:6
+    if(Math.sin(c)>0)dy[i]=ytop-cy[i];  // > CustomCode.setdydx:7
+    else dy[i]=-ytop-cy[i];  // > CustomCode.setdydx:8
+    dx[i]=dy[i]/Math.tan(c);  // > CustomCode.setdydx:9
+   }  // > CustomCode.setdydx:10
+  }  // > CustomCode.setdydx:11
+
+  function dragit(){  // > CustomCode.dragit:1
+   if(checkit==true)for(var i=0;i<n;i++){  // > CustomCode.dragit:2
+     checkdrag(i);  // > CustomCode.dragit:3
+   }  // > CustomCode.dragit:4
+    if(dragid==n-1)id1=0;  // > CustomCode.dragit:5
+    else id1=dragid+1;  // > CustomCode.dragit:6
+    if(dragid==0)id=n-1;  // > CustomCode.dragit:7
+    else id=dragid-1;  // > CustomCode.dragit:8
+    m=(px[id]-px[dragid])*(px[id1]-px[dragid])+(py[id]-py[dragid])*(py[id1]-py[dragid]);  // > CustomCode.dragit:9
+    m=m/Math.sqrt(((px[id]-px[dragid]))*((px[id]-px[dragid]))+(py[id]-py[dragid])*(py[id]-py[dragid]))/Math.sqrt((px[id1]-px[dragid])*(px[id1]-px[dragid])+(py[id1]-py[dragid])*(py[id1]-py[dragid]));  // > CustomCode.dragit:10
+    msg="angle="+(Math.round(Math.acos(m)*c2a*10+0.5)/10.);  // > CustomCode.dragit:11
+    setit();  // > CustomCode.dragit:12
+  }  // > CustomCode.dragit:13
+
+  function checkdrag (dragid) {  // > CustomCode.checkdrag:1
+    if(dragid==n-1)id1=0;  // > CustomCode.checkdrag:2
+    else id1=dragid+1;  // > CustomCode.checkdrag:3
+    if(dragid==0)id=n-1;  // > CustomCode.checkdrag:4
+    else id=dragid-1;  // > CustomCode.checkdrag:5
+    c=Math.atan2(py[id1]-py[dragid],px[id1]-px[dragid]);  // > CustomCode.checkdrag:6
+    c1=Math.atan2(py[id1]-py[id],px[id1]-px[id]);  // > CustomCode.checkdrag:7
+    if(c>c1 &&c-c1<pi){  // > CustomCode.checkdrag:8
+      System.out.println("c="+c+",c1="+c1);  // > CustomCode.checkdrag:9
+      r=(py[id1]-py[id])*(py[id1]-py[id])+(px[id1]-px[id])*(px[id1]-px[id]);  // > CustomCode.checkdrag:10
+      m=((py[id1]-py[dragid])*(py[id1]-py[id])+(px[id1]-px[dragid])*(px[id1]-px[id]))/r;  // > CustomCode.checkdrag:11
+      xt=m*(px[id1]-px[id]);//b  // > CustomCode.checkdrag:12
+      yt=m*(py[id1]-py[id]);  // > CustomCode.checkdrag:13
+      px[dragid]-=2*(xt-(px[id1]-px[dragid]));// 2(a-b)  // > CustomCode.checkdrag:14
+      py[dragid]-=2*(yt-(py[id1]-py[dragid]));  // > CustomCode.checkdrag:15
+    }  // > CustomCode.checkdrag:16
+    if(dragid==n-1)for(var i=n;i<n0;i++){  // > CustomCode.checkdrag:17
+      px[i]=px[dragid];  // > CustomCode.checkdrag:18
+      py[i]=py[dragid];  // > CustomCode.checkdrag:19
+    }  // > CustomCode.checkdrag:20
+  }  // > CustomCode.checkdrag:21
+
+  function setN() {  // > CustomCode.setN:1
+    dc=2*pi/n;  // > CustomCode.setN:2
+  if(n%2==0)ci=dc;  // > CustomCode.setN:3
+  else ci=pi2;  // > CustomCode.setN:4
+  ci+=rca/c2a;  // > CustomCode.setN:5
+  for(var i=0;i<=n0;i++){  // > CustomCode.setN:6
+   if(i<=n){  // > CustomCode.setN:7
+    c=ci-i*dc;  // > CustomCode.setN:8
+    px[i]=R*Math.cos(c);  // > CustomCode.setN:9
+    py[i]=R*Math.sin(c);  // > CustomCode.setN:10
+   // if(i>0 &&py[i]==py[i-1])py[i]=py[i-1]+min;  // > CustomCode.setN:11
+   }else{  // > CustomCode.setN:12
+     px[i]=px[0];  // > CustomCode.setN:13
+     py[i]=py[0];  // > CustomCode.setN:14
+   }  // > CustomCode.setN:15
+  }  // > CustomCode.setN:16
+   setit();  // > CustomCode.setN:17
+   nmode=true;  // > CustomCode.setN:18
+  }  // > CustomCode.setN:19
+
+  function setit() {  // > CustomCode.setit:1
+    for(var i=n;i<n0+1;i++){  // > CustomCode.setit:2
+     px[i]=px[0];  // > CustomCode.setit:3
+     py[i]=py[0];  // > CustomCode.setit:4
+     pxy[i][1]=px[i];  // > CustomCode.setit:5
+     pxy[i][2]=py[i];  // > CustomCode.setit:6
+   }  // > CustomCode.setit:7
+   for(var i=0;i<n;i++){  // > CustomCode.setit:8
+    cs[i]=Math.atan2(py[i+1]-py[i],px[i+1]-px[i]);  // > CustomCode.setit:9
+     //addtable  // > CustomCode.setit:10
+  //   pxy[i][0]=i;  // > CustomCode.setit:11
+     pxy[i][1]=px[i];  // > CustomCode.setit:12
+     pxy[i][2]=py[i];  // > CustomCode.setit:13
+   }  // > CustomCode.setit:14
+   sizep=size/Math.sqrt(n);  // > CustomCode.setit:15
+   checkit=false;  // > CustomCode.setit:16
+   nmode=false;  // > CustomCode.setit:17
+   _step();   // > CustomCode.setit:18
+  }  // > CustomCode.setit:19
+
+  function setpolygons () {  // > CustomCode.setpolygons:1
+    for(var i=0;i<n;i++){  // > CustomCode.setpolygons:2
+      px[i]=pxy[i][1];  // > CustomCode.setpolygons:3
+      py[i]=pxy[i][2];  // > CustomCode.setpolygons:4
+    }  // > CustomCode.setpolygons:5
+    pxy[n][1]=px[0];  // > CustomCode.setpolygons:6
+    pxy[n][2]=py[1];  // > CustomCode.setpolygons:7
+    setit();  // > CustomCode.setpolygons:8
+  }  // > CustomCode.setpolygons:9
+
+  function insertRow(){  // > CustomCode.customfrem:1
+  tableinput = [ncount,nx2[ncount],ny2[ncount],I[ncount]]  // > CustomCode.customfrem:2
+  }  // > CustomCode.customfrem:3
+  function calctable () {  // > CustomCode.customfrem:4
+  for(var i=0;i<n;i++){  // > CustomCode.customfrem:5
+   cs[i]=Math.atan2(py[i+1]-py[i],px[i+1]-px[i]);  // > CustomCode.customfrem:6
+   //tableformat add  // > CustomCode.customfrem:7
+   pxy[i][0]=i;  // > CustomCode.customfrem:8
+   }  // > CustomCode.customfrem:9
+  }  // > CustomCode.customfrem:10
+
+  //https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode  // > CustomCode.fullscreen:1
+  // does not work for iOS   // > CustomCode.fullscreen:2
+  /*jslint browser:true */  // > CustomCode.fullscreen:3
+  function toggleFullScreen() {  // > CustomCode.fullscreen:4
+    if (!document.fullscreenElement &&    // alternative standard method  // > CustomCode.fullscreen:5
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods  // > CustomCode.fullscreen:6
+      if (document.documentElement.requestFullscreen) {  // > CustomCode.fullscreen:7
+        document.documentElement.requestFullscreen();  // > CustomCode.fullscreen:8
+      } else if (document.documentElement.msRequestFullscreen) {  // > CustomCode.fullscreen:9
+        document.documentElement.msRequestFullscreen();  // > CustomCode.fullscreen:10
+      } else if (document.documentElement.mozRequestFullScreen) {  // > CustomCode.fullscreen:11
+        document.documentElement.mozRequestFullScreen();  // > CustomCode.fullscreen:12
+      } else if (document.documentElement.webkitRequestFullscreen) {  // > CustomCode.fullscreen:13
+        document.documentElement.webkitRequestFullscreen();  // > CustomCode.fullscreen:14
+      }  // > CustomCode.fullscreen:15
+    } else {  // > CustomCode.fullscreen:16
+      if (document.exitFullscreen) {  // > CustomCode.fullscreen:17
+        document.exitFullscreen();  // > CustomCode.fullscreen:18
+      } else if (document.msExitFullscreen) {  // > CustomCode.fullscreen:19
+        document.msExitFullscreen();  // > CustomCode.fullscreen:20
+      } else if (document.mozCancelFullScreen) {  // > CustomCode.fullscreen:21
+        document.mozCancelFullScreen();  // > CustomCode.fullscreen:22
+      } else if (document.webkitExitFullscreen) {  // > CustomCode.fullscreen:23
+        document.webkitExitFullscreen();  // > CustomCode.fullscreen:24
+      }  // > CustomCode.fullscreen:25
+    }  // > CustomCode.fullscreen:26
+  }  // > CustomCode.fullscreen:27
+
+  _model.addToInitialization(function() {
+    if (!__pagesEnabled["Init Page"]) return;
+    //-10,-10,0,10,10,0  // > Initialization.Init Page:1
+    px[0]=px[1]=-10;  // > Initialization.Init Page:2
+    px[2]=px[5]=0;  // > Initialization.Init Page:3
+    px[3]=px[4]=10;  // > Initialization.Init Page:4
+    //0,20,30,20,0,10  // > Initialization.Init Page:5
+    py[0]=py[4]=0;  // > Initialization.Init Page:6
+    py[1]=py[3]=20;  // > Initialization.Init Page:7
+    py[2]=30;  // > Initialization.Init Page:8
+    py[5]=10;  // > Initialization.Init Page:9
+    //n=6;  // > Initialization.Init Page:10
+    for(var i=n;i<=n0;i++){  // > Initialization.Init Page:11
+     px[i]=px[0];  // > Initialization.Init Page:12
+     py[i]=py[0];  // > Initialization.Init Page:13
+    }  // > Initialization.Init Page:14
+    for(var i=0;i<n;i++){  // > Initialization.Init Page:15
+     cs[i]=Math.atan2(py[i+1]-py[i],px[i+1]-px[i]);  // > Initialization.Init Page:16
+     //tableformat add  // > Initialization.Init Page:17
+     pxy[i][0]=i;  // > Initialization.Init Page:18
+     pxy[i][1]=px[i];  // > Initialization.Init Page:19
+     pxy[i][2]=py[i];  // > Initialization.Init Page:20
+    }  // > Initialization.Init Page:21
+    sizep=size/Math.sqrt(n);  // > Initialization.Init Page:22
+    nmode=false;  // > Initialization.Init Page:23
+  });
+
+  _model.addToInitialization(function() {
+    if (!__pagesEnabled["svg"]) return;
+    var container = document.createElement('div');  // > Initialization.svg:1
+    var svggradient = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><defs>'+  // > Initialization.svg:2
+      '  <radialGradient id="mygrandient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">'+  // > Initialization.svg:3
+      '    <stop offset="0%" style="stop-color:rgb(0,200,0); stop-opacity:0.5" />'+  // > Initialization.svg:4
+      '    <stop offset="100%" style="stop-color:rgb(00,100,0);stop-opacity:1" />'+  // > Initialization.svg:5
+      '  </radialGradient>'+  // > Initialization.svg:6
+       '  <radialGradient id="mygrandient2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">'+  // > Initialization.svg:7
+      '    <stop offset="0%" style="stop-color:rgb(255,255,255); stop-opacity:1" />'+  // > Initialization.svg:8
+      '    <stop offset="100%" style="stop-color:rgb(0,200,200);stop-opacity:1" />'+  // > Initialization.svg:9
+      '  </radialGradient>'+  // > Initialization.svg:10
+      '</defs></svg>';  // > Initialization.svg:11
+    container.innerHTML = svggradient;  // > Initialization.svg:12
+    document.body.appendChild(container);  // > Initialization.svg:13
+    //"url(#mygrandient)"  // > Initialization.svg:14
+  });
+
+  _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
+
+  _model.addToFixedRelations(function() {
+    if (!__pagesEnabled["calculateRays"]) return;
+    sx[0]=xs+dxs;  // > FixedRelations.calculateRays:1
+    sy[0]=ys+dys;  // > FixedRelations.calculateRays:2
+    sc[0]=Math.atan2(dys,dxs);  // > FixedRelations.calculateRays:3
+    ns=1;  // > FixedRelations.calculateRays:4
+    it=0;  // > FixedRelations.calculateRays:5
+    cx[0]=sx[0];  // > FixedRelations.calculateRays:6
+    cy[0]=sy[0];  // > FixedRelations.calculateRays:7
+    I[0]=1;  // > FixedRelations.calculateRays:8
+    if(findnext(0,c) &&findnext(0,c+pi))out[0]=false;  // > FixedRelations.calculateRays:9
+    else out[0]=true;  // > FixedRelations.calculateRays:10
+    idr[0]=-1; // if outside   // > FixedRelations.calculateRays:11
+    traceid=0;  // > FixedRelations.calculateRays:12
+    ncount=0;  // > FixedRelations.calculateRays:13
+    ndx[ncount]=ndy[ncount]=0;  // > FixedRelations.calculateRays:14
+    for(var i=0;i<ns;i++){// light sources from cx[i],cy[i] with angle sc[i]  // > FixedRelations.calculateRays:15
+     c=sc[i];  // > FixedRelations.calculateRays:16
+     if(findnext(i,c)){//find contact point  // > FixedRelations.calculateRays:17
+      if(I[i]<Imin){  // > FixedRelations.calculateRays:18
+       continue;  // > FixedRelations.calculateRays:19
+      }  // > FixedRelations.calculateRays:20
+      if(out[i]){  // > FixedRelations.calculateRays:21
+        indexr=index0/index;  // > FixedRelations.calculateRays:22
+      }else{  // > FixedRelations.calculateRays:23
+        indexr=index/index0;  // > FixedRelations.calculateRays:24
+      }  // > FixedRelations.calculateRays:25
+      cs1=Math.cos(c);  // > FixedRelations.calculateRays:26
+      sc1=Math.sin(c);  // > FixedRelations.calculateRays:27
+      cs2=Math.cos(cp);  // > FixedRelations.calculateRays:28
+      sc2=Math.sin(cp);  // > FixedRelations.calculateRays:29
+      adb=cs1*cs2+sc1*sc2;  // > FixedRelations.calculateRays:30
+      nx=cs1-adb*cs2;// normal vector  // > FixedRelations.calculateRays:31
+      ny=sc1-adb*sc2;  // > FixedRelations.calculateRays:32
+      rx=2*adb*cs2-cs1;//reflected vector  // > FixedRelations.calculateRays:33
+      ry=2*adb*sc2-sc1;  // > FixedRelations.calculateRays:34
+      if(Math.abs(ry)==1)rx=0;  // > FixedRelations.calculateRays:35
+      ci=Math.asin(adb);  // > FixedRelations.calculateRays:36
+      nx2[ncount]=xt-nx*nd/2;  // > FixedRelations.calculateRays:37
+      ny2[ncount]=yt-ny*nd/2;  // > FixedRelations.calculateRays:38
+      ndx[ncount]=nx*nd;  // > FixedRelations.calculateRays:39
+      ndy[ncount]=ny*nd;  // > FixedRelations.calculateRays:40
+      ncount++;    // > FixedRelations.calculateRays:41
+      it++;  // > FixedRelations.calculateRays:42
+      cx[it]=xt;  // > FixedRelations.calculateRays:43
+      cy[it]=yt;  // > FixedRelations.calculateRays:44
+      sc[it]=Math.atan2(ry,rx);  // > FixedRelations.calculateRays:45
+      out[it]=out[traceid];  // > FixedRelations.calculateRays:46
+      idr[it]=id2;  // > FixedRelations.calculateRays:47
+      if(Math.abs(indexr*adb)>=1){//total reflection  // > FixedRelations.calculateRays:48
+        I[it]=I[i];  // > FixedRelations.calculateRays:49
+        if(!out[i])traceid=it;  // > FixedRelations.calculateRays:50
+        ns++;  // > FixedRelations.calculateRays:51
+      }else{  // > FixedRelations.calculateRays:52
+        cr=Math.asin(indexr*adb);  // > FixedRelations.calculateRays:53
+        dv=getreflections(ci,cr);  // > FixedRelations.calculateRays:54
+        I[it]=I[i]*dv;  // > FixedRelations.calculateRays:55
+        it++;  // > FixedRelations.calculateRays:56
+        if(out[i])traceid=it;  // > FixedRelations.calculateRays:57
+        else traceid=it-1;  // > FixedRelations.calculateRays:58
+        nl=Math.sqrt(nx*nx+ny*ny);  // > FixedRelations.calculateRays:59
+        csr=Math.cos(cr);  // > FixedRelations.calculateRays:60
+        scr=Math.sin(cr);  // > FixedRelations.calculateRays:61
+        rx2=nx/nl*csr+cs2*scr;  // > FixedRelations.calculateRays:62
+        ry2=ny/nl*csr+sc2*scr;  // > FixedRelations.calculateRays:63
+        sc[it]=Math.atan2(ry2,rx2);  // > FixedRelations.calculateRays:64
+        cx[it]=xt;// refracted light  // > FixedRelations.calculateRays:65
+        cy[it]=yt;  // > FixedRelations.calculateRays:66
+        //sc[it]=c-(ci-cr);//Math.atan2(ny,nx)+cr;// cp-pi2-cr;  // > FixedRelations.calculateRays:67
+        I[it]=I[i]*(1-dv);//*(1-dv);  // > FixedRelations.calculateRays:68
+        out[it]=!out[it-1];  // > FixedRelations.calculateRays:69
+        idr[it]=id2;  // > FixedRelations.calculateRays:70
+        ns+=2;  // > FixedRelations.calculateRays:71
+      }  // > FixedRelations.calculateRays:72
+     }  // > FixedRelations.calculateRays:73
+     if(it>nt0-3)break;  // > FixedRelations.calculateRays:74
+    }  // > FixedRelations.calculateRays:75
+    ca=sc[0]/a2c;  // > FixedRelations.calculateRays:76
+    if(ns>nr)nr2=nr;  // > FixedRelations.calculateRays:77
+    else nr2=ns;  // > FixedRelations.calculateRays:78
+    //_view.dataTable.clearData(); // Later add  // > FixedRelations.calculateRays:79
+    _view.dataTable.clear(); // Later add  // > FixedRelations.calculateRays:80
+    for(var i=0;i<nr2;i++){  // > FixedRelations.calculateRays:81
+     rows[0]=i;  // > FixedRelations.calculateRays:82
+     rows[1]=cx[i];  // > FixedRelations.calculateRays:83
+     rows[2]=cy[i];  // > FixedRelations.calculateRays:84
+     rows[3]=I[i];  // > FixedRelations.calculateRays:85
+     _view.dataTable.appendRow(rows); //Later add  // > FixedRelations.calculateRays:86
+    }  // > FixedRelations.calculateRays:87
+    if(ncount==0)ncount=1;  // > FixedRelations.calculateRays:88
+  });
+
+  _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
+
+    _model._fontResized = function(iBase,iSize,iDelta) {
+      _view._fontResized(iBase,iSize,iDelta);
+  }; // end of _fontResized
+
+  function _getViews() {
+    var _viewsInfo = [];
+    var _counter = 0;
+    _viewsInfo[_counter++] = { name : "HtmlView Page", width : 800, height : 600 };
+    return _viewsInfo;
+  } // end of _getViews
+
+  function _selectView(_viewNumber) {
+    _view = null;
+    _view = new polygonraysnwee_View(_topFrame,_viewNumber,_libraryPath,_codebasePath);
+    var _view_super_reset = _view._reset;
+    _view._reset = function() {
+      _view_super_reset();
+      switch(_viewNumber) {
+        case -10 : break; // make Lint happy
+        default :
+        case 0:
+          _view.controlpanel.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'controlpanel'
+          _view.comboBox.linkProperty("Options",  function() { return ["Display","lmin = ","Rotate = ","N = ","Index of Refraction = "]; } ); // HtmlView Page linking property 'Options' for element 'comboBox'
+          _view.comboBox.setAction("OnChange", function(_data,_info) {
+  insertRow();
+  var opts = _view.comboBox.getProperty("SelectedOptions");  // array of options
+      var option = (opts.length > 0)? opts[0]:""; // selected option 
+  //["Display","lmin = ","Rotate = ","N = ","Index of Refraction = "]
+  if (option == "Display"){combo = 1;}
+  else if (option == "lmin = "){combo = 2;}
+  else if (option == "Rotate = "){combo = 3;}
+  else if (option == "N = "){combo = 4;}
+  else if (option == "Index of Refraction = "){combo = 5;}
+
+}); // HtmlView Page setting action 'OnChange' for element 'comboBox'
+          _view.comboBox.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'comboBox'
+          _view.combo1.linkProperty("Display",  function() { return (combo ==1)?"inline-flex":"none"; } ); // HtmlView Page linking property 'Display' for element 'combo1'
+          _view.showallcheckbox.linkProperty("Checked",  function() { return showall; }, function(_v) { showall = _v; } ); // HtmlView Page linking property 'Checked' for element 'showallcheckbox'
+          _view.shownormbox.linkProperty("Checked",  function() { return showN; }, function(_v) { showN = _v; } ); // HtmlView Page linking property 'Checked' for element 'shownormbox'
+          _view.checkitbox.linkProperty("Checked",  function() { return checkit; }, function(_v) { checkit = _v; } ); // HtmlView Page linking property 'Checked' for element 'checkitbox'
+          _view.tableshow.linkProperty("Checked",  function() { return showcontrol; }, function(_v) { showcontrol = _v; } ); // HtmlView Page linking property 'Checked' for element 'tableshow'
+          _view.combo2.linkProperty("Display",  function() { return (combo ==2)?"inline-flex":"none"; } ); // HtmlView Page linking property 'Display' for element 'combo2'
+          _view.lminslider.linkProperty("Value",  function() { return Imin; }, function(_v) { Imin = _v; } ); // HtmlView Page linking property 'Value' for element 'lminslider'
+          _view.combo3.linkProperty("Display",  function() { return (combo ==3)?"inline-flex":"none"; } ); // HtmlView Page linking property 'Display' for element 'combo3'
+          _view.rotateunits.linkProperty("Text",  function() { return rca.toFixed(0)+"°"; } ); // HtmlView Page linking property 'Text' for element 'rotateunits'
+          _view.sliderrotate.linkProperty("Value",  function() { return rca; }, function(_v) { rca = _v; } ); // HtmlView Page linking property 'Value' for element 'sliderrotate'
+          _view.sliderrotate.setAction("OnChange", function(_data,_info) {
+  setN();
+
+}); // HtmlView Page setting action 'OnChange' for element 'sliderrotate'
+          _view.combo4.linkProperty("Display",  function() { return (combo ==4)?"inline-flex":"none"; } ); // HtmlView Page linking property 'Display' for element 'combo4'
+          _view.sliderN.linkProperty("Maximum",  function() { return n0; }, function(_v) { n0 = _v; } ); // HtmlView Page linking property 'Maximum' for element 'sliderN'
+          _view.sliderN.linkProperty("Value",  function() { return n; }, function(_v) { n = _v; } ); // HtmlView Page linking property 'Value' for element 'sliderN'
+          _view.sliderN.setAction("OnChange", function(_data,_info) {
+  setN();calctable();
+
+}); // HtmlView Page setting action 'OnChange' for element 'sliderN'
+          _view.combo5.linkProperty("Display",  function() { return (combo ==5)?"inline-flex":"none"; } ); // HtmlView Page linking property 'Display' for element 'combo5'
+          _view.indexofrefractionslider.linkProperty("Value",  function() { return index; }, function(_v) { index = _v; } ); // HtmlView Page linking property 'Value' for element 'indexofrefractionslider'
+          _view.ResetButton.setAction("OnClick", function(_data,_info) {
+  _reset();
+
+}); // HtmlView Page setting action 'OnClick' for element 'ResetButton'
+          _view.ResetButton.linkProperty("Font",  function() { return fontb; }, function(_v) { fontb = _v; } ); // HtmlView Page linking property 'Font' for element 'ResetButton'
+          _view.plottingPanel.setAction("OnDoubleClick", function(_data,_info) {
+  toggleFullScreen();
+
+}); // HtmlView Page setting action 'OnDoubleClick' for element 'plottingPanel'
+          _view.polygon.linkProperty("PointsY",  function() { return py; }, function(_v) { py = _v; } ); // HtmlView Page linking property 'PointsY' for element 'polygon'
+          _view.polygon.linkProperty("PointsX",  function() { return px; }, function(_v) { px = _v; } ); // HtmlView Page linking property 'PointsX' for element 'polygon'
+          _view.polygon.linkProperty("X",  function() { return pdx; }, function(_v) { pdx = _v; } ); // HtmlView Page linking property 'X' for element 'polygon'
+          _view.polygon.linkProperty("Y",  function() { return pdy; }, function(_v) { pdy = _v; } ); // HtmlView Page linking property 'Y' for element 'polygon'
+          _view.polygon.setAction("OnDrag", function(_data,_info) {
+  if(pdx*pdx+pdy*pdy>0){
+   for(var i=0;i<=n0;i++){
+     px[i]=px[i]+pdx;
+     py[i]=py[i]+pdy;
+   }
+   pdx=pdy=0;
+  }
+
+}); // HtmlView Page setting action 'OnDrag' for element 'polygon'
+          _view.drag.linkProperty("X",  function() { return pdx; }, function(_v) { pdx = _v; } ); // HtmlView Page linking property 'X' for element 'drag'
+          _view.drag.linkProperty("Y",  function() { return pdy; }, function(_v) { pdy = _v; } ); // HtmlView Page linking property 'Y' for element 'drag'
+          _view.drag.setAction("OnDrag", function(_data,_info) {
+  if(pdx*pdx+pdy*pdy>0){
+   for(var i=0;i<=n0;i++){
+     px[i]=px[i]+pdx;
+     py[i]=py[i]+pdy;
+   }
+   pdx=pdy=0;
+  }
+
+}); // HtmlView Page setting action 'OnDrag' for element 'drag'
+          _view.shapeSet.linkProperty("NumberOfElements",  function() { return n; }, function(_v) { n = _v; } ); // HtmlView Page linking property 'NumberOfElements' for element 'shapeSet'
+          _view.shapeSet.linkProperty("X",  function() { return px; }, function(_v) { px = _v; } ); // HtmlView Page linking property 'X' for element 'shapeSet'
+          _view.shapeSet.linkProperty("Y",  function() { return py; }, function(_v) { py = _v; } ); // HtmlView Page linking property 'Y' for element 'shapeSet'
+          _view.shapeSet.setAction("OnDrag", function(_data,_info) {
+  dragit();
+  //customfrem
+  insertRow();
+
+}); // HtmlView Page setting action 'OnDrag' for element 'shapeSet'
+          _view.shapeSet.linkProperty("ElementInteracted",  function() { return dragid; }, function(_v) { dragid = _v; } ); // HtmlView Page linking property 'ElementInteracted' for element 'shapeSet'
+          _view.arrow.linkProperty("SizeX",  function() { return dxs; }, function(_v) { dxs = _v; } ); // HtmlView Page linking property 'SizeX' for element 'arrow'
+          _view.arrow.linkProperty("X",  function() { return xs; }, function(_v) { xs = _v; } ); // HtmlView Page linking property 'X' for element 'arrow'
+          _view.arrow.linkProperty("Y",  function() { return ys; }, function(_v) { ys = _v; } ); // HtmlView Page linking property 'Y' for element 'arrow'
+          _view.arrow.linkProperty("SizeY",  function() { return dys; }, function(_v) { dys = _v; } ); // HtmlView Page linking property 'SizeY' for element 'arrow'
+          _view.arrow.linkProperty("LineWidth",  function() { return stroke*2; } ); // HtmlView Page linking property 'LineWidth' for element 'arrow'
+          _view.arrow.setAction("OnDrag", function(_data,_info) {
+  c=Math.atan2(dys,dxs);
+  dxs=d*Math.cos(c);
+  dys=d*Math.sin(c);
+  showcontrol=true;
+  //customfrem
+  insertRow();
+
+}); // HtmlView Page setting action 'OnDrag' for element 'arrow'
+          _view.lightray.linkProperty("X",  function() { return xs; }, function(_v) { xs = _v; } ); // HtmlView Page linking property 'X' for element 'lightray'
+          _view.lightray.linkProperty("Y",  function() { return ys; }, function(_v) { ys = _v; } ); // HtmlView Page linking property 'Y' for element 'lightray'
+          _view.draglight.linkProperty("X",  function() { return dxs; }, function(_v) { dxs = _v; } ); // HtmlView Page linking property 'X' for element 'draglight'
+          _view.draglight.linkProperty("Y",  function() { return dys; }, function(_v) { dys = _v; } ); // HtmlView Page linking property 'Y' for element 'draglight'
+          _view.segmentSet.linkProperty("NumberOfElements",  function() { return ns; }, function(_v) { ns = _v; } ); // HtmlView Page linking property 'NumberOfElements' for element 'segmentSet'
+          _view.segmentSet.linkProperty("SizeX",  function() { return dx; }, function(_v) { dx = _v; } ); // HtmlView Page linking property 'SizeX' for element 'segmentSet'
+          _view.segmentSet.linkProperty("X",  function() { return cx; }, function(_v) { cx = _v; } ); // HtmlView Page linking property 'X' for element 'segmentSet'
+          _view.segmentSet.linkProperty("LineColor",  function() { return clr; }, function(_v) { clr = _v; } ); // HtmlView Page linking property 'LineColor' for element 'segmentSet'
+          _view.segmentSet.linkProperty("Y",  function() { return cy; }, function(_v) { cy = _v; } ); // HtmlView Page linking property 'Y' for element 'segmentSet'
+          _view.segmentSet.linkProperty("SizeY",  function() { return dy; }, function(_v) { dy = _v; } ); // HtmlView Page linking property 'SizeY' for element 'segmentSet'
+          _view.text.linkProperty("Y",  function() { return ymax/3*2; } ); // HtmlView Page linking property 'Y' for element 'text'
+          _view.text.linkProperty("Text",  function() { return msg; }, function(_v) { msg = _v; } ); // HtmlView Page linking property 'Text' for element 'text'
+          _view.text.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'text'
+          _view.segmentSetNorm.linkProperty("NumberOfElements",  function() { return ncount; }, function(_v) { ncount = _v; } ); // HtmlView Page linking property 'NumberOfElements' for element 'segmentSetNorm'
+          _view.segmentSetNorm.linkProperty("SizeX",  function() { return ndx; }, function(_v) { ndx = _v; } ); // HtmlView Page linking property 'SizeX' for element 'segmentSetNorm'
+          _view.segmentSetNorm.linkProperty("X",  function() { return nx2; }, function(_v) { nx2 = _v; } ); // HtmlView Page linking property 'X' for element 'segmentSetNorm'
+          _view.segmentSetNorm.linkProperty("Y",  function() { return ny2; }, function(_v) { ny2 = _v; } ); // HtmlView Page linking property 'Y' for element 'segmentSetNorm'
+          _view.segmentSetNorm.linkProperty("Visibility",  function() { return showN; }, function(_v) { showN = _v; } ); // HtmlView Page linking property 'Visibility' for element 'segmentSetNorm'
+          _view.segmentSetNorm.linkProperty("SizeY",  function() { return ndy; }, function(_v) { ndy = _v; } ); // HtmlView Page linking property 'SizeY' for element 'segmentSetNorm'
+          _view.tabbedPanel.linkProperty("Titles",  function() { return ["Intensity","Polygons"]; } ); // HtmlView Page linking property 'Titles' for element 'tabbedPanel'
+          _view.tabbedPanel.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'tabbedPanel'
+          _view.tabbedPanel.linkProperty("Display",  function() { return showcontrol?"inline":"none"; } ); // HtmlView Page linking property 'Display' for element 'tabbedPanel'
+          _view.ctext.linkProperty("Text",  function() { return "c = "+ca.toFixed(1)+"°"; } ); // HtmlView Page linking property 'Text' for element 'ctext'
+          _view.ctext.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'ctext'
+          _view.sliderc.linkProperty("Value",  function() { return ca; }, function(_v) { ca = _v; } ); // HtmlView Page linking property 'Value' for element 'sliderc'
+          _view.sliderc.setAction("OnChange", function(_data,_info) {
+  c=ca*a2c;
+  dxs=d*Math.cos(c);
+  dys=d*Math.sin(c);
+  _step();
+  //calcfortable
+  insertRow();
+
+}); // HtmlView Page setting action 'OnChange' for element 'sliderc'
+          _view.dataTable.linkProperty("HeadersText",  function() { return cname; }, function(_v) { cname = _v; } ); // HtmlView Page linking property 'HeadersText' for element 'dataTable'
+          _view.dataTable.linkProperty("CellsFormat",  function() { return cformat; }, function(_v) { cformat = _v; } ); // HtmlView Page linking property 'CellsFormat' for element 'dataTable'
+          _view.arrayPanel2.linkProperty("Input",  function() { return pxy; }, function(_v) { pxy = _v; } ); // HtmlView Page linking property 'Input' for element 'arrayPanel2'
+          _view.arrayPanel2.linkProperty("Maximum",  function() { return n0+1; } ); // HtmlView Page linking property 'Maximum' for element 'arrayPanel2'
+          _view.arrayPanel2.linkProperty("HeadersText",  function() { return columnName; }, function(_v) { columnName = _v; } ); // HtmlView Page linking property 'HeadersText' for element 'arrayPanel2'
+          _view.arrayPanel2.linkProperty("CellsFormat",  function() { return ["0","0.00","0.00"]; } ); // HtmlView Page linking property 'CellsFormat' for element 'arrayPanel2'
+          break;
+      } // end of switch
+    }; // end of new reset
+
+    _model.setView(_view);
+    _model.reset();
+    _view._enableEPub();
+  } // end of _selectView
+
+  _model.setAutoplay(false);
+  _model.setFPS(20);
+  _model.setStepsPerDisplay(1);
+  _selectView(-1); // this includes _model.reset()
+  return _model;
+}
+
+function polygonraysnwee_View (_topFrame,_viewNumber,_libraryPath,_codebasePath) {
+  var _view;
+  switch(_viewNumber) {
+    case -10 : break; // make Lint happy
+    default :
+    case 0: _view = polygonraysnwee_View_0 (_topFrame); break;
+  } // end of switch
+
+  if (_codebasePath) _view._setResourcePath(_codebasePath);
+
+  if (_libraryPath) _view._setLibraryPath(_libraryPath);
+
+
+  return _view;
+} // end of main function
+
+function polygonraysnwee_View_0 (_topFrame) {
+  var _view = EJSS_CORE.createView(_topFrame);
+
+  _view._reset = function() {
+    _view._clearAll();
+    _view._addElement(EJSS_INTERFACE.panel,"panel", _view._topFrame) // EJsS HtmlView.HtmlView Page: declaration of element 'panel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"controlpanel", _view.panel) // EJsS HtmlView.HtmlView Page: declaration of element 'controlpanel'
+      .setProperty("CSS",{   "position" : "absolute",   "top" : "4%",    "margin-left":"0px",    "left":"3%" }) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'controlpanel'
+      .setProperty("Display","inline-flex") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'controlpanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.comboBox,"comboBox", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'comboBox'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"combo1", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'combo1'
+      .setProperty("Background","yellow") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'combo1'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"showallcheckbox", _view.combo1) // EJsS HtmlView.HtmlView Page: declaration of element 'showallcheckbox'
+      .setProperty("Text","show all") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'showallcheckbox'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"shownormbox", _view.combo1) // EJsS HtmlView.HtmlView Page: declaration of element 'shownormbox'
+      .setProperty("Text","show norm") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'shownormbox'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"checkitbox", _view.combo1) // EJsS HtmlView.HtmlView Page: declaration of element 'checkitbox'
+      .setProperty("Text","check") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'checkitbox'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"tableshow", _view.combo1) // EJsS HtmlView.HtmlView Page: declaration of element 'tableshow'
+      .setProperty("Text","table") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'tableshow'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"combo2", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'combo2'
+      .setProperty("Background","blue") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'combo2'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"lminslider", _view.combo2) // EJsS HtmlView.HtmlView Page: declaration of element 'lminslider'
+      .setProperty("Minimum",0.001) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'lminslider'
+      .setProperty("Maximum",0.100) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'lminslider'
+      .setProperty("ShowText",true) // EJsS HtmlView.HtmlView Page: setting property 'ShowText' for element 'lminslider'
+      .setProperty("Format","0.000") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'lminslider'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"combo3", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'combo3'
+      .setProperty("Background","pink") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'combo3'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"rotateunits", _view.combo3) // EJsS HtmlView.HtmlView Page: declaration of element 'rotateunits'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"sliderrotate", _view.combo3) // EJsS HtmlView.HtmlView Page: declaration of element 'sliderrotate'
+      .setProperty("Minimum",0) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'sliderrotate'
+      .setProperty("Maximum",180) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'sliderrotate'
+      .setProperty("Format","0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'sliderrotate'
+      .setProperty("Step",5) // EJsS HtmlView.HtmlView Page: setting property 'Step' for element 'sliderrotate'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"combo4", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'combo4'
+      .setProperty("Background","green") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'combo4'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"sliderN", _view.combo4) // EJsS HtmlView.HtmlView Page: declaration of element 'sliderN'
+      .setProperty("Minimum",3) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'sliderN'
+      .setProperty("ShowText",true) // EJsS HtmlView.HtmlView Page: setting property 'ShowText' for element 'sliderN'
+      .setProperty("Format","0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'sliderN'
+      .setProperty("Step",1) // EJsS HtmlView.HtmlView Page: setting property 'Step' for element 'sliderN'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"combo5", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'combo5'
+      .setProperty("Background","Magenta") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'combo5'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"indexofrefractionslider", _view.combo5) // EJsS HtmlView.HtmlView Page: declaration of element 'indexofrefractionslider'
+      .setProperty("Minimum",1.2) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'indexofrefractionslider'
+      .setProperty("Maximum",1.8) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'indexofrefractionslider'
+      .setProperty("ShowText",true) // EJsS HtmlView.HtmlView Page: setting property 'ShowText' for element 'indexofrefractionslider'
+      .setProperty("Format","0.000") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'indexofrefractionslider'
+      .setProperty("Step",0.1) // EJsS HtmlView.HtmlView Page: setting property 'Step' for element 'indexofrefractionslider'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.button,"ResetButton", _view.controlpanel) // EJsS HtmlView.HtmlView Page: declaration of element 'ResetButton'
+      .setProperty("Text","↻") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'ResetButton'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.plottingPanel,"plottingPanel", _view.panel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel'
+      .setProperty("Height","95vh") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel'
+      .setProperty("Width","100%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'plottingPanel'
+      .setProperty("Gutters",[0,0,0,0]) // EJsS HtmlView.HtmlView Page: setting property 'Gutters' for element 'plottingPanel'
+      .setProperty("ShowAreaRectangle",false) // EJsS HtmlView.HtmlView Page: setting property 'ShowAreaRectangle' for element 'plottingPanel'
+      .setProperty("ShowCoordinates",false) // EJsS HtmlView.HtmlView Page: setting property 'ShowCoordinates' for element 'plottingPanel'
+      .setProperty("Background","url(#mygrandient)") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'plottingPanel'
+      .setProperty("XFixedTick",-50) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel'
+      .setProperty("Enabled",true) // EJsS HtmlView.HtmlView Page: setting property 'Enabled' for element 'plottingPanel'
+      .setProperty("SquareAspect",true) // EJsS HtmlView.HtmlView Page: setting property 'SquareAspect' for element 'plottingPanel'
+      .setProperty("MaximumY",50) // EJsS HtmlView.HtmlView Page: setting property 'MaximumY' for element 'plottingPanel'
+      .setProperty("MaximumX",50) // EJsS HtmlView.HtmlView Page: setting property 'MaximumX' for element 'plottingPanel'
+      .setProperty("YFixedTick",50) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel'
+      .setProperty("MinimumX",-50) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'plottingPanel'
+      .setProperty("MinimumY",-50) // EJsS HtmlView.HtmlView Page: setting property 'MinimumY' for element 'plottingPanel'
+      .setProperty("XTickStep",100) // EJsS HtmlView.HtmlView Page: setting property 'XTickStep' for element 'plottingPanel'
+      .setProperty("YTickStep",100) // EJsS HtmlView.HtmlView Page: setting property 'YTickStep' for element 'plottingPanel'
+      .setProperty("AutoScaleY",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel'
+      .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.polygon,"polygon", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'polygon'
+      .setProperty("FillColor","url(#mygrandient2)") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'polygon'
+      .setProperty("LineColor","black") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'polygon'
+      .setProperty("LineWidth",2) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'polygon'
+      .setProperty("EnabledPosition","ENABLED_ANY") // EJsS HtmlView.HtmlView Page: setting property 'EnabledPosition' for element 'polygon'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"drag", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'drag'
+      .setProperty("SizeX",20) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'drag'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'drag'
+      .setProperty("LineColor","Yellow") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'drag'
+      .setProperty("SizeY",20) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'drag'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'drag'
+      .setProperty("DrawFill",false) // EJsS HtmlView.HtmlView Page: setting property 'DrawFill' for element 'drag'
+      .setProperty("EnabledPosition","ENABLED_ANY") // EJsS HtmlView.HtmlView Page: setting property 'EnabledPosition' for element 'drag'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shapeSet,"shapeSet", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'shapeSet'
+      .setProperty("SizeX",20) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'shapeSet'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'shapeSet'
+      .setProperty("LineColor","Blue") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'shapeSet'
+      .setProperty("SizeY",20) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'shapeSet'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'shapeSet'
+      .setProperty("DrawFill",false) // EJsS HtmlView.HtmlView Page: setting property 'DrawFill' for element 'shapeSet'
+      .setProperty("EnabledPosition","ENABLED_ANY") // EJsS HtmlView.HtmlView Page: setting property 'EnabledPosition' for element 'shapeSet'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.arrow,"arrow", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'arrow'
+      .setProperty("EnabledSize","ENABLED_ANY") // EJsS HtmlView.HtmlView Page: setting property 'EnabledSize' for element 'arrow'
+      .setProperty("LineColor","blue") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'arrow'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.group,"lightray", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'lightray'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"draglight", _view.lightray) // EJsS HtmlView.HtmlView Page: declaration of element 'draglight'
+      .setProperty("SizeX",20) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'draglight'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'draglight'
+      .setProperty("LineColor","Red") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'draglight'
+      .setProperty("SizeY",20) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'draglight'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'draglight'
+      .setProperty("DrawFill",false) // EJsS HtmlView.HtmlView Page: setting property 'DrawFill' for element 'draglight'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.segmentSet,"segmentSet", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'segmentSet'
+      .setProperty("LineWidth",2) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'segmentSet'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"text", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'text'
+      .setProperty("RelativePosition","NORTH") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'text'
+      .setProperty("EnabledPosition","ENABLED_X") // EJsS HtmlView.HtmlView Page: setting property 'EnabledPosition' for element 'text'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.segmentSet,"segmentSetNorm", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'segmentSetNorm'
+      .setProperty("LineColor","gray") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'segmentSetNorm'
+      .setProperty("LineWidth",2) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'segmentSetNorm'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.tabbedPanel,"tabbedPanel", _view.panel) // EJsS HtmlView.HtmlView Page: declaration of element 'tabbedPanel'
+      .setProperty("Width","30%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'tabbedPanel'
+      .setProperty("CSS",{   "position" : "absolute",   "top" : "10%",    "margin-right":"0px",    "right":"3%" }) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'tabbedPanel'
+      .setProperty("Background","White") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'tabbedPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"Intensity", _view.tabbedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'Intensity'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"toppanel", _view.Intensity) // EJsS HtmlView.HtmlView Page: declaration of element 'toppanel'
+      .setProperty("Background","rgba(0,100,255,1.0)") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'toppanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"ctext", _view.toppanel) // EJsS HtmlView.HtmlView Page: declaration of element 'ctext'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"sliderc", _view.toppanel) // EJsS HtmlView.HtmlView Page: declaration of element 'sliderc'
+      .setProperty("Minimum",-180) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'sliderc'
+      .setProperty("Maximum",180) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'sliderc'
+      .setProperty("Step",1) // EJsS HtmlView.HtmlView Page: setting property 'Step' for element 'sliderc'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"datapanel", _view.Intensity) // EJsS HtmlView.HtmlView Page: declaration of element 'datapanel'
+      .setProperty("Background","rgba(0,100,255,1.0)") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'datapanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.dataTable,"dataTable", _view.datapanel) // EJsS HtmlView.HtmlView Page: declaration of element 'dataTable'
+      .setProperty("Maximum",20) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'dataTable'
+      .setProperty("Active",true) // EJsS HtmlView.HtmlView Page: setting property 'Active' for element 'dataTable'
+      .setProperty("Background","rgba(0,100,255,1.0)") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'dataTable'
+      .setProperty("NoRepeat",true) // EJsS HtmlView.HtmlView Page: setting property 'NoRepeat' for element 'dataTable'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"Polygon", _view.tabbedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'Polygon'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.dataTable,"arrayPanel2", _view.Polygon) // EJsS HtmlView.HtmlView Page: declaration of element 'arrayPanel2'
+      .setProperty("Active",true) // EJsS HtmlView.HtmlView Page: setting property 'Active' for element 'arrayPanel2'
+      .setProperty("Background","Pink") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'arrayPanel2'
+      .setProperty("NoRepeat",true) // EJsS HtmlView.HtmlView Page: setting property 'NoRepeat' for element 'arrayPanel2'
+      .setProperty("ClearAtInput",true) // EJsS HtmlView.HtmlView Page: setting property 'ClearAtInput' for element 'arrayPanel2'
+      ;
+
+  };
+
+  return _view;
+}
+
+
+//--><!]]></script>
+  </head>
+  <body>
+    <div role="button" id="_topFrame" style="text-align:center"></div>
+  <div id="metadata" class="metadata">
+    <br />
+    <div id="title_author">
+      <hr />
+      <b>Title and author:</b>
+      <p>
+      </p>
+      <p>
+      <img alt="author image" src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/04waves_13light/01authorfu-kwun.hwang.png" />
+      <img alt="author image" src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/04waves_13light/1authorlookangphoto.png" />
+ Fu-Kwun Hwang; Fremont Teng; lookang
+      </p>
+    </div>
+    <hr />
+    <p></p>
+    <div id="copyright_message">
+      <div class="cc_left"  style="float:left">&#169; 2018, Fu-Kwun Hwang; Fremont Teng; lookang.</div>
+      <div class="cc_right" style="float:right">    Released under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US"> <img alt="Creative Commons Attribution-NonCommercial-ShareAlike" src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/images/cc_icon.png" /> </a> license.</div>
+    </div>
+  </div>
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+      var _model;
+      var _scorm;
+      window.addEventListener('load',
+        function () { 
+          _model =  new polygonraysnwee("_topFrame","file:/Users/lookang/Google%20Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/","file:/Users/lookang/Google%20Drive/PublicLawrence/workspace/source/EJSS/04waves_13light/");
+          if (typeof _isApp !== "undefined" && _isApp) _model.setRunAlways(true);
+          TextResizeDetector.TARGET_ELEMENT_ID = '_topFrame';
+          TextResizeDetector.USER_INIT_FUNC = function () {
+            var iBase = TextResizeDetector.addEventListener(function(e,args) {
+              _model._fontResized(args[0].iBase,args[0].iSize,args[0].iDelta);
+              },null);
+            _model._fontResized(iBase);
+          };
+          _model.onload();
+        }, false);
+    //--><!]]></script>
+  </body>
+</html>

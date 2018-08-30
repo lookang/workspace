@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Point Charge Electric Field</title>
+    <link rel="stylesheet"  type="text/css" href="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/resources/ejss.css" />
+    <link rel="stylesheet"  type="text/css" href="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/resources/ejss.css" />
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/scripts/common_script.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/scripts/textresizedetector.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/ejsS.v1.min.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/jsdrawing/OSPCanvas.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/jsdrawing/OSPVectorColorMap.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/jsdrawing/OSPShape.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/jsdrawing/OSPUtil.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/jsdrawing/OSPVectorField.js"></script>
+    <script src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/jsdrawing/OSPArrow.js"></script>
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+/* _inputParameters: an object with different values for the model parameters */
+function PointChargeElectricField(_topFrame,_libraryPath,_codebasePath, _inputParameters) {
+  var _model = EJSS_CORE.createAnimationLMS();
+  var _view;
+  var _isPlaying = false;
+  var _isPaused = true;
+  var _isMobile = (navigator===undefined) ? false : navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i);
+
+var _stringProperties = {};
+  var _tools = {
+    showInputDialog : EJSS_INTERFACE.BoxPanel.showInputDialog,
+    showOkDialog : EJSS_INTERFACE.BoxPanel.showOkDialog,
+    showOkCancelDialog : EJSS_INTERFACE.BoxPanel.showOkCancelDialog,
+    downloadText: EJSS_TOOLS.File.downloadText,
+    uploadText: function(action) { EJSS_TOOLS.File.uploadText(_model,action); } 
+  };
+
+  function _play()  { _isPaused = false; _isPlaying = true;  _model.play();  }
+  function _pause() { _isPaused = true;  _isPlaying = false; _model.pause(); }
+  function _step()  { _pause();  _model.step(); }
+  function _reset() { _model.reset();  _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); }
+  _model._play  = _play;
+  _model._pause = _pause;
+  _model._step  = _step;
+  _model._reset = _reset;
+  function _update() { _model.update(); }
+  function _initialize() { _model.initialize(); }
+  function _setFPS(_fps) { _model.setFPS(_fps); }
+  function _setDelay(_delay) { _model.setDelay(_delay); }
+  function _setStepsPerDisplay(_spd) { _model.setStepsPerDisplay(_spd); }
+  function _setUpdateView(_updateView) { _model.setUpdateView(_updateView); }
+  function _setAutoplay(_auto) { _model.setAutoplay(_auto); }
+  function _println(_message) { console.log(_message); }
+
+  function _breakAfterThisPage() { _model.setShouldBreak(true); }
+
+  function _resetSolvers() { if (_model.resetSolvers) _model.resetSolvers(); }
+
+  function _saveText(name,type,content) { if (_model.saveText) _model.saveText(name,type,content); }
+
+  function _saveState(name) { if (_model.saveState) _model.saveState(name); }
+
+  function _saveImage(name,panelname) { if (_model.saveImage) _model.saveImage(name,panelname); }
+
+  function _readState(url,type) { if (_model.readState) _model.readState(url,type); }
+
+  function _readText(url,type,varname) { if (_model.readText) _model.readText(url,type,varname); }
+
+  function _getStringProperty(propertyName) {
+    var _value = _stringProperties[propertyName];
+    if (_value===undefined) return propertyName;
+    else return _value;
+  }
+  var __pagesEnabled = [];
+  function _setPageEnabled(pageName,enabled) { __pagesEnabled[pageName] = enabled; }
+
+  var width; // EjsS Model.Variables.Drawing Vars.width
+  var height; // EjsS Model.Variables.Drawing Vars.height
+  var xmin; // EjsS Model.Variables.Drawing Vars.xmin
+  var xmax; // EjsS Model.Variables.Drawing Vars.xmax
+  var ymin; // EjsS Model.Variables.Drawing Vars.ymin
+  var ymax; // EjsS Model.Variables.Drawing Vars.ymax
+  var headSize; // EjsS Model.Variables.Drawing Vars.headSize
+  var lower; // EjsS Model.Variables.Drawing Vars.lower
+  var upper; // EjsS Model.Variables.Drawing Vars.upper
+  var msg; // EjsS Model.Variables.Drawing Vars.msg
+  var msg2; // EjsS Model.Variables.Drawing Vars.msg2
+
+  var n; // EjsS Model.Variables.Charge Vars.n
+  var x; // EjsS Model.Variables.Charge Vars.x
+  var y; // EjsS Model.Variables.Charge Vars.y
+  var q; // EjsS Model.Variables.Charge Vars.q
+  var qactive; // EjsS Model.Variables.Charge Vars.qactive
+  var xactive; // EjsS Model.Variables.Charge Vars.xactive
+  var yactive; // EjsS Model.Variables.Charge Vars.yactive
+  var selected; // EjsS Model.Variables.Charge Vars.selected
+  var active; // EjsS Model.Variables.Charge Vars.active
+  var colors; // EjsS Model.Variables.Charge Vars.colors
+  var xtest; // EjsS Model.Variables.Charge Vars.xtest
+  var ytest; // EjsS Model.Variables.Charge Vars.ytest
+  var ex; // EjsS Model.Variables.Charge Vars.ex
+  var ey; // EjsS Model.Variables.Charge Vars.ey
+
+  var nx; // EjsS Model.Variables.Field Vars.nx
+  var ny; // EjsS Model.Variables.Field Vars.ny
+  var xPos; // EjsS Model.Variables.Field Vars.xPos
+  var yPos; // EjsS Model.Variables.Field Vars.yPos
+  var t; // EjsS Model.Variables.Field Vars.t
+  var dt; // EjsS Model.Variables.Field Vars.dt
+  var data; // EjsS Model.Variables.Field Vars.data
+  var vectorField; // EjsS Model.Variables.Field Vars.vectorField
+  var scale; // EjsS Model.Variables.Field Vars.scale
+  var showField; // EjsS Model.Variables.Field Vars.showField
+
+  _model.getOdes = function() { return []; };
+
+  _model.removeEvents = function(){
+  };
+
+  function _serialize() { return _model.serialize(); }
+
+  _model._userSerialize = function() {
+    return {
+      width : width,
+      height : height,
+      xmin : xmin,
+      xmax : xmax,
+      ymin : ymin,
+      ymax : ymax,
+      headSize : headSize,
+      lower : lower,
+      upper : upper,
+      msg : msg,
+      msg2 : msg2,
+      n : n,
+      x : x,
+      y : y,
+      q : q,
+      qactive : qactive,
+      xactive : xactive,
+      yactive : yactive,
+      selected : selected,
+      active : active,
+      colors : colors,
+      xtest : xtest,
+      ytest : ytest,
+      ex : ex,
+      ey : ey,
+      nx : nx,
+      ny : ny,
+      xPos : xPos,
+      yPos : yPos,
+      t : t,
+      dt : dt,
+      data : data,
+      vectorField : vectorField,
+      scale : scale,
+      showField : showField
+    };
+  };
+
+  _model._readParameters = function(json) {
+    if(typeof json.width != "undefined") width = json.width;
+    if(typeof json.height != "undefined") height = json.height;
+    if(typeof json.xmin != "undefined") xmin = json.xmin;
+    if(typeof json.xmax != "undefined") xmax = json.xmax;
+    if(typeof json.ymin != "undefined") ymin = json.ymin;
+    if(typeof json.ymax != "undefined") ymax = json.ymax;
+    if(typeof json.headSize != "undefined") headSize = json.headSize;
+    if(typeof json.lower != "undefined") lower = json.lower;
+    if(typeof json.upper != "undefined") upper = json.upper;
+    if(typeof json.msg != "undefined") msg = json.msg;
+    if(typeof json.msg2 != "undefined") msg2 = json.msg2;
+    if(typeof json.n != "undefined") n = json.n;
+    if(typeof json.x != "undefined") x = json.x;
+    if(typeof json.y != "undefined") y = json.y;
+    if(typeof json.q != "undefined") q = json.q;
+    if(typeof json.qactive != "undefined") qactive = json.qactive;
+    if(typeof json.xactive != "undefined") xactive = json.xactive;
+    if(typeof json.yactive != "undefined") yactive = json.yactive;
+    if(typeof json.selected != "undefined") selected = json.selected;
+    if(typeof json.active != "undefined") active = json.active;
+    if(typeof json.colors != "undefined") colors = json.colors;
+    if(typeof json.xtest != "undefined") xtest = json.xtest;
+    if(typeof json.ytest != "undefined") ytest = json.ytest;
+    if(typeof json.ex != "undefined") ex = json.ex;
+    if(typeof json.ey != "undefined") ey = json.ey;
+    if(typeof json.nx != "undefined") nx = json.nx;
+    if(typeof json.ny != "undefined") ny = json.ny;
+    if(typeof json.xPos != "undefined") xPos = json.xPos;
+    if(typeof json.yPos != "undefined") yPos = json.yPos;
+    if(typeof json.t != "undefined") t = json.t;
+    if(typeof json.dt != "undefined") dt = json.dt;
+    if(typeof json.data != "undefined") data = json.data;
+    if(typeof json.vectorField != "undefined") vectorField = json.vectorField;
+    if(typeof json.scale != "undefined") scale = json.scale;
+    if(typeof json.showField != "undefined") showField = json.showField;
+  };
+
+  _model._inputAndPublicParameters = ["width",  "height",  "xmin",  "xmax",  "ymin",  "ymax",  "headSize",  "lower",  "upper",  "msg",  "msg2",  "n",  "x",  "y",  "q",  "qactive",  "xactive",  "yactive",  "selected",  "active",  "colors",  "xtest",  "ytest",  "ex",  "ey",  "nx",  "ny",  "xPos",  "yPos",  "t",  "dt",  "data",  "vectorField",  "scale",  "showField"]; 
+
+  _model._outputAndPublicParameters = ["width",  "height",  "xmin",  "xmax",  "ymin",  "ymax",  "headSize",  "lower",  "upper",  "msg",  "msg2",  "n",  "x",  "y",  "q",  "qactive",  "xactive",  "yactive",  "selected",  "active",  "colors",  "xtest",  "ytest",  "ex",  "ey",  "nx",  "ny",  "xPos",  "yPos",  "t",  "dt",  "data",  "vectorField",  "scale",  "showField"];
+
+  function _unserialize(json) { return _model.unserialize(json); }
+
+  _model._userUnserialize = function(json) {
+    _model._readParameters(json);
+   _resetSolvers();
+   _model.update();
+  };
+
+  _model.addToReset(function() {
+    __pagesEnabled["Init Vector Field"] = true;
+    __pagesEnabled["Compute Field"] = true;
+  });
+
+  _model.addToReset(function() {
+    width = (_isMobile||_isEPub)?400:500; // EjsS Model.Variables.Drawing Vars.width
+    height = (_isMobile||_isEPub)?400:500; // EjsS Model.Variables.Drawing Vars.height
+    xmin = -10; // EjsS Model.Variables.Drawing Vars.xmin
+    xmax = 10; // EjsS Model.Variables.Drawing Vars.xmax
+    ymin = -10; // EjsS Model.Variables.Drawing Vars.ymin
+    ymax = 10; // EjsS Model.Variables.Drawing Vars.ymax
+    headSize = 3; // EjsS Model.Variables.Drawing Vars.headSize
+    lower = 0.2; // EjsS Model.Variables.Drawing Vars.lower
+    upper = 1.0; // EjsS Model.Variables.Drawing Vars.upper
+    msg = "Drag the charge"; // EjsS Model.Variables.Drawing Vars.msg
+    msg2 = ""; // EjsS Model.Variables.Drawing Vars.msg2
+  });
+
+  _model.addToReset(function() {
+    n = 1; // EjsS Model.Variables.Charge Vars.n
+    x = new Array(n); // EjsS Model.Variables.Charge Vars.x
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n; _i0+=1) {  // EjsS Model.Variables.Charge Vars.x
+        x[_i0] = 0;  // EjsS Model.Variables.Charge Vars.x
+      }
+    }());
+    y = new Array(n); // EjsS Model.Variables.Charge Vars.y
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n; _i0+=1) {  // EjsS Model.Variables.Charge Vars.y
+        y[_i0] = 0;  // EjsS Model.Variables.Charge Vars.y
+      }
+    }());
+    q = new Array(n); // EjsS Model.Variables.Charge Vars.q
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n; _i0+=1) {  // EjsS Model.Variables.Charge Vars.q
+        q[_i0] = 1;  // EjsS Model.Variables.Charge Vars.q
+      }
+    }());
+    qactive = 1; // EjsS Model.Variables.Charge Vars.qactive
+    xactive = 0; // EjsS Model.Variables.Charge Vars.xactive
+    yactive = 0; // EjsS Model.Variables.Charge Vars.yactive
+    selected = 0; // EjsS Model.Variables.Charge Vars.selected
+    active = selected+1; // EjsS Model.Variables.Charge Vars.active
+    colors = new Array(n); // EjsS Model.Variables.Charge Vars.colors
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<n; _i0+=1) {  // EjsS Model.Variables.Charge Vars.colors
+        colors[_i0] = "red";  // EjsS Model.Variables.Charge Vars.colors
+      }
+    }());
+    xtest = 6; // EjsS Model.Variables.Charge Vars.xtest
+    ytest = 6; // EjsS Model.Variables.Charge Vars.ytest
+    ex = 1; // EjsS Model.Variables.Charge Vars.ex
+    ey = 1; // EjsS Model.Variables.Charge Vars.ey
+  });
+
+  _model.addToReset(function() {
+    nx = 18; // EjsS Model.Variables.Field Vars.nx
+    ny = 18; // EjsS Model.Variables.Field Vars.ny
+    xPos = new Array(0); // EjsS Model.Variables.Field Vars.xPos
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<0; _i0+=1) {  // EjsS Model.Variables.Field Vars.xPos
+        xPos[_i0] = 0;  // EjsS Model.Variables.Field Vars.xPos
+      }
+    }());
+    yPos = new Array(0); // EjsS Model.Variables.Field Vars.yPos
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<0; _i0+=1) {  // EjsS Model.Variables.Field Vars.yPos
+        yPos[_i0] = 0;  // EjsS Model.Variables.Field Vars.yPos
+      }
+    }());
+    t = 0; // EjsS Model.Variables.Field Vars.t
+    dt = 0.1; // EjsS Model.Variables.Field Vars.dt
+    data = new Array(2); // EjsS Model.Variables.Field Vars.data
+    scale = 3; // EjsS Model.Variables.Field Vars.scale
+    showField = true; // EjsS Model.Variables.Field Vars.showField
+  });
+
+  if (_inputParameters) {
+    _inputParameters = _model.parseInputParameters(_inputParameters);
+    if (_inputParameters) _model.addToReset(function() { _model._readParameters(_inputParameters); });
+  }
+
+  _model.addToReset(function() {
+    _model.setAutoplay(false);
+    _model.setFPS(10);
+    _model.setStepsPerDisplay(1);
+  });
+
+  function drawVectorField(context,element) {  // > CustomCode.Draw Vectors:1
+    if(!showField) return;  // > CustomCode.Draw Vectors:2
+    var ospCanvas = new OSPCanvas(context,element, xmin,xmax,ymin,ymax);  // > CustomCode.Draw Vectors:3
+    vectorField.updateData(data);  // > CustomCode.Draw Vectors:4
+    ospCanvas.addDrawable(vectorField);  // > CustomCode.Draw Vectors:5
+    ospCanvas.drawObjects();  // > CustomCode.Draw Vectors:6
+  }  // > CustomCode.Draw Vectors:7
+
+  function createData() {  // > CustomCode.Create Data Array:1
+    var newXData= [];  // > CustomCode.Create Data Array:2
+    var newYData= [];  // > CustomCode.Create Data Array:3
+    for(var i=0; i<nx; i++) {  // > CustomCode.Create Data Array:4
+      newXData.push([]);  // > CustomCode.Create Data Array:5
+      newYData.push([]);  // > CustomCode.Create Data Array:6
+      for (var j=0; j<ny; j++) {  // > CustomCode.Create Data Array:7
+        newXData[i].push(0); //adds the value to the data  // > CustomCode.Create Data Array:8
+        newYData[i].push(0); //adds the value to the data  // > CustomCode.Create Data Array:9
+      }  // > CustomCode.Create Data Array:10
+    }  // > CustomCode.Create Data Array:11
+    return [newXData,newYData]; //returns new component arrays  // > CustomCode.Create Data Array:12
+  }  // > CustomCode.Create Data Array:13
+
+  function addCharge(qn) {  // > CustomCode.Actions:1
+    x.push(0);  // > CustomCode.Actions:2
+    y.push(y[selected]+1);  // > CustomCode.Actions:3
+    q.push(qn);  // > CustomCode.Actions:4
+    if(qn>0){  // > CustomCode.Actions:5
+      colors.push("red");  // > CustomCode.Actions:6
+    }else{  // > CustomCode.Actions:7
+     colors.push("blue");  // > CustomCode.Actions:8
+    }  // > CustomCode.Actions:9
+    n++;  // > CustomCode.Actions:10
+    selected=n-1;  // > CustomCode.Actions:11
+    active=n;  // > CustomCode.Actions:12
+    qactive=q[selected];  // > CustomCode.Actions:13
+    xactive=x[selected];  // > CustomCode.Actions:14
+    yactive=y[selected];  // > CustomCode.Actions:15
+    _view._update();  // > CustomCode.Actions:16
+  }  // > CustomCode.Actions:17
+
+  function computeField (pos) {  // > CustomCode.Compute Field:1
+    var Ex=0;  // > CustomCode.Compute Field:2
+    var Ey=0;  // > CustomCode.Compute Field:3
+    var xi=pos[0];  // > CustomCode.Compute Field:4
+    var yj=pos[1];  // > CustomCode.Compute Field:5
+    for(var p=0; p<n; p++) {  // > CustomCode.Compute Field:6
+      // loop over charges  // > CustomCode.Compute Field:7
+      var dx=xi-x[p];                      // grid point x-separation  // > CustomCode.Compute Field:8
+      var dy=yj-y[p];                      // grid point y-separation  // > CustomCode.Compute Field:9
+      var r2=dx*dx+dy*dy;                  // distance squared  // > CustomCode.Compute Field:10
+      var r3=r2*Math.sqrt(r2);             // distance cubed  // > CustomCode.Compute Field:11
+      if(r2!=0) {  // > CustomCode.Compute Field:12
+        // check for singularity  // > CustomCode.Compute Field:13
+        Ex += q[p]*dx/r3;               // add E field x-component  // > CustomCode.Compute Field:14
+        Ey += q[p]*dy/r3;               // add E field y-component  // > CustomCode.Compute Field:15
+      } // end of if statement  // > CustomCode.Compute Field:16
+    }  // > CustomCode.Compute Field:17
+    var E=Math.sqrt(Ex*Ex+Ey*Ey);  // > CustomCode.Compute Field:18
+    msg2="At test charge |E| ="+E.toFixed(4);  // > CustomCode.Compute Field:19
+    xtest=pos[0];  // > CustomCode.Compute Field:20
+    ytest=pos[1];  // > CustomCode.Compute Field:21
+    ex=10*Ex;  // > CustomCode.Compute Field:22
+    ey=10*Ey;  // > CustomCode.Compute Field:23
+  }  // > CustomCode.Compute Field:24
+
+  _model.addToInitialization(function() {
+    if (!__pagesEnabled["Init Vector Field"]) return;
+    _view.custom.setFunction(drawVectorField);  // > Initialization.Init Vector Field:1
+    _view._update();  // updates the function Field and draws the wave function   // > Initialization.Init Vector Field:2
+    xPos= arrayCoordinates(xmin, xmax, nx); // returns array(nx);  // > Initialization.Init Vector Field:3
+    yPos= arrayCoordinates(ymin, ymax, ny); // returns array(nx);  // > Initialization.Init Vector Field:4
+    data=createData();  // creates component arrays  // > Initialization.Init Vector Field:5
+    vectorField = new VectorField(data, xmin,xmax,nx,ymin,ymax,ny);  // > Initialization.Init Vector Field:6
+    vectorField.setThreshold(lower,upper);  // > Initialization.Init Vector Field:7
+    computeField ([xtest,ytest]);  // > Initialization.Init Vector Field:8
+  });
+
+  _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
+
+  _model.addToFixedRelations(function() {
+    if (!__pagesEnabled["Compute Field"]) return;
+    var xField=data[0];  // > FixedRelations.Compute Field:1
+    var yField=data[1];  // > FixedRelations.Compute Field:2
+    for (var i=0; i<nx; i++) {  // > FixedRelations.Compute Field:3
+      for (var j=0; j<ny; j++) {  // > FixedRelations.Compute Field:4
+        xField[i][j]=0;  // > FixedRelations.Compute Field:5
+        yField[i][j]=0;  // > FixedRelations.Compute Field:6
+        var xi=xPos[i];  // > FixedRelations.Compute Field:7
+        var yj=yPos[j];  // > FixedRelations.Compute Field:8
+        for(var p=0; p<n; p++) {  // > FixedRelations.Compute Field:9
+          // loop over charges  // > FixedRelations.Compute Field:10
+          var dx=xi-x[p];                      // grid point x-separation  // > FixedRelations.Compute Field:11
+          var dy=yj-y[p];                      // grid point y-separation  // > FixedRelations.Compute Field:12
+          var r2=dx*dx+dy*dy;                  // distance squared  // > FixedRelations.Compute Field:13
+          var r3=r2*Math.sqrt(r2);             // distance cubed  // > FixedRelations.Compute Field:14
+          if(r2!=0) {  // > FixedRelations.Compute Field:15
+            // check for singularity  // > FixedRelations.Compute Field:16
+            xField[i][j] += scale*q[p]*dx/r3;               // add E field x-component  // > FixedRelations.Compute Field:17
+            yField[i][j] += scale*q[p]*dy/r3;               // add E field y-component  // > FixedRelations.Compute Field:18
+          } // end of if statement  // > FixedRelations.Compute Field:19
+        }  // > FixedRelations.Compute Field:20
+      }  // > FixedRelations.Compute Field:21
+    }  // > FixedRelations.Compute Field:22
+  });
+
+  _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
+
+    _model._fontResized = function(iBase,iSize,iDelta) {
+      _view._fontResized(iBase,iSize,iDelta);
+  }; // end of _fontResized
+
+  function _getViews() {
+    var _viewsInfo = [];
+    var _counter = 0;
+    _viewsInfo[_counter++] = { name : "HtmlView Page", width : 800, height : 600 };
+    return _viewsInfo;
+  } // end of _getViews
+
+  function _selectView(_viewNumber) {
+    _view = null;
+    _view = new PointChargeElectricField_View(_topFrame,_viewNumber,_libraryPath,_codebasePath);
+    var _view_super_reset = _view._reset;
+    _view._reset = function() {
+      _view_super_reset();
+      switch(_viewNumber) {
+        case -10 : break; // make Lint happy
+        default :
+        case 0:
+          _view.upperPanel.linkProperty("Width",  function() { return width; }, function(_v) { width = _v; } ); // HtmlView Page linking property 'Width' for element 'upperPanel'
+          _view.xminField.linkProperty("Value",  function() { return xmin; }, function(_v) { xmin = _v; } ); // HtmlView Page linking property 'Value' for element 'xminField'
+          _view.xminField.linkProperty("Editable",  function() { return _isPaused; } ); // HtmlView Page linking property 'Editable' for element 'xminField'
+          _view.xminField.setAction("OnChange", function(_data,_info) {
+  _initialize();
+
+}); // HtmlView Page setting action 'OnChange' for element 'xminField'
+          _view.xmaxField.linkProperty("Value",  function() { return xmax; }, function(_v) { xmax = _v; } ); // HtmlView Page linking property 'Value' for element 'xmaxField'
+          _view.xmaxField.linkProperty("Editable",  function() { return _isPaused; } ); // HtmlView Page linking property 'Editable' for element 'xmaxField'
+          _view.xmaxField.setAction("OnChange", function(_data,_info) {
+  _initialize();
+
+}); // HtmlView Page setting action 'OnChange' for element 'xmaxField'
+          _view.yminField.linkProperty("Value",  function() { return ymin; }, function(_v) { ymin = _v; } ); // HtmlView Page linking property 'Value' for element 'yminField'
+          _view.yminField.linkProperty("Editable",  function() { return _isPaused; } ); // HtmlView Page linking property 'Editable' for element 'yminField'
+          _view.yminField.setAction("OnChange", function(_data,_info) {
+  _initialize();
+
+}); // HtmlView Page setting action 'OnChange' for element 'yminField'
+          _view.ymaxField.linkProperty("Value",  function() { return ymax; }, function(_v) { ymax = _v; } ); // HtmlView Page linking property 'Value' for element 'ymaxField'
+          _view.ymaxField.linkProperty("Editable",  function() { return _isPaused; } ); // HtmlView Page linking property 'Editable' for element 'ymaxField'
+          _view.ymaxField.setAction("OnChange", function(_data,_info) {
+  _initialize();
+
+}); // HtmlView Page setting action 'OnChange' for element 'ymaxField'
+          _view.plottingPanel.linkProperty("Height",  function() { return height; }, function(_v) { height = _v; } ); // HtmlView Page linking property 'Height' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("Width",  function() { return width; }, function(_v) { width = _v; } ); // HtmlView Page linking property 'Width' for element 'plottingPanel'
+          _view.plottingPanel.setAction("OnRelease", function(_data,_info) {
+  msg2="";
+
+}); // HtmlView Page setting action 'OnRelease' for element 'plottingPanel'
+          _view.plottingPanel.setAction("OnPress", computeField); // HtmlView Page setting action 'OnPress' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("TLMessage",  function() { return msg; }, function(_v) { msg = _v; } ); // HtmlView Page linking property 'TLMessage' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MaximumY",  function() { return ymax; }, function(_v) { ymax = _v; } ); // HtmlView Page linking property 'MaximumY' for element 'plottingPanel'
+          _view.plottingPanel.setAction("OnDrag", computeField); // HtmlView Page setting action 'OnDrag' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MaximumX",  function() { return xmax; }, function(_v) { xmax = _v; } ); // HtmlView Page linking property 'MaximumX' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MinimumX",  function() { return xmin; }, function(_v) { xmin = _v; } ); // HtmlView Page linking property 'MinimumX' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MinimumY",  function() { return ymin; }, function(_v) { ymin = _v; } ); // HtmlView Page linking property 'MinimumY' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("BLMessage",  function() { return msg2; }, function(_v) { msg2 = _v; } ); // HtmlView Page linking property 'BLMessage' for element 'plottingPanel'
+          _view.custom.linkProperty("SizeX",  function() { return xmax-xmin; } ); // HtmlView Page linking property 'SizeX' for element 'custom'
+          _view.custom.linkProperty("X",  function() { return xmin; }, function(_v) { xmin = _v; } ); // HtmlView Page linking property 'X' for element 'custom'
+          _view.custom.linkProperty("Y",  function() { return ymin; }, function(_v) { ymin = _v; } ); // HtmlView Page linking property 'Y' for element 'custom'
+          _view.custom.linkProperty("SizeY",  function() { return ymax-ymin; } ); // HtmlView Page linking property 'SizeY' for element 'custom'
+          _view.chargeSet.linkProperty("NumberOfElements",  function() { return n; }, function(_v) { n = _v; } ); // HtmlView Page linking property 'NumberOfElements' for element 'chargeSet'
+          _view.chargeSet.linkProperty("FillColor",  function() { return colors; }, function(_v) { colors = _v; } ); // HtmlView Page linking property 'FillColor' for element 'chargeSet'
+          _view.chargeSet.setAction("OnDrag", function(_data,_info) {
+  active=selected+1;
+  xactive=x[selected];
+  yactive=y[selected];
+  qactive=q[selected];
+  msg=""
+  computeField ([xtest,ytest]);
+
+}); // HtmlView Page setting action 'OnDrag' for element 'chargeSet'
+          _view.chargeSet.linkProperty("ElementInteracted",  function() { return selected; }, function(_v) { selected = _v; } ); // HtmlView Page linking property 'ElementInteracted' for element 'chargeSet'
+          _view.chargeSet.linkProperty("X",  function() { return x; }, function(_v) { x = _v; } ); // HtmlView Page linking property 'X' for element 'chargeSet'
+          _view.chargeSet.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'chargeSet'
+          _view.chargeSet.setAction("OnPress", function(_data,_info) {
+  active=selected+1;
+  xactive=x[selected];
+  yactive=y[selected];
+  qactive=q[selected];
+
+}); // HtmlView Page setting action 'OnPress' for element 'chargeSet'
+          _view.testChargeGroup.linkProperty("X",  function() { return xtest; }, function(_v) { xtest = _v; } ); // HtmlView Page linking property 'X' for element 'testChargeGroup'
+          _view.testChargeGroup.linkProperty("Y",  function() { return ytest; }, function(_v) { ytest = _v; } ); // HtmlView Page linking property 'Y' for element 'testChargeGroup'
+          _view.arrow.linkProperty("SizeX",  function() { return ex; }, function(_v) { ex = _v; } ); // HtmlView Page linking property 'SizeX' for element 'arrow'
+          _view.arrow.linkProperty("SizeY",  function() { return ey; }, function(_v) { ey = _v; } ); // HtmlView Page linking property 'SizeY' for element 'arrow'
+          _view.controlPanel.linkProperty("Width",  function() { return width; }, function(_v) { width = _v; } ); // HtmlView Page linking property 'Width' for element 'controlPanel'
+          _view.activeField.linkProperty("Value",  function() { return active; }, function(_v) { active = _v; } ); // HtmlView Page linking property 'Value' for element 'activeField'
+          _view.activeField.setAction("OnChange", function(_data,_info) {
+  active =Math.max(active,1);
+  active =Math.min(active,n);
+  selected=active-1;
+  qactive=q[selected];
+  xactive=x[selected];
+  yactive=y[selected];
+
+}); // HtmlView Page setting action 'OnChange' for element 'activeField'
+          _view.qField.linkProperty("Value",  function() { return qactive; }, function(_v) { qactive = _v; } ); // HtmlView Page linking property 'Value' for element 'qField'
+          _view.qField.setAction("OnChange", function(_data,_info) {
+  q[selected]=qactive;
+  if(qactive>0) {
+    colors[selected]="red";
+  } else {
+    colors[selected]="blue";
+  }
+
+}); // HtmlView Page setting action 'OnChange' for element 'qField'
+          _view.xiField.linkProperty("Value",  function() { return xactive; }, function(_v) { xactive = _v; } ); // HtmlView Page linking property 'Value' for element 'xiField'
+          _view.xiField.setAction("OnChange", function(_data,_info) {
+  x[selected]=xactive;
+
+}); // HtmlView Page setting action 'OnChange' for element 'xiField'
+          _view.yiField.linkProperty("Value",  function() { return yactive; }, function(_v) { yactive = _v; } ); // HtmlView Page linking property 'Value' for element 'yiField'
+          _view.yiField.setAction("OnChange", function(_data,_info) {
+  y[selected]=yactive;
+
+}); // HtmlView Page setting action 'OnChange' for element 'yiField'
+          _view.showFieldCheck.linkProperty("Checked",  function() { return showField; }, function(_v) { showField = _v; } ); // HtmlView Page linking property 'Checked' for element 'showFieldCheck'
+          _view.addPosButton.setAction("OnPress", function(_data,_info) {
+  addCharge(+1);
+
+}); // HtmlView Page setting action 'OnPress' for element 'addPosButton'
+          _view.addNegButton.setAction("OnPress", function(_data,_info) {
+  addCharge(-1);
+
+}); // HtmlView Page setting action 'OnPress' for element 'addNegButton'
+          _view.resetButton.setAction("OnClick", function(_data,_info) {
+  _reset();
+
+}); // HtmlView Page setting action 'OnClick' for element 'resetButton'
+          break;
+      } // end of switch
+    }; // end of new reset
+
+    _model.setView(_view);
+    _model.reset();
+    _view._enableEPub();
+  } // end of _selectView
+
+  _model.setAutoplay(false);
+  _model.setFPS(10);
+  _model.setStepsPerDisplay(1);
+  _selectView(-1); // this includes _model.reset()
+  return _model;
+}
+
+function PointChargeElectricField_View (_topFrame,_viewNumber,_libraryPath,_codebasePath) {
+  var _view;
+  switch(_viewNumber) {
+    case -10 : break; // make Lint happy
+    default :
+    case 0: _view = PointChargeElectricField_View_0 (_topFrame); break;
+  } // end of switch
+
+  if (_codebasePath) _view._setResourcePath(_codebasePath);
+
+  if (_libraryPath) _view._setLibraryPath(_libraryPath);
+
+
+  return _view;
+} // end of main function
+
+function PointChargeElectricField_View_0 (_topFrame) {
+  var _view = EJSS_CORE.createView(_topFrame);
+
+  _view._reset = function() {
+    _view._clearAll();
+    _view._addElement(EJSS_INTERFACE.wrappedPanel,"wrappedPanel", _view._topFrame) // EJsS HtmlView.HtmlView Page: declaration of element 'wrappedPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"titlePanel", _view.wrappedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'titlePanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"titleLabel", _view.titlePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'titleLabel'
+      .setProperty("Text","<h1>Coulomb's Law and Electric Fields</h1>") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'titleLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"upperPanel", _view.wrappedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'upperPanel'
+      .setProperty("CSS",{ "display":"block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'upperPanel'
+      .setProperty("Background","rgba(240,240,240,255)") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'upperPanel'
+      .setProperty("BorderStyle","double") // EJsS HtmlView.HtmlView Page: setting property 'BorderStyle' for element 'upperPanel'
+      .setProperty("BorderColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'BorderColor' for element 'upperPanel'
+      .setProperty("BorderWidth",1) // EJsS HtmlView.HtmlView Page: setting property 'BorderWidth' for element 'upperPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"ioPanel", _view.upperPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'ioPanel'
+      .setProperty("CSS",{"display":"block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'ioPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"xPanel", _view.ioPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xPanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'xPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"xminLabel", _view.xPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xminLabel'
+      .setProperty("Text","x min =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'xminLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"xminField", _view.xPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xminField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'xminField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'xminField'
+      .setProperty("Tooltip","minimum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'xminField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"xmaxLabel", _view.xPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xmaxLabel'
+      .setProperty("Text","x max =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'xmaxLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"xmaxField", _view.xPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xmaxField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'xmaxField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'xmaxField'
+      .setProperty("Tooltip","maximum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'xmaxField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"yPanel", _view.ioPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'yPanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'yPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"yminLabel", _view.yPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'yminLabel'
+      .setProperty("Text","y min =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'yminLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"yminField", _view.yPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'yminField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'yminField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'yminField'
+      .setProperty("Tooltip","minimum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'yminField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"ymaxLabel", _view.yPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'ymaxLabel'
+      .setProperty("Text","y max =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'ymaxLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"ymaxField", _view.yPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'ymaxField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'ymaxField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'ymaxField'
+      .setProperty("Tooltip","maximum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'ymaxField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"mainPanel", _view.wrappedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'mainPanel'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.plottingPanel,"plottingPanel", _view.mainPanel,"GRAPHICS2D_CANVAS") // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel'
+      .setProperty("ShowAreaRectangle",false) // EJsS HtmlView.HtmlView Page: setting property 'ShowAreaRectangle' for element 'plottingPanel'
+      .setProperty("ShowCoordinates",false) // EJsS HtmlView.HtmlView Page: setting property 'ShowCoordinates' for element 'plottingPanel'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel'
+      .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel'
+      .setProperty("XTickStep",2.0) // EJsS HtmlView.HtmlView Page: setting property 'XTickStep' for element 'plottingPanel'
+      .setProperty("YTickStep",2.0) // EJsS HtmlView.HtmlView Page: setting property 'YTickStep' for element 'plottingPanel'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel'
+      .setProperty("GraphicsMode","Canvas") // EJsS HtmlView.HtmlView Page: setting property 'GraphicsMode' for element 'plottingPanel'
+      .setProperty("GridXShow",false) // EJsS HtmlView.HtmlView Page: setting property 'GridXShow' for element 'plottingPanel'
+      .setProperty("Background","White") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'plottingPanel'
+      .setProperty("Enabled",true) // EJsS HtmlView.HtmlView Page: setting property 'Enabled' for element 'plottingPanel'
+      .setProperty("Title","Electric Field") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel'
+      .setProperty("SquareAspect",false) // EJsS HtmlView.HtmlView Page: setting property 'SquareAspect' for element 'plottingPanel'
+      .setProperty("GridYShow",false) // EJsS HtmlView.HtmlView Page: setting property 'GridYShow' for element 'plottingPanel'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel'
+      .setProperty("AutoScaleY",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'plottingPanel'
+      .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'plottingPanel'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.custom,"custom", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'custom'
+      .setProperty("FillColor","Red") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'custom'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'custom'
+      .setProperty("LineColor","Blue") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'custom'
+      .setProperty("LineWidth",2) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'custom'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shapeSet,"chargeSet", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'chargeSet'
+      .setProperty("ShapeType","ELLIPSE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'chargeSet'
+      .setProperty("Sensitivity",15) // EJsS HtmlView.HtmlView Page: setting property 'Sensitivity' for element 'chargeSet'
+      .setProperty("SizeX",15) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'chargeSet'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'chargeSet'
+      .setProperty("SizeY",15) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'chargeSet'
+      .setProperty("EnabledPosition","ENABLED_ANY") // EJsS HtmlView.HtmlView Page: setting property 'EnabledPosition' for element 'chargeSet'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.group,"testChargeGroup", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'testChargeGroup'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"backgroundBox", _view.testChargeGroup) // EJsS HtmlView.HtmlView Page: declaration of element 'backgroundBox'
+      .setProperty("FillColor","Yellow") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'backgroundBox'
+      .setProperty("SizeX",70) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'backgroundBox'
+      .setProperty("RelativePosition","SOUTH") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'backgroundBox'
+      .setProperty("ShapeType","ROUND_RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'backgroundBox'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'backgroundBox'
+      .setProperty("Y",0.3) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'backgroundBox'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'backgroundBox'
+      .setProperty("SizeY",15) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'backgroundBox'
+      .setProperty("DrawLines",false) // EJsS HtmlView.HtmlView Page: setting property 'DrawLines' for element 'backgroundBox'
+      .setProperty("DrawFill",true) // EJsS HtmlView.HtmlView Page: setting property 'DrawFill' for element 'backgroundBox'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"text", _view.testChargeGroup) // EJsS HtmlView.HtmlView Page: declaration of element 'text'
+      .setProperty("SizeX",40) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'text'
+      .setProperty("RelativePosition","SOUTH") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'text'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'text'
+      .setProperty("Y",0.45) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'text'
+      .setProperty("Text","test charge") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'text'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'text'
+      .setProperty("SizeY",15) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'text'
+      .setProperty("Font","normal bold 12px ") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'text'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"testCharge", _view.testChargeGroup) // EJsS HtmlView.HtmlView Page: declaration of element 'testCharge'
+      .setProperty("FillColor","Green") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'testCharge'
+      .setProperty("SizeX",9) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'testCharge'
+      .setProperty("ShapeType","WHEEL") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'testCharge'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'testCharge'
+      .setProperty("LineColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'testCharge'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'testCharge'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'testCharge'
+      .setProperty("SizeY",9) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'testCharge'
+      .setProperty("DrawLines",true) // EJsS HtmlView.HtmlView Page: setting property 'DrawLines' for element 'testCharge'
+      .setProperty("LineWidth",2) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'testCharge'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.arrow,"arrow", _view.testChargeGroup) // EJsS HtmlView.HtmlView Page: declaration of element 'arrow'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'arrow'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'arrow'
+      .setProperty("Visibility",true) // EJsS HtmlView.HtmlView Page: setting property 'Visibility' for element 'arrow'
+      .setProperty("LineWidth",2) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'arrow'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"controlPanel", _view.wrappedPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'controlPanel'
+      .setProperty("CSS",{ "display":"block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'controlPanel'
+      .setProperty("Background","rgba(240,240,240,255)") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'controlPanel'
+      .setProperty("BorderStyle","double") // EJsS HtmlView.HtmlView Page: setting property 'BorderStyle' for element 'controlPanel'
+      .setProperty("BorderColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'BorderColor' for element 'controlPanel'
+      .setProperty("BorderWidth",1) // EJsS HtmlView.HtmlView Page: setting property 'BorderWidth' for element 'controlPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"chargePanel", _view.controlPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'chargePanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'chargePanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"activePanel", _view.chargePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'activePanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'activePanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"activeLabel", _view.activePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'activeLabel'
+      .setProperty("Text"," i =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'activeLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"activeField", _view.activePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'activeField'
+      .setProperty("Width",20) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'activeField'
+      .setProperty("Format","0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'activeField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"qPanel", _view.chargePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'qPanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'qPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"qLabel", _view.qPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'qLabel'
+      .setProperty("Text"," q<sub>i</sub> =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'qLabel'
+      .setProperty("Font","normal bold 12px ") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'qLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"qField", _view.qPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'qField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'qField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'qField'
+      .setProperty("Tooltip","minimum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'qField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"xiPanel", _view.chargePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xiPanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'xiPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"xiLabel", _view.xiPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xiLabel'
+      .setProperty("Text"," x<sub>i</sub> =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'xiLabel'
+      .setProperty("Font","normal bold 12px ") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'xiLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"xiField", _view.xiPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'xiField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'xiField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'xiField'
+      .setProperty("Tooltip","minimum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'xiField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"yiPanel", _view.chargePanel) // EJsS HtmlView.HtmlView Page: declaration of element 'yiPanel'
+      .setProperty("CSS",{"display":"inline-block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'yiPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"yiLabel", _view.yiPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'yiLabel'
+      .setProperty("Text"," y<sub>i</sub> =") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'yiLabel'
+      .setProperty("Font","normal bold 12px ") // EJsS HtmlView.HtmlView Page: setting property 'Font' for element 'yiLabel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"yiField", _view.yiPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'yiField'
+      .setProperty("Width",35) // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'yiField'
+      .setProperty("Format","0.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'yiField'
+      .setProperty("Tooltip","minimum x") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'yiField'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"buttonPanel", _view.controlPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'buttonPanel'
+      .setProperty("CSS",{"display":"block"}) // EJsS HtmlView.HtmlView Page: setting property 'CSS' for element 'buttonPanel'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"showFieldCheck", _view.buttonPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'showFieldCheck'
+      .setProperty("Text","Show field") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'showFieldCheck'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.button,"addPosButton", _view.buttonPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'addPosButton'
+      .setProperty("Tooltip","Adds a ositive charge") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'addPosButton'
+      .setProperty("Text","Add +") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'addPosButton'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.button,"addNegButton", _view.buttonPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'addNegButton'
+      .setProperty("Tooltip","Adds a negative charge") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'addNegButton'
+      .setProperty("Text","Add -") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'addNegButton'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.button,"resetButton", _view.buttonPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'resetButton'
+      .setProperty("ImageUrl","/org/opensourcephysics/resources/controls/images/reset.gif") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'resetButton'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"narrativePanel", _view._topFrame) // EJsS HtmlView.HtmlView Page: declaration of element 'narrativePanel'
+      .setProperty("Html","<p>The Coulomb's Law and Electric Fields model shows the <a href=\"http://en.wikipedia.org/wiki/Vector_field\">electric field</a> from multiple <a href=\"http://en.wikipedia.org/wiki/Point_charge\">point charges</a>. Use the add charge buttons to create additional point charges and drag them to create various configurations.</p> <p>The <a href=\"http://en.wikipedia.org/wiki/Electric_field\">electric field</a> is defined as the force per unit charge that would be experienced by a very small <a href=\"http://en.wikipedia.org/wiki/Test_charge\">test charge</a> at a given location. The Coulomb's Law and Electric Fields model shows an ideal test charge with an arrow that represents the field at the test location. The numerical field magnitude is shown in a yellow message box near the bottom of the view as the test charge is dragged. You can observe the point-particle singularity if you drag the test charge close to a point charge.</p> <p>Because the electric field changes dramatically in the vicinity of a charged particle, it is difficult to visualize its global properties using only a single test charge. A good way to visualize the field's geometric structure is to draw a grid of force vectors. Force vectors are drawn uniformly and the force per unit charge is shown at each location. The color representation (with constant arrow length) uses light blue for weak fields and progresses through the spectrum of blue, green, red and black as the magnitude of the field increases.</p> <h2>Electric Field Exploration</h2>     <p>Use the add charge buttons to create and position point charges. You can drag these point       charges after they are created or you can change their position and charge using the input       fields.</p>     <ul>       <li>First, examine the field around a single 1 unit charge. What does the field look like?         Increase the charge to 2 units. How is that field configuration different? Change to charge         to -2. What is the difference? Notice that the length of the arrows does not change but that         the magnitude (strength) of the field is represented using light blue for weak fields and         progresses through the spectrum of blue, green, red and black as the magnitude of the field         increases. When the charge is switched from positive to negative, the color of the charge         changes and the electric field vectors change direction. A positive charges has field         vectors that point radially outward and a negative charge has field vectors that point         radially inward.</li>       <li>Hide the field vectors and drag the test charge toward and away from a charge at the         origin. How does the field magnitude change if you change the radial distance from 1 to 2?         Does your relation hold if you start at a different distance and double that distance?</li>       <li>Reset the simulation and add two positive charges of the same magnitude. Note that if you         added the charges at the same position, you must drag a charge away to see the one         underneath. How is the field different with two charges compared with one? Move one of the         charges closer and further away from the other one. When the charges are sitting on top of         each other, what does the field look like? When you move them far apart, what does it look         like? Notice that the fields add together (it is nothing more than vector addition). The         fact that the electric field at any point is the vector sum of the electric fields due to         the surrounding charges is a consequence of the principle of force superposition. The force         on a test charge is due to the sum of the Coulomb forces from the surrounding charges and         the field vectors points in the direction of the electric field due to all the charges.</li>       <li>What do you predict the field will look like with two negative charges (of equal         magnitude)? Try it. What are the similarities and differences between the two positive and         two negative charge distributions?</li>       <li>What about a dipole, one positive and one negative charge? How is it the same or different         from two charges of the same sign? What is the direction of the field at the midpoint         between the charges? The vector field can again be described in terms of the vector sum of         the field from the two particles. What happens to the electric field if you place a two         dipole charges at the same location?</li>       <li>Try two charges of different magnitude. What does the field look like? Notice that there         is a point where the electric field is zero directly in between the two charges. If you         added a third charge at that spot, what do you predict the force on it would be?</li>       <li>Add three or four charges and look at the field. Pick one point of the electric field and         explain why it points in the direction it does. How can you tell, simply by looking at the         field (and not the color on the charges), which ones are positive and which ones are         negative? How can you tell which ones have more charge?</li>     </ul>      <h2>Teaching Objectives</h2>     <ul>       <li>         <h3>Forces, Energy and Fields</h3>         <p>Attractive and repulsive interactions at a distance (e.g., gravitational, magnetic,           electrical and electromagnetic) can be described and explained using a field model. </p>       </li>     </ul>     <ul>       <li>         <h3>Learning Goal</h3>         <p>Students understand that the field model explains how objects exert attractive and           repulsive forces on each other at a distance: their fields are the agents of the           interaction. </p>       </li>     </ul>     <ul>       <li>         <h3>Essential Knowledge</h3>         <ol>           <li> The field of a source (e.g., a particle with charge) depends only on the properties             of the source and the position of an object relative to the source, not on any             properties of objects placed in the field (e.g., a test charge). The field of an object             is always there, even if the object is not interacting with anything else. </li>           <li> The strength of the electric field at a certain location is given by the electric             force per unit of charge experienced by a test object placed at that location. If the             electrical field at a certain position is known, then the electrical force exerted by             the sources of that field on any object at that position can be calculated by             multiplying the field strength (E) and the charge of the object. </li>         </ol>       </li>     </ul>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'narrativePanel'
+      ;
+
+  };
+
+  return _view;
+}
+
+
+//--><!]]></script>
+  </head>
+  <body>
+    <div role="button" id="_topFrame" style="text-align:center"></div>
+  <div id="metadata" class="metadata">
+    <br />
+    <div id="title_author">
+      <hr />
+      <b>Title and author:</b>
+      <p>
+      Point Charge Electric Field<br />
+     <img alt="Logo" src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/PointChargeElectricField/DipoleField.png" />
+      </p>
+      <p>
+      <img alt="author image" src="file:///Users/lookang/Google Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/resources/wc_icon.png" />
+ Wolfgang Christian
+      </p>
+    </div>
+    <hr />
+    <p></p>
+    <div id="copyright_message">
+      <div class="cc_left"  style="float:left">&#169; 2018, Wolfgang Christian.</div>
+      <div class="cc_right" style="float:right">    Released under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US"> <img alt="Creative Commons Attribution-NonCommercial-ShareAlike" src="file:///Users/lookang/Google Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/images/cc_icon.png" /> </a> license.</div>
+    </div>
+  </div>
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+      var _model;
+      var _scorm;
+      window.addEventListener('load',
+        function () { 
+          _model =  new PointChargeElectricField("_topFrame","file:/Users/lookang/Google%20Drive/PublicLawrence/EjsS_5.3.SG_180225/bin/javascript/lib/","file:/Users/lookang/Google%20Drive/PublicLawrence/workspace/source/EJSS/05electricitynmagnetism_11efield/ejss_src_PointChargeElectricField/");
+          if (typeof _isApp !== "undefined" && _isApp) _model.setRunAlways(true);
+          TextResizeDetector.TARGET_ELEMENT_ID = '_topFrame';
+          TextResizeDetector.USER_INIT_FUNC = function () {
+            var iBase = TextResizeDetector.addEventListener(function(e,args) {
+              _model._fontResized(args[0].iBase,args[0].iSize,args[0].iDelta);
+              },null);
+            _model._fontResized(iBase);
+          };
+          _model.onload();
+        }, false);
+    //--><!]]></script>
+  </body>
+</html>
