@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+    <style type="text/css">
+    .style1 {
+      font-family: Verdana;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 align="left">
+      <font size="5">An Introduction to Computer Simulation Methods:<br>
+      Chapter 17 Examples</font></h1>
+    <p align="center"><img src="RotatingBox.jpg"></p>
+    <p align="center"><font size="2">The angular momentum vector is not aligned with the axel rotation if the box is tilted.</font></p>
+    <h1>Rotation About a Fixed Axis</h1>
+    <p align="left">The Rotation About a Fixed Axis example computes the angular momentum of a <a href="http://en.wikipedia.org/wiki/Rigid_body">rigid rectangular box</a> attached to a 
+    rotating axle.&nbsp; The fixed axis is in the z-direction so that the angular velocity is 
+    <span class="style1"><strong>&#969;</strong></span>=(0, 0, &#969;).&nbsp; Users can tilt the box relative to the axle 
+    and can change the box dimensions.&nbsp; The simulation shows that the <a href="http://en.wikipedia.org/wiki/Angular_momentum">angular momentum </a>vector <strong>L</strong> is not aligned with the the angular velocity vector 
+    <span class="style1"><strong>&#969;</strong></span> unless the box is 
+    rotating about an axis parallel to a box edge.&nbsp; The simulation also shows the <a href="http://en.wikipedia.org/wiki/Torque">torque</a> <strong>N</strong> that must be applied to the axel to maintain its fixed orientation.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">The angular momentum <strong>L</strong> of a box rotating with angular 
+    velocity <span class="style1"><strong>&#969;</strong> is</span></p>
+    <p align="left">&nbsp;</p>
+    <p align="left" class="style1"><strong>L</strong> = I <strong>w</strong></p>
+    <p align="left" class="style1">&nbsp;</p>
+    <p align="left" class="style1">where <strong>L </strong>and <strong>&#969;</strong> are vectors and I is the <a href="http://en.wikipedia.org/wiki/Moment_of_inertia">moment of inertia</a> tensor.&nbsp; Although this equation is true 
+    in any reference frame, the vector and tensor components are frame dependent.&nbsp; Additional windows within the simulation display the frame-dependent algebra in 
+    an inertial reference frame fixed in space and in a non-inertial reference frame attached to the rotating box with a rotation axis parallel to a box edge.&nbsp; 
+    Because the moment of inertia tensor (matrix) in the body frame is diagonal, the angular momentum computation in this non-inertial body frame is much simpler than the computation 
+    in the inertial space frame.&nbsp; A non-inertial reference frame will, however, introduce frame-dependent forces when solving the dynamical equations 
+    for <a href="http://en.wikipedia.org/wiki/Rigid_body_dynamics">rigid body motion</a>.</p>
+    <font size="3"><h2>Related Models</h2>
+    <p>The following EJS models are described in <a href="http://www.compadre.org/OSP/items/detail.cfm?ID=10680">Chapter 17</a> of the EJS adaptation of <em>An Introduction to Computer Simulation Methods</em>. </p>
+    <ul>
+        <li>
+        Affine Transformation in 2D: Shows how homogeneous coordinates are used in two dimensions. </li>
+        <li>
+        Affine Transformation in 3D: Shows how homogeneous coordinates are used in three dimensions.</li>
+        <li>
+        Euler Angle Demo:&nbsp; Displays the orientation of a rigid body subject to three Euler angle rotations.</li>
+        <li>
+        Quaternion <font size="3">Demo:&nbsp; Displays the orientation of a rigid body subject to a quaternion rotation.</font></li>
+        <li>
+        Rotation About a Fixed Axis: Computes the angular momentum of a box attached to an axle.</li>
+        <li>
+        Feynman Plate: Computes the wobble of a spinning plate using a simple quaternion rate equation.</li>
+        <li>
+        Free Rotation: Computes and displays the trajectory of a rigid body rotating about its center of mass in the absence of external torque.</li>
+        <li>
+        Gyroscope:&nbsp; Computes and displays the trajectory of gyroscope under the influence of a gravitational torque.</li>
+    </ul>
+
+    <h2>Credits</h2>
+    <p>The Rotation About a Fixed Axis example was developed by Wolfgang Christian using the Easy Java Simulations (EJS) modeling tool version 4.3.&nbsp; You 
+    can examine and modify the model for this simulation if you have Ejs installed by right-clicking within the program and selecting &quot;Open Ejs Model&quot; from the pop-up menu.&nbsp;
+    </p>
+    <p>&nbsp;</p>
+    <p>Information about EJS is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+    </font>
+
+  </body>
+</html>

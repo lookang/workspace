@@ -1,0 +1,23 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 150906. Visit http://www.um.es/fem/Ejs
+title: Free Particle Eigenstate Superposition
+logo-image: 
+author: Wolfgang Christian
+copyright: W. Christian
+preferred-width: 800
+preferred-height: 600
+author-image: wc_icon.png
+source: FreeParticleEigenstateSuperposition.ejss
+main-script: 
+main-simulation: FreeParticleEigenstateSuperposition_Simulation.xhtml
+available-languages: 
+html-contents: FreeParticleEigenstateSuperposition_Contents.xhtml
+html-main: FreeParticleEigenstateSuperposition.xhtml
+page-title: Free Particle Eigenstate Superposition
+page-index: FreeParticleEigenstateSuperposition/FreeParticleEigenstates.xhtml
+page-index: FreeParticleEigenstateSuperposition_Simulation.xhtml
+resource: FreeParticleEigenstateSuperposition/schroedinger_au.gif
+resource: wc_icon.png
+resource: FreeParticleEigenstateSuperposition/color_strip.jpg
+resource: FreeParticleEigenstateSuperposition/free_particle_superposition.gif
+resource: FreeParticleEigenstateSuperposition/propagating_wave.gif
+resource: FreeParticleEigenstateSuperposition/FreeParticleEigenstates.xhtml

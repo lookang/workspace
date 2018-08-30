@@ -1,0 +1,307 @@
+<Osejs version="3.3">
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>About</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <u><font color="#0000ff">Archimedes' principle:</font></u><br><br><br>This 
+    principle states that a body immersed in a fluid is buoyed up by a force 
+    equal to the weight of the displaced fluid. The weight and buoyant force 
+    have the following expressions:<br><img src="laboratoriosTexto/Imagenes/Peso.gif"><br><img src="laboratoriosTexto/Imagenes/Empuje.gif"><br>
+The weight and the buoyant force are equal in the equilibium<font color="#0000ff">
+: </font><br><img src="laboratoriosTexto/Imagenes/Equilibrio.gif"><br><img src="laboratoriosTexto/Imagenes/DiagramaModeloArquimedes.gif"><br>
+This virtual lab allows the user to change the mass of a cubic object with 
+    1m^2 of volume between a minimun and a maximum value. The maximum mass 
+    value is calculated considering h=L and a force equilibrium.<br>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Author</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Carla Mart&#237;n<br>Dpto. de Inform&#225;tica y Autom&#225;tica<br>E.T.S. 
+    de Ingenier&#237;a Inform&#225;tica, UNED<br>Juan del Rosal 16, 28040 
+    Madrid, Spain
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>VariablesModelo</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>m</Name>
+<Value><![CDATA[500]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[masa del objeto [Kg]]]></Comment>
+</Variable>
+<Variable>
+<Name>L</Name>
+<Value><![CDATA[1]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Longitud del objeto [m]]]></Comment>
+</Variable>
+<Variable>
+<Name>dL</Name>
+<Value><![CDATA[1000]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[densidad del objeto [Kg/m^3]]]></Comment>
+</Variable>
+<Variable>
+<Name>mmin</Name>
+<Value><![CDATA[10]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[masa mínima que deseamos tenga el objeto [Kg]]]></Comment>
+</Variable>
+<Variable>
+<Name>mmax</Name>
+<Value><![CDATA[dL*L*L*L]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[masa máxima que ha de tener el objeto para que flote [kg]]]></Comment>
+</Variable>
+<Variable>
+<Name>h</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Altura del objeto que se encuentra sumergida en el agua [m]]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>VariablesVisualizacion</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>xmin</Name>
+<Value><![CDATA[-3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Mínima coordenada x del elemento PanelDibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>xmax</Name>
+<Value><![CDATA[3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Máxima coordenada x del elemento PanelDibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>ymin</Name>
+<Value><![CDATA[-3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Mínima coordenada y del elemento PanelDibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>ymax</Name>
+<Value><![CDATA[3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Máxima coordenada y del elemento PanelDibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>xSolido</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Coordenadas X de los vértices del poligono que representa al objeto]]></Comment>
+</Variable>
+<Variable>
+<Name>ySolido</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Coordenadas Y de los vértices del poligono que representa al objeto]]></Comment>
+</Variable>
+<Variable>
+<Name>xLiquido</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Coordenadas X de los vértices del poligono que representa al liquido]]></Comment>
+</Variable>
+<Variable>
+<Name>yLiquido</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Coordenadas Y de los vértices del poligono que representa al liquido]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Página Inicio</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+xSolido[0] = -L/2; 
+xSolido[1] = -L/2; 
+xSolido[2] = L/2; 
+xSolido[3] =L/2; 
+
+xLiquido[0] = -3; yLiquido[0] = -3;
+xLiquido[1] = -3; yLiquido[1] = 0;
+xLiquido[2] = 3; yLiquido[2] = 0;
+xLiquido[3] =3; yLiquido[3] = -3;
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Página Ligaduras</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+h=m/L/L/dL; 
+ ySolido[0] = -h;
+ ySolido[1] = L-h;
+ ySolido[2] = L-h;
+ ySolido[3] = -h;
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Página Propia</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+
+
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Ventana</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[Ventana]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA[300,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel</Property>
+<Property name="parent">Ventana</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">masa</Property>
+<Property name="parent">Panel</Property>
+<Property name="variable"><![CDATA[m]]></Property>
+<Property name="minimum"><![CDATA[mmin]]></Property>
+<Property name="maximum"><![CDATA[mmax]]></Property>
+<Property name="format"><![CDATA[m=#.#]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">PanelDibujo</Property>
+<Property name="parent">Ventana</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[xmin]]></Property>
+<Property name="maximumX"><![CDATA[xmax]]></Property>
+<Property name="minimumY"><![CDATA[ymin]]></Property>
+<Property name="maximumY"><![CDATA[ymax]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">Liquido</Property>
+<Property name="parent">PanelDibujo</Property>
+<Property name="maxpoints"><![CDATA[4]]></Property>
+<Property name="x"><![CDATA[xLiquido]]></Property>
+<Property name="y"><![CDATA[yLiquido]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[blue]]></Property>
+<Property name="secondaryColor"><![CDATA[blue]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">Solido</Property>
+<Property name="parent">PanelDibujo</Property>
+<Property name="maxpoints"><![CDATA[4]]></Property>
+<Property name="x"><![CDATA[xSolido]]></Property>
+<Property name="y"><![CDATA[ySolido]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="closed"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[black]]></Property>
+<Property name="secondaryColor"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+</Osejs>

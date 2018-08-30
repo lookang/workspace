@@ -1,0 +1,26 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170624. Visit http://www.um.es/fem/Ejs
+title: spring mass model pe,ke,te vs x
+logo-image: SHM18/2016-01-25_1124s.png
+author: weelookang@gmail.com
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto5050.png
+source: SHM18_v2.ejss
+main-script: 
+main-simulation: SHM18_v2_Simulation.xhtml
+available-languages: 
+html-contents: SHM18_v2_Contents.xhtml
+html-main: SHM18_v2.xhtml
+page-title: SHM18
+page-index: SHM18.xhtml
+page-title: spring mass model pe,ke,te vs x
+page-index: SHM18_v2_Simulation.xhtml
+resource: 1authorlookangphoto5050.png
+resource: SHM18/2015-02-25_0835.png
+resource: SHM18/2015-02-25_0836.png
+resource: SHM18/2015-02-25_0837.png
+resource: SHM18/2015-02-25_0838.png
+resource: SHM18/2015-02-25_0838_001.png
+resource: SHM18/2016-01-25_1124s.png
+resource: SHM18.xhtml

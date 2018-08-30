@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="FourSpringAccelerometer"
+author="W. Christian"
+description=""
+screenshot="./FourSpringAccelerometer/FourSpringAccelerometer.png"
+thumbnail="./FourSpringAccelerometer/FourSpringAccelerometer.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="FourSpringAccelerometer_Simulation.xhtml"/>
+</Module>

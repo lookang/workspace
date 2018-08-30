@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" title="ejs_css" type="text/css" href="../../../_ejs_library/css/ejsPage.css">
+  <link rel="stylesheet" title="server_css" type="text/css" href="../../_css/ejsPage.css">
+  <title>Physics Modeling Example</title>
+	</head>
+<body>
+    <h1>
+      EJS 3D Implementation</h1>
+    <p align="center"><img src="Affine3D.jpg"></p>
+    <p align="center"><font size="2">A polygon and line segments being used to approximate a cylinder. </font></p>
+    <h2 align="left">Rotation Elements</h2>
+    <p align="left">The Affine Transformation in Three Dimensions example shows how to transform data directly using matrix algebra but this data is hidden inside most 
+    Elements.&nbsp; How does a user transform the mesh data that defines a 3D sphere?&nbsp;EJS provides Elements on the 3D tools and utilities palette that manipulate this 
+    hidden data using any of the following rotation implementations:</p>
+    <p align="left">&nbsp;</p>
+    <ul>
+        <li>
+        <p align="left">x-axis</p>
+        </li>
+        <li>
+        <p align="left">y-axis</p>
+        </li>
+        <li>
+        <p align="left">z-axis</p>
+        </li>
+        <li>
+        <p align="left">angle axis</p>
+        </li>
+        <li>
+        <p align="left">quaternion</p>
+        </li>
+    </ul>
+
+    <p align="left">&nbsp;</p>
+    <p align="left">Select a rotation and add it to a 3D Element or Group to apply it to that element.&nbsp; As usual, inspector property fields can connect (bind) the 
+    rotation element to a model variable to change the transformation as the model evolves.&nbsp; Examine the Euler Angle Demo, Quaternion Demo, and gyroscope models to 
+    see how rotation implementations are used in practice.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">See the <a href="http://www.um.es/fem/EjsWiki/Main/ElementsRotation3D">3D Rotations</a> page on the EJS Wiki for more complete information about the 
+    rotation Elements.</p>
+    <h2 align="left">Transformation Property</h2>
+    <p align="left">The Transform property on a 3D Element inspector allows users to control the shape and location of an Element on a three-dimensional drawing panel. This property field accepts input of type: String, double[], 3DTransformation, and Object. </p>
+    <p align="left">&nbsp;</p>
+    <ul>
+        <li>
+        <p align="left">double[] input:&nbsp; If the array has exactly 6 elements, the array is interpreted as a 3x3 transformation matrix that is applied to the Element.&nbsp; 
+        If the array has exactly four elements, the array is interpreted as an angle-axis transformation.&nbsp; The first element contains the rotation angle in radians 
+        and subsequent three elements contain the rotation axis direction cosines.</p>
+        </li>
+        <li>
+        <p align="left">Object input: Allows users to use object-oriented programming and to pass OSP Transformation objects directly to the Element.&nbsp; Transformation 
+        implementation in the OSP numerical package are Matrix3DTransformation and Quaternion.</p>
+        </li>
+        <li>
+        <p align="left">String input: A String created by the custom property editor that describes a sequence of static transformations.</p>
+        </li>
+    </ul>
+
+    <p align="left">&nbsp;</p>
+    <p align="left">See the <a href="http://www.um.es/fem/EjsWiki/Main/ElementsAboutTransforms">3D Transformations</a> page on the EJS Wiki for more complete information 
+    about the Transformations property.</p>
+    <h2 align="left">Simple 3D</h2>
+    <p align="left">When drawing a scene with many objects or an object with a complex shape, the 3D algorithm decomposes the scene into several (dozens) of individual 
+    polygons. The algorithm then sorts these polygons in space and projects them them onto the canvas in reverse order (from far to near). This implies storing each 
+    polygon in a data structure, such as a List, and sorting so that polygons are dawn quickly in the right order. This Simple 3D implementation is always available in 
+    EJS models because it is implemented using standard Java code.&nbsp; The disadvantage of this algorithm is&nbsp; that an intersecting polygon will cover portions of 
+    its intersecting partner.&nbsp; Subdividing a polygon can solve the intersection problem but the added computation may cause the model to become sluggish. </p>
+    <h2 align="left">Java 3D</h2>
+    <p align="left">Matrix multiplication and polygon rendering are at the heart of 3D visualization and computers now have specialized hardware to to perform these 
+    operations.&nbsp; For example, the processor chip on a high-end <a href="http://en.wikipedia.org/wiki/CUDA">Nvidia graphics cards</a> has 480 graphics processing 
+    units (GPUs) each of which can process tens of thousands of matrix multiplications per second.&nbsp; Although the standard Java distribution uses some of this 
+    graphics processing power for rendering 2D images, the standard distribution does not support a high-performance 3D library.&nbsp; The
+    <a href="https://java3d.dev.java.net/">Java 3D</a> library available from java.net developer site fills this need. </p>
+    <p align="left">&nbsp;</p>
+    <p align="left">Java 3D is a robust and easy to install library that can greatly improve the quality and performance of EJS 3D models.&nbsp; EJS models attempt to 
+    use this library if the 3D Drawing Panel implementation property is set to J3D.&nbsp; You can right-click within a running model's drawing panel and select Diagnostics|About Java 3D to see if the 3D package has been properly installed.&nbsp; Note that EJS defaults to the Simple 3D implementation if the Java 3D library is 
+    not available.</p>
+    <h2>3D Navigation</h2>
+
+    <p align="left">An EJS model's 3D view has built in navigation features that can be accessed while the program is running. </p>
+    <p align="left">&nbsp;</p>
+    <ul>
+      <li><p align="left">Left-button click-dragging on the particle changes its position. </li>
+      <li><p align="left">Left-button click-dragging on an empty regions rotates the view. </li>
+      <li><p align="left">Left-button shift-click-dragging zooms in and out. </li>
+      <li><p align="left">Left-button control-click-dragging translates (pans) the view. </li>
+      <li><p align="left">Left-button alt-click-dragging displays a 3D cursor on the scene (if the panel is “Enabled”). </li>
+    </ul>
+    <p align="left">&nbsp;</p>
+    <p align="left">If the ‘x’, ‘y’ or ‘z’ key is pressed during a mouse action, the actions affects only this coordinate.&nbsp; Note 
+    also that these actions are are modified if the 3D view is projected onto a 2D plane. </p>
+  
+  </body>
+</html>

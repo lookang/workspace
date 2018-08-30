@@ -1,0 +1,71 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: Circuit Play
+logo-image: Cover.PNG
+author: Francisco Esquembre; Kay Shin Tan
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: Francisco_SS.PNG;./Ms Tan Kay Shin_SS.png
+source: CircuitPlay.ejss
+main-script: 
+main-simulation: CircuitPlay_Simulation.xhtml
+available-languages: 
+html-description: CircuitPlay_Intro_1.html
+html-contents: CircuitPlay_Contents.xhtml
+html-main: CircuitPlay.xhtml
+page-title: Intro Page
+page-index: CircuitPlay_Intro_1.html
+page-title: Circuit Play
+page-index: CircuitPlay_Simulation.xhtml
+resource: DCCircuit/.DS_Store
+resource: DCCircuit/._.DS_Store
+resource: DCCircuit/._Battery1.png
+resource: DCCircuit/._Battery3.jpg
+resource: DCCircuit/._Battery4.jpg
+resource: DCCircuit/._Battery5.png
+resource: DCCircuit/._Battery6.png
+resource: DCCircuit/._Battery7.png
+resource: DCCircuit/._Battery8.jpg
+resource: DCCircuit/._Battery9.png
+resource: DCCircuit/._Resistor.png
+resource: DCCircuit/._Resistor1.png
+resource: DCCircuit/._Resistor2.png
+resource: DCCircuit/._Resistor3.jpg
+resource: DCCircuit/._Resistor4.png
+resource: DCCircuit/._Resistor5.png
+resource: DCCircuit/._Resistor6.png
+resource: DCCircuit/._Resistor7.png
+resource: DCCircuit/._Wire.png
+resource: DCCircuit/Battery1.png
+resource: DCCircuit/Battery2.jpg
+resource: DCCircuit/Battery3.jpg
+resource: DCCircuit/Battery4.jpg
+resource: DCCircuit/Battery5.png
+resource: DCCircuit/Battery6.png
+resource: DCCircuit/Battery7.png
+resource: DCCircuit/Battery8.jpg
+resource: DCCircuit/Battery9.png
+resource: DCCircuit/diyicon.PNG
+resource: DCCircuit/icon.png
+resource: DCCircuit/icon.zip
+resource: DCCircuit/res/mipmap-hdpi/drawable-hdpi-icon.png
+resource: DCCircuit/res/mipmap-mdpi/drawable-mdpi-icon.png
+resource: DCCircuit/res/mipmap-xhdpi/drawable-xhdpi-icon.png
+resource: DCCircuit/res/mipmap-xxhdpi/drawable-xxhdpi-icon.png
+resource: DCCircuit/res/mipmap-xxxhdpi/drawable-xxxhdpi-icon.png
+resource: DCCircuit/Resistance Calculation.xlsx
+resource: DCCircuit/Resistor.png
+resource: DCCircuit/Resistor1.png
+resource: DCCircuit/Resistor2.png
+resource: DCCircuit/Resistor3.jpg
+resource: DCCircuit/Resistor4.png
+resource: DCCircuit/Resistor5.png
+resource: DCCircuit/Resistor6.png
+resource: DCCircuit/Resistor7.png
+resource: DCCircuit/web_hi_res_512.png
+resource: DCCircuit/Wire.png
+resource: Cover.PNG
+resource: Overview_1.png
+resource: Ms Tan Kay Shin_SS.png
+resource: Complete_1.png
+resource: Francisco_SS.PNG

@@ -1,0 +1,396 @@
+<Osejs version="3.3">
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Lissajous figures</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Lissajous curves were studied by the French physicist and mathematician 
+    Jules Antoine Lissajous.<br><br><img src="laboratoriosTexto/Imagenes/lissajous1.gif"><br><b>
+Jules Antoine Lissajous (1822-1880)</b><br><br>Lissajous curves are the 
+    composition of two harmonic motions (sinusoids):<br><br><i>x</i> = <i>
+    amplitude </i>* cos ( <i>frequency1</i> * <i>time</i> )<br><i>y</i> = <i>
+    amplitude</i> * cos ( <i>frecuency2</i> * <i>time</i> + <i>phase</i> )
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Simulation algorithm</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="laboratoriosTexto/Imagenes/lissajous2_en.gif">
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Activities</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    This virtual-lab will enable you to analyze the Lissajous figures. The 
+    view of the virtual-lab contains three buttons (A, B and C), which set 
+    predefined values to the frequency and the phase of the harmonic signals. 
+    In addition, the numerical values of the frequency and the phase can be 
+    selected by the lab's user.
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Authors</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Alfonso Urqu&#237;a and Carla Mart&#237;n<br>Dpto. de Inform&#225;tica y 
+    Autom&#225;tica<br>E.T.S. Ingenier&#237;a Inform&#225;tica, UNED<br>Juan 
+    del Rosal 16, 28040 Madrid, Spain
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Variables</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>tiempo</Name>
+<Value><![CDATA[0.0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>deltaTiempo</Name>
+<Value><![CDATA[0.05]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>amplitud</Name>
+<Value><![CDATA[30.0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>frecuencia1</Name>
+<Value><![CDATA[1.05]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>frecuencia2</Name>
+<Value><![CDATA[1.0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>desfase</Name>
+<Value><![CDATA[0.0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>x</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>y</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Auxiliary variables</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>maximo</Name>
+<Value><![CDATA[1.2*amplitud]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>minimo</Name>
+<Value><![CDATA[-1.2*amplitud]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>n</Name>
+<Value><![CDATA[150]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Avance en el tiempo</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+tiempo = tiempo + deltaTiempo;
+]]></Code>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cálculo de la posición</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+x = amplitud * Math.cos( frecuencia1 * tiempo );
+y = amplitud * Math.cos( frecuencia2 * tiempo + desfase );
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>A</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void a () {
+   frecuencia1 = 0.06981;
+   frecuencia2 = 0.08744;
+   deltaTiempo = 1;
+   n = 2000;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>B</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void b () {
+   frecuencia1 = 0.19198;
+   frecuencia2 = 0.24443;
+   deltaTiempo = 1;
+   n = 2000;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>C</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void c () {
+   frecuencia1 = 0.54105;
+   frecuencia2 = 0.38397;
+   deltaTiempo = 1;
+   n = 300;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Ventana_principal</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[Ventana principal]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA[300,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">Pantalla</Property>
+<Property name="parent">Ventana_principal</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[minimo]]></Property>
+<Property name="maximumX"><![CDATA[maximo]]></Property>
+<Property name="minimumY"><![CDATA[minimo]]></Property>
+<Property name="maximumY"><![CDATA[maximo]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Representación_gráfica</Property>
+<Property name="parent">Pantalla</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="maxpoints"><![CDATA[n]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel_controles</Property>
+<Property name="parent">Ventana_principal</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel_botones</Property>
+<Property name="parent">Panel_controles</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">A</Property>
+<Property name="parent">Panel_botones</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA[A]]></Property>
+<Property name="action"><![CDATA[a()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">B</Property>
+<Property name="parent">Panel_botones</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[B]]></Property>
+<Property name="action"><![CDATA[b()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">C</Property>
+<Property name="parent">Panel_botones</Property>
+<Property name="position">south</Property>
+<Property name="text"><![CDATA[C]]></Property>
+<Property name="action"><![CDATA[c()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel_casillas</Property>
+<Property name="parent">Panel_controles</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Frecuencia1</Property>
+<Property name="parent">Panel_casillas</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[frecuencia1]]></Property>
+<Property name="format"><![CDATA[w1 = 0.0000]]></Property>
+<Property name="action"><![CDATA[_resetView()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Frecuencia2</Property>
+<Property name="parent">Panel_casillas</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[frecuencia2]]></Property>
+<Property name="format"><![CDATA[w2 = 0.0000]]></Property>
+<Property name="action"><![CDATA[_resetView()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">Desfase</Property>
+<Property name="parent">Panel_casillas</Property>
+<Property name="position">south</Property>
+<Property name="variable"><![CDATA[desfase]]></Property>
+<Property name="format"><![CDATA[phase = 0.0000]]></Property>
+<Property name="action"><![CDATA[_resetView()]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+</Osejs>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+    <style type="text/css">
+.style1 {
+  font-family: Verdana;
+}
+</style>
+    </head>
+  <body>
+    <h1 align="left">
+      Inertia Tensor</h1>
+    <p align="left">&nbsp;</p>
+    <p style="margin-top: 0">The <a href="http://en.wikipedia.org/wiki/Angular_momentum">angular momentum</a> vector <b>L</b> of a rotating
+    <a href="http://en.wikipedia.org/wiki/Rigid_body">rigid body</a> is </p>
+    <p style="margin-top: 0"></p>
+    <p style="margin-top: 0"><font size="3">L = <i>I</i> <b>&#969;</b></font> </p>
+    <p style="margin-top: 0"></p>
+    <p style="margin-top: 0">where <i>I</i> is the inertia tensor and <b>&#969;</b> is the angular velocity vector. The 
+    <a href="http://en.wikipedia.org/wiki/Inertia_tensor">inertia tensor</a> is easy to compute if xyz-axes are 
+    chosen to be the principal axes of the body.&nbsp; The principal axes of a rectangular box are normal to the box sides (parallel to the edges) because these 
+    directions are the symmetry axes of the rigid body.&nbsp; The rectangular box with uniform mass distribution and sides of length a, b, and c, the inertia tensor in 
+    the principal axes coordinate system is</p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p style="margin-top: 0"><img src="inertia_tensor_eqn.gif"></p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p style="margin-top: 0">where I<sub>1</sub>=M(b<sup>2</sup>+c<sup>2</sup>)/12, I<sub>2</sub>=M(a<sup>2</sup>+c<sup>2</sup>)/12, and I<sub>3</sub>=M(a<sup>2</sup>+b<sup>2</sup>)/12 
+    and where M is the total box mass.</p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p style="margin-top: 0">The inertia tensor is diagonal and easy to compute in the body frame (a non-inertial frame fixed to the object) but not in the 
+    space frame (an inertial frame fixed in space). If we wish to work in the space frame, we can perform a volume integral for each matrix element.&nbsp; A better way is 
+    to transform the inertia tensor from the body frame into the space frame using 
+    the rotation transformation <i>R </i>that connects the two frames: </p>
+    <p style="margin-top: 0"></p>
+    <p style="margin-top: 0"><i>I</i><sub>space</sub> = <i>R</i><sup>-<font size="3">1</font></sup> <i>I</i><sub>body</sub> <i>R</i></p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p style="margin-top: 0">The transformation matrix R connecting the two frames is constructed by first rotating the box through an angle <span class="style1">&#966;</span> 
+    about the z direction and then tilting the box by an angle <span class="style1">&#945;.&nbsp; This reference frame transformation is performed in the fixed relation 
+    workpanel and the transformed inertia tensor is displayed in the space algebra window in the Rotation About a Fixed Axis model.</span></p>
+    
+  </body>
+</html>

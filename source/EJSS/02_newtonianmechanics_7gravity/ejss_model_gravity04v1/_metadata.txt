@@ -1,0 +1,37 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170624. Visit http://www.um.es/fem/Ejs
+title: Gravitational Force Model
+logo-image: gravity04/2015-03-09_1457_001s.png
+author: weelookang@gmail.com; Anne Cox; Wolfgang Christian; Francisco Esquembre
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto.png;./01authorannecox.png;./01authorwc_icon.png;./01authorPacoEsquembre2011.png
+source: gravity04v1.ejss
+main-script: 
+main-simulation: gravity04v1_Simulation.xhtml
+available-languages: 
+html-contents: gravity04v1_Contents.xhtml
+html-main: gravity04v1.xhtml
+page-title: 7.2_Field_Stength
+page-index: gravity04.xhtml
+page-title: Gravitational Force Model
+page-index: gravity04v1_Simulation.xhtml
+resource: 01authorwc_icon.png
+resource: 01authorPacoEsquembre2011.png
+resource: gravity04/2016-04-19_1505_001.png
+resource: gravity04/2016-04-19_1503.png
+resource: gravity04/2016-04-19_1506_003.png
+resource: gravity04/2016-04-19_1505.png
+resource: gravity04/2016-04-19_1506_001.png
+resource: gravity04/2016-04-19_1507.png
+resource: gravity04/2016-04-19_1504_002.png
+resource: gravity04.xhtml
+resource: gravity04/2016-04-19_1502.png
+resource: gravity04/2015-03-09_1457_001s.png
+resource: 01authorannecox.png
+resource: 1authorlookangphoto.png
+resource: gravity04/2016-04-19_1506_002.png
+resource: gravity04/2016-04-19_1504.png
+resource: gravity04/2016-04-19_1504_001.png
+resource: gravity04/2016-04-19_1504_003.png
+resource: gravity04/2016-04-19_1506.png

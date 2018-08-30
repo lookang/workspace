@@ -1,0 +1,2437 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.3" password="">
+<Osejs.Information>
+<Title><![CDATA[Roller Coaster]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[Modified by Wolfgang Christian.
+Remixed by weelookang@gmail.com
+]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<StaticImages>
+</StaticImages>
+<HTMLHead><![CDATA[]]></HTMLHead>
+<Logo>users/sgeducation/lookang/Energy conversion and conservation of roller coaster/roller coaster.png</Logo>
+<Author><![CDATA[Michael R Gallis and Wee Loo Kang (weelookang@gmail.com)]]></Author>
+<AuthorLogo>users/sgeducation/lookang/Energy conversion and conservation of roller coaster/lookangphoto.png</AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./coaster_car.png;./coaster_spring.png;users/sgeducation/lookang/Energy conversion and conservation of roller coaster/lookangphoto.png;users/sgeducation/lookang/Energy conversion and conservation of roller coaster/roller coaster.png;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Intro Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Intro Page</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <a href="http://weelookang.blogspot.sg/2010/06/ejs-open-source-roller-coaster-physics.html">http://weelookang.blogspot.sg/2010/06/ejs-open-source-roller-coaster-physics.html</a>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>coaster</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[these variables describe the physics of the coaster]]></PageComment>
+<Variable>
+<Name><![CDATA[coaster_s]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[position along spline]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_sv]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[velocity along spline]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_sv0]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[coaster intial "speed" along path]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_sa]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[acceleration along spline]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_x]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x coord of coaster]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_y]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y coord of coaster]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_theta]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[orientation of coaster]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_vx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x comp of velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_vy]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y comp of velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_v]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v_display]]></Name>
+<Value><![CDATA["V = 0"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_v0]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[coaster initial speed]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_ax]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x comp of accel]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coaster_ay]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y comp of accel]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[9.81]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.01]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[time step for numerics]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Rx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[reaction force, x comp]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Ry]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[reaction force, y comp]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[E]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[KE]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[PE]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[KE_est]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vhat_x]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[unit vec along velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vhat_y]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[unit vec along velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nhat_x]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[normal unit vec]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nhat_y]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[normal unit vec]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vn]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rdn]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spring_x]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[coord of end of track "bumper"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spring_y]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[coord of end of track "bumper"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spring_theta]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[orientation of end of track "bumper"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launcher_x]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[coord of end of track "bumper"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launcher_y]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[coord of end of track "bumper"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[launcher_theta]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[orientation of end of track "bumper"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[friction]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mass]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Radius]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>spline_vars_y</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[natural or parabolic runout]]></PageComment>
+<Variable>
+<Name><![CDATA[spline_Nmax]]></Name>
+<Value><![CDATA[25]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[max number of intervals]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_N]]></Name>
+<Value><![CDATA[12]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[current number of intervals]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_fy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[values]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_ay]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_by]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_cy]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_dy]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_Dy]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_gamma]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_phiy]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_chiy]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_alpha]]></Name>
+<Value><![CDATA[1.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_beta]]></Name>
+<Value><![CDATA[1.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_is_natural]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_delta]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA["length" of the spline segments]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>spline_vars_x</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[natural or parabolic runout recycles some params from y spline]]></PageComment>
+<Variable>
+<Name><![CDATA[spline_fx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[values]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_ax]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_bx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_cx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_dx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_Dx]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_phix]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spline_chix]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[spline_Nmax+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>interface</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[parameters for user interface for the knots of the splines]]></PageComment>
+<Variable>
+<Name><![CDATA[showN]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[N_max]]></Name>
+<Value><![CDATA[spline_Nmax]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[N]]></Name>
+<Value><![CDATA[12]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[interface_x]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[N_max+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[interface_y]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[N_max+1]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[delta]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fname]]></Name>
+<Value><![CDATA["filename"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[options]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[which_opt]]></Name>
+<Value><![CDATA["ramp"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[which_opts]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>plotting</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[parameters for plotting the spline]]></PageComment>
+<Variable>
+<Name><![CDATA[pn]]></Name>
+<Value><![CDATA[256]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[px]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[pn]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[py]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[pn]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pdx]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[pn]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pdy]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[pn]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pds0]]></Name>
+<Value><![CDATA[0.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ps]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>boolean</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[KE_graph]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mom_graph]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>options</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+_view.drawingPanel.setAntialiasTextOn(true);
+_view.drawingPanel.setAntialiasShapeOn(true);
+
+// moved to the fixed realtions by weelk
+//options ="ramp ;"+"up and down;"+"loop;"+"2loops;"+"figure 8;"+"custom";
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>which_opt</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+/*if (which_opt=="ramp") set_ramp();
+  else if (which_opt=="up") set_up_down_up();
+  else if (which_opt=="loop") set_loop1();
+  else if (which_opt=="2loops") set_loop2();
+  else if (which_opt=="figure 8"if () set_fig8();
+  else if (which_opt=="custom") set_custom(10);
+//  else set_ramp();//if all else fails
+*/  
+  which_opt = which_opts;
+if (which_opt ==""){ // if blank
+                    which_opt = "ramp";
+//                    delta = delta=1.0/(float)N;
+                    set_ramp();
+                    }
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>interface_init</Name>
+<Active>false</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// need to disable this cos is it forcing the display to always set_ramp(); by weelk
+// can't seems to make the applet remember the old state, enable this page back
+
+spline_is_natural = true;
+delta=1.0/(float)N;
+spline_delta=delta;
+spline_N=N;
+for(int i=0;i<=N_max;i++) {
+  interface_x[i]=(float)i/(float)N*20.;
+  interface_y[i]=(float)(N-i)/(float)N*20.;
+}
+//set_ramp();/**/
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>spline_init</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+spline_gamma_init ();
+spline_getdatay();
+spline_getdatax();
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>plot_init</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+pds0=(float)(N)*delta/(float)pn;
+
+plotter ();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>coaster_init</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+coaster_s=0;
+coaster_sv=0;
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>time</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//t = 0; // appears to be not needed by weelk
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Evol Page 2</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+coaster_s=coaster_s+coaster_sv*dt;
+coaster_sa=sdd(coaster_s,coaster_sv);
+coaster_sv=coaster_sv+coaster_sa*dt;
+//have coaster "bounce" at end
+if(coaster_s>=1.0) {
+  coaster_sv=-Math.abs(coaster_sv);
+} else if (coaster_s < 0.0) {
+  coaster_sv=Math.abs(coaster_sv);
+}
+//enforce energy conservation by adjusting coaster speed coaster_sv
+
+
+//this is the likely place to add effects of friction
+KE_est=E-g*ys(coaster_s);//this is what KE "should be"
+if(KE_est>=1.0E-6) {
+  KE=.5*(xsp(coaster_s)*xsp(coaster_s)+ysp(coaster_s)*ysp(coaster_s))*coaster_sv*coaster_sv;
+  coaster_sv=coaster_sv*Math.sqrt(KE_est/KE);
+}
+/**/
+t = t+dt; // added to count time by weelk
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>false</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<Events>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>end_of_line</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<EventContent>
+<EventType>STATE_EVENT</EventType>
+<Method>BISECTION</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[0.001]]></Tolerance>
+<StopAtEvent>true</StopAtEvent>
+<ZeroCondition><![CDATA[
+return 1.0-coaster_s;
+]]></ZeroCondition>
+<Action><![CDATA[
+coaster_sv=-Math.abs(coaster_sv);
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+</EventContent>
+</Event.Page>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>begining_of_line</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<EventContent>
+<EventType>STATE_EVENT</EventType>
+<Method>BISECTION</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[0.001]]></Tolerance>
+<StopAtEvent>true</StopAtEvent>
+<ZeroCondition><![CDATA[
+return coaster_s;
+]]></ZeroCondition>
+<Action><![CDATA[
+coaster_sv=Math.abs(coaster_sv);
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+</EventContent>
+</Event.Page>
+</Events>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="coaster_s">coaster_sv</Rate>
+<Rate state="coaster_sv">sdd(coaster_s,coaster_sv) - friction/mass*coaster_sv</Rate>
+<Rate state=""></Rate>
+<Method>RungeKutta</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>0.00001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>plots</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+for(int i=0;i<pn;i++){
+  ps=pds0*(float)i;
+  px[i]=spline_evaluatorx(ps);
+  pdx[i]=spline_evaluatorx(ps+pds0)-px[i];
+
+  py[i]=spline_evaluatory(ps);
+  pdy[i]=spline_evaluatory(ps+pds0)-py[i];
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>options</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+options ="ramp;"+"up and down;"+"circularloop;"+"loop;"+"2loops;"+"figure 8;"+"custom";
+/*  if (which_opt.startsWith("ramp")) set_ramp();
+  else if (which_opt.startsWith("up")) set_up_down_up();
+  else if (which_opt.startsWith("loop")) set_loop1();
+  else if (which_opt.startsWith("2loops")) set_loop2();
+  else if (which_opt.startsWith("figure 8")) set_fig8();
+  else if (which_opt.startsWith("custom")) set_custom(10);
+//  else set_ramp();//if all else fails
+*/
+/*
+if (which_opt=="ramp") set_ramp();
+  else if (which_opt=="up") set_up_down_up();
+  else if (which_opt=="loop") set_loop1();
+  else if (which_opt=="2loops") set_loop2();
+  else if (which_opt=="figure 8") set_fig8();
+  else if (which_opt=="custom") set_custom(10);
+  else set_ramp();//if all else fails
+ */
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>controls_limits</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+controls_limits ();
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>coaster</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+coaster_set ();
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>time</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+PE = mass*g*ys(coaster_s); // added by weelk for ease of variables
+  KE=.5*mass*coaster_v*coaster_v;
+  E = PE+KE;
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>spline_routines</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//add x-zero offset later
+public double spline_evaluatory(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=spline_ay[is]+(spline_by[is]+(spline_cy[is]+spline_dy[is]*zz)*zz)*zz;
+  return val;
+}
+//evaluate y spline parameters from knots
+public void spline_getdatay() {
+  spline_N=N; //no bounds checking here...
+  for(int i=0;i<=spline_N;i++) {
+    spline_fy[i]=interface_y[i];
+  }
+
+  spline_chiy[0]=spline_beta*(spline_fy[1]-spline_fy[0]);
+  spline_phiy[0]=spline_chiy[0];
+  for(int i=1;i<=spline_N-1;i++) {
+    spline_chiy[i]=3.0*(spline_fy[i+1]-spline_fy[i-1]);
+    spline_phiy[i]=spline_gamma[i]*(spline_chiy[i]-spline_phiy[i-1]);
+  }
+  spline_chiy[spline_N]=spline_beta*(spline_fy[spline_N]-spline_fy[spline_N-1]);
+  spline_phiy[spline_N]=spline_gamma[spline_N]*(spline_chiy[spline_N]-spline_alpha*spline_phiy[spline_N-1]);
+
+  spline_Dy[spline_N]=spline_phiy[spline_N];
+  for(int i=1;i<=spline_N;i++) {
+    spline_Dy[spline_N-i]=spline_phiy[spline_N-i]-spline_gamma[spline_N-i]*spline_Dy[spline_N-i+1];
+  }
+
+  for(int i=0;i<=spline_N-1;i++) {
+    spline_ay[i]=spline_fy[i];
+    spline_by[i]=spline_Dy[i];
+    spline_cy[i]=3.0*(spline_fy[i+1]-spline_fy[i])-spline_Dy[i+1]-2.0*spline_Dy[i];
+    spline_dy[i]=spline_Dy[i+1]+spline_Dy[i]-2.0*(spline_fy[i+1]-spline_fy[i]);
+
+
+  }
+}
+//initialize spline constants for this number of knots and type of spline
+public void spline_gamma_init () {
+  if(spline_is_natural) {
+    spline_alpha=.5;
+    spline_beta=1.5;
+  } else {
+    spline_alpha=1;
+    spline_beta=2;
+  }
+  spline_gamma[0]=spline_alpha;
+  for(int i=1;i<=spline_N-1;i++) {
+    spline_gamma[i]=1.0/(4.0-spline_gamma[i-1]);
+  }
+  spline_gamma[spline_N]=1.0/(1.0-spline_alpha*spline_gamma[spline_N-1]);
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>spline_routines_x</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//add x-zero offset later
+public double spline_evaluatorx(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=spline_ax[is]+(spline_bx[is]+(spline_cx[is]+spline_dx[is]*zz)*zz)*zz;
+  return val;
+}
+//evaluate x spline parameters from knots
+public void spline_getdatax() {
+  spline_N=N; //no bounds checking here...
+  for(int i=0;i<=spline_N;i++) {
+    spline_fx[i]=interface_x[i];
+  }
+
+  spline_chix[0]=spline_beta*(spline_fx[1]-spline_fx[0]);
+  spline_phix[0]=spline_chix[0];
+  for(int i=1;i<=spline_N-1;i++) {
+    spline_chix[i]=3.0*(spline_fx[i+1]-spline_fx[i-1]);
+    spline_phix[i]=spline_gamma[i]*(spline_chix[i]-spline_phix[i-1]);
+  }
+  spline_chix[spline_N]=spline_beta*(spline_fx[spline_N]-spline_fx[spline_N-1]);
+  spline_phix[spline_N]=spline_gamma[spline_N]*(spline_chix[spline_N]-spline_alpha*spline_phix[spline_N-1]);
+
+  spline_Dx[spline_N]=spline_phix[spline_N];
+  for(int i=1;i<=spline_N;i++) {
+    spline_Dx[spline_N-i]=spline_phix[spline_N-i]-spline_gamma[spline_N-i]*spline_Dx[spline_N-i+1];
+  }
+
+  for(int i=0;i<=spline_N-1;i++) {
+    spline_ax[i]=spline_fx[i];
+    spline_bx[i]=spline_Dx[i];
+    spline_cx[i]=3.0*(spline_fx[i+1]-spline_fx[i])-spline_Dx[i+1]-2.0*spline_Dx[i];
+    spline_dx[i]=spline_Dx[i+1]+spline_Dx[i]-2.0*(spline_fx[i+1]-spline_fx[i]);
+
+
+  }
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>plotter_lib</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void plotter () {
+  for(int i=0;i<pn;i++) {
+    ps=pds0*(float)i;
+    px[i]=spline_evaluatorx(ps);
+    pdx[i]=spline_evaluatorx(ps+pds0)-px[i];
+
+    py[i]=spline_evaluatory(ps);
+    pdy[i]=spline_evaluatory(ps+pds0)-py[i];
+  }
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>controls</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void controls_limits () {
+  N=Math.min(N_max,Math.max(0,N));
+  for(int i=0;i<=N_max;i++) {
+    interface_x[i]=Math.min(20.0,Math.max(interface_x[i],0.0));
+    interface_y[i]=Math.min(20.0,Math.max(interface_y[i],0.0));
+  }
+}
+public void update_spline() {
+  //stuff that needs to be called when spline is changed
+  //set the spline
+  controls_limits ();
+  spline_getdatay();
+  spline_getdatax();
+  //update the stuff for dynamics including stuff for display
+  KE=.5*mass*coaster_v0*coaster_v0; // KE = 0.5*m*v*v added by weelk
+
+E=mass*g*ys(0.0)+KE; // TE = mgh + KE added by weelk
+  double xp=xsp(0.);//only evaluate these once...
+  double yp=ysp(0.);
+  coaster_sv0=coaster_v0/Math.sqrt(xp*xp+yp*yp);
+
+  coaster_reset();  //track/launch speed change ->reset cart to start
+
+}
+
+public void play_it() {
+  //update_spline();
+  _play();
+}
+public void pause_it() {
+  _pause();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>for_dynamics</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//this function evaluates x as a function of s
+public double xs(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=spline_ax[is]+(spline_bx[is]+(spline_cx[is]+spline_dx[is]*zz)*zz)*zz;
+  return val;
+}
+//this function evaluates the the first derivative of x wrt s
+public double xsp(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=spline_bx[is]+(2.0*spline_cx[is]+3.0*spline_dx[is]*zz)*zz;
+  return val/spline_delta;
+}
+//this function evaluates the the second derivative of x wrt s
+public double xspp(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=2.0*spline_cx[is]+6.0*spline_dx[is]*zz;
+  return val/(spline_delta*spline_delta);
+}
+//this function evaluates y as a function of s
+public double ys(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=spline_ay[is]+(spline_by[is]+(spline_cy[is]+spline_dy[is]*zz)*zz)*zz;
+  return val;
+}
+//this function evaluates the the first derivative of y wrt s
+
+public double ysp(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=spline_by[is]+(2.0*spline_cy[is]+3.0*spline_dy[is]*zz)*zz;
+  return val/spline_delta;
+}
+//this function evaluates the the second derivative of y wrt s
+public double yspp(double this_s) {
+  double scaled_s=this_s/spline_delta;
+  int is=(int)(scaled_s);
+  is = Math.min(Math.max(is,0),spline_N-1);
+  double zz=scaled_s-(float)is;
+  double val=2.0*spline_cy[is]+6.0*spline_dy[is]*zz;
+  return val/(spline_delta*spline_delta);
+}
+//this function evaluates the the second derivative of s wrt time
+public double sdd(double s, double sd) {
+  double xp=xsp(s);//only evaluate these once...
+  double yp=ysp(s);
+// from description dynamics dcoaster_sv/dt = -g*yp ....
+double val=-g*yp-1.0*(xp*xspp(s)+yp*yspp(s))*sd*sd;
+//  double val=-mass*g*yp-1.0*(xp*xspp(s)+yp*yspp(s))*sd*sd; // added mass
+  val=val/(xp*xp+yp*yp);
+  return val;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>presets</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+/*
+options =
+"ramp ;"+
+"up and down;"+
+"loop;"+
+"2loops;"+
+"figure 8;"+
+"custom";
+*/
+
+public void service_opts() {
+  showN=false;
+  if (which_opt.startsWith("ramp")) set_ramp();
+  else if (which_opt.startsWith("up")) set_up_down_up();
+  else if (which_opt.startsWith("loop")) set_loop1();
+  else if (which_opt.startsWith("circularloop")) set_loopcircular(); // added by lookang for circular loop
+  else if (which_opt.startsWith("2loops")) set_loop2();
+  else if (which_opt.startsWith("figure 8")) set_fig8();
+  else if (which_opt.startsWith("custom")) set_custom(10);
+  else set_ramp();//if all else fails
+}
+
+public void set_custom(int N) {
+  showN=true;
+  this.N=N;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  for(int i=0;i<=N_max;i++) {
+    interface_x[i]=(float)i/(float)N*20.;
+    interface_y[i]=(float)(N-i)/(float)N*20.;
+  }
+  spline_gamma_init ();
+  update_spline();
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "custom"; // added in attempt in make it remember by weelk
+}
+
+public void set_ramp() {
+  N=7;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  for(int i=0;i<=N_max;i++) {
+    interface_x[i]=(float)i/(float)N*20.;
+    interface_y[i]=(float)(N-i)/(float)N*20.;
+  }
+  spline_gamma_init ();
+  update_spline();
+
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "ramp"; // added in attempt in make it remember by weelk
+}
+
+
+public void set_up_down_up() {
+  coaster_s=0.;
+  _reset();
+  N=5;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  interface_x[0]=0.;  interface_y[0]=20.;
+  interface_x[1]=4.;  interface_y[1]=10.;
+  interface_x[2]=8.;  interface_y[2]=0.;
+  interface_x[3]=12.; interface_y[3]=0.;
+  interface_x[4]=16.; interface_y[4]=10.;
+  interface_x[5]=20.; interface_y[5]=20.;
+  spline_gamma_init ();
+    /*
+  spline_getdatay();
+  spline_getdatax();
+  */
+  update_spline();
+
+
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "up"; // added in attempt in make it remember by weelk
+}
+
+public void set_loop1() {
+  coaster_s=0.;
+  _reset();
+  N=7;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  interface_x[0]=0.;  interface_y[0]=20.;
+  interface_x[1]=3.;  interface_y[1]=0.;
+  interface_x[2]=15.;  interface_y[2]=0.;
+  interface_x[3]=15.; interface_y[3]=11.;
+  interface_x[4]=3.; interface_y[4]=11.;
+  interface_x[5]=3.; interface_y[5]=0.;
+  interface_x[6]=15.; interface_y[6]=0.;
+  interface_x[7]=20.; interface_y[7]=20.;
+  spline_gamma_init ();
+    /*
+  spline_getdatay();
+  spline_getdatax();
+  */
+  update_spline();
+
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "loop"; // added in attempt in make it remember by weelk
+}
+
+public void set_loopcircular() { // circular added by lookang
+  coaster_s=0.;
+  _reset();
+  N=25;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  interface_x[0]=0.;  interface_y[0]=20.;
+  interface_x[1]=0.5;  interface_y[1]=9.;
+  interface_x[2]=1.6;  interface_y[2]=4.5;
+  interface_x[3]=2.9; interface_y[3]=2.1;
+  interface_x[4]=5.5; interface_y[4]=0.5;
+ for (int counter=5; counter<=(18+4) /* Iterations */ ; counter++) {
+    interface_x[counter]=10+Radius*Math.cos(((counter-5)*20.-90.)/180.*Math.PI);
+  interface_y[counter]=5+Radius*Math.sin(((counter-5)*20.-90)/180.*Math.PI);  
+}
+   interface_x[23]=11.;  interface_y[23]=0.;
+  interface_x[24]=15.;  interface_y[24]=0.;
+  interface_x[25]=20.;  interface_y[25]=0.;
+ 
+ 
+ 
+ 
+  spline_gamma_init ();
+    /*
+  spline_getdatay();
+  spline_getdatax();
+  */
+  update_spline();
+
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "circularloop"; // added in attempt in make it remember by weelk
+}
+
+
+
+
+
+public void set_loop2() {
+  coaster_s=0.;
+  _reset();
+  N=12;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  interface_x[0]=0.;  interface_y[0]=20.;
+  interface_x[1]=5.;  interface_y[1]=10.;
+  interface_x[2]=10.;  interface_y[2]=10.;
+  interface_x[3]=10.; interface_y[3]=15.;
+  interface_x[4]=5.; interface_y[4]=15.;
+  interface_x[5]=5.; interface_y[5]=1.;
+  interface_x[6]=10.; interface_y[6]=1.;
+  interface_x[7]=10.; interface_y[7]=6.;
+  interface_x[8]=5.; interface_y[8]=6.;
+  interface_x[9]=5.; interface_y[9]=1.;
+  interface_x[10]=10.; interface_y[10]=1.;
+  interface_x[11]=15.; interface_y[11]=10.;
+  interface_x[12]=18.; interface_y[12]=20.;
+  spline_gamma_init ();
+  spline_getdatay();
+  spline_getdatax();
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "2loops"; // added in attempt in make it remember by weelk
+}
+public void set_fig8() {
+  coaster_s=0.;
+  _reset();
+  N=12;
+  delta=1.0/(float)N;
+  spline_delta=delta;
+  spline_N=N;
+  interface_x[0]=0.;  interface_y[0]=20.;
+  interface_x[1]=2.;  interface_y[1]=4.;
+  interface_x[2]=6.;  interface_y[2]=0.;
+  interface_x[3]=10.; interface_y[3]=4.;
+  interface_x[4]=6.; interface_y[4]=8.;
+  interface_x[5]=2.; interface_y[5]=4.;
+  interface_x[6]=6.; interface_y[6]=0.;
+  interface_x[7]=10.; interface_y[7]=4.;
+  interface_x[8]=14.; interface_y[8]=8.;
+  interface_x[9]=18.; interface_y[9]=4.;
+  interface_x[10]=14.; interface_y[10]=0.;
+  interface_x[11]=10.; interface_y[11]=4.;
+  interface_x[12]=14.; interface_y[12]=20.;
+  spline_gamma_init ();
+    /*
+  spline_getdatay();
+  spline_getdatax();
+  */
+  update_spline();
+
+  pds0=(float)(N)*delta/(float)pn;
+  plotter ();
+which_opts = "figure 8"; // added in attempt in make it remember by weelk
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>coaster_routines</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void coaster_set () {
+  coaster_x=xs(coaster_s);
+  coaster_y=ys(coaster_s);
+  coaster_vx=xsp(coaster_s)*coaster_sv;
+  coaster_vy=ysp(coaster_s)*coaster_sv;
+  coaster_v=Math.sqrt(coaster_vx*coaster_vx+coaster_vy*coaster_vy);
+  v_display = String.format("V = %4.1f", coaster_v);
+  coaster_theta=Math.atan2(ysp(coaster_s),xsp(coaster_s));
+  coaster_ax=xspp(coaster_s)*coaster_sv*coaster_sv+xsp(coaster_s)*coaster_sa;
+  coaster_ay=yspp(coaster_s)*coaster_sv*coaster_sv+ysp(coaster_s)*coaster_sa;
+  Rx=mass*coaster_ax; // Reaction forcex = mass*coaster_ax
+  Ry=mass*(coaster_ay+g); // added mass by weelk
+  //fix reaction force -take only components perp to track
+  vhat_x=xsp(coaster_s);//tangent unit vector
+  vhat_y=ysp(coaster_s);
+  vn=Math.sqrt(vhat_x*vhat_x+vhat_y*vhat_y);
+  vhat_x=vhat_x/vn;
+  vhat_y=vhat_y/vn;
+  nhat_x=-vhat_y;// track norml = tangent rotated 90 degrees
+  nhat_y=vhat_x;
+  rdn=Rx*nhat_x+Ry*nhat_y;
+  Rx=rdn*nhat_x;
+  Ry=rdn*nhat_y;
+  //set spring
+  spring_x=xs(.999);
+  spring_y=ys(.999);
+  spring_theta=Math.atan2(ysp(.999),xsp(.999));
+ //set launcher
+  launcher_x=xs(.0);
+  launcher_y=ys(.0);
+  launcher_theta=Math.atan2(ysp(.0),xsp(.0))+3.14159;
+
+}
+
+public void coaster_reset() {
+  coaster_s=0;
+  coaster_sv=coaster_sv0;
+  t=0;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Roller Coaster Physics Model"]]></Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["29,165"]]></Property>
+<Property name="size"><![CDATA["700,540"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-5.0]]></Property>
+<Property name="maximumX"><![CDATA[25.]]></Property>
+<Property name="minimumY"><![CDATA[-5.0]]></Property>
+<Property name="maximumY"><![CDATA[25.0]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="showCoordinates"><![CDATA[true]]></Property>
+<Property name="background"><![CDATA[220,245,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">ground</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[90]]></Property>
+<Property name="sizey"><![CDATA[10]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[NORTH]]></Property>
+<Property name="color"><![CDATA[255,128,64]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image</Type>
+<Property name="name">car</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x]]></Property>
+<Property name="y"><![CDATA[coaster_y]]></Property>
+<Property name="sizex"><![CDATA[4]]></Property>
+<Property name="sizey"><![CDATA[4]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="image"><![CDATA[./coaster_car.png]]></Property>
+<Property name="angle"><![CDATA[coaster_theta]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet</Type>
+<Property name="name">curve</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="elementnumber"><![CDATA[pn]]></Property>
+<Property name="x"><![CDATA[px]]></Property>
+<Property name="y"><![CDATA[py]]></Property>
+<Property name="sizex"><![CDATA[pdx]]></Property>
+<Property name="sizey"><![CDATA[pdy]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[GRAY]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">vel</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x]]></Property>
+<Property name="y"><![CDATA[coaster_y]]></Property>
+<Property name="sizex"><![CDATA[coaster_vx]]></Property>
+<Property name="sizey"><![CDATA[coaster_vy]]></Property>
+<Property name="scalex"><![CDATA[.5]]></Property>
+<Property name="scaley"><![CDATA[.5]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="secondaryColor"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">react</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x]]></Property>
+<Property name="y"><![CDATA[coaster_y]]></Property>
+<Property name="sizex"><![CDATA[Rx]]></Property>
+<Property name="sizey"><![CDATA[Ry]]></Property>
+<Property name="scalex"><![CDATA[.25]]></Property>
+<Property name="scaley"><![CDATA[.25]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[GREEN]]></Property>
+<Property name="secondaryColor"><![CDATA[GREEN]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">gvec</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x]]></Property>
+<Property name="y"><![CDATA[coaster_y]]></Property>
+<Property name="sizey"><![CDATA[-g]]></Property>
+<Property name="scalex"><![CDATA[.25]]></Property>
+<Property name="scaley"><![CDATA[.25]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">gvec2</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x]]></Property>
+<Property name="y"><![CDATA[coaster_y]]></Property>
+<Property name="sizey"><![CDATA[-g*1.2]]></Property>
+<Property name="scalex"><![CDATA[.25]]></Property>
+<Property name="scaley"><![CDATA[.25]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image</Type>
+<Property name="name">spring</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[spring_x]]></Property>
+<Property name="y"><![CDATA[spring_y]]></Property>
+<Property name="sizex"><![CDATA[4]]></Property>
+<Property name="sizey"><![CDATA[4]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="image"><![CDATA[./coaster_spring.png]]></Property>
+<Property name="angle"><![CDATA[spring_theta]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">R_label</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x+Rx*.3]]></Property>
+<Property name="y"><![CDATA[coaster_y+Ry*.3]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["R"]]></Property>
+<Property name="color"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">g_label</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x+0.5]]></Property>
+<Property name="y"><![CDATA[coaster_y-.3*g]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["g"]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">v_label</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[coaster_x+.55*coaster_vx]]></Property>
+<Property name="y"><![CDATA[coaster_y+.55*coaster_vy]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["v"]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image</Type>
+<Property name="name">launcher</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[launcher_x]]></Property>
+<Property name="y"><![CDATA[launcher_y]]></Property>
+<Property name="sizex"><![CDATA[4]]></Property>
+<Property name="sizey"><![CDATA[4]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="image"><![CDATA[./coaster_spring.png]]></Property>
+<Property name="angle"><![CDATA[launcher_theta]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParticleSet</Type>
+<Property name="name">spline_controls</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="elementnumber"><![CDATA[N+1]]></Property>
+<Property name="x"><![CDATA[interface_x]]></Property>
+<Property name="y"><![CDATA[interface_y]]></Property>
+<Property name="sizex"><![CDATA[.5]]></Property>
+<Property name="sizey"><![CDATA[.5]]></Property>
+<Property name="size"><![CDATA[1.0]]></Property>
+<Property name="visible"><![CDATA[_isPaused()]]></Property>
+<Property name="enabled"><![CDATA[_isPaused()]]></Property>
+<Property name="dragaction"><![CDATA[update_spline ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">v_display_txt</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[-5]]></Property>
+<Property name="y"><![CDATA[-3]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%v_display%]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">paramPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">vPanel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider</Property>
+<Property name="parent">vPanel</Property>
+<Property name="variable"><![CDATA[coaster_v0]]></Property>
+<Property name="minimum"><![CDATA[-10]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="format"><![CDATA["u = 0.0 m/s"]]></Property>
+<Property name="ticks"><![CDATA[21]]></Property>
+<Property name="dragaction"><![CDATA[update_spline ()]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="tooltip"><![CDATA["Initial Velocity"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">NPanel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Nlabel</Property>
+<Property name="parent">NPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["     N"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">Nfield</Property>
+<Property name="parent">NPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[N]]></Property>
+<Property name="format"><![CDATA[0]]></Property>
+<Property name="action"><![CDATA[N=Math.max(2,N);
+N=Math.min(N,spline_Nmax);  // limit the maximum
+set_custom(N);]]></Property>
+<Property name="size"><![CDATA["50,24"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">gPanel22</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="tooltip"><![CDATA["doesnt work"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider32</Property>
+<Property name="parent">gPanel22</Property>
+<Property name="variable"><![CDATA[g]]></Property>
+<Property name="minimum"><![CDATA[-9.81]]></Property>
+<Property name="maximum"><![CDATA[19.62]]></Property>
+<Property name="format"><![CDATA["g = 0.0 m/s^2"]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[update_spline ();
+_initialize();]]></Property>
+<Property name="background"><![CDATA[RED]]></Property>
+<Property name="tooltip"><![CDATA["Acceleration Due to Gravity"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">mass</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="variable"><![CDATA[mass]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="format"><![CDATA["m = 00 kg"]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="dragaction"><![CDATA[update_spline ();
+_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["mass of roller coaster in kg"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">friction</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="variable"><![CDATA[friction]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[5]]></Property>
+<Property name="format"><![CDATA["b = 0.0 N"]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="dragaction"><![CDATA[_initialize();]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="tooltip"><![CDATA["damping factor b, where Fdamping = b*v"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">tPanel</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider2</Property>
+<Property name="parent">tPanel</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="format"><![CDATA["t = 0.00 s"]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">vPanel2</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider3</Property>
+<Property name="parent">vPanel2</Property>
+<Property name="variable"><![CDATA[coaster_v]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[20]]></Property>
+<Property name="format"><![CDATA["v = 0.0 m/s"]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">EPanel22</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider33</Property>
+<Property name="parent">EPanel22</Property>
+<Property name="variable"><![CDATA[E]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[196.2]]></Property>
+<Property name="format"><![CDATA["TE = 0.0 J"]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PE2</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider35</Property>
+<Property name="parent">PE2</Property>
+<Property name="variable"><![CDATA[PE]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[196.2]]></Property>
+<Property name="format"><![CDATA["PE = 0.0 J"]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">KE2</Property>
+<Property name="parent">paramPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider34</Property>
+<Property name="parent">KE2</Property>
+<Property name="variable"><![CDATA[KE]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[196.2]]></Property>
+<Property name="format"><![CDATA["KE = 0.0 J"]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="foreground"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">preset_panel</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderTitle"><![CDATA["examples: "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ComboBox</Type>
+<Property name="name">presets_combo</Property>
+<Property name="parent">preset_panel</Property>
+<Property name="position">center</Property>
+<Property name="options"><![CDATA[%options%]]></Property>
+<Property name="variable"><![CDATA[%which_opt%]]></Property>
+<Property name="action"><![CDATA[service_opts()]]></Property>
+<Property name="size"><![CDATA[150,24]]></Property>
+<Property name="editBackground"><![CDATA[WHITE]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+<Property name="font"><![CDATA[Monospaced,PLAIN,12]]></Property>
+<Property name="tooltip"><![CDATA["Select an example roller coaster track"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel19</Property>
+<Property name="parent">buttonPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">momgraph</Property>
+<Property name="parent">panel19</Property>
+<Property name="variable"><![CDATA[mom_graph]]></Property>
+<Property name="text"><![CDATA["plot v vs t"]]></Property>
+<Property name="foreground"><![CDATA[255,0,255,200]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel192</Property>
+<Property name="parent">buttonPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">Kegraph</Property>
+<Property name="parent">panel192</Property>
+<Property name="variable"><![CDATA[KE_graph]]></Property>
+<Property name="text"><![CDATA["plot KE vs t"]]></Property>
+<Property name="foreground"><![CDATA[255,0,255,100]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">twoStateButton</Property>
+<Property name="parent">panel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["Starts and stops the simulation."]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">panel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/step.gif]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["Steps the simulation."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetTimeButton</Property>
+<Property name="parent">panel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset1.gif]]></Property>
+<Property name="action"><![CDATA[coaster_reset ()]]></Property>
+<Property name="tooltip"><![CDATA["Resets the time."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">panel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[//coaster_s=0.;
+_reset();
+_view.presets_combo.setSelectedIndex(0);]]></Property>
+<Property name="tooltip"><![CDATA["Resets the simulation to its default state."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panelnotgoodforverticaldisplay</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">EPanel222</Property>
+<Property name="parent">panelnotgoodforverticaldisplay</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Bar</Type>
+<Property name="name">bar</Property>
+<Property name="parent">EPanel222</Property>
+<Property name="variable"><![CDATA[E]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[196.2]]></Property>
+<Property name="format"><![CDATA["TE = 0.0 J"]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+<Property name="tooltip"><![CDATA["total energy"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PE22</Property>
+<Property name="parent">panelnotgoodforverticaldisplay</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Bar</Type>
+<Property name="name">bar2</Property>
+<Property name="parent">PE22</Property>
+<Property name="variable"><![CDATA[g*ys(coaster_s)]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[196.2]]></Property>
+<Property name="format"><![CDATA["PE = 0.0 J"]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="tooltip"><![CDATA["Potential Energy"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">KE22</Property>
+<Property name="parent">panelnotgoodforverticaldisplay</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Bar</Type>
+<Property name="name">bar3</Property>
+<Property name="parent">KE22</Property>
+<Property name="variable"><![CDATA[KE]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[196.2]]></Property>
+<Property name="format"><![CDATA["KE = 0.0 J"]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="foreground"><![CDATA[MAGENTA]]></Property>
+<Property name="tooltip"><![CDATA["Kinetic Energy"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">right</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel6</Property>
+<Property name="parent">right</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="visible"><![CDATA[mom_graph]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">panel6</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[0]]></Property>
+<Property name="yMarginPercentage"><![CDATA[5]]></Property>
+<Property name="title"><![CDATA["velocity ( m/s) vs time (s)"]]></Property>
+<Property name="showAxes"><![CDATA[true]]></Property>
+<Property name="axesType"><![CDATA[CARTESIAN2]]></Property>
+<Property name="titleX"><![CDATA["time (s)"]]></Property>
+<Property name="titleY"><![CDATA["velocity ( m/s)"]]></Property>
+<Property name="visible"><![CDATA[mom_graph]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">trace4</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[coaster_v]]></Property>
+<Property name="active"><![CDATA[true]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel82</Property>
+<Property name="parent">right</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel3</Property>
+<Property name="parent">panel82</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[0]]></Property>
+<Property name="yMarginPercentage"><![CDATA[5]]></Property>
+<Property name="title"><![CDATA["energy (J) vs time (s)"]]></Property>
+<Property name="showAxes"><![CDATA[true]]></Property>
+<Property name="axesType"><![CDATA[CARTESIAN2]]></Property>
+<Property name="titleX"><![CDATA["time (s)"]]></Property>
+<Property name="titleY"><![CDATA["energy (J)"]]></Property>
+<Property name="visible"><![CDATA[KE_graph]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">trace222</Property>
+<Property name="parent">plottingPanel3</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[E]]></Property>
+<Property name="active"><![CDATA[true]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+<Property name="stroke"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">trace3</Property>
+<Property name="parent">plottingPanel3</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[PE]]></Property>
+<Property name="active"><![CDATA[true]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">trace22</Property>
+<Property name="parent">plottingPanel3</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[KE]]></Property>
+<Property name="active"><![CDATA[true]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+<Property name="stroke"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

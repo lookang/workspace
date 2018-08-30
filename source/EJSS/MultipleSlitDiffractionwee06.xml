@@ -1,0 +1,1653 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.1" password="">
+<Osejs.Information>
+<Title><![CDATA[Multiple Slit Diffraction]]></Title>
+<Copyright><![CDATA[Creative Commons Attribution]]></Copyright>
+<Keywords><![CDATA[multiple slit difraction, interference]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[beginner]]></Level>
+<Language><![CDATA[English]]></Language>
+<Abstract><![CDATA[Original model by Fu-Kwun Hwang adpted for Ejs 4.1 by Robert Mohr and Wolfgang Christian at Davidson College.
+remixed by lookang]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>true</UseMacMenuBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<MenuPosition>0</MenuPosition>
+<CSSFolder></CSSFolder>
+<Logo></Logo>
+<Author><![CDATA[Fu-Kwun Hwang,Robert Mohr, Wolfgang Christian; lookang]]></Author>
+<AuthorLogo>./01authorfu-kwun.hwang.png;./1authorlookangphoto.png</AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./01authorfu-kwun.hwang.png;./1authorlookangphoto.png;./MultipleSlitDiffraction/MultipleSlitDiffraction.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./MultipleSlitDiffraction/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Diffraction</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Diffraction</Title>
+  <External>true</External>
+  <![CDATA[
+./MultipleSlitDiffraction/MultipleSlitDiffraction.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>coordinate</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[range]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmin]]></Name>
+<Value><![CDATA[-range]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmax]]></Name>
+<Value><![CDATA[range]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymin]]></Name>
+<Value><![CDATA[-range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymax]]></Name>
+<Value><![CDATA[range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zmin]]></Name>
+<Value><![CDATA[-range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zmax]]></Name>
+<Value><![CDATA[range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[range/40]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[um]]></Name>
+<Value><![CDATA[1.e-6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mouseReading]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mouseReadingy]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[nx]]></Name>
+<Value><![CDATA[1000]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ny]]></Name>
+<Value><![CDATA[1000]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Intensity]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Intensityy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Intensityyx]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lambda]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[lambdar]]></Name>
+<Value><![CDATA[0.66]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Ladjusted]]></Name>
+<Value><![CDATA[200/L]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spectrumy]]></Name>
+<Value><![CDATA[ymin]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spectrumy1]]></Name>
+<Value><![CDATA[ymin+0.1*ymax]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spectrumy1y]]></Name>
+<Value><![CDATA[ymin+0.1*ymax]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spectrumy2]]></Name>
+<Value><![CDATA[spectrumy1+1.9*ymax]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[spectrumy2y]]></Name>
+<Value><![CDATA[spectrumy1+1.9*ymax]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Imax]]></Name>
+<Value><![CDATA[ny]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pi]]></Name>
+<Value><![CDATA[Math.PI]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[XP]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[XPy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[YP]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[YPy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[YP2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[YP2y]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xscale]]></Name>
+<Value><![CDATA[5.25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yscale]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[d]]></Name>
+<Value><![CDATA[10.*a]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[N]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[singleSlit]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ar]]></Name>
+<Value><![CDATA[1.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dr]]></Name>
+<Value><![CDATA[4.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showXY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showintensity]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[colors]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Color]]></Type>
+<Dimension><![CDATA[[256]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[colorlookang]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[computey]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ystring]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yvalue]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ypshow]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ypspace]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yvalueslider]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[screenshow]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>interference</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[i]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[j]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[sum2[i][j]]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[c]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Ix]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+var dx=(xmax-xmin)/(nx-1);
+for(var i=0;i<nx;i++){
+ XP[i]=xmin+i*dx;
+//  XPy[i]=xmin+i*dx;
+}
+//lightPalette(lambdar);
+draw_interference ();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+_view.singleSlitTrial.clear();
+_view.multipleSlitTrail.clear();
+_view.singleSlitTrial2.clear(); // lookang
+_view.multipleSlitTrail2.clear();// lookang to clear plot
+lambda=lambdar*um;
+if(dr<1.2*ar) dr=1.2*ar;
+a=ar*um;
+d=dr*um;
+if(N==1)singleSlit=true;
+else singleSlit=false;
+var I,alpha,cst,dy,dyy,sc,beta,cst2,I2;
+var alphax, betax, scx,Ix,Ixx, I2x, cstx,cst2x;// lookang
+Imax=a*a*3.e8/N;
+dy=(spectrumy2-spectrumy1);
+//dyy=(spectrumy2y-spectrumy1y); // added lookang
+for(var i=0;i<nx;i++) {
+  x = 0.01+(200-0.01)*i/nx; // lookang
+  sc=XP[i]/Math.sqrt(XP[i]*XP[i]+L*5*L*5)*xscale;
+  scx=x/Math.sqrt(x*x+L*5*L*5)*xscale;
+  alpha=pi*a*sc/lambda;
+  alphax=pi*a*scx/lambda*x ;// lookang
+  beta=pi*d*sc/lambda;
+    betax=pi*d*scx/lambda*x;// lookang
+  if(alpha==0)I2=I=Imax;
+  else {
+    cst2=Math.sin(alpha)/alpha;
+     cst2x=Math.sin(alphax)/alphax;// lookang
+    if(singleSlit) {
+      cst=cst2;
+       cstx=cst2x;// lookang
+    } else {
+      cst=cst2*Math.sin(N*beta)/Math.sin(beta)/N;
+      cstx=cst2x*Math.sin(N*betax)/Math.sin(betax)/N;// lookang
+    }
+    I=cst*cst;
+    Ix=cstx*cstx;// lookang
+    I2=cst2*cst2;
+    I2x=cst2x*cst2x;// lookang
+  }
+  for(var j=0;j<ny;j++) {
+   y = 200*j/ny; // lookang
+   Intensity[i][j]=I*Imax*N/2;  // nonlinear scale for screen
+   Intensityy[j][i]=I*Imax*N/2;  // flip i for j to get the rigth screen by lookang
+   Intensityyx[j][i]=I*Imax*N/2;  // code not working I for Ix, abandoned changes
+  }
+  YP[i]=spectrumy1+dy*I*yscale/50; // added divide 50 by lookang to draw yellow intensity lower
+  YP2[i]=spectrumy1+dy*I2*yscale/50;
+  //  YPy[i]=spectrumy1y+dy*I*yscale;
+ // YP2y[i]=spectrumy1y+dy*I2*yscale;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>lookang</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>fullscreen</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
+// does not work for iOS 
+/*jslint browser:true */
+function toggleFullScreen() {
+  if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>rgb</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+function rgb(r, g, b){
+  return "rgb("+r+","+g+","+b+")";
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute Intensity</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// computes intensity in response to mouse action
+function computeIntensity () {
+  var x=_view.DrawingPanel.getMouseX();
+  var sc=x/Math.sqrt(x*x+L*L)*xscale;
+  var alpha=pi*a*sc/lambda;
+  var beta=pi*d*sc/lambda;
+  if(alpha===0) {
+    mouseReading=Imax*yscale;
+    return;
+  }
+  var cst=Math.sin(alpha)/alpha;
+  if(!singleSlit){
+    cst=cst*Math.sin(N*beta)/Math.sin(beta)/N;
+  }
+  mouseReading=cst*cst*yscale;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute Intensity 2 2</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// computes intensity in response to mouse action
+// added by lookang to adapt to right panel
+function computeIntensityy () {
+  var x=_view.right.getMouseY();
+  var sc=x/Math.sqrt(x*x+L*L)*xscale;
+  var alpha=pi*a*sc/lambda;
+  var beta=pi*d*sc/lambda;
+  if(alpha===0) {
+    mouseReadingy=Imax*yscale;
+    return;
+  }
+  var cst=Math.sin(alpha)/alpha;
+  if(!singleSlit){
+    cst=cst*Math.sin(N*beta)/Math.sin(beta)/N;
+  }
+  mouseReadingy=cst*cst*yscale;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>compute y</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+function compute_y () {
+var y=_view.right.getMouseY()/200;
+yvalue = y; 
+yvalueslider = yvalue*100;
+ystring = " y = "+ _view._format(y,"0.000")+ " m ";
+return ;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>draw interference</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+function draw_interference () {
+for (var i=0; i<nx; i++) {
+    x = 0.01+(200-0.01)*i/nx;
+    c = pi/(lambdar*x)*xscale/2.6; // factor 2.6 determined by trial and error lookang
+
+    for (var j=0; j<ny; j++) {
+      y = 100+(200)*j/ny;
+      if (N==1)  {
+        sum2[i][j]= 2.0*Math.abs((Math.sin(c*ar*(y-200.0)))/(c*ar*(y-200.0)));
+                 }
+      else {
+        if (N==2) {
+        //  sum2[i][j]= 2.0*Math.cos(c*dr*(y-200.0))*Math.cos(c*dr*(y-200.0));
+        //          }
+       // else {
+          sum2[i][j]= 2.0*Math.cos(c*dr*(y-200.0))*Math.cos(c*dr*(y-200.0))*Math.abs((Math.sin(c*ar*(y-200.0)))/(c*ar*(y-200.0)));
+             }
+           }
+    if (y == 200) { // centre line draw max
+        sum2[i][j]= 2.0;
+                    }
+     if (x > L) { // outside screen draw zero
+        sum2[i][j]= 0.0;
+                 }
+}
+}
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Frame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Multiple Slit Diffraction"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["496,85"]]></Property>
+<Property name="size"><![CDATA["640,447"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">DrawingPanel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[xmin/2]]></Property>
+<Property name="maximumX"><![CDATA[xmax]]></Property>
+<Property name="minimumY"><![CDATA[ymin]]></Property>
+<Property name="maximumY"><![CDATA[ymax]]></Property>
+<Property name="square"><![CDATA[false]]></Property>
+<Property name="x"><![CDATA[-55.0]]></Property>
+<Property name="y"><![CDATA[-56.61971830985917]]></Property>
+<Property name="showCoordinates"><![CDATA[true]]></Property>
+<Property name="BLmessage"><![CDATA["top view"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ScalarField2D</Type>
+<Property name="name">scalarField</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="z"><![CDATA[Intensity]]></Property>
+<Property name="autoscaleZ"><![CDATA[false]]></Property>
+<Property name="minimumZ"><![CDATA[0]]></Property>
+<Property name="maximumZ"><![CDATA[0.05/yscale/N]]></Property>
+<Property name="expandedZ"><![CDATA[2]]></Property>
+<Property name="minimumX"><![CDATA[xmin]]></Property>
+<Property name="maximumX"><![CDATA[xmax]]></Property>
+<Property name="minimumY"><![CDATA[spectrumy1]]></Property>
+<Property name="maximumY"><![CDATA[spectrumy2]]></Property>
+<Property name="plotType"><![CDATA[INTERPOLATED]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="levels"><![CDATA[100]]></Property>
+<Property name="colormode"><![CDATA[colors]]></Property>
+<Property name="floorcolor"><![CDATA[BLACK]]></Property>
+<Property name="ceilingcolor"><![CDATA[colors[255]]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">singleSlitTrial</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="inputX"><![CDATA[XP]]></Property>
+<Property name="inputY"><![CDATA[YP2]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">multipleSlitTrail</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="inputX"><![CDATA[XP]]></Property>
+<Property name="inputY"><![CDATA[YP]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">background</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2*200]]></Property>
+<Property name="sizeY"><![CDATA[2*200]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ScalarField2D</Type>
+<Property name="name">scalarFieldinterference</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="z"><![CDATA[sum2]]></Property>
+<Property name="minimumZ"><![CDATA[0.0]]></Property>
+<Property name="maximumZ"><![CDATA[2.0]]></Property>
+<Property name="minimumX"><![CDATA[0.0]]></Property>
+<Property name="maximumX"><![CDATA[200]]></Property>
+<Property name="minimumY"><![CDATA[-100]]></Property>
+<Property name="maximumY"><![CDATA[100]]></Property>
+<Property name="plotType"><![CDATA[INTERPOLATED]]></Property>
+<Property name="colormode"><![CDATA[colors]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ScalarField2D</Type>
+<Property name="name">scalarFieldinterference2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="z"><![CDATA[Intensityyx]]></Property>
+<Property name="minimumZ"><![CDATA[0.0]]></Property>
+<Property name="maximumZ"><![CDATA[2.0]]></Property>
+<Property name="minimumX"><![CDATA[0.0]]></Property>
+<Property name="maximumX"><![CDATA[200]]></Property>
+<Property name="minimumY"><![CDATA[-100]]></Property>
+<Property name="maximumY"><![CDATA[100]]></Property>
+<Property name="plotType"><![CDATA[INTERPOLATED]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="colormode"><![CDATA[colors]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">laser4</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.45*200]]></Property>
+<Property name="sizeY"><![CDATA[0.07*200]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="lineColor"><![CDATA[colorlookang]]></Property>
+<Property name="fillColor"><![CDATA[colorlookang]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">slits</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[4]]></Property>
+<Property name="sizeY"><![CDATA[40]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="movesGroup"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+<Property name="fillColor"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">singlegroup</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="visible"><![CDATA[N==1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">hole13</Property>
+<Property name="parent">singlegroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[5]]></Property>
+<Property name="sizeY"><![CDATA[ar/1]]></Property>
+<Property name="releaseAction"><![CDATA[_initialize()]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">doubleholeGroup</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[0.0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[N>=2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">hole132</Property>
+<Property name="parent">doubleholeGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[dr/2/1]]></Property>
+<Property name="sizeX"><![CDATA[5]]></Property>
+<Property name="sizeY"><![CDATA[ar/1]]></Property>
+<Property name="releaseAction"><![CDATA[_initialize()]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">hole1322</Property>
+<Property name="parent">doubleholeGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-dr/2/1]]></Property>
+<Property name="sizeX"><![CDATA[5]]></Property>
+<Property name="sizeY"><![CDATA[ar/1]]></Property>
+<Property name="releaseAction"><![CDATA[_initialize()]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">source</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[-0.45*200]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[-0.05*200]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="scalex"><![CDATA[4]]></Property>
+<Property name="scaley"><![CDATA[4]]></Property>
+<Property name="style"><![CDATA[TRIANGLE]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[200,220,208]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">screen2</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="x"><![CDATA[L]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[ymax-ymin]]></Property>
+<Property name="visible"><![CDATA[screenshow]]></Property>
+<Property name="enabledPosition"><![CDATA[ENABLED_X]]></Property>
+<Property name="enabledSize"><![CDATA[ENABLED_NONE]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="dragAction"><![CDATA[_initialize()]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+<Property name="lineWidth"><![CDATA[6]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">pointgroup</Property>
+<Property name="parent">DrawingPanel</Property>
+<Property name="visible"><![CDATA[ypshow]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">P</Property>
+<Property name="parent">pointgroup</Property>
+<Property name="x"><![CDATA[L]]></Property>
+<Property name="y"><![CDATA[yvalue*100]]></Property>
+<Property name="sizeX"><![CDATA[20]]></Property>
+<Property name="sizeY"><![CDATA[20]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[ENABLED_Y]]></Property>
+<Property name="style"><![CDATA[WHEEL]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="fillColor"><![CDATA[255,0,255,50]]></Property>
+<Property name="lineWidth"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">distArrow</Property>
+<Property name="parent">pointgroup</Property>
+<Property name="x"><![CDATA[L]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[yvalue*100]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="fillColor"><![CDATA[MAGENTA]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">xtext</Property>
+<Property name="parent">pointgroup</Property>
+<Property name="x"><![CDATA[L-size/2]]></Property>
+<Property name="y"><![CDATA[y+ypspace]]></Property>
+<Property name="sizeX"><![CDATA[size*5]]></Property>
+<Property name="sizeY"><![CDATA[size*5]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="transformation"><![CDATA[90]]></Property>
+<Property name="text"><![CDATA[%ystring%]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,20]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="fillColor"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">right</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">east</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumY"><![CDATA[xmin]]></Property>
+<Property name="maximumY"><![CDATA[xmax]]></Property>
+<Property name="pressaction"><![CDATA[computeIntensityy ();
+compute_y ();]]></Property>
+<Property name="dragaction"><![CDATA[computeIntensityy ();
+compute_y ();]]></Property>
+<Property name="showCoordinates"><![CDATA[true]]></Property>
+<Property name="xFormat"><![CDATA[null]]></Property>
+<Property name="yFormat"><![CDATA[null]]></Property>
+<Property name="xyExpression"><![CDATA["mouseReadingy"]]></Property>
+<Property name="xyFormat"><![CDATA["I = 0.00"]]></Property>
+<Property name="TLmessage"><![CDATA["screen view"]]></Property>
+<Property name="BRmessage"><![CDATA[%ystring%]]></Property>
+<Property name="visible"><![CDATA[screenshow]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ScalarField2D</Type>
+<Property name="name">scalarField2</Property>
+<Property name="parent">right</Property>
+<Property name="z"><![CDATA[Intensityy]]></Property>
+<Property name="autoscaleZ"><![CDATA[false]]></Property>
+<Property name="minimumZ"><![CDATA[0]]></Property>
+<Property name="maximumZ"><![CDATA[0.05/yscale/N]]></Property>
+<Property name="expandedZ"><![CDATA[2]]></Property>
+<Property name="minimumX"><![CDATA[spectrumy1]]></Property>
+<Property name="maximumX"><![CDATA[spectrumy2]]></Property>
+<Property name="minimumY"><![CDATA[xmin]]></Property>
+<Property name="maximumY"><![CDATA[xmax]]></Property>
+<Property name="plotType"><![CDATA[INTERPOLATED]]></Property>
+<Property name="levels"><![CDATA[100]]></Property>
+<Property name="colormode"><![CDATA[colors]]></Property>
+<Property name="floorcolor"><![CDATA[BLACK]]></Property>
+<Property name="ceilingcolor"><![CDATA[colors[255]]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">singleSlitTrial2</Property>
+<Property name="parent">right</Property>
+<Property name="inputX"><![CDATA[YP2]]></Property>
+<Property name="inputY"><![CDATA[XP]]></Property>
+<Property name="visible"><![CDATA[showXY]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">multipleSlitTrail2</Property>
+<Property name="parent">right</Property>
+<Property name="inputX"><![CDATA[YP]]></Property>
+<Property name="inputY"><![CDATA[XP]]></Property>
+<Property name="visible"><![CDATA[showintensity]]></Property>
+<Property name="measured"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bottom</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">upperPanel</Property>
+<Property name="parent">bottom</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">lambda</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel24</Property>
+<Property name="parent">lambda</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label5</Property>
+<Property name="parent">panel24</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[" $\lambda$ = "]]></Property>
+<Property name="background"><![CDATA[colorlookang]]></Property>
+<Property name="tooltip"><![CDATA["Wavelength = 0.00 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field4</Property>
+<Property name="parent">panel24</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[lambdar]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="action"><![CDATA[lightPalette(lambdar);
+_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["Wavelength = 0.00 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label24</Property>
+<Property name="parent">panel24</Property>
+<Property name="position">south</Property>
+<Property name="text"><![CDATA[" $\mu$m "]]></Property>
+<Property name="background"><![CDATA[colorlookang]]></Property>
+<Property name="tooltip"><![CDATA["$\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Sliderlambda</Property>
+<Property name="parent">lambda</Property>
+<Property name="variable"><![CDATA[lambdar]]></Property>
+<Property name="minimum"><![CDATA[0.1]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="dragaction"><![CDATA[lightPalette(lambdar);
+_initialize();]]></Property>
+<Property name="background"><![CDATA[colorlookang]]></Property>
+<Property name="tooltip"><![CDATA["Wavelength = 0.00 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">N</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel2</Property>
+<Property name="parent">N</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label</Property>
+<Property name="parent">panel2</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[" N = "]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+<Property name="tooltip"><![CDATA["number of slits"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field</Property>
+<Property name="parent">panel2</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[N]]></Property>
+<Property name="format"><![CDATA["00"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["number of slits"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label2</Property>
+<Property name="parent">panel2</Property>
+<Property name="position">south</Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderN</Property>
+<Property name="parent">N</Property>
+<Property name="variable"><![CDATA[N]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[2]]></Property>
+<Property name="pressaction"><![CDATA[_initialize()]]></Property>
+<Property name="dragaction"><![CDATA[_initialize()]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+<Property name="tooltip"><![CDATA["number of slits"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">a</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel22</Property>
+<Property name="parent">a</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label3</Property>
+<Property name="parent">panel22</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[" a = "]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["Slit Width"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field2</Property>
+<Property name="parent">panel22</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[ar]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["Slit Width"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label22</Property>
+<Property name="parent">panel22</Property>
+<Property name="position">south</Property>
+<Property name="text"><![CDATA[" $\mu$m "]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["$\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderA</Property>
+<Property name="parent">a</Property>
+<Property name="variable"><![CDATA[ar]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[2]]></Property>
+<Property name="pressaction"><![CDATA[_initialize()]]></Property>
+<Property name="dragaction"><![CDATA[_initialize()]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["Slit Width = 0 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">d</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="visible"><![CDATA[!singleSlit]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel23</Property>
+<Property name="parent">d</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label4</Property>
+<Property name="parent">panel23</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[" d = "]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+<Property name="tooltip"><![CDATA["Slit Separation = 0 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field3</Property>
+<Property name="parent">panel23</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[dr]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="tooltip"><![CDATA["Slit Separation = 0 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label23</Property>
+<Property name="parent">panel23</Property>
+<Property name="position">south</Property>
+<Property name="text"><![CDATA[" $\mu$m "]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+<Property name="tooltip"><![CDATA["$\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Sliderd</Property>
+<Property name="parent">d</Property>
+<Property name="variable"><![CDATA[dr]]></Property>
+<Property name="minimum"><![CDATA[3]]></Property>
+<Property name="maximum"><![CDATA[6]]></Property>
+<Property name="enabled"><![CDATA[!singleSlit]]></Property>
+<Property name="pressaction"><![CDATA[_initialize()]]></Property>
+<Property name="dragaction"><![CDATA[_initialize()]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+<Property name="tooltip"><![CDATA["Slit Separation = 0 $\mu$m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Ladjusted</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel242</Property>
+<Property name="parent">Ladjusted</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">checkBox</Property>
+<Property name="parent">panel242</Property>
+<Property name="variable"><![CDATA[screenshow]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["show screen "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label52</Property>
+<Property name="parent">panel242</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[" L = "]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["distance from slit to screen"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field42</Property>
+<Property name="parent">panel242</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[Ladjusted]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="action"><![CDATA[L = Ladjusted*200;
+_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["distance in x direction"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label242</Property>
+<Property name="parent">panel242</Property>
+<Property name="position">south</Property>
+<Property name="text"><![CDATA[" m "]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showEnvelope</Property>
+<Property name="parent">panel242</Property>
+<Property name="variable"><![CDATA[showXY]]></Property>
+<Property name="enabled"><![CDATA[screenshow]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="tooltip"><![CDATA["Envelope"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showEnvelope2</Property>
+<Property name="parent">panel242</Property>
+<Property name="variable"><![CDATA[showintensity]]></Property>
+<Property name="enabled"><![CDATA[screenshow]]></Property>
+<Property name="background"><![CDATA[YELLOW]]></Property>
+<Property name="tooltip"><![CDATA["show intensity"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Sliderlambda2</Property>
+<Property name="parent">Ladjusted</Property>
+<Property name="variable"><![CDATA[Ladjusted]]></Property>
+<Property name="minimum"><![CDATA[0.1]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="dragaction"><![CDATA[L = Ladjusted*200;
+lightPalette(lambdar);
+_initialize();]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["distance from slit to screen in m"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">y2</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel232</Property>
+<Property name="parent">y2</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">checkBox2</Property>
+<Property name="parent">panel232</Property>
+<Property name="variable"><![CDATA[ypshow]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="tooltip"><![CDATA["show ruler measurement "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label42</Property>
+<Property name="parent">panel232</Property>
+<Property name="text"><![CDATA[" y = "]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["y direction measurement from central line"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field32</Property>
+<Property name="parent">panel232</Property>
+<Property name="variable"><![CDATA[yvalue]]></Property>
+<Property name="format"><![CDATA["0.000"]]></Property>
+<Property name="action"><![CDATA[y = yvalue*100;]]></Property>
+<Property name="tooltip"><![CDATA["measurement in y direction"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label232</Property>
+<Property name="parent">panel232</Property>
+<Property name="text"><![CDATA[" m "]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+<Property name="tooltip"><![CDATA["metre"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">screenDistance2</Property>
+<Property name="parent">y2</Property>
+<Property name="variable"><![CDATA[yvalueslider]]></Property>
+<Property name="minimum"><![CDATA[-100]]></Property>
+<Property name="maximum"><![CDATA[100]]></Property>
+<Property name="ticks"><![CDATA[6]]></Property>
+<Property name="pressaction"><![CDATA[yvalue = yvalueslider/100;
+_initialize();]]></Property>
+<Property name="dragaction"><![CDATA[yvalue = yvalueslider/100;
+_initialize();]]></Property>
+<Property name="background"><![CDATA[MAGENTA]]></Property>
+<Property name="tooltip"><![CDATA["measurement in y direction"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">bottom</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderXscale</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="variable"><![CDATA[xscale]]></Property>
+<Property name="minimum"><![CDATA[0.1]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="tooltip"><![CDATA["Distance along screen."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderYscale</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="variable"><![CDATA[yscale]]></Property>
+<Property name="minimum"><![CDATA[1/N]]></Property>
+<Property name="maximum"><![CDATA[400/N]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="tooltip"><![CDATA["Intensity Scale"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">reset</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["reset simulation"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+<Osejs.HtmlView.Page>
+<Type>HTML_VIEW_EDITOR</Type>
+<Name>HtmlView Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<SizeOption>0</SizeOption>
+<X>1440</X>
+<Y>0</Y>
+<Width>800</Width>
+<Height>600</Height>
+<KeepHidden>false</KeepHidden>
+<Tree>
+<HtmlView.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Name><![CDATA[panel]]></Name>
+</HtmlView.Element>
+<HtmlView.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Name><![CDATA[panel2]]></Name>
+<Parent><![CDATA[panel]]></Parent>
+</HtmlView.Element>
+<HtmlView.Element>
+<Type>Elements.PlottingPanel</Type>
+<Name><![CDATA[plottingPanel]]></Name>
+<Parent><![CDATA[panel2]]></Parent>
+<Property name="AutoScaleY"><![CDATA[true]]></Property>
+<Property name="AutoScaleX"><![CDATA[true]]></Property>
+</HtmlView.Element>
+</Tree>
+</Content>
+</Osejs.HtmlView.Page>
+</Osejs.HtmlView>
+</Osejs>

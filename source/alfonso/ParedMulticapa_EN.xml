@@ -1,0 +1,954 @@
+<Osejs version="3.3">
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>About</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <div class="moz-text-flowed" lang="x-western">
+      <b>Multi-layered wall </b><br>The goal of this virtual lab is to 
+      illustrate the computation of the steady-state heat conduction in a 
+      three-layered wall. The steady-state heat conduction is assumed to be 
+      one-dimensional.<br><br>The wall is composed of three layers of 
+      different materials and thickness <i>L<sub>A</sub></i>, <i>L<sub> B</sub></i>
+ an <i>L<sub>C</sub></i> . The temperature of the inner surface of the wall is <i>
+T<sub>1 </sub></i>and the outside temperature <i>T<sub>4</sub> </i>(see figure 
+      1).<br><br><img src="laboratoriosTexto/Imagenes/flujoCalor1DParedMultiple1.gif"><br><big><font size="2"><br>
+Figura 1: Heat conduction through a multiple wall. Equivalent thermic circuit.</font></big><br><br>
+The heat flow per unit area (<i>q<sub>x</sub></i> )and the temperature at the 
+      interfaces of the diferent layers (<i>T<sub> 2</sub></i>, <i>T<sub>3</sub></i>
+ ) are calculated.<br>Thermal conductivities of the layer's materials (<i>k<sub>
+A</sub></i> , <i>k<sub>B</sub></i> , <i>k<sub>C</sub></i> ) are assumed to be 
+      independent of others model variables. The thickness of the layer that 
+      compose the walls are model parameters. The wall surface (<i>S</i>) is 
+      assumed to be constant. The <i>S</i> parameter is not used in the model 
+      equations, because <i>q<sub>x</sub></i> doesn't depend on this parameter.<br><img src="laboratoriosTexto/Imagenes/flujoCalor1DParedMultiple3.gif"><br>
+The mathematical model is described by the following equations:<br><img src="laboratoriosTexto/Imagenes/flujoCalor1DParedMultiple2.gif">
+
+    </div>
+    <br>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Author</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Carla Mart&#237;n<br>Dpto. de Inform&#225;tica y Autom&#225;tica<br>E.T.S. 
+    de Ingenier&#237;a Inform&#225;tica, UNED<br>Juan del Rosal 16, 28040 
+    Madrid, Spain
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>VariablesModeloMatematico</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>T1</Name>
+<Value><![CDATA[-18.00]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Temperatura a la que esta el interior de la superficie de la pared (x=0)]]></Comment>
+</Variable>
+<Variable>
+<Name>T4</Name>
+<Value><![CDATA[25.00]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Temperatura a la que esta el exterior de la superficie de la pared (x=La+Lb+Lc)]]></Comment>
+</Variable>
+<Variable>
+<Name>T2</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Temperatura en x=La]]></Comment>
+</Variable>
+<Variable>
+<Name>T3</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Temperatura en x=La+Lb]]></Comment>
+</Variable>
+<Variable>
+<Name>La</Name>
+<Value><![CDATA[0.015]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Espesor de la pared A en m]]></Comment>
+</Variable>
+<Variable>
+<Name>Lb</Name>
+<Value><![CDATA[0.1]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Espesor de la pared B en m]]></Comment>
+</Variable>
+<Variable>
+<Name>Lc</Name>
+<Value><![CDATA[0.075]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Espesor de la pared C en m]]></Comment>
+</Variable>
+<Variable>
+<Name>ka</Name>
+<Value><![CDATA[0.151]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Conductividad termica de la pared A en W/mK]]></Comment>
+</Variable>
+<Variable>
+<Name>kb</Name>
+<Value><![CDATA[0.0433]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Conductividad termica de la pared B en W/mK]]></Comment>
+</Variable>
+<Variable>
+<Name>kc</Name>
+<Value><![CDATA[0.762]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Conductividad termica de la pared C en W/mK]]></Comment>
+</Variable>
+<Variable>
+<Name>qx</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Flujo de calor a traves de la pared en W/m/m]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>VariablesVisualizacion</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>xminPanel</Name>
+<Value><![CDATA[-0.15]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[minima x del panel de dibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>xmaxPanel</Name>
+<Value><![CDATA[0.65]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maxima x del panel de dibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>yminPanel</Name>
+<Value><![CDATA[-0.3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[minima y del panel de dibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>ymaxPanel</Name>
+<Value><![CDATA[1.1]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maxima y del panel de dibujo]]></Comment>
+</Variable>
+<Variable>
+<Name>Lmax</Name>
+<Value><![CDATA[0.55]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Espesor maxim de la pared de 3 capas]]></Comment>
+</Variable>
+<Variable>
+<Name>Ly</Name>
+<Value><![CDATA[0.9]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Altura de la pared]]></Comment>
+</Variable>
+<Variable>
+<Name>ypared</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Vector con las posiciones y de la pared de tres capas]]></Comment>
+</Variable>
+<Variable>
+<Name>xparedA</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Vector con las posiciones x de la capa A de la pared]]></Comment>
+</Variable>
+<Variable>
+<Name>xparedB</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Vector con las posiciones x de la capa B de la pared]]></Comment>
+</Variable>
+<Variable>
+<Name>xparedC</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Vector con las posiciones x de la capa C de la pared]]></Comment>
+</Variable>
+<Variable>
+<Name>n</Name>
+<Value><![CDATA[4]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Numero de puntos que se van a emplear para calcular el perfil de temperaturas de la pared]]></Comment>
+</Variable>
+<Variable>
+<Name>T</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[n]</Dimension>
+<Comment><![CDATA[Vector con n posiciones, siendo T(i) es la temperatura en el punto x(i) de la pared. Se da la temp. en ºC]]></Comment>
+</Variable>
+<Variable>
+<Name>x</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[n]</Dimension>
+<Comment><![CDATA[Vector con n posiciones, siendo T(i) es la temperatura en el punto x(i) de la pared. Se da la temp. en ºC]]></Comment>
+</Variable>
+<Variable>
+<Name>Tint</Name>
+<Value><![CDATA[]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Text</Name>
+<Value><![CDATA[]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Tintx</Name>
+<Value><![CDATA[-0.08]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Tinty</Name>
+<Value><![CDATA[Ly/2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Textx</Name>
+<Value><![CDATA[0.58]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Texty</Name>
+<Value><![CDATA[Ly/2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Qxtext</Name>
+<Value><![CDATA[]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Qxx</Name>
+<Value><![CDATA[0.3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Qxy</Name>
+<Value><![CDATA[-0.15]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>arrowx</Name>
+<Value><![CDATA[0.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>arrowy</Name>
+<Value><![CDATA[-0.23]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>kaTooltip</Name>
+<Value><![CDATA["Conductividad termica pared A en W/mK"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>kbTooltip</Name>
+<Value><![CDATA["Conductividad termica pared B en W/mK"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>kcTooltip</Name>
+<Value><![CDATA["Conductividad termica pared C en W/mK"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>LaTooltip</Name>
+<Value><![CDATA["Longitud de la pared A"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>LbTooltip</Name>
+<Value><![CDATA["Longitud de la pared B"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>LcTooltip</Name>
+<Value><![CDATA["Longitud de la paredC"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>TextParedA</Name>
+<Value><![CDATA["Wall A"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>TextParedB</Name>
+<Value><![CDATA["Wall B"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>TextParedC</Name>
+<Value><![CDATA["Wall C"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>showParams</Name>
+<Value><![CDATA[false]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>showPlot</Name>
+<Value><![CDATA[true]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Página Inicio</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+dibujaPared ();
+Tint = String.valueOf(T1).substring(0,3) + " ºC";
+Text =  String.valueOf(T4).substring(0,4) + " ºC";
+Qxtext= "qx = "+String.valueOf(qx).substring(0,4) + " W/m/m";
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Página Ligaduras</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+qx=(T1-T4)/(La/ka+Lb/kb+Lc/kc);
+T2=T1-qx*1/ka*La;
+T3=T2-qx*1/kb*(Lb);
+x[0]=0; x[1]=La; x[2]=La+Lb; x[3]=La+Lb+Lc;
+T[0]=T1; T[1]=T2; T[2]=T3; T[3]=T4;
+Qxtext= "qx = "+String.valueOf(qx).substring(0,4) + " W/m/m";
+//Tint = String.valueOf(T1).substring(0,3) + " ºC";
+//Text =  String.valueOf(T4).substring(0,4) + " ºC";
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>DibujaPared</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void dibujaPared () {
+  ypared[0]=0; ypared[1]=Ly;ypared[2]=Ly;ypared[3]=0;
+  xparedA[0]=0; xparedA[1]=0; xparedA[2]=La; xparedA[3]=La;
+  xparedB[0]=La; xparedB[1]=La; xparedB[2]=La+Lb; xparedB[3]=La+Lb;
+  xparedC[0]=La+Lb; xparedC[1]=La+Lb; xparedC[2]=La+Lb+Lc; xparedC[3]=La+Lb+Lc;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Acciones</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void changeTint () {
+ String s;
+ int l;
+ T1=T1*1.0000000000001;
+ if (T1>5) T1=5;
+ if (T1<-35) T1=-35;
+ s= String.valueOf(T1);
+ if (s.length()<4)
+   l = s.length();
+ else 
+   l = 4;
+
+ 
+ Tint = String.valueOf(T1).substring(0,l) + " ºC";
+  
+}
+
+public void changeText () {
+ String s;
+ int l;
+ T4=T4*1.0000000000001;
+ if (T4>50) T4=50;
+ if (T4<10) T4=10;
+ s= String.valueOf(T4);
+ if (s.length()<5)
+   l = s.length();
+ else 
+   l = 5;
+
+ Text =  s.substring(0,l) + " ºC";
+
+}
+
+public void changeLa(){
+ if (La+Lb+Lc>Lmax) La=Lmax-Lb-Lc;
+ if (La<0.005) La = 0.005;
+ dibujaPared();
+}
+
+
+public void changeLb(){
+ if (La+Lb+Lc>Lmax) Lb=Lmax-La-Lc;
+ if (Lb<0.005) Lb = 0.005;
+ dibujaPared();
+}
+
+
+public void changeLc(){
+ if (La+Lb+Lc>Lmax) Lc=Lmax-Lb-La;
+ if (Lc<0.005) Lc = 0.005;
+ dibujaPared();
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[mainFrame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA[372,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panelButtons</Property>
+<Property name="parent">panel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:2,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelTint</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">EtiquetaTint</Property>
+<Property name="parent">PanelTint</Property>
+<Property name="text"><![CDATA[Tint =]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericoTint</Property>
+<Property name="parent">PanelTint</Property>
+<Property name="variable"><![CDATA[T1]]></Property>
+<Property name="action"><![CDATA[changeTint()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelText</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">EtiquetaText</Property>
+<Property name="parent">PanelText</Property>
+<Property name="text"><![CDATA[Text = ]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericoText</Property>
+<Property name="parent">PanelText</Property>
+<Property name="variable"><![CDATA[T4]]></Property>
+<Property name="action"><![CDATA[changeText()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelCheckboxes</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">Parameters</Property>
+<Property name="parent">PanelCheckboxes</Property>
+<Property name="variable"><![CDATA[showParams]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[Parameters]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showPlot</Property>
+<Property name="parent">PanelCheckboxes</Property>
+<Property name="variable"><![CDATA[showPlot]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[T profile]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[xminPanel]]></Property>
+<Property name="maximumX"><![CDATA[xmaxPanel]]></Property>
+<Property name="minimumY"><![CDATA[yminPanel]]></Property>
+<Property name="maximumY"><![CDATA[ymaxPanel]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">ParedA</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[4]]></Property>
+<Property name="x"><![CDATA[xparedA]]></Property>
+<Property name="y"><![CDATA[ypared]]></Property>
+<Property name="color"><![CDATA[255,0,64]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">ParedB</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[4]]></Property>
+<Property name="x"><![CDATA[xparedB]]></Property>
+<Property name="y"><![CDATA[ypared]]></Property>
+<Property name="color"><![CDATA[128,128,192]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">ParedC</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[4]]></Property>
+<Property name="x"><![CDATA[xparedC]]></Property>
+<Property name="y"><![CDATA[ypared]]></Property>
+<Property name="color"><![CDATA[64,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">TextoTint</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[Tintx]]></Property>
+<Property name="y"><![CDATA[Tinty]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%Tint%]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">TextoText</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[Textx]]></Property>
+<Property name="y"><![CDATA[Texty]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%Text%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">TextoQ</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[Qxx]]></Property>
+<Property name="y"><![CDATA[Qxy]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%Qxtext%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">TextoParedA</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xminPanel+(xmaxPanel-xminPanel)*1/4]]></Property>
+<Property name="y"><![CDATA[yminPanel+(ymaxPanel-yminPanel)*0.9]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%TextParedA%]]></Property>
+<Property name="color"><![CDATA[255,0,64]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">TextoParedB</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xminPanel+(xmaxPanel-xminPanel)*1/2]]></Property>
+<Property name="y"><![CDATA[yminPanel+(ymaxPanel-yminPanel)*0.9]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%TextParedB%]]></Property>
+<Property name="color"><![CDATA[128,128,192]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">TextoParedC</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xminPanel+(xmaxPanel-xminPanel)*3/4]]></Property>
+<Property name="y"><![CDATA[yminPanel+(ymaxPanel-yminPanel)*0.9]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%TextParedC%]]></Property>
+<Property name="color"><![CDATA[64,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">Flechax</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[arrowx]]></Property>
+<Property name="y"><![CDATA[arrowy]]></Property>
+<Property name="sizex"><![CDATA[xmaxPanel*0.1]]></Property>
+<Property name="sizey"><![CDATA[0]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">VentanaPlots</Property>
+<Property name="title"><![CDATA[VentanaPlots]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showPlot]]></Property>
+<Property name="location"><![CDATA[380,0]]></Property>
+<Property name="size"><![CDATA[300,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">PanelConEjes</Property>
+<Property name="parent">VentanaPlots</Property>
+<Property name="position">center</Property>
+<Property name="titleX"><![CDATA[x (m)]]></Property>
+<Property name="titleY"><![CDATA[T (ºC)]]></Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">PerfilTemp</Property>
+<Property name="parent">PanelConEjes</Property>
+<Property name="maxpoints"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[T]]></Property>
+<Property name="closed"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">PoligonoLa</Property>
+<Property name="parent">PanelConEjes</Property>
+<Property name="maxpoints"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[La]]></Property>
+<Property name="y"><![CDATA[T]]></Property>
+<Property name="secondaryColor"><![CDATA[255,0,64]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">PoligonoLb</Property>
+<Property name="parent">PanelConEjes</Property>
+<Property name="maxpoints"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[La+Lb]]></Property>
+<Property name="y"><![CDATA[T]]></Property>
+<Property name="secondaryColor"><![CDATA[64,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">VentanaParam</Property>
+<Property name="title"><![CDATA[VentanaDialogoParam]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showParams]]></Property>
+<Property name="location"><![CDATA[0,350]]></Property>
+<Property name="size"><![CDATA[300,90]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelParameter</Property>
+<Property name="parent">VentanaParam</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[grid:2,3,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panelka</Property>
+<Property name="parent">PanelParameter</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Etiquetaka</Property>
+<Property name="parent">Panelka</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[ka =]]></Property>
+<Property name="tooltip"><![CDATA[%kaTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericoka</Property>
+<Property name="parent">Panelka</Property>
+<Property name="variable"><![CDATA[ka]]></Property>
+<Property name="tooltip"><![CDATA[%kaTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panelkb</Property>
+<Property name="parent">PanelParameter</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Etiquetakb</Property>
+<Property name="parent">Panelkb</Property>
+<Property name="text"><![CDATA[kb =]]></Property>
+<Property name="tooltip"><![CDATA[%kbTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericokb</Property>
+<Property name="parent">Panelkb</Property>
+<Property name="variable"><![CDATA[kb]]></Property>
+<Property name="tooltip"><![CDATA[%kbTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panelkc</Property>
+<Property name="parent">PanelParameter</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Etiquetakc</Property>
+<Property name="parent">Panelkc</Property>
+<Property name="text"><![CDATA[kc = ]]></Property>
+<Property name="tooltip"><![CDATA[%kcTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericokc</Property>
+<Property name="parent">Panelkc</Property>
+<Property name="variable"><![CDATA[kc]]></Property>
+<Property name="tooltip"><![CDATA[%kcTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panella</Property>
+<Property name="parent">PanelParameter</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Etiquetala</Property>
+<Property name="parent">Panella</Property>
+<Property name="text"><![CDATA[La = ]]></Property>
+<Property name="tooltip"><![CDATA[%LaTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericola</Property>
+<Property name="parent">Panella</Property>
+<Property name="variable"><![CDATA[La]]></Property>
+<Property name="action"><![CDATA[changeLa()]]></Property>
+<Property name="tooltip"><![CDATA[%LaTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panellb</Property>
+<Property name="parent">PanelParameter</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Etiquetalb</Property>
+<Property name="parent">Panellb</Property>
+<Property name="text"><![CDATA[Lb = ]]></Property>
+<Property name="tooltip"><![CDATA[%LbTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericolb</Property>
+<Property name="parent">Panellb</Property>
+<Property name="variable"><![CDATA[Lb]]></Property>
+<Property name="action"><![CDATA[changeLb()]]></Property>
+<Property name="tooltip"><![CDATA[%LbTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panellc</Property>
+<Property name="parent">PanelParameter</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Etiquetalc</Property>
+<Property name="parent">Panellc</Property>
+<Property name="text"><![CDATA[Lc = ]]></Property>
+<Property name="tooltip"><![CDATA[%LcTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoNumericolc</Property>
+<Property name="parent">Panellc</Property>
+<Property name="variable"><![CDATA[Lc]]></Property>
+<Property name="action"><![CDATA[changeLc()]]></Property>
+<Property name="tooltip"><![CDATA[%LcTooltip%]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+</Osejs>

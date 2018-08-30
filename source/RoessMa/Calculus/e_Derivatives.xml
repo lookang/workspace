@@ -1,0 +1,1848 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.3" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[dieter.roess@t-online.de]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<StaticImages>
+</StaticImages>
+<HTMLHead><![CDATA[]]></HTMLHead>
+<Logo></Logo>
+<Author><![CDATA[Dieter Roess]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Description</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Description</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      
+    </p>
+    <h1 align="center">
+      &quot;Derivative machine&quot;
+    </h1>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      At the left side of the window one of 8 different predefined base 
+      functions <i>y = f(x)</i> can be selected by <b>radio buttons</b>. A 
+      suitable <i>x</i> range is attributed to each of them.
+    </p>
+    <ul>
+      <li>
+        <i>Gaussian:&#160; exp (-(x-3)<sup>2</sup>) </i>
+      </li>
+      <li>
+        <i>sine (x) </i>
+      </li>
+      <li>
+        <i>(sine (x))<sup>2</sup> </i>
+      </li>
+      <li>
+        <i>sine (x<sup>2</sup>) </i>
+      </li>
+      <li>
+        <i>(sine (x-20))/(x-20) </i>
+      </li>
+      <li>
+        <i>[(sine (x-20))/(x-20)]<sup>2</sup> </i>
+      </li>
+      <li>
+        <i>Power function: pow (x,9) = x<sup>9</sup> =x*x*x*x*x*x*x*x*x </i>
+      </li>
+      <li>
+        <i>Exponential: exp(x)</i>
+      </li>
+    </ul>
+    <p>
+      When the simulation is opened, the Gaussian function will be active. It 
+      is drawn as a blue curve. The zero line is shown in black.
+    </p>
+    <p style="margin-top: 0">
+      At the top of the window there are <b>10 checkboxes </b>to select 
+      derivatives of the base function. These are drawn as curves in the color 
+      of the check box numbers. Derivatives of different order can be shown 
+      simultaneously. Not all may be distinctly visible if their scales differ 
+      significantly. The scaling of the ordinate is self adjusting to the 
+      highest value.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      A <b>red dot</b> on the curve defines a model point <i>x<sub>0</sub>, y<sub>0</sub> 
+      </i>, for which the values of the derivatives a1 to a9 are shown in the <b>number 
+      fields</b> at the lower left. The dot can be drawn with the mouse to 
+      calculate derivatives for arbitrary model points. If it is drawn out of 
+      the abscissa range, it can be reset with the <b>Reset Button</b>.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Any one of the predefined functions can be selected with the <b>Radio 
+      Buttons</b> at the left.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      For the sine function the curves of the 4<sup>th</sup> and the 8<sup>th</sup> 
+      derivative correctly coincide with that of the base function. The ninth 
+      derivative does not yet show visible irregularities by calculation or 
+      approximation errors.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      With the power function, the 9<sup>th</sup> derivative is a very high 
+      constant. At high x values the limited resolution of the difference 
+      algorithm results in increasing noise-like deviations.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The functions in this simulation are not editable as in other 
+      simulations of this course. The reason is that this is the only way the 
+      results for high order derivatives can be calculated <b>real time.</b> 
+      If you want to investigate other functions, open the simulation with the 
+      EJS Console, and change or add the simple code for a predefined function.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Algorithm</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Algorithm</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p align="center" style="margin-top: 0">
+      
+    </p>
+    <h1 align="center">
+      Derivatives
+    </h1>
+    <p style="margin-top: 0">
+      This simulation calculates a base function
+    </p>
+    <p align="center" style="margin-top: 0">
+      <i>y = f(x)</i>
+    </p>
+    <p style="margin-top: 0">
+      for 1000 <i>x- </i>values in a given interval.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      With <i>h </i>the difference between consecutive <i>x </i>values 
+      sufficiently small, the first derivative (differential quotient) is 
+      approximated by the difference quotient
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p align="center" style="margin-top: 0">
+      <i>y<sup>(1)</sup>(x) = (1/2h) [y(x+h) - y(x-h)]</i>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The second derivative is approximated as the difference quotient of the 
+      first difference quotient
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p align="center" style="margin-top: 0">
+      <i>y<sup>(2)</sup>(x)= (1/2h) [y<sup>(1)</sup>(x+h) - y<sup>(1)</sup>(x-h)] 
+      = (1/2h)<sup>2 </sup>[y(x+2h) - 2y(x) + y(x-1h)] </i>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This algorithm can be continued, leading to the code lines for the base 
+      function a[0] and the derivatives up to the 9th order a[9].
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      For the predefined functions and intervals most approximations do not 
+      visually differ from the analytical derivatives. This can be best 
+      controlled with the sine function, where the derivatives look the same 
+      at every 4<sup>th</sup> order.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      For still higher derivatives, the limits of the accuracy of the 
+      approximation and also the computing accuracy are stressed, and noisy 
+      artifacts appear.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Code: With s = 1/(2h)
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      a0[j]=Math.pow(s,0)*y[0][j];
+    </p>
+    <p style="margin-top: 0">
+      a1[j]=Math.pow(s,1)*(y2[1][j]-y1[1][j]);
+    </p>
+    <p style="margin-top: 0">
+      a2[j]=Math.pow(s,2)*(y2[2][j]-2*y2[0][j]+y1[2][j]);
+    </p>
+    <p style="margin-top: 0">
+      a3[j]=Math.pow(s,3)*(y2[3][j]-3*y2[1][j]+3*y1[1][j]-y1[3][j]);
+    </p>
+    <p style="margin-top: 0">
+      a4[j]=Math.pow(s,4)*(y2[4][j]-4*y2[2][j]+6*y2[0][j]-4*y1[2][j]+y1[4][j]);
+    </p>
+    <p style="margin-top: 0">
+      a5[j]=Math.pow(s,5)*(y2[5][j]-5*y2[3][j]+10*y2[1][j]-10*y1[1][j]+5*y1[3][j]-y1[5][j]);
+    </p>
+    <p style="margin-top: 0">
+      a6[j]=Math.pow(s,6)*(y2[6][j]-6*y2[4][j]+15*y2[2][j]-20*y2[0][j]+15*y1[2][j]-6*y1[4][j]+y1[6][j]);
+    </p>
+    <p style="margin-top: 0">
+      a7[j]=Math.pow(s,7)*(y2[7][j]-7*y2[5][j]+21*y2[3][j]-35*y2[1][j]+35*y1[1][j]-21*y1[3][j]+7*y1[5][j]-y1[7][j]);
+    </p>
+    <p style="margin-top: 0">
+      a8[j]=Math.pow(s,8)*(y2[8][j]-8*y2[6][j]+28*y2[4][j]-56*y2[2][j]+70*y2[0][j]-56*y1[2][j]+28*y1[4][j]-8*y1[6][j]+y1[8][j]);
+    </p>
+    <p style="margin-top: 0">
+      a9[j]=Math.pow(s,9)*(y2[9][j]-9*y2[7][j]+36*y2[5][j]-84*y2[3][j]+126*y2[1][j]-126*y1[1][j]+84*y1[3][j]-36*y1[5][j]+9*y1[7][j]-y1[9][j]);
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The integers in the formulas follow simple generation rules, so that the 
+      series can be easily generated or continued.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Experiments</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Experiments</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <b>E1: </b>
+    </p>
+    <ul>
+      <li>
+        The first derivative describes the local steepness of the function&#180;s 
+        curve
+      </li>
+      <li>
+        The second derivative describes the local change of its steepness = 
+        curvature
+      </li>
+      <li>
+        The third derivative describes the local change of its curvature =&#160; ?
+      </li>
+      <li>
+        The fourth derivative describes the local change in the change of 
+        curvature or the curvature of the curvature of the base function = ??
+      </li>
+      <li>
+        ...and so on
+      </li>
+    </ul>
+    <p>
+      Try to understand what the higher derivatives mean, as applied to the 
+      base curve of a function
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E2:&#160;</b> Do the same for the sine function. Why does the 4<sup>th</sup> 
+      derivative look like the base function? (Hint:&#160; reason first why the 
+      second derivative looks like the negative of the base function, and then 
+      apply the same reasoning to the fourth and second derivative).
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E3:</b>&#160; Go through the derivatives of the power function:&#160; What type 
+      of parabola is each one?
+    </p>
+    <p style="margin-top: 0">
+      (Hint:&#160; the easy way is to reason downward from the 9th one).
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E4:</b>&#160; Choose sine(x<sup>2</sup>). Consider why the 
+      derivatives assume higher and higher values (observe that the y scale is 
+      self adjusting!). Why are discernable oscillations shifting to higher x 
+      values with increasing order?
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E5:&#160;</b> With sine(x)/x many derivatives are within comparable 
+      amplitude range, while looking quite different. Go through exercise E1 
+      to understand the change in the basic function expressed by the 
+      different derivatives.
+    </p>
+    <p style="margin-top: 0">
+      (Hint:&#160; start by comparing any two consecutive derivatives)
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Authors</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Authors</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      This simulation was created in May 2010 by Dieter Roess
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This simulation is part of the work
+    </p>
+    <p style="margin-top: 0">
+      &#8220;<a href="http://www.degruyter.de/cont/fb/ma/detail.cfm?id=IS-9783110250053-1">Learning 
+      and Teaching Mathematics using Simulations </a>
+    </p>
+    <p style="margin-top: 0">
+      &#8211; Plus 2000 Examples from Physics&#8221;
+    </p>
+    <p style="margin-top: 0">
+      ISBN 978-3-11-025005-3, Walter de Gruyter GmbH &amp; Co. KG
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m]]></Name>
+<Value><![CDATA[1000]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[range]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmin]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymin]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymax]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[step]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[s]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[4.1758]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[-0.058139534883721034]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a3]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a4]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a5]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a6]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a7]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a8]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a9]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[m]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table _x0</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x0]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y0]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x10]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y10]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x20]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y20]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a10]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a20]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a30]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a40]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a50]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a60]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a70]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a80]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a90]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Selection</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[_0]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_3]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_4]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_5]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_6]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_7]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_8]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[_9]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Cases</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[A]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[B]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[C]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[D]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[E]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[F]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[G]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[H]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[I]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//set parameters
+step=(range-xmin)/1000;
+h=step*7;//the factor is a compromise between resolution and rest error
+s=1.0/2.0/h;
+x0=(range+xmin+0.0000001)/2.0;//avoids division by 0
+
+//set back check boxes
+_0=true;
+_1=true;
+_2=false;
+_3=false;
+_4=false;
+_5=false;
+_6=false;
+_7=false;
+_8=false;
+_9=false;
+//calculate
+derivative() ;
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>html-start</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// for the html- Link version this start the description window 
+//together with the simulation windows
+Thread thread = new Thread(new Runnable() {
+  public void run() {
+    try { Thread.sleep(500); }
+    catch (Exception exc) {}
+    _view.showDescription(true);
+  }
+});
+thread.start();
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//defines selected function
+
+if (B==true){
+A=1;
+range=3*Math.PI;
+xmin=0;
+ymax=1.5;
+ymin=-1.5;}
+if (C==true){
+A=2;
+range=2*Math.PI;
+xmin=0;
+ymax=1.5;
+ymin=-1.5;}
+if (D==true){
+A=3;
+range=1.2;
+xmin=0;
+ymax=5;
+ymin=-1.0;}
+if (E==true){
+A=4;
+range=3.0;
+xmin=-3;
+ymax=1.3;
+ymin=-0.1;}
+if (F==true){
+A=5;
+range=13.0;
+xmin=-13.0;
+ymax=1.2;
+ymin=-0.3;}
+if (G==true){
+A=6;
+range=13.0;
+xmin=-13;
+ymax=1.2;
+ymin=-0.3;}
+if (H==true){
+A=7;
+range=3*Math.PI;
+xmin=-1.5;
+ymax=1.5;
+ymin=-1.5;}
+if (I==true){
+A=8;
+range=2.0;
+xmin=-2;
+ymax=8;
+ymin=-0.5;}
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Deriv</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+public void derivative () {
+  derivative_x0 () ;
+for (int j=0; j<m ; j++) {
+x[j]=xmin+step*j;
+for (int i=0; i<n ; i++) {
+//defines selected base function
+//calculates base function and y value right and left to x[j]
+if (A==1) {
+y[j]=Math.sin(x[j]);  
+y2[i][j]=Math.sin(x[j]+h*i);
+y1[i][j]=Math.sin(x[j]-h*i);
+}
+ if (A==2) {
+y[j]=Math.sin(x[j]*x[j]);
+y2[i][j]=Math.sin((x[j]+h*i)*(x[j]+h*i));
+y1[i][j]=Math.sin((x[j]-h*i)*(x[j]-h*i));
+}
+ if (A==3) {
+y[j]=Math.pow(x[j],9);
+y2[i][j]=Math.pow((x[j]+h*i),9);
+y1[i][j]=Math.pow((x[j]-h*i),9);
+}
+ if (A==4) {
+y[j]=Math.exp(-x[j]*x[j]);
+y2[i][j]=Math.exp(-(x[j]+h*i)*(x[j]+h*i));
+y1[i][j]=Math.exp(-(x[j]-h*i)*(x[j]-h*i));
+}
+ if (A==5) {
+y[j]=Math.sin(x[j])/x[j];
+y2[i][j]=Math.sin(x[j]+h*i)/(x[j]+h*i);
+y1[i][j]=Math.sin(x[j]-h*i)/(x[j]-h*i);
+}
+ if (A==6) {
+y[j]=Math.sin(x[j])*Math.sin(x[j])/((x[j])*(x[j]));
+y2[i][j]=Math.sin(x[j]+h*i)*Math.sin(x[j]+h*i)/((x[j]+h*i)*(x[j]+h*i));
+y1[i][j]=Math.sin(x[j]-h*i)*Math.sin(x[j]-h*i)/((x[j]-h*i)*(x[j]-h*i));
+}
+ if (A==7) {
+y[j]=Math.sin(x[j])*Math.sin(x[j]);
+y2[i][j]=Math.sin(x[j]+h*i)*Math.sin(x[j]+h*i);
+y1[i][j]=Math.sin(x[j]-h*i)*Math.sin(x[j]-h*i);
+}
+if (A==8) {
+y[j]=Math.exp(x[j]);
+y2[i][j]=Math.exp(x[j]+h*i);
+y1[i][j]=Math.exp(x[j]-h*i);
+}
+//calculates derivatives as derivative of derivative
+//using only values of the base function itself.
+a1[j]=Math.pow(s,1)*(y2[1][j]-y1[1][j]);
+a2[j]=Math.pow(s,2)*(y2[2][j]-2*y2[0][j]+y1[2][j]);
+a3[j]=Math.pow(s,3)*(y2[3][j]-3*y2[1][j]+3*y1[1][j]-y1[3][j]);
+a4[j]=Math.pow(s,4)*(y2[4][j]-4*y2[2][j]+6*y2[0][j]-4*y1[2][j]+y1[4][j]);
+a5[j]=Math.pow(s,5)*(y2[5][j]-5*y2[3][j]+10*y2[1][j]-10*y1[1][j]+5*y1[3][j]-y1[5][j]);
+a6[j]=Math.pow(s,6)*(y2[6][j]-6*y2[4][j]+15*y2[2][j]-20*y2[0][j]+15*y1[2][j]-6*y1[4][j]+y1[6][j]);
+a7[j]=Math.pow(s,7)*(y2[7][j]-7*y2[5][j]+21*y2[3][j]-35*y2[1][j]+35*y1[1][j]-21*y1[3][j]+7*y1[5][j]-y1[7][j]);
+a8[j]=Math.pow(s,8)*(y2[8][j]-8*y2[6][j]+28*y2[4][j]-56*y2[2][j]+70*y2[0][j]-56*y1[2][j]+28*y1[4][j]-8*y1[6][j]+y1[8][j]);
+a9[j]=Math.pow(s,9)*(y2[9][j]-9*y2[7][j]+36*y2[5][j]-84*y2[3][j]+126*y2[1][j]-126*y1[1][j]+84*y1[3][j]-36*y1[5][j]+9*y1[7][j]-y1[9][j]);
+}
+}
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Deriv x0</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+public void derivative_x0 () {
+for (int i=0; i<n ; i++) {
+//defines selected base function
+//calculates base function and y value right and left to x0
+if (A==1) {
+y0=Math.sin(x0);  
+y20[i]=Math.sin(x0+h*i);
+y10[i]=Math.sin(x0-h*i);
+}
+ if (A==2) {
+y0=Math.sin(x0*x0);
+y20[i]=Math.sin((x0+h*i)*(x0+h*i));
+y10[i]=Math.sin((x0-h*i)*(x0 -h*i));
+}
+ if (A==3) {
+y0=Math.pow(x0,9);
+y20[i]=Math.pow((x0+h*i),9);
+y10[i]=Math.pow((x0-h*i),9);
+}
+ if (A==4) {
+y0=Math.exp(-x0*x0);
+y20[i]=Math.exp(-(x0+h*i)*(x0+h*i));
+y10[i]=Math.exp(-(x0-h*i)*(x0-h*i));
+}
+ if (A==5) {
+y0=Math.sin(x0)/x0;
+y20[i]=Math.sin(x0+h*i)/(x0+h*i);
+y10[i]=Math.sin(x0-h*i)/(x0-h*i);
+}
+ if (A==6) {
+y0=Math.sin(x0)*Math.sin(x0)/((x0)*(x0));
+y20[i]=Math.sin(x0+h*i)*Math.sin(x0+h*i)/((x0+h*i)*(x0+h*i));
+y10[i]=Math.sin(x0-h*i)*Math.sin(x0-h*i)/((x0-h*i)*(x0-h*i));
+}
+if (A==7) {
+y0=Math.sin(x0)*Math.sin(x0);
+y20[i]=Math.sin(x0+h*i)*Math.sin(x0+h*i);
+y10[i]=Math.sin(x0-h*i)*Math.sin(x0-h*i);
+}
+if (A==8) {
+y0=Math.exp(x0);
+y20[i]=Math.exp(x0+h*i);
+y10[i]=Math.exp(x0-h*i);
+}
+
+//calculates derivatives as derivative of derivative
+//using only values of the base function itself.
+a10=Math.pow(s,1)*(y20[1]-y10[1]);
+a20=Math.pow(s,2)*(y20[2]-2*y20[0]+y10[2]);
+a30=Math.pow(s,3)*(y20[3]-3*y20[1]+3*y10[1]-y10[3]);
+a40=Math.pow(s,4)*(y20[4]-4*y20[2]+6*y20[0]-4*y10[2]+y10[4]);
+a50=Math.pow(s,5)*(y20[5]-5*y20[3]+10*y20[1]-10*y10[1]+5*y10[3]-y10[5]);
+a60=Math.pow(s,6)*(y20[6]-6*y20[4]+15*y20[2]-20*y20[0]+15*y10[2]-6*y10[4]+y10[6]);
+a70=Math.pow(s,7)*(y20[7]-7*y20[5]+21*y20[3]-35*y20[1]+35*y10[1]-21*y10[3]+7*y10[5]-y10[7]);
+a80=Math.pow(s,8)*(y20[8]-8*y20[6]+28*y20[4]-56*y20[2]+70*y20[0]-56*y10[2]+28*y10[4]-8*y10[6]+y10[8]);
+a90=Math.pow(s,9)*(y20[9]-9*y20[7]+36*y20[5]-84*y20[3]+126*y20[1]-126*y10[1]+84*y10[3]-36*y10[5]+9*y10[7]-y10  [9]);
+}
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Dot</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void dot () {
+x0=range*1.0001/2.0;
+derivative_x0 () ;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">plottingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Derivative machine"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["-2,23"]]></Property>
+<Property name="size"><![CDATA["787,533"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[xmin]]></Property>
+<Property name="maximumX"><![CDATA[range]]></Property>
+<Property name="minimumY"><![CDATA[ymin]]></Property>
+<Property name="maximumY"><![CDATA[ymax]]></Property>
+<Property name="title"><![CDATA["Derivatives ( n = 0 : base function)"]]></Property>
+<Property name="titleX"><![CDATA["x"]]></Property>
+<Property name="titleY"><![CDATA["y(n)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_0_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_1_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a1]]></Property>
+<Property name="visible"><![CDATA[_1]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_2_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a2]]></Property>
+<Property name="visible"><![CDATA[_2]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_3_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a3]]></Property>
+<Property name="visible"><![CDATA[_3]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_4_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a4]]></Property>
+<Property name="visible"><![CDATA[_4]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_5_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a5]]></Property>
+<Property name="visible"><![CDATA[_5]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[PINK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_6_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a6]]></Property>
+<Property name="visible"><![CDATA[_6]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[192,128,192]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_7_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a7]]></Property>
+<Property name="visible"><![CDATA[_7]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_8_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a8]]></Property>
+<Property name="visible"><![CDATA[_8]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[DARKGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">_9_</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[a9]]></Property>
+<Property name="visible"><![CDATA[_9]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Zero</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[_0]]></Property>
+<Property name="maxpoints"><![CDATA[999]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[BLACK]]></Property>
+<Property name="stroke"><![CDATA[0.1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">shape</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x0]]></Property>
+<Property name="y"><![CDATA[y0]]></Property>
+<Property name="sizeX"><![CDATA[(range-xmin)/50]]></Property>
+<Property name="sizeY"><![CDATA[(ymax-ymin)/40]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="dragAction"><![CDATA[derivative_x0 ()]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Selection</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label</Property>
+<Property name="parent">Selection</Property>
+<Property name="text"><![CDATA["order of derivative  n"]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_0</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_0]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["0"]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_1</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_1]]></Property>
+<Property name="text"><![CDATA["1"]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_2</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_2]]></Property>
+<Property name="text"><![CDATA["2"]]></Property>
+<Property name="foreground"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_3</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_3]]></Property>
+<Property name="text"><![CDATA["3"]]></Property>
+<Property name="foreground"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_4</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_4]]></Property>
+<Property name="text"><![CDATA["4"]]></Property>
+<Property name="foreground"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_5</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_5]]></Property>
+<Property name="text"><![CDATA["5"]]></Property>
+<Property name="foreground"><![CDATA[PINK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_6</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_6]]></Property>
+<Property name="text"><![CDATA["6"]]></Property>
+<Property name="foreground"><![CDATA[192,128,192]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_7</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_7]]></Property>
+<Property name="text"><![CDATA["7"]]></Property>
+<Property name="foreground"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_8</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_8]]></Property>
+<Property name="text"><![CDATA["8"]]></Property>
+<Property name="foreground"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">_9</Property>
+<Property name="parent">Selection</Property>
+<Property name="variable"><![CDATA[_9]]></Property>
+<Property name="text"><![CDATA["9"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">functionSelection</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="size"><![CDATA["190,533"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Name</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="text"><![CDATA["base function     "]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">E</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[E]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Gauss�an"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">B</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[B]]></Property>
+<Property name="text"><![CDATA["sin(x)"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">H</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[H]]></Property>
+<Property name="text"><![CDATA["[sin(x)] square"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">C</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[C]]></Property>
+<Property name="text"><![CDATA["sin(x*x)"]]></Property>
+<Property name="selectedimage"><![CDATA["Sine(x*x)"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">F</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[F]]></Property>
+<Property name="text"><![CDATA["(sin(x))/x"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">G</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[G]]></Property>
+<Property name="text"><![CDATA["[(sin(x))/x] quadrat"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">D</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[D]]></Property>
+<Property name="text"><![CDATA["power(x,9)"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">I</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[I]]></Property>
+<Property name="text"><![CDATA["exp(x)"]]></Property>
+<Property name="actionon"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="text"><![CDATA["reset dot (xo, yo)"]]></Property>
+<Property name="action"><![CDATA[dot ()]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">x0</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[x0]]></Property>
+<Property name="format"><![CDATA["     xo = 0.0000"]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,13]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">y0</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[y0]]></Property>
+<Property name="format"><![CDATA["     yo = 0.0000"]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,13]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">factors</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="text"><![CDATA["    value of derivative at  xo, yo "]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field2</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a10]]></Property>
+<Property name="format"><![CDATA["             a1 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field3</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a20]]></Property>
+<Property name="format"><![CDATA["             a2 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field4</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a30]]></Property>
+<Property name="format"><![CDATA["             a3 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field5</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a40]]></Property>
+<Property name="format"><![CDATA["             a4 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field6</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a50]]></Property>
+<Property name="format"><![CDATA["             a5 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field7</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a60]]></Property>
+<Property name="format"><![CDATA["             a6 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field8</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a70]]></Property>
+<Property name="format"><![CDATA["             a7 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field9</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a80]]></Property>
+<Property name="format"><![CDATA["             a8 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field10</Property>
+<Property name="parent">functionSelection</Property>
+<Property name="variable"><![CDATA[a90]]></Property>
+<Property name="format"><![CDATA["             a9 = 0.0000"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

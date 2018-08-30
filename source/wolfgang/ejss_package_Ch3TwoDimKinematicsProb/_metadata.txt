@@ -1,0 +1,25 @@
+package:true
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+folder:Physlet Two-Dimensional Kinematics
+read-only:true
+author:W. Christian and M. Belloni
+logo-image: _folderIcon.png
+author-image: _infoIcon.png
+model:model1 | One-Dimensional Kinematics Problems
+model:model2 | Prob 3.1: Rank the 5 Vectors
+model:model3 | Prob 3.2: Two Vectors Shown on a Grid
+model:model4 | Prob 3.3: Rank the Motion Diagrams
+model:model5 | Prob 3.4: A Bowling Ball is Lifted
+model:model6 | Prob 3.5: Helicopter Takes Off
+model:model7 | Prob 3.6: Hot-Air Balloon Takes Off
+model:model8 | Prob 3.7: A Projectile is Launched
+model:model9 | Prob 3.8: Shoot the Apple from the Tree
+model:model10 | Prob 3.9: Projectile Motion
+model:model11 | Prob 3.10: Aim the Projectile to Hit the Lamborghini
+model:model12 | Prob 3.11: A Ball Slides Off of a Table
+model:model13 | Prob 3.12:  Bouncing Baskeball
+model:model14 | Prob 3.13: Putted Golf Ball
+model:model15 | Prob 3.14: Accelerating Space Probe
+model:model16 | Prob 3.15: Object Moving Along Circle
+model:model17 | Prob 3.16: Rotating Square
+model:model18 | Prob 3.17: Uniform Circular Motion of a Wheel

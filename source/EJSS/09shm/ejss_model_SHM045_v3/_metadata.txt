@@ -1,0 +1,32 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170620. Visit http://www.um.es/fem/Ejs
+title: circular motion model
+logo-image: SHMcircle/2016-01-05_1400s.png
+author: weelookang@gmail.com; Fu-Kwun Hwang
+copyright: Creative Commons Attribution
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto5050.png;./01authorfu-kwun.hwang.png
+source: SHM045_v3.ejss
+main-script: 
+main-simulation: SHM045_v3_Simulation.xhtml
+available-languages: 
+html-contents: SHM045_v3_Contents.xhtml
+html-main: SHM045_v3.xhtml
+page-title: SHM03
+page-index: SHM03.xhtml
+page-title: circular motion model
+page-index: SHM045_v3_Simulation.xhtml
+resource: 1authorlookangphoto5050.png
+resource: SHM03.xhtml
+resource: SHMcircle/vinyl-883199_960_720.png
+resource: SHMcircle/2015-02-16_1150.png
+resource: SHMcircle/2016-01-05_1400s.png
+resource: SHMcircle/16px-Clockwise_Arrow.svg.png
+resource: SHMcircle/16px-Counterclockwise_Arrow.svg.png
+resource: SHMcircle/2016-01-05_1400.png
+resource: SHMcircle/2016-01-05_1426.png
+resource: SHMcircle/32px-Clockwise_Arrow.svg.png
+resource: SHMcircle/32px-Counterclockwise_Arrow.svg.png
+resource: SHMcircle/477px-Vinyl_LP.jpg
+resource: SHMcircle/circularSHM2014-02-24_1610small.png
+resource: 01authorfu-kwun.hwang.png

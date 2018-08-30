@@ -1,0 +1,39 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170525. Visit http://www.um.es/fem/Ejs
+title: X-Ray Spectrum
+logo-image: XRay_Spectrum_supplemental/2016-04-06_0851s.png
+author: Michael R. Gallis; lookang
+copyright:  Creative Commons Attribution-Noncommercial-Share Alike 3.0
+preferred-width: 800
+preferred-height: 600
+author-image: mrg_ID50x50.png;./01authorlookang50x50.png
+source: XRaySpectrumweev3.ejss
+main-script: 
+main-simulation: XRaySpectrumweev3_Simulation.xhtml
+es-main-script: 
+es-main-simulation: XRaySpectrumweev3_Simulation_es.xhtml
+available-languages: es
+html-description: XRaySpectrumweev3_Intro_2.html
+html-description: XRaySpectrumweev3_Intro_1.html
+html-contents: XRaySpectrumweev3_Contents.xhtml
+html-main: XRaySpectrumweev3.xhtml
+page-title: About
+page-index: XRaySpectrumweev3_Intro_1.html
+page-title: For Teachers
+page-index: XRaySpectrumweev3_Intro_2.html
+page-title: X-Ray Spectrum
+page-index: XRaySpectrumweev3_Simulation.xhtml
+es-html-contents: XRaySpectrumweev3_Contents_es.xhtml
+es-html-main: XRaySpectrumweev3_es.xhtml
+es-page-title: About
+es-page-index: XRaySpectrumweev3_Intro_1.html
+es-page-title: For Teachers
+es-page-index: XRaySpectrumweev3_Intro_2.html
+es-page-title: X-Ray Spectrum
+es-page-index: XRaySpectrumweev3_Simulation_es.xhtml
+resource: 01authorlookang50x50.png
+resource: full_screen.png
+resource: XRay_Spectrum_supplemental/2016-04-06_0851s.png
+resource: XRay_Spectrum_supplemental/XRaySpectrumDiscussion.html
+resource: XRay_Spectrum_supplemental/XRaySpectrumLogo.png
+resource: XRay_Spectrum_supplemental/XRaySpectrumTechNotes.html
+resource: mrg_ID50x50.png

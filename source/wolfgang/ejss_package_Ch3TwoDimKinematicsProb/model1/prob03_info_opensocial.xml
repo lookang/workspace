@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="prob03_info"
+author="Wolfgang Chrsitian; Mario Belloni"
+description="Visit the Open Source Physics site for information about this model and EJS. 
+<http://www.compadre.org/OSP/>.
+
+Contact: wochristian@davidson.edu"
+screenshot="./DavidsonPhysletProblems.png"
+thumbnail="./DavidsonPhysletProblems.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="prob03_info_Simulation.xhtml"/>
+</Module>

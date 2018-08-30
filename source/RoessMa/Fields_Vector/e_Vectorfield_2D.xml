@@ -1,0 +1,1319 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.3" password="">
+<Osejs.Information>
+<Title><![CDATA[2D-Vektorfeld]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[dieter.roess@t-online.de]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<StaticImages>
+</StaticImages>
+<HTMLHead><![CDATA[]]></HTMLHead>
+<Logo></Logo>
+<Author><![CDATA[Dieter Roess - WEH- Foundation]]></Author>
+<AuthorLogo></AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Description</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Description</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p align="center" style="margin-top: 0">
+      
+    </p>
+    <h1 align="center">
+      Two dimensional vector fields
+    </h1>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This simulation shows 2 dimensional vector fields, more specifically the <i>xy</i> 
+      cross section of a 3 dimensional vector field constant in <i>z</i> 
+      direction (as with a cylinder of infinite extension).
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Shown are flow fields characterized by local velocity components <i>a_x </i>in 
+      the<i> x</i> direction and <i>a_y</i> in the <i>y</i> direction. Arrows 
+      with uniform length display the direction of the resulting flow vector.&#160; 
+      The size of the vector is indicated qualitatively by color gradation.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      When opening the simulation, a field with two vortices is demonstrated. 
+      Two white <b>text fields</b> show the formulas of its vector components. 
+      A blue text field shows the <b>divergence</b><i> </i>of the field, a 
+      brown field the <i>3D</i> coordinates of its<b> rotation vecto<i>r</i></b><i>.</i>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      In a <b>combobox </b>one can choose among many predefined fields. The 
+      type of field and the components of its vectors are stated. The second 
+      case is empty for your own data insertions. Alternatively you can edit 
+      data of predefined cases in the a_x and a_y text fields (do not forget 
+      to press the <i>Enter </i>button after changes!)
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Changing to another predefined function erases old data. If you want to 
+      preserve the result of your own changes, fabricate a <i>picture,</i> 
+      (most simply by pressing the <i>Print</i> button of your keyboard to 
+      transfer the window data into the temporary store; then paste them into 
+      a suitable document. A more comfortable way is to use a <i>screenshot 
+      reader</i>).
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      A <b>red test object</b> lies in the vector field that will follow the 
+      flow vector both in direction and value once the <b>start</b> button is 
+      activated. It jumps back to its initial position when it crosses the 
+      limits of the field.<b> Step </b>causes one step of movement.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      You can <b>draw the object</b> with the mouse, and test the field at 
+      every position that way. This gives an impression of direction and value 
+      within the whole field.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      You can turn off the vector <b>arrows</b> with an option switch and try 
+      to understand the field just from the movement of the test body.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The <b>zoom</b> slider changes the scale of coordinates. As the number 
+      of arrows shown is constant, this helps to recognize details. The 
+      default case with two vortices is a good example.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The <b>arrow length</b> slider changes the length of arrows,<b> init</b> 
+      resets all parameters , <b>reset_point</b> resets the test object to the 
+      default position.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Formulas</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Formulas</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p align="center" style="margin-top: 0">
+      <b>Vector Algebra</b>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      In this simulation the <i>z</i> component of the velocity vector is 
+      zero. The vector lies in the <i>xy</i>-plane. The rotation vector is 
+      perpendicular to the <i>xy</i>-plane; it has just a <i>z</i> component.
+    </p>
+    <p style="margin-top: 0">
+      This results in:
+    </p>
+    <p align="center" style="margin-top: 0">
+      <b>a</b><i> = (a<sub>x</sub> , a<sub>y</sub>, 0)</i>
+    </p>
+    <p align="center" style="margin-top: 0">
+      div <b>a</b> = <i>&#8706;a<sub>x</sub>/&#8706;x + &#8706;a<sub>y</sub>/&#8706;y 
+      + 0 = &#8706;a<sub>x</sub>/&#8706;x + &#8706;a<sub>y</sub>/&#8706;y</i>
+    </p>
+    <p align="center" style="margin-top: 0">
+      <b>rot v</b> = (<i>0, 0, &#8706;a<sub>y</sub>/&#8706;x -&#8706;a<sub>x</sub>/&#8706;y</i>)
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      When is the field <b>without vortex</b>: rotation = 0 ?
+    </p>
+    <p align="center" style="margin-top: 0">
+      &#8706;v<sub>y</sub>/&#8706;x -&#8706;v<sub>x</sub>/&#8706;y =&#160; 0
+    </p>
+    <p style="margin-top: 0">
+      This holds when <i>a<sub>x</sub> = a(x)</i> and <i>a<sub>y </sub>= a(y)</i>; 
+      the components are functions of their own coordinates only (e.g.&#160; <i>a<sub>x</sub> 
+      = x<sup>2</sup>+3x-1, a<sub>y </sub>= y<sup>3</sup>-y<sup>2</sup></i>). 
+      This includes the case of both components being constants, whose 
+      derivative is zero (e.g. <i>a<sub>x</sub> = 1, a<sub>y </sub>= -4</i>).
+    </p>
+    <p style="margin-top: 0">
+      If one component is a function of the other coordinate, then in general 
+      the field will have vortices, except when the partial derivatives just 
+      compensate, as for
+    </p>
+    <p style="margin-top: 0">
+      <b>rot</b> (<i>a<sub>x</sub> = y, a<sub>y </sub>= x</i>) = (0, 0, 1 - 
+      1)&#160; = (0, 0, 0&#160;) = 0
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      When is the field <b>without source</b>: divergence = 0<b>?</b>
+    </p>
+    <p align="center" style="margin-top: 0">
+      &#8706;a<sub>x</sub>/&#8706;x = - &#8706;a<sub>y</sub>/&#8706;y
+    </p>
+    <p style="margin-top: 0">
+      The partial derivatives must be equal in absolute value, with opposite 
+      sign (sum = zero).
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The movement of the <b>test object</b> is determined and calculated by 
+      two simple ordinary differential equations:&#160;
+    </p>
+    <p align="center" style="margin-top: 0">
+      <i>dx/dt = a<sub>x</sub> </i>
+    </p>
+    <p align="center" style="margin-top: 0">
+      <i>dy/dt = a<sub>y</sub></i>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Experiments</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Experiments</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p align="left" style="margin-top: 0">
+      <b>E 1:</b>&#160; Study the default case of the twin vortices. Calculate 
+      rotation and divergence yourself by partial derivation of the formulas 
+      of the components (the &quot;other&quot; coordinate is treated as a constant).
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 2:</b>&#160; Change the scale with the <b>zoom</b> slider and 
+      observe how the visual impression of the field changes with scale.
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 3:&#160;</b> Start the test object and follow its path concerning 
+      direction and velocity. Try to understand this by studying the formulas.
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 4:&#160;</b> Draw the test object to other points in the field and 
+      test its quantitative structure by the object&#180;s movement.
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 5:&#160;</b> Choose fields that have constants as components. 
+      Change numbers and understand how this influences the field. Start the 
+      test object. Does it change its velocity?
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 6:</b>&#160;Choose fields with components linear in coordinates. Try to 
+      understand the context. Why are divergences not quoted?&#160; (localized 
+      limits may occur at sources).
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 6:&#160; </b>How does the test object move now?<b> </b>Which terms 
+      in the formulas lead to acceleration?
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 7: </b>Choose the two corresponding last cases of twin sources and 
+      twin vortices and study the differences.
+    </p>
+    <p align="left" style="margin-top: 0">
+      
+    </p>
+    <p align="left" style="margin-top: 0">
+      <b>E 8:&#160;</b>Invent your own formulas for fields, calculate 
+      divergence and rotation, describe the characteristics.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Authors</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Authors</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      this file was created by Dieter Roess in March 2009
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This simulation is part of the work
+    </p>
+    <p style="margin-top: 0">
+      &#8220;<a href="http://www.degruyter.de/cont/fb/ma/detail.cfm?id=IS-9783110250053-1">Learning 
+      and Teaching Mathematics using Simulations </a>
+    </p>
+    <p style="margin-top: 0">
+      &#8211; Plus 2000 Examples from Physics&#8221;
+    </p>
+    <p style="margin-top: 0">
+      ISBN 978-3-11-025005-3, Walter de Gruyter GmbH &amp; Co. KG
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Variable</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[max]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showFlow]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[r]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l]]></Name>
+<Value><![CDATA[0.10000800000000001]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Bewegung</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Functions</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[fTyp]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[die aktuelle Formel]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x_functions]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[String mit Formeln zur Initialisierung der Combo-Box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y_functions]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[String mit Formeln zur Initialisierung der Combo-Box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[description]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[die zur gewaehlten Formel passende Beschreibung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x_functionList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[Liste mit Formeln]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y_functionList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[Liste mit Formeln]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[descriptionList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[Liste mit Beschreibungen]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[divergenzList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rotationList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[divergenz]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rotation]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Feld</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+/*simple fields and directions
+1,0   constant  right
+0,1   constant upward
+-1,0  constant left
+0,-1  constant downward
+x,y   radial outward
+-x,-y radial inward
+y,-x  circular clockwise
+-y,x  circular anticlockwise
+0,-y  x-wire attractive 
+0,y   x-wire rejective
+x,0   y-wire rejective
+-x,0  y-wire attractive anziehend
+*/
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+max=2.0;
+Listen();
+initFunctions();
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>html-start</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// for the html- Link version this start the description window 
+//together with the simulation windows
+Thread thread = new Thread(new Runnable() {
+  public void run() {
+    try { Thread.sleep(500); }
+    catch (Exception exc) {}
+    _view.showDescription(true);
+  }
+});
+thread.start();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Bewegung</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Discontinuities>
+</Discontinuities>
+<IndependentVariable>t</IndependentVariable>
+<Increment>0.05</Increment>
+<Rate state="x">_view.dxdtFunction.evaluate(x,y)</Rate>
+<Rate state="y">_view.dydtFunction.evaluate(x,y)</Rate>
+<Rate state=""></Rate>
+<Method>MidPoint</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance></AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayMaximum><![CDATA[]]></DelayMaximum>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if ( Math.abs(x)>max||Math.abs(y)>max) {
+_pause();
+resetObject () ;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Lists</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void Listen() {
+ 
+ //List of function type
+  descriptionList = new java.util.ArrayList();
+  // List of formulas
+  x_functionList = new java.util.ArrayList();
+  y_functionList = new java.util.ArrayList();
+  divergenzList=new java.util.ArrayList();
+  rotationList=new java.util.ArrayList();
+  
+  //fill List
+        
+        x_functionList.add("-y^2+y");
+	y_functionList.add("x^2+x");
+	descriptionList.add("twin vortices (-y^2 + y, x^2 + x)");	
+        divergenzList.add("0 + 0 = 0 ");
+        rotationList.add("(0,0, 2x+2y) ");
+        
+        x_functionList.add("");
+	y_functionList.add("");
+	descriptionList.add("your data");	
+        divergenzList.add("");
+        rotationList.add("(  ,  , )");       
+       
+        x_functionList.add("1");
+	y_functionList.add("0");
+	descriptionList.add("constant to the right  (1 , 0)");	
+        divergenzList.add("0 + 0 = 0");
+        rotationList.add("(0,0,0) = 0");
+
+        x_functionList.add("-1");
+	y_functionList.add("0");
+	descriptionList.add("constant to the left  (-1 , 0)");	
+        divergenzList.add("0 + 0 = 0");
+        rotationList.add("(0,0,0) = 0");
+        
+        x_functionList.add("1");
+	y_functionList.add("1");
+	descriptionList.add("constant diagonal  (1 , 1)");	
+        divergenzList.add("0 + 0 = 0");
+        rotationList.add("(0,0,0) = 0");
+              
+        x_functionList.add("x");
+	y_functionList.add("y");
+	descriptionList.add("radial outward  (x , y)");
+        divergenzList.add("? ?");
+        rotationList.add("(0,0,0) = 0");
+        
+        x_functionList.add("-x");
+	y_functionList.add("-y");
+	descriptionList.add("radial inward (-x , -y)");
+        divergenzList.add("? ?");
+        rotationList.add("(0,0,0) = 0");
+        
+	x_functionList.add("y");
+	y_functionList.add("-x");
+	descriptionList.add("vortex right (y , -x)");
+        divergenzList.add("0 + 0 = 0");
+        rotationList.add("(0,0,-1-1) = (0,0,-2)"); 
+        
+        x_functionList.add("-y");
+	y_functionList.add("x");
+	descriptionList.add("vortex left (-y , x)");
+        divergenzList.add("0 + 0 = 0");
+        rotationList.add("(0,0,1+1) = (0,0,2)"); 	
+        
+        x_functionList.add("0");
+	y_functionList.add("-y");
+	descriptionList.add("x-line attractive (0 , -y)");
+        divergenzList.add("0 - 1 = -1");
+        rotationList.add("(0,0,0) = 0"); 	
+        
+        x_functionList.add("x");
+	y_functionList.add("0");
+	descriptionList.add("y_line repuslive (x , 0)");	
+        divergenzList.add("1 + 0 = +1");
+        rotationList.add("(0,0,0) = 0"); 	
+        
+        x_functionList.add("y*(1-x)");
+	y_functionList.add("-x*(1-y)");
+	descriptionList.add("vortex & source (y (1-x) , -x (1-y))");	
+        divergenzList.add("x - y");
+        rotationList.add("(0, 0, x + y - 2)"); 
+        
+        x_functionList.add("x^2+x");
+	y_functionList.add("-y^2+y");
+	descriptionList.add("twin source and drain(x^2 + x , -y^2 + y)");	
+        divergenzList.add("2x -2y");
+        rotationList.add("(0,0,0) = 0"); 
+
+        x_functionList.add("-y^2+y");
+	y_functionList.add("x^2+x");
+	descriptionList.add("twin vortices (-y^2 + y, x^2 + x)");	
+        divergenzList.add("0 + 0 = 0 ");
+        rotationList.add("(0,0, 2x+2y) ");
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>initFunction</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void initFunctions(){
+  String fu  = (String)descriptionList.get(0);
+  for (int i = 1; i < descriptionList.size(); i++ ) {
+  String d = ((String)descriptionList.get(i)).trim();
+      fu = fu + "; " + d;
+}
+  //string transcribed in  "descriptions"
+  description = fu;  
+  //first function is fetched and calculated:
+  x_functions = x_functionList.get(0);
+  y_functions = y_functionList.get(0);
+  divergenz=divergenzList.get(0);
+  rotation=rotationList.get(0);
+  }
+ 
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>changeFunction</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void changeFunction() {
+// where in the list is the chosen function??
+if (descriptionList!=null) {
+int pos = descriptionList.indexOf(fTyp.trim());
+//get this function from field Fx_2
+x_functions = x_functionList.get(pos);
+y_functions = y_functionList.get(pos);
+divergenz=divergenzList.get(pos);
+rotation=rotationList.get(pos);
+ }
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>SetBack</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void resetObject () {
+ x=0.5;
+ y=0;
+ _view.resetTraces();;
+}
+
+public void editieren () {
+divergenz = "? ?";
+rotation = "? ?";
+}
+
+public void zurueck () {
+max=2.0;
+l=0.1;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">plottingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Plane vector fields"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["548,588"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-max]]></Property>
+<Property name="maximumX"><![CDATA[max]]></Property>
+<Property name="minimumY"><![CDATA[-max]]></Property>
+<Property name="maximumY"><![CDATA[max]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Test object moving in vector field"]]></Property>
+<Property name="titleX"><![CDATA["x"]]></Property>
+<Property name="titleY"><![CDATA["y"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">plot</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticVectorField2D</Type>
+<Property name="name">analyticVectorField2D</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="variable1"><![CDATA["x"]]></Property>
+<Property name="points1"><![CDATA[30]]></Property>
+<Property name="variable2"><![CDATA["y"]]></Property>
+<Property name="points2"><![CDATA[30]]></Property>
+<Property name="xcomponent"><![CDATA[%x_functions%]]></Property>
+<Property name="ycomponent"><![CDATA[%y_functions%]]></Property>
+<Property name="length"><![CDATA[l]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="visible"><![CDATA[showFlow]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="autoscale"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">particle</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[8]]></Property>
+<Property name="sizey"><![CDATA[8]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[_view.resetTraces()]]></Property>
+<Property name="secondaryColor"><![CDATA[BLACK]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Skalierung</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[max]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[10.0]]></Property>
+<Property name="format"><![CDATA["zoom =  0.0"]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="ticks"><![CDATA[18]]></Property>
+<Property name="closest"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["70,0"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Kontrollen</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="size"><![CDATA["60,40"]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">Kontrollen</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA["start"]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA["stop"]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetPunkt</Property>
+<Property name="parent">Kontrollen</Property>
+<Property name="text"><![CDATA["reset_point"]]></Property>
+<Property name="action"><![CDATA[resetObject ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">Kontrollen</Property>
+<Property name="text"><![CDATA["step"]]></Property>
+<Property name="action"><![CDATA[_step();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">init</Property>
+<Property name="parent">Kontrollen</Property>
+<Property name="text"><![CDATA["init"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showFieldCheckBox</Property>
+<Property name="parent">Kontrollen</Property>
+<Property name="variable"><![CDATA[showFlow]]></Property>
+<Property name="text"><![CDATA["arrows"]]></Property>
+<Property name="alignment"><![CDATA[LEFT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Pfeil</Property>
+<Property name="parent">Kontrollen</Property>
+<Property name="variable"><![CDATA[l]]></Property>
+<Property name="minimum"><![CDATA[0.05]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="format"><![CDATA["arrow length =  0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Funktionen</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="size"><![CDATA["300,30"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">divergenz</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="text"><![CDATA[" divergence="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Function</Type>
+<Property name="name">divergenzanzeige</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="variable"><![CDATA[%divergenz%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["70,20"]]></Property>
+<Property name="background"><![CDATA[192,255,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">rotation</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="text"><![CDATA[" rotation ="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Function</Type>
+<Property name="name">rotationsanzeige</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="variable"><![CDATA[%rotation%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["80,20"]]></Property>
+<Property name="background"><![CDATA[255,192,64]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">dxdtLabel</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["a_x="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Function</Type>
+<Property name="name">dxdtFunction</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[%x_functions%]]></Property>
+<Property name="independent"><![CDATA["x,y"]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[editieren ()]]></Property>
+<Property name="size"><![CDATA["100,20"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">dydtLabel</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="text"><![CDATA["  a_y="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Function</Type>
+<Property name="name">dydtFunction</Property>
+<Property name="parent">Funktionen</Property>
+<Property name="variable"><![CDATA[%y_functions%]]></Property>
+<Property name="independent"><![CDATA["x,y"]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[editieren ()]]></Property>
+<Property name="size"><![CDATA["100,20"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Funktionstyp</Property>
+<Property name="parent">panel</Property>
+<Property name="position">east</Property>
+<Property name="text"><![CDATA["function type and vector (a_x, a_y)"]]></Property>
+<Property name="foreground"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ComboBox</Type>
+<Property name="name">Auswahlliste</Property>
+<Property name="parent">panel</Property>
+<Property name="position">center</Property>
+<Property name="options"><![CDATA[%description%]]></Property>
+<Property name="variable"><![CDATA[%fTyp%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[changeFunction()]]></Property>
+<Property name="size"><![CDATA["500,30"]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

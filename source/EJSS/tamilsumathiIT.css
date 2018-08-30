@@ -1,0 +1,23 @@
+.animated {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 0000;
+	stroke-linejoin: round;
+	animation: dash 20s linear forwards;
+}
+
+@keyframes dash {
+	from {stroke-dashoffset: 1000;}
+	to {stroke-dashoffset: 0;}
+}
+
+.animated_ti {
+	stroke-dasharray: 300;
+	stroke-dashoffset: 300;
+	stroke-linejoin: round;
+	animation: dash_ti 3s linear forwards;
+}
+
+@keyframes dash_ti {
+	from {stroke-dashoffset: 300;}
+	to {stroke-dashoffset: 0;}
+}

@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title> Description</title>
+    <link rel="stylesheet" type="text/css" href="../../_ejs_library/css/ejsPage.css"></link>
+  </head>
+  <body > 
+
+    <h1 align="center">
+      Function plotter <i>z = f ( x , y )</i>
+    </h1>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This function plotter displays standard functions <i>z = f(x , y)</i> 
+      that may contain up to four continuously variable parameters <i>a, b, c,</i> 
+      <i>p.</i>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      At the start of the simulation you will first see the projection of a 
+      plane in space, viewed under perspective distortion. It is embedded into 
+      an <i>x y z </i>tripod, and is accompanied by the <i>x y- plane</i> <i>z 
+      = 0. </i>This plane can be deactivated by its check box.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Other predefined surfaces in space can by selected in the <b>ComboBox</b>.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      By time modulation of parameters <i>a(t)</i>, <i>b(t), c(t) </i>the 
+      surfaces are animated, so that they appear moving in space. As you see 
+      in the formula field, the periodic function <i>cos(t)</i> is creating 
+      the animation effect. The program calculates functions in time steps of <i>&#8710;t 
+      = p*0.1</i> milliseconds. Slider<i> p</i> thus controls the speed of 
+      animation. <i>p = 0</i> freezes the graph.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      In the formula of the plane <i>cos(t)</i> is multiplied to<i> (bx+ay)</i>. 
+      <i>t = 0 </i>leads to <i>cos(t) = 1</i>. <b>Play</b> starts the 
+      animation, with time<i> t</i> starting at <i>0, </i>as indicated in the<i> 
+      t </i>number field. With <i>cos(t)</i> fluctuating periodically, the 
+      plane oscillates in space. Sliders <i>a, b, c</i> define its base 
+      orientation. <b>Pause</b> freezes the animation at any spatial position. <b>Reset</b> 
+      leads back to the initial conditions.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Only those surfaces are animated whose formula has <i>cos(t)</i> as a 
+      factor.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Scaling of all three axes has a range of &#8723;2.5. The <i>xy-</i>plane 
+      cuts the <i>z</i>-axis at the center of the <i>z</i>-arrow. The minimum 
+      and maximum position of the <i>z</i>-axis is marked by a red and a green 
+      dot.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The orientation of the tripod in space can be changed by drawing with 
+      the mouse.
+    </p>
+    <p style="margin-top: 0">
+      Other ways of visualization are described on the next page.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Predefined functions are selected in the ComboBox with a mouse click.
+    </p>
+    <p style="margin-top: 0">
+      Parameters <i>a,b,c </i>can be varied by sliders while the animation is 
+      running. By editing the formulas you can change the parts that are 
+      animated. You can input new formulas to create your own surfaces. Do not 
+      forget to press the <i>ENTER </i>key after a change!
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Touching a surface with the mouse pointer lets its color filling 
+      disappear; the wire mesh of calculation will be pronouncedly visible.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The program can only demonstrate real values of <i>z.</i> If variables<i> 
+      x, y </i>lead to imaginary solutions<i> z = 0 </i>will be shown. This 
+      artefact can not be avoided, so ignore it!
+    </p>
+  
+  </body>
+</html>

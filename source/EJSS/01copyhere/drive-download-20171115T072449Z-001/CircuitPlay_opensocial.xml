@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="CircuitPlay"
+author="Francisco Esquembre; Kay Shin Tan"
+description=""
+screenshot="./Cover.PNG"
+thumbnail="./Cover.PNG">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="CircuitPlay_Simulation.xhtml"/>
+</Module>

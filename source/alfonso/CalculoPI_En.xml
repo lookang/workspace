@@ -1,0 +1,403 @@
+<Osejs version="3.3">
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>About</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <u><b>Estimation of PI using a Monte Carlo method:</b></u><br><br>Monte 
+    Carlo methods are often useful for solving problems in physics and 
+    mathematics, which cannot be solved by analytical means.<br>The goal of 
+    this virtual-lab is to obtain an approximated value of PI, using a Monte 
+    Carlo method. Next, we describe briefly how this method is used to 
+    estimate PI.<br>Imagine that we are throwing a dart over a square surface 
+    of side 2 m. There is a circle of radius 1 m. inscribed in the square. 
+    Assuming that the probability is uniformly distributed, the probability of 
+    hitting inside the circle is equal to PI/4. Dividing the number of hits by 
+    the number of throws, it is obtained an estimation of PI. We will obtain a 
+    better approximation by increasing the number of throws.<br>This 
+    virtual-lab allows the user to select the number of throws.
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Author</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Carla Mart&#237;n<br>Dpto. de Inform&#225;tica y Autom&#225;tica<br>E.T.S. 
+    de Ingenier&#237;a Inform&#225;tica, UNED<br>Juan del Rosal 16, 28040 
+    Madrid, Spain
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Variables</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>drawMinx</Name>
+<Value><![CDATA[-1.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Minimo valor de x del componente PanelDibujo de la vista]]></Comment>
+</Variable>
+<Variable>
+<Name>drawMaxx</Name>
+<Value><![CDATA[1.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Maximo valor de x del componente PanelDibujo de la vista]]></Comment>
+</Variable>
+<Variable>
+<Name>drawMiny</Name>
+<Value><![CDATA[-0.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Minimo valor de y del componente PanelDibujo de la vista]]></Comment>
+</Variable>
+<Variable>
+<Name>drawMaxy</Name>
+<Value><![CDATA[1.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Minimo valor de y del componente PanelDibujo de la vista]]></Comment>
+</Variable>
+<Variable>
+<Name>Maxpoints</Name>
+<Value><![CDATA[5000]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Maximo numero de puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>nTotal</Name>
+<Value><![CDATA[100]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Numero de puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>nAciertos</Name>
+<Value><![CDATA[]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Coordenadas x de los puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>Pointx</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[Maxpoints]</Dimension>
+<Comment><![CDATA[Coordenadas x de los puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>Pointy</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[Maxpoints]</Dimension>
+<Comment><![CDATA[Coordenada y  de los puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>Pointsizex</Name>
+<Value><![CDATA[20/100]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Dimension en el eje x de los puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>Pointsizey</Name>
+<Value><![CDATA[10/100]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Dimension en el eje y de los puntos empleados en el calculo de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>cuadx</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Coordenadas x de los vertices del rectangulo donde se inscribe el semicirculo]]></Comment>
+</Variable>
+<Variable>
+<Name>cuady</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[4]</Dimension>
+<Comment><![CDATA[Coordenadas y de los vertices del rectangulo donde se inscribe el semicirculo]]></Comment>
+</Variable>
+<Variable>
+<Name>numPointsCirc</Name>
+<Value><![CDATA[14]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Numero de puntos que forman el semicirculo]]></Comment>
+</Variable>
+<Variable>
+<Name>circx</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[numPointsCirc]</Dimension>
+<Comment><![CDATA[Coordenadas x de los puntos del poligono que se emplea para dibujar el semicirculo]]></Comment>
+</Variable>
+<Variable>
+<Name>circy</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>[numPointsCirc]</Dimension>
+<Comment><![CDATA[Coordenadas y de los puntos del poligono que se emplea para dibujar el semicirculo]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Variables2</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>PI</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Valor de PI obtenido por el metodo de Monte Carlo]]></Comment>
+</Variable>
+<Variable>
+<Name>valorPI</Name>
+<Value><![CDATA[]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[String que se emplea para visualizar en el grafico el valor de PI en el campo texto]]></Comment>
+</Variable>
+<Variable>
+<Name>valorPIx</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Coordenada x del campo texto usado para visualizar el valor de PI]]></Comment>
+</Variable>
+<Variable>
+<Name>valorPIy</Name>
+<Value><![CDATA[0.1]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Coordenada y del campo texto usado para visualizar el valor de PI]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Página Inicio</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+cuadx[0]=-1; cuady[0]=0;
+cuadx[1]=-1; cuady[1]=1;
+cuadx[2]=1; cuady[2]=1;
+cuadx[3]=1; cuady[3]=0;
+
+for (int i =0; i<numPointsCirc; i++) {
+ circx[i] = Math.cos(Math.PI/(numPointsCirc-1)*i);
+ circy[i] = Math.sin(Math.PI/(numPointsCirc-1)*i);
+}
+
+calculaPI ();
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Acciones</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void calculaPI () {
+ nAciertos=0;
+for (int i=0; i<nTotal; i++){
+  if (nTotal >Maxpoints) nTotal=Maxpoints;
+  Pointx[i] = 2*Math.random ()-1;
+  Pointy[i] = Math.random() ;
+  if (Math.sqrt(Pointx[i]*Pointx[i]+Pointy[i]*Pointy[i])<1) nAciertos = nAciertos +1;
+ }
+PI=4.0*(nAciertos/(double)nTotal);
+valorPI="PI ="+PI;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[mainFrame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA[372,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panelButtons</Property>
+<Property name="parent">panel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelcalcPI</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">EtiquetaN</Property>
+<Property name="parent">PanelcalcPI</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[N =]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">CampoN</Property>
+<Property name="parent">PanelcalcPI</Property>
+<Property name="variable"><![CDATA[nTotal]]></Property>
+<Property name="format"><![CDATA[00]]></Property>
+<Property name="action"><![CDATA[calculaPI()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[drawMinx]]></Property>
+<Property name="maximumX"><![CDATA[drawMaxx]]></Property>
+<Property name="minimumY"><![CDATA[drawMiny]]></Property>
+<Property name="maximumY"><![CDATA[drawMaxy]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">Cuadrado</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[4]]></Property>
+<Property name="x"><![CDATA[cuadx]]></Property>
+<Property name="y"><![CDATA[cuady]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="color"><![CDATA[lightGray]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">Circulo</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[numPointsCirc]]></Property>
+<Property name="x"><![CDATA[circx]]></Property>
+<Property name="y"><![CDATA[circy]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="color"><![CDATA[cyan]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParticleSet</Type>
+<Property name="name">Puntos</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="elementnumber"><![CDATA[nTotal]]></Property>
+<Property name="x"><![CDATA[Pointx]]></Property>
+<Property name="y"><![CDATA[Pointy]]></Property>
+<Property name="sizex"><![CDATA[Pointsizex]]></Property>
+<Property name="sizey"><![CDATA[Pointsizey]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text</Type>
+<Property name="name">ValorPI</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[valorPIx]]></Property>
+<Property name="y"><![CDATA[valorPIy]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%valorPI%]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+</Osejs>

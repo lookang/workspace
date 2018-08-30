@@ -1,0 +1,26 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 150906. Visit http://www.um.es/fem/Ejs
+title: Quantum Wave Packet
+logo-image: FreeParticleWavepacket/FreeParticle.png
+author: Wolfgang Christian
+copyright: W. Christian
+preferred-width: 800
+preferred-height: 600
+author-image: wc_icon.png
+source: FreeParticleWavepacket.ejss
+main-script: 
+main-simulation: FreeParticleWavepacket_Simulation.xhtml
+available-languages: 
+html-contents: FreeParticleWavepacket_Contents.xhtml
+html-main: FreeParticleWavepacket.xhtml
+page-title: Quantum Wave Packet
+page-index: FreeParticleWavepacket_Simulation.xhtml
+resource: wc_icon.png
+resource: FreeParticleWavePacket/FreeParticleWavePacket.xhtml
+resource: FreeParticleWavepacket/FreePaticleWavePacket.gif
+resource: FreeParticleWavepacket/FreeParticle.png
+resource: FreeParticleWavePacket/FreeParticle.png
+resource: FreeParticleWavePacket/FreeParticleWavePacket.gif
+resource: FreeParticleWavePacket/FreeParticleWavePacket.html
+resource: FreeParticleWavePacket/FreePaticleWavePacket.gif
+resource: css/ejsPage.css
+resource: css/ejsSimulation.css

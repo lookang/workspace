@@ -1,0 +1,25 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170624. Visit http://www.um.es/fem/Ejs
+title: horizontal spring mass model a vs x
+logo-image: SHM07/2015-02-16_1207s.png
+author: weelookang@gmail.com; Francisco Esquembre
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto5050.png;./01authorPacoEsquembre2011.png
+source: SHM07v4.ejss
+main-script: 
+main-simulation: SHM07v4_Simulation.xhtml
+available-languages: 
+html-contents: SHM07v4_Contents.xhtml
+html-main: SHM07v4.xhtml
+page-title: SHM04
+page-index: SHM07.xhtml
+page-title: horizontal spring mass model a vs x
+page-index: SHM07v4_Simulation.xhtml
+resource: SHM07/2015-02-16_1207s.png
+resource: 1authorlookangphoto5050.png
+resource: 01authorPacoEsquembre2011.png
+resource: SHM07/2015-02-16_1207.png
+resource: SHM07/image27.gif
+resource: SHM07/SHM07v2.ejss
+resource: SHM07.xhtml

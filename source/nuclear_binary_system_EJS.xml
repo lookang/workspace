@@ -1,0 +1,1041 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.7" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>true</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<DetectedFiles><![CDATA[./nuclear_binary_system_EJS.png;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Binary System</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Binary System</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif; color: purple }
+        address { border-top-style: dotted; margin-top: 0; padding-top: 0; border-top-width: thin; border-top-color: border-color }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      nuclear_binary_system_matlab_octave.m - by Javier E. Hasbun and Benjamin 
+      E. Hogan (2012)
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      For a binary system, such as the one shown below, we can use the 
+      following equations to determine the motion of m<sub>1</sub> and m<sub>2</sub>:
+    </p>
+    <table>
+      <tr>
+        <td>
+          <b>r</b><sub>1</sub> =<b> r</b><sub>cm</sub> - (m<sub>2</sub>/M) <b>r<br>r</b><sub>2</sub> 
+          =<b> r</b><sub>cm</sub> + (m<sub>1</sub>/M) <b>r<br>r</b><sub>cm</sub> 
+          = (m<sub>1</sub><b>r</b><sub>1</sub>+m<sub>2</sub><b>r</b><sub>2</sub>)/M<br>&#956;<b>r'' 
+          = </b>f <b>r/</b>r<b> </b><br>&#956; = m<sub>1</sub>m<sub>2</sub>/m<sub>1</sub>+m<sub>2 
+          </sub>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="center">
+            <i><img src="./nuclear_binary_system_EJS.png">
+            </i>
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Since we know that
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          &#956;<b>r'' = </b>f <b>r/</b>r
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            we can solve for <b>r'' </b>giving
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            <b>r''</b> = (f/&#956;) <b>r</b>/r
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Seperating this into x- and y-components gives
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            d<sup>2</sup>x/dt<sup>2</sup> = (f/&#956;)*x/&#8730;(x<sup>2</sup>+y<sup>2</sup>)
+          </p>
+          <p style="margin-top: 0" align="left">
+            d<sup>2</sup>y/dt<sup>2 </sup>= (f/&#956;)*y/&#8730;(x<sup>2</sup>+y<sup>2</sup>)
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Next, we need to find the force. Using the WOODS-SAXON spherically 
+            symmetric potential which is given by
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            V(r) = -V0*ff(r,R,a)
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            where ff(r,R,a) is a Fermi-function form factor given by
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            ff(r,R,a) = [1+exp(r-R/a)]<sup>-1</sup>,
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            and the parameters are
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Vo = 52.06 MeV
+          </p>
+          <p style="margin-top: 0" align="left">
+            a = 0.662 fm
+          </p>
+          <p style="margin-top: 0" align="left">
+            R = R0*A^(1/3), Ro = 1.26 fm.
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Since we know that a potential is defined as V(r) = &#8747; f(r)&#8729;dr,
+          </p>
+          <p style="margin-top: 0" align="left">
+            we can find f(r) by taking the derivative of V(r) w.r.t. r. We get
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            f(r) = -V0*exp(r-R/a)/{a*[1+exp(r-R/a)]}.
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            This is then inserted into the equations of motion giving
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            d<sup>2</sup>x/dt<sup>2</sup> = 
+            -V0*exp((r-R)/a)*x/{a*&#956;*[1+exp((r-R)/a)]*&#8730;(x<sup>2</sup>+y<sup>2</sup>)}
+          </p>
+          <p style="margin-top: 0" align="left">
+            d<sup>2</sup>y/dt<sup>2 </sup>= 
+            -V0*exp((r-R)/a)*y/{a*&#956;*[1+exp((r-R)/a)]*&#8730;(x<sup>2</sup>+y<sup>2</sup>)}
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            Solving these equations give the x- and y-coordinates of the 
+            center of mass which in turn give the x- and y-coodinates of m<sub>1</sub> 
+            and m<sub>2</sub>, respectively.
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            To ensure unit compatibility, let
+          </p>
+          <p style="margin-top: 0" align="left">
+            x = X*a0
+          </p>
+          <p style="margin-top: 0" align="left">
+            y = Y*a0
+          </p>
+          <p style="margin-top: 0" align="left">
+            a = A*a0
+          </p>
+          <p style="margin-top: 0" align="left">
+            R = R*a0
+          </p>
+          <p style="margin-top: 0" align="left">
+            t = T*tau
+          </p>
+          <p style="margin-top: 0" align="left">
+            V0 = V0*Eb
+          </p>
+          <p style="margin-top: 0" align="left">
+            m1 = M1*m0
+          </p>
+          <p style="margin-top: 0" align="left">
+            m2 = M2*m0
+          </p>
+          <p style="margin-top: 0" align="left">
+            &#956; = &#956;*m0
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            The equations of motion then become
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            d<sup>2</sup>X/dT<sup>2</sup> = 
+            -V0*exp((sqrt(X^2+Y^2)-R)/A)*X/{A*&#956;*[1+exp((sqrt(X^2+Y^2)-R)/A)]^2*&#8730;(X<sup>2</sup>+Y<sup>2</sup>)}
+          </p>
+          <p style="margin-top: 0" align="left">
+            d<sup>2</sup>Y/dT<sup>2 </sup>= 
+            -V0*exp((sqrt(X^2+Y^2)-R)/A)*Y/{A*&#956;*[1+exp((sqrt(X^2+Y^2)-R)/A)]^2*&#8730;(X<sup>2</sup>+Y<sup>2</sup>)}
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            after arbitrarily setting (Eb*tau^2 / m0*a0^2) =1.
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Solving the above expression for tau, we see that the one second 
+            is equivalent to 1.02E-22 seconds of simulation time.
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            To determine the initial conditions, we set t=0, <b>r</b><sub>CM</sub>=0, 
+            and d<b>r</b><sub>CM</sub>/dt=<b>v</b><sub>CM</sub>=0.
+          </p>
+          <p style="margin-top: 0" align="left">
+            This gives
+          </p>
+          <p style="margin-top: 0" align="left">
+            <b>r</b><sub>1,0</sub> = -(m2/m1)*<b>r</b><sub>2,0</sub>
+          </p>
+          <p style="margin-top: 0" align="left">
+            and
+          </p>
+          <p style="margin-top: 0" align="left">
+            <b>v</b><sub>1,0</sub> = -(m2/m1)*<b>v</b><sub>2,0 ,</sub><br>
+          </p>
+          <p style="margin-top: 0" align="left">
+            or in component form:
+          </p>
+          <p style="margin-top: 0" align="left">
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            x<sub>1,0</sub> = -(m2/m1)*x<sub>2,0 </sub>
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            y<sub>1,0</sub> = -(m2/m1)*y<sub>2,0</sub>
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            vx<sub>1,0</sub> = -(m2/m1)*vx<sub>2,0</sub>
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p style="margin-top: 0" align="left">
+            vy<sub>1,0</sub> = -(m2/m1)*vy<sub>2,0 </sub>
+          </p>
+          <p style="margin-top: 0" align="left">
+            <br>
+            
+          </p>
+          <p style="margin-top: 0" align="left">
+            Setting either component of x=0 makes the y-component a maximum. 
+            For y we choose 1.
+          </p>
+          <p style="margin-top: 0" align="left">
+            Similarly this would make the y-component of velocity zero, the 
+            the x-component would be a maximum.
+          </p>
+          <p style="margin-top: 0" align="left">
+            For vx we chose 0.085.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Center of Mass</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[r]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mu]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R0]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[V0]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[M]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[CMx]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[CMy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Separate Masses</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[m1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[A]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mp]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mn]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+t = 0;
+mp = 1.00727647;            // proton mass
+mn = 1.00866501;            // neutron mass
+m1 = mn/mp;                 // m1 is mass of neutron in proton units
+m2 = 4.002603-mn;           // mass of He nucleus minus one neutron
+m2 = m2/mp;                 // m2 in proton units
+M = m1+m2;                  // total mass
+A = 4;                      // atomic mass number
+V0 = 52.06;                 // potential of the system (unitless)
+a = 0.662;                  // skin thickness of the nucleus (unitless)
+R0 = 1.26;                  // approx experimental nucleon radius(unitless)
+R = R0*Math.cbrt(A);        // radius of the nucleus (unitless)
+mu = m1*m2/M;               // reduced mass (proton units)
+
+// size of the masses (unitless)
+R1 = R0;                      // radius of m1
+R2 = R0*Math.cbrt(A-1);       // radius of m2
+
+dt = .05;                     // time increment
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Initial Pos, Vel</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// center of mass of the binary system (in fm)
+// CMx = (m1*x1 + m2*x2)/M;
+// CMy = (m1*y1 + m2*y2)/M;
+// set center of masses to be the origin
+CMx = 0;
+CMy = 0;
+
+// initial positions for m1 and m2
+x2 = 0;
+x1 = -(m2/m1)*x2;
+
+y2 = 1;
+y1 = -(m2/m1)*y2;
+
+vy2 = 0;
+vy1 = -(m2/m1)*vy2;
+
+vx2 = 0.085;
+vx1 = -(m2/m1)*vx2;
+
+//initial positions for reduced mass
+vx = vx2-vx1;
+vy = vy2-vy1;
+x = x2-x1;
+y = y2-y1;
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Events>
+</Events>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="x">vx</Rate>
+<Rate state="y">vy</Rate>
+<Rate state="vx">Force(x,y)*(x/r)/mu</Rate>
+<Rate state="vy">Force(x,y)*(y/r)/mu</Rate>
+<Rate state=""></Rate>
+<Method>RungeKutta</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>10.2e-21</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Components</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// x- and y-components of masses m1 and m2
+x1 = CMx - m2*x/M;
+y1 = CMy - m2*y/M;
+x2 = CMx + m1*x/M;
+y2 = CMy + m1*y/M;
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Lib Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// compute the force given relative x- and y-coordinates
+public double Force(double x, double y) {
+  r = Math.sqrt(x*x+y*y);
+  double ep = Math.exp((r-R)/a);
+  double eps = a*Math.pow((1+ep),2);
+  double f = -V0*(ep/eps);            // the Woods-Saxon force
+  return f;
+  }
+
+public void Reset() {
+  _view.resetTraces();
+  }
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">plottingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Frame"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["102,140"]]></Property>
+<Property name="size"><![CDATA["429,442"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[-5]]></Property>
+<Property name="maximumX"><![CDATA[5]]></Property>
+<Property name="minimumY"><![CDATA[-5]]></Property>
+<Property name="maximumY"><![CDATA[5]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Neutron-Core Interaction, Helium"]]></Property>
+<Property name="showAxes"><![CDATA[true]]></Property>
+<Property name="titleX"><![CDATA["x (fm)"]]></Property>
+<Property name="majorTicksX"><![CDATA[true]]></Property>
+<Property name="titleY"><![CDATA["y (fm)"]]></Property>
+<Property name="interiorBackground"><![CDATA[192,192,255]]></Property>
+<Property name="background"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="foreground"><![CDATA[DARKGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">m2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="sizeX"><![CDATA[R2]]></Property>
+<Property name="sizeY"><![CDATA[R2]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+<Property name="fillColor"><![CDATA[CYAN]]></Property>
+<Property name="drawingLines"><![CDATA[true]]></Property>
+<Property name="drawingFill"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">m1</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="sizeX"><![CDATA[R1]]></Property>
+<Property name="sizeY"><![CDATA[R1]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">m1_trace</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[y1]]></Property>
+<Property name="memory"><![CDATA[20]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">m2_trace</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[y2]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[CYAN]]></Property>
+<Property name="xLabel"><![CDATA["x"]]></Property>
+<Property name="yLabel"><![CDATA["y"]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="secondaryColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">rm_trace</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">cm</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[CMx]]></Property>
+<Property name="y"><![CDATA[CMy]]></Property>
+<Property name="sizeX"><![CDATA[0.3]]></Property>
+<Property name="sizeY"><![CDATA[0.3]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">image</Property>
+<Property name="parent">plottingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">legend_rm</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[4]]></Property>
+<Property name="y"><![CDATA[3]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">legend_m1</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[4]]></Property>
+<Property name="y"><![CDATA[4]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">legend_m2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[4]]></Property>
+<Property name="y"><![CDATA[3.5]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">text_rm</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[6.9]]></Property>
+<Property name="y"><![CDATA[3]]></Property>
+<Property name="sizeX"><![CDATA[3]]></Property>
+<Property name="sizeY"><![CDATA[.5]]></Property>
+<Property name="text"><![CDATA["reduced mass"]]></Property>
+<Property name="font"><![CDATA[Arial Narrow,PLAIN,6]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">text_m1</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[5.8]]></Property>
+<Property name="y"><![CDATA[4.1]]></Property>
+<Property name="sizeX"><![CDATA[.7]]></Property>
+<Property name="sizeY"><![CDATA[.4]]></Property>
+<Property name="text"><![CDATA["m1"]]></Property>
+<Property name="font"><![CDATA[Arial Narrow,PLAIN,6]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">text_m2</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[5.8]]></Property>
+<Property name="y"><![CDATA[3.55]]></Property>
+<Property name="sizeX"><![CDATA[.8]]></Property>
+<Property name="sizeY"><![CDATA[.4]]></Property>
+<Property name="text"><![CDATA["m2"]]></Property>
+<Property name="font"><![CDATA[Arial Narrow,PLAIN,6]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[GRID:4,2,3,3]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="border"><![CDATA[1,1,1,1]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">timeLabel</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="text"><![CDATA["Time(10^-22 s)="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">time</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">atomicMassLab</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="text"><![CDATA["Atomic Mass(u)= "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">atomicMass</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[M]]></Property>
+<Property name="value"><![CDATA[M]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[Reset ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">atomicNumLab</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="text"><![CDATA["A= "]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">atomicNumber</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[A]]></Property>
+<Property name="value"><![CDATA[A]]></Property>
+<Property name="action"><![CDATA[Reset ()]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

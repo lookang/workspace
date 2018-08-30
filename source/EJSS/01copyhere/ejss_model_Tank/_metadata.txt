@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: First Order DE (Concentration Changes in Tank)
+logo-image: 
+author: Lam Meng Hwee
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: Tank.ejss
+main-script: 
+main-simulation: Tank_Simulation.xhtml
+available-languages: 
+html-contents: Tank_Contents.xhtml
+html-main: Tank.xhtml
+page-title: First Order DE (Concentration Changes in Tank)
+page-index: Tank_Simulation.xhtml

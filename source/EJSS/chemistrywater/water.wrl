@@ -1,0 +1,118 @@
+#VRML V2.0 utf8 CosmoWorlds V1.0
+
+Group {
+  children	[
+    Group {
+      children	[
+	WorldInfo {
+	  title	"water.wrl"
+	  info	"Insight II version 95.0.6"
+	}
+	Background {
+	  skyColor	0 0 0
+	}
+	NavigationInfo {
+	  type	[ "EXAMINE",
+		    "ANY" ]
+	}
+	Collision {
+	  children	Group {
+	    children	[
+	      Shape {
+		appearance	Appearance {
+		  material	DEF mat_255_0 Material {
+		    diffuseColor	1 0 0
+		  }
+
+		}
+
+		geometry	IndexedLineSet {
+		  coord	Coordinate {
+		    point	[ -0.037209 0.049572 -0.002014,
+			      0.426791 0.056072 0.120986,
+			      -0.037209 0.049572 -0.002014,
+			      -0.168709 -0.399928 -0.107014 ]
+		  }
+
+		  coordIndex	[ 0, 1, -1, 2, 3, -1 ]
+		}
+
+	      }
+	      Shape {
+		appearance	Appearance {
+		  material	DEF mat_255_255 Material {
+		    diffuseColor	1 1 1
+		  }
+
+		}
+
+		geometry	IndexedLineSet {
+		  coord	DEF _v2%3 Coordinate {
+		    point	[ 0.890791 0.062572 0.243986,
+			      0.426791 0.056072 0.120986,
+			      -0.300209 -0.849428 -0.212014,
+			      -0.168709 -0.399928 -0.107014 ]
+		  }
+
+		  coordIndex	[ 0, 1, -1, 2, 3, -1 ]
+		}
+
+	      }
+	      Transform {
+		children	Shape {
+		  appearance	Appearance {
+		    material	USE mat_255_0
+
+		  }
+
+		  geometry	DEF sphere Sphere {
+		  }
+
+		}
+
+		translation	-0.037209 0.049572 -0.002014
+		scale	1.35 1.35 1.35
+	      }
+	      Transform {
+		children	Shape {
+		  appearance	Appearance {
+		    material	USE mat_255_255
+
+		  }
+
+		  geometry	USE sphere
+
+		}
+
+		translation	0.890791 0.062572 0.243986
+		scale	1.1 1.1 1.1
+	      }
+	      Transform {
+		children	Shape {
+		  appearance	Appearance {
+		    material	USE mat_255_255
+
+		  }
+
+		  geometry	USE sphere
+
+		}
+
+		translation	-0.300209 -0.849428 -0.212014
+		scale	1.1 1.1 1.1
+	      }
+	    ]
+	  }
+
+	  collide	FALSE
+	}
+      ]
+    }
+    DEF VP1 Viewpoint {
+      position	0.295291 -0.274928 11.8156
+      orientation	0 0 1  0
+      fieldOfView	0.785398
+      description	"viewpoint6"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+title: Prob 3.2: Two Vectors Shown on a Grid
+logo-image: prob03_02/prob03_02.png
+author: Andreu Glasmann; Wolfgang Christian; Mario Belloni
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: ag.png;./wc_icon.png;./mjb_icon.png
+main-script: prob03_02_Simulation.js
+main-simulation: prob03_02_Simulation.xhtml
+available-languages: 
+html-contents: prob03_02_Contents.xhtml
+html-main: prob03_02.xhtml
+page-title: Prob 3.2: Two Vectors Shown on a Grid
+page-index: prob03_02_Simulation.xhtml
+resource: wc_icon.png
+resource: ag.png
+resource: prob03_02/ejss_html_prob03_02.html
+resource: prob03_02/prob03_02.png
+resource: mjb_icon.png

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+
+    <head>
+        <title>Circular Drumhead Modes</title>
+        <link href="../resources/ejss.css" rel="stylesheet" type="text/css" />
+    </head>
+
+<body><p style="text-align:center"><img src="mode34.png" /></p><p style="text-align:center">Circular
+            drumhead with radial mode n=3 and angular mode m=4.</p>
+    <h1>Vibrating Drumhead</h1>
+    <p>The Vibrating Drumhead model displays the analytical wave equation solution for a thin <a
+                href="http://en.wikipedia.org/wiki/Vibrations_of_a_circular_drum"> circular
+                membrane</a> with a fixed boundary. The spatial part of the analytic solution
+            u(r,&#952;) is expressed in polar coordinates using <a
+                href="http://en.wikipedia.org/wiki/Bessel_function">Bessel functions</a> and
+            sinusoidal functions. The complete solution is a superposition (sum) of single frequency
+            oscillatory solutions. These vibrations are known as modes and are enumerated by
+            integers <i>m</i> and <i>n</i> where <i>n</i> is a positive integer that counts the
+            number of radial nodes and <i>m</i> counts the number of azimuthal (angular) nodes. This
+            simulation uses the cosine solution if <i>m&#8805;</i><i>0</i> and the sine solution if
+                <i>m&lt;0</i>.</p>
+        
+        <p><img src="mode_equ.jpg" /></p><p>The constant
+                <i>k</i><sub>n,m</sub> is chosen so that the displacement <i>u</i> is zero at the
+            boundary. Drumhead modes are not static but oscillate with a frequency
+                &#969;<sub>n,m</sub> that depends on the drumhead tension and mass density and are
+            chosen so that the lowest frequency is one for the fundamental mode, <i>n</i>=1 and
+                <i>m</i>=0. The mode frequencies are not harmonic (integer multiples of the lowest
+            frequency) but solutions with the same <i>n</i> and <i>|m|</i> have the same frequency
+            and are said to be degenerate.</p><p>This simulation shows single mode oscillations.
+            Although vibrating systems, such as a rectangular plate or a circular drumhead, can
+            oscillate in a single mode, the complete solution is often more complex because these
+            systems usually oscillate simultaneously in many modes. </p><h2>Visualization</h2><p>The simulation shows either a two-dimensional or a three-dimensional view of a single-mode
+            drumhead oscillation. In the two-dimensional view, large amplitude regions (anti-nodes)
+            are bright red or blue whereas low amplitude regions (nodes) are dark.</p><p><b>Note:</b> That the algorithm used to visualize the solution may fail
+            for very large values of m or n. The view's spatial resolution is limited because the
+            drumhead displacement is computed on a finite spatial grid. The two-dimensional view is
+            faster and has a finer grid to it usually provides a better visualization for large mode
+            numbers.  Increasing the mode integers will increase the vibration frequency and may
+            requite a smaller simulation time-step &#916;<i>t</i> to produce a smooth
+            visualization.</p><h2>References</h2><ul>
+            <li>
+                <p>&quot;Chladni Patterns on Drumheads: A Physics of Music Experiment,&quot; Randy
+                    Worland, The Physics Teacher, (in press). </p>
+            </li>
+            <li>
+                <p>&quot;Acoustics of Percussion Instruments - Part II,&quot; Thomas D. Rossing, The
+                    Physics Teacher. <strong>15</strong>(5), 278-288 (1977), DOI:<a
+                        href="http://dx.doi.org/10.1119/1.2339633">10.1119/1.2339633</a></p>
+            </li>
+            <li>
+                <p>&quot;Chladni's law for vibrating plates,&quot; Thomas D. Rossing, Am. J. Phys.
+                        <strong>50</strong>(3), 271-274 (1982), DOI:<a
+                        href="http://dx.doi.org/10.1119/1.12866">10.1119/1.12866</a></p>
+            </li>
+        </ul><h2> Credits:</h2><p> The Vibrating Drumhead model was developed by Wolfgang Christian
+            using the Easy Java Simulations (EJS) version 5 authoring and modeling tool. Information
+            about EJS is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/"
+                    >http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP ComPADRE collection
+                    &lt;<b><a href="http://www.compadre.org/OSP/"
+                >http://www.compadre.org/OSP/</a></b>&gt;.</p>
+</body>
+</html>

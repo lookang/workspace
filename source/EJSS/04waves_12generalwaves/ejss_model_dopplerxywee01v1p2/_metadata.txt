@@ -1,0 +1,53 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170429. Visit http://www.um.es/fem/Ejs
+title: Doppler Effect Sound Wave JavaScript Applet
+logo-image: doppler/dopplers.png
+author: Fu-Kwun Hwang and remixed by lookang (weelookang@gmail.com); lookang
+copyright: Creative Commons Attribution
+preferred-width: 800
+preferred-height: 600
+author-image: 01authorfu-kwun.hwang.png;./01authorlookang50x50.png
+source: dopplerxywee01v1p2.ejss
+main-script: 
+main-simulation: dopplerxywee01v1p2_Simulation.xhtml
+es-main-script: 
+es-main-simulation: dopplerxywee01v1p2_Simulation_es.xhtml
+zh CN-main-script: 
+zh CN-main-simulation: dopplerxywee01v1p2_Simulation_zh CN.xhtml
+sv-main-script: 
+sv-main-simulation: dopplerxywee01v1p2_Simulation_sv.xhtml
+available-languages: es,zh CN,sv
+html-description: dopplerxywee01v1p2_Intro_1.html
+html-contents: dopplerxywee01v1p2_Contents.xhtml
+html-main: dopplerxywee01v1p2.xhtml
+page-title: Intro Page
+page-index: dopplerxywee01v1p2_Intro_1.html
+page-title: Doppler Effect Sound Wave JavaScript Applet
+page-index: dopplerxywee01v1p2_Simulation.xhtml
+es-html-contents: dopplerxywee01v1p2_Contents_es.xhtml
+es-html-main: dopplerxywee01v1p2_es.xhtml
+es-page-title: Intro Page
+es-page-index: dopplerxywee01v1p2_Intro_1.html
+es-page-title: Doppler Effect Sound Wave JavaScript Applet
+es-page-index: dopplerxywee01v1p2_Simulation_es.xhtml
+zh CN-html-contents: dopplerxywee01v1p2_Contents_zh CN.xhtml
+zh CN-html-main: dopplerxywee01v1p2_zh CN.xhtml
+zh CN-page-title: Intro Page
+zh CN-page-index: dopplerxywee01v1p2_Intro_1.html
+zh CN-page-title: Doppler Effect Sound Wave JavaScript Applet
+zh CN-page-index: dopplerxywee01v1p2_Simulation_zh CN.xhtml
+sv-html-contents: dopplerxywee01v1p2_Contents_sv.xhtml
+sv-html-main: dopplerxywee01v1p2_sv.xhtml
+sv-page-title: Intro Page
+sv-page-index: dopplerxywee01v1p2_Intro_1.html
+sv-page-title: Doppler Effect Sound Wave JavaScript Applet
+sv-page-index: dopplerxywee01v1p2_Simulation_sv.xhtml
+resource: doppler/doppler.png
+resource: doppler/dopplerjava.png
+resource: doppler/dopplers.png
+resource: doppler/ear.gif
+resource: doppler/SoundOff.gif
+resource: doppler/SoundOn.gif
+resource: doppler/toy_plastic_inflatable_ball_bounce_on_floor.mp3
+resource: full_screen.png
+resource: 01authorfu-kwun.hwang.png
+resource: 01authorlookang50x50.png

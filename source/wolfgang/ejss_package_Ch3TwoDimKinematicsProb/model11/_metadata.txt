@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+title: Prob 3.10: Aim the Projectile to Hit the Lamborghini
+logo-image: prob03_10/prob03_10.png
+author: Andreu Glasmann; Wolfgang Christian; Mario Belloni
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: ag.png;./wc_icon.png;./mjb_icon.png
+main-script: prob03_10_Simulation.js
+main-simulation: prob03_10_Simulation.xhtml
+available-languages: 
+html-contents: prob03_10_Contents.xhtml
+html-main: prob03_10.xhtml
+page-title: Prob 3.10: Aim the Projectile to Hit the Lamborghini
+page-index: prob03_10_Simulation.xhtml
+resource: wc_icon.png
+resource: prob03_10/ejss_html_prob03_10.html
+resource: prob03_10/prob03_10.png
+resource: prob03_10/r_ghini.gif
+resource: ag.png
+resource: mjb_icon.png

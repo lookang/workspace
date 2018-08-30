@@ -1,0 +1,2548 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Micrometer best java applet made in EJS open source creative commons license ]]></Title>
+<Copyright><![CDATA[]]></Copyright>
+<Keywords><![CDATA[Micrometer ]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[secondary]]></Level>
+<Language><![CDATA[english]]></Language>
+<Abstract><![CDATA[http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=683.msg2451#msg2451
+Original Source code by Fu-Kwun Hwang http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=567.msg2364#msg2364 Derived work by Wee Loo Kang under creative commons http://creativecommons.org/licenses/by/2.5/tw/deed.en
+http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=683.0
+Micrometer Ejs open source creative commons license world best java applet 
+Micrometers use the principle of a screw to amplify small distances that are too small to measure directly into large rotations of the screw that are big enough to read from a scale. The accuracy of a micrometer derives from the accuracy of the thread form that is at its heart. The basic operating principles of a micrometer are as follows:
+The amount of rotation of an accurately made screw can be directly and precisely correlated to a certain amount of axial movement (and vice-versa), through the constant known as the screw's lead. A screw's lead is the distance it moves forward axially with one complete turn (360�). (In most threads [that is, in all single-start threads], lead and pitch refer to essentially the same concept.)
+With an appropriate lead and major diameter of the screw, a given amount of axial movement will be amplified in the resulting circumferential movement.
+The micrometer has most functional physical parts of a real micrometer.
+Frame (Orange)
+The C-shaped body that holds the anvil and barrel in constant relation to each other. It is thick because it needs to minimize expansion, and contraction, which would distort the measurement. The frame is heavy and consequently has a high thermal mass, to prevent substantial heating up by the holding hand/fingers. has a text 0.01 mm for smallest division of instrument has a text 2 rounds = 100 = 1.00 mm to allow association to actual micrometer
+Anvil (Gray)
+The shiny part that the spindle moves toward, and that the sample rests against.
+Sleeve / barrel / stock (Yellow)
+The stationary round part with the linear scale on it. Sometimes vernier markings.
+Lock nut / lock-ring / thimble lock (Blue)
+The knurled part (or lever) that one can tighten to hold the spindle stationary, such as when momentarily holding a measurement.
+Screw
+(not seen) The heart of the micrometer It is inside the barrel.
+Spindle (Dark Green)
+The shiny cylindrical part that the thimble causes to move toward the anvil.
+Thimble (Green)
+The part that one's thumb turns. Graduated markings.
+Ratchet (Teal)
+(not shown ) Device on end of handle that limits applied pressure by slipping at a calibrated torque.
+This applet has an object (Black)
+with slider on left top to control the y-motion of the object into the anvil and spindle (jaws), the graphics also allows drag action.
+with slider on left bottom to control the x-size of the object into the anvil and spindle (jaws).
+On the left bottom slider is the zero error control to allow of exploring with if the micrometer has either +0.15 mm (max) or -0.15mm (min) zero error. The are check boxes:
+hint: guide lines and arrows to indicate the region of interest plus the accompanying rationale for the answer.
+answer: shows the measurement d = Huh mm
+lock: allows simulating of the lock function in real micrometer which disable changes to the position of the spindle then by the measurement is unchangeable.
+On the bottom there is a green slider to control the position of the spindle, drag on any part of the view also drags the spindle.
+There is 2 buttons left and right fine control to allow for single incremental change of the measurement, to allow learners to sense the rotation simulation of the spindle with the many lines to simulate the coarse pattern to increase friction between fingers and on the thimble and ratchet.
+The reset button restores learning environment to default setting.]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<Logo>./Micrometer/mircometer.PNG</Logo>
+<Author><![CDATA[Fu-Kwun Hwang and modified by Loo Kang Wee (weelookang@gmail.com) and Wolfgang Christian]]></Author>
+<AuthorLogo>./Micrometer/lookangphoto.png</AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./Micrometer/<img width=601
+height=490 id=;./Micrometer/Micrometer.html;./Micrometer/lookangphoto.png;./Micrometer/mircometer.PNG;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./Micrometer/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Micrometer</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Micrometer</Title>
+  <External>true</External>
+  <![CDATA[
+./Micrometer/Micrometer.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Intro Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Intro Page</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        ﻿ body { margin-top: 2%; margin-right: 3%; margin-bottom: 5%; margin-left: 3%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        body { font-family: Georgia, Times New Roman, Times, serif; color: purple; background-color: #C8DFD0 }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <a href=" http://weelookang.blogspot.sg/2010/06/ejs-open-source-micrometer-java-applet.html" cr="true">http://weelookang.blogspot.sg/2010/06/ejs-open-source-micrometer-java-applet.html</a>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>22</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>coordinate</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[range]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[range]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmin]]></Name>
+<Value><![CDATA[-range]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmax]]></Name>
+<Value><![CDATA[range]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymin]]></Name>
+<Value><![CDATA[-range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymax]]></Name>
+<Value><![CDATA[range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[range/20]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[particle size]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size2]]></Name>
+<Value><![CDATA[size/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[stroke]]></Name>
+<Value><![CDATA[2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zero]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pi]]></Name>
+<Value><![CDATA[Math.PI]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[show]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mx]]></Name>
+<Value><![CDATA[25]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[my]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mxs]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mys]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zoom]]></Name>
+<Value><![CDATA[0.9999715]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[autoscale]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>basic</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[-50.443599493029154]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[34]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[n is the number of markers 34 to draw till the end of stage ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n2]]></Name>
+<Value><![CDATA[n/5]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[n2 is counter of the number 0 5 10 15 for drawing ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xv]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yv]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xi]]></Name>
+<Value><![CDATA[size*1.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dx]]></Name>
+<Value><![CDATA[xmax/n]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tx]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n2]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[txt]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[[n2]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n3]]></Name>
+<Value><![CDATA[21]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hdx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hdxthread]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hythread]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[hythreadrachet]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>greendial</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[np]]></Name>
+<Value><![CDATA[6]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h]]></Name>
+<Value><![CDATA[3*size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h2]]></Name>
+<Value><![CDATA[h*1.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xp]]></Name>
+<Value><![CDATA[{3*h,1.5*h,0,0,1.5*h,3*h}]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[np]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yp]]></Name>
+<Value><![CDATA[{h2,h2,h,-h,-h2,-h2}]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[np]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[test]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>rachet</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[npr]]></Name>
+<Value><![CDATA[6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xpr]]></Name>
+<Value><![CDATA[3*h]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ypr]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[step0]]></Name>
+<Value><![CDATA[0.11767]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[first micrometer step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[step]]></Name>
+<Value><![CDATA[step0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[current micrometer step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[direction]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>view</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[w]]></Name>
+<Value><![CDATA[0.9*ymax]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[w width to be drawn]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L0]]></Name>
+<Value><![CDATA[w*1.81]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[unknow]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[w2]]></Name>
+<Value><![CDATA[Math.random()*w]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[w2 is width of mircometer]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[d]]></Name>
+<Value><![CDATA[108.57064311]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[d is width of micrometer on the screen]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Lmax]]></Name>
+<Value><![CDATA[L0-w2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[L]]></Name>
+<Value><![CDATA[Lmax]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dmin]]></Name>
+<Value><![CDATA[w2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[0.75*size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xzero]]></Name>
+<Value><![CDATA[xi+d]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[id]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[iy]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dy]]></Name>
+<Value><![CDATA[2*h/(n3-1)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ci]]></Name>
+<Value><![CDATA[-pi/4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dc]]></Name>
+<Value><![CDATA[pi/2/(n3-1)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[c]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[R]]></Name>
+<Value><![CDATA[h/Math.sin(-ci)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yt]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[5]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[txty]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[[5]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tc]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[error]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>language</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[l_play]]></Name>
+<Value><![CDATA["play"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_pause]]></Name>
+<Value><![CDATA["pause"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_reset]]></Name>
+<Value><![CDATA["reset"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_init]]></Name>
+<Value><![CDATA["initialize"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[label]]></Name>
+<Value><![CDATA["play"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_step]]></Name>
+<Value><![CDATA["step"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>text</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_msg]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[idv]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_msg_2]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[integerd]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[decimald]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[integerd1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[decimald1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_integerd]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_decimald]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showhint]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>lock</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[lock]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nolock]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>check</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[showAnswerFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[answer]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_answer]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_enterK1f]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[enterK1f]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[K1fcorrect]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[K1fcorrectbackground]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>magnify</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[showmagnify]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmagnify]]></Name>
+<Value><![CDATA[30]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymagnify]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[factor]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[wmagnify]]></Name>
+<Value><![CDATA[160]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ratio]]></Name>
+<Value><![CDATA[wmagnify/factor]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>drawingscalelinesandnumbers</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+_view.micrometerDrawingPanel.setAntialiasTextOn(true);
+_view.micrometerDrawingPanel.setAntialiasShapeOn(true);
+
+for(int i=0;i<n;i++){
+ xv[i]=xi+i*dx; // drawing lines marking on the main scale
+  if(i%2==0){
+   yv[i]=size2; // ALL upper part y coordinate of line size2 which is a fraction of range
+   
+   if(i%10==0){
+    yv[i]*=2;    // *= is not equal to 2 0,5,10,15y coordinate of line 2 
+    
+    if(i%20==0)
+    
+    yv[i]*=1.25;  // 0,10 y position coordinate of line  
+  tx[i/10]=xv[i];  // generate the x coordinate of 0 5 10 15
+ txt[i/10]=(i/2)+""; // clever way to make txt 0 5 10 15
+ // when i = 10 , txt[1] = 5; when i = 20 , txt [2] = 10, when i =30, txt = 15
+ 
+   }
+  }else yv[i]=-size2; // to flip the lines downwards
+}
+ _step(); // no idea what this do 
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//mx=0;// for zoom to be centred
+//my=0;
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if(lock) return;
+d=d+direction*step;
+d=Math.max(0,d);
+d=Math.min(160,d);
+if(y<=size2) d=Math.max(d,w2);
+L=L0-d;
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>compute markings</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+xzero=xi+d;
+zero=0.;
+id=(int)(d/dx*50.);
+tc=0;
+for(int i=0;i<n3;i++){
+ iy=id+i-10+error;
+ if(iy<0)iy+=50;
+ iy=iy%50;
+ c=ci+dc*i;
+ hy[i]=R*Math.sin(c);
+ 
+ hythread[i] = 1.2*R*Math.sin(c); // draw thread at higher y to fill the green dial broad part
+ hythreadrachet[i] = 0.5*R*Math.sin(c);// draw thread at lower y to fill the rachet part
+ 
+ if(iy%5==0){
+  if(iy%10==0)hdx[i]=1.5*size; // if iy%10==0 draw a 1.5*size line
+  else hdx[i]=size; // if iy%5==0 draw a size line
+ if(tc<5){
+  yt[tc]=hy[i];
+  txty[tc]=iy+"";
+  tc++;
+ }
+ }else hdx[i]=size2; // the rest draw a size2 line
+  hdxthread[i]=-5*size2; // lines to make thread same and draw -5*size2 direction
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>show answer</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// id is 923 and idv = 9.23
+if(id/10.==(int)(id/10.)) {
+    idv=(id/100.)+"0"; // to solve problem of id = 920 and idv = 9.20
+
+                            }
+else {
+  idv=id/100.+"";
+  
+      }
+    answer= Double.parseDouble(idv); // convert to double to be used in check
+    l_answer=idv+"";
+
+if(show==true)
+{
+    l_msg="d = "+idv+" mm"; // wanted to make clearer but did not
+ }
+  else {
+  l_msg="d = ??? mm";
+       }
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>hint</Name>
+<Active>false</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// integerd =(int)(id/100.);
+// id is 840.0 for 8.40 mm reading
+
+integerd =(int)(id/100.); // integer ( 840.0/100) = 8.0
+decimald =(-integerd*100+id)/100.;
+l_integerd = double2String(integerd,1.)+"0 mm"; // +"0" is the trick to create extra zero
+// codes added to address Ered post on making significant of zero error clear
+if ( error == 0 ) {
+//  l_decimald = double2String(decimald,1000.0 )+" mm";
+
+if(decimald*10.==(int)(decimald*10.))
+{
+    l_decimald = double2String(decimald,1000.0 )+"0 mm"; // to solve problem of id = 920 and idv = 9.20
+}
+else {
+ l_decimald = double2String(decimald,1000.0 )+" mm";
+      }
+}
+
+else { // zero not zero
+  
+  //l_decimald = double2String(decimald+error/100.,1000. )+ "-(" + error/(100.) + ") mm";
+//if(((decimald+error/100.)*10.)==(int)((decimald+error/100.)*10.)) {
+
+// only decimald is 0.20 and error is 0.10 for example
+if((decimald*10.==(int)(decimald*10.))&&(error/10.==(int)(error/10.))){
+l_decimald = double2String(decimald,1000. )+ "0-(" + error/(100.) + "0) mm"; // to solve problem of id = 920 and idv = 9.20
+                            }
+      
+// only decimald is 0.20      
+      else if((decimald*10.==(int)(decimald*10.))){
+l_decimald = double2String(decimald,1000. )+ "0-(" + error/(100.) + ") mm"; // to solve problem of id = 920 and idv = 9.20
+                            }
+
+
+// only error is 0.10
+else if((error/10.==(int)(error/10.))){
+l_decimald = double2String(decimald,1000. )+ "-(" + error/(100.) + "0) mm"; // to solve problem of id = 920 and idv = 9.20
+                            }
+else {
+l_decimald = double2String(decimald,1000. )+ "-(" + error/(100.) + ") mm";
+  
+      }
+
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>hintnew</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// integerd =(int)(id/100.);
+// id is 840.0 for 8.40 mm reading
+
+integerd =(int)(id/100.); // integer ( 840.0/100) = 8.0
+decimald =(-integerd*100+id)/100.;
+l_integerd = double2String(integerd,1.)+"0 mm"; // +"0" is the trick to create extra zero
+// codes added to address Ered post on making significant of zero error clear
+if ( error == 0 ) {
+//  l_decimald = double2String(decimald,1000.0 )+" mm";
+
+if(decimald*10.==(int)(decimald*10.))
+{
+    l_decimald = double2String(decimald,1000.0 )+"0 mm"; // to solve problem of id = 920 and idv = 9.20
+}
+else {
+ l_decimald = double2String(decimald,1000.0 )+" mm";
+      }
+}
+
+else { // zero not zero
+  
+  //l_decimald = double2String(decimald+error/100.,1000. )+ "-(" + error/(100.) + ") mm";
+//if(((decimald+error/100.)*10.)==(int)((decimald+error/100.)*10.)) {
+
+// only decimald is 0.20 and error is 0.10 for example
+integerd =(int)((id+error)/100.); // integer ( 840.0/100) = 8.0 // bug fixed for accounting with zero error 20January2012
+decimald =(-(integerd)*100+(id+error))/100.;
+l_integerd = double2String(integerd,1.)+"0 mm";
+if((decimald*10.==(int)(decimald*10.))&&(error/10.==(int)(error/10.))){
+l_decimald = double2String(decimald,1000. )+ "0-(" + error/(100.) + "0) mm"; // to solve problem of id = 920 and idv = 9.20
+                            }
+      
+// only decimald is 0.20      
+      else if((decimald*10.==(int)(decimald*10.))){
+l_decimald = double2String(decimald,1000. )+ "0-(" + error/(100.) + ") mm"; // to solve problem of id = 920 and idv = 9.20
+                            }
+
+
+// only error is 0.10
+else if((error/10.==(int)(error/10.))){
+l_decimald = double2String(decimald,1000. )+ "-(" + error/(100.) + "0) mm"; // to solve problem of id = 920 and idv = 9.20
+                            }
+else {
+l_decimald = double2String(decimald,1000. )+ "-(" + error/(100.) + ") mm";
+  
+      }
+
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>check</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if (showAnswerFlag==false)
+{ 
+K1fcorrect = "";
+}
+else
+{
+//Double.valueOf(l_enterK1f);
+//dDouble.valueOf(l_enterK1f);
+// enterK1f=Double.parseDouble(l_enterK1f);
+// enterK1f= valueOf(l_enterK1f);
+
+//if(l_answer.compareTo(l_enterK1f)==0){// exactly the same
+if(l_answer.compareTo(l_enterK1f)==0){
+K1fcorrect = "Great! You have the right answer!";
+K1fcorrectbackground = java.awt.Color.GREEN;
+}
+else {// different string but might be correct value
+// double a,b;
+// a=new Double(l_answer).doubleValue(); //or  a= Double.parseDouble(ans);
+ // or  b=Double.parseDouble(uvalue);
+ if(Math.abs(answer-enterK1f)<1.e-7){// same value but different digits or incorrect format
+K1fcorrect = " Check the number of digits ";
+K1fcorrectbackground = java.awt.Color.ORANGE;
+ }
+ 
+ else {// different value
+//double c;
+// c=new Double(l_enterK1f).doubleValue(); 
+
+K1fcorrect = " Incorrect, Your input is out by "+ double2String((answer - enterK1f),100000) ;
+K1fcorrectbackground = java.awt.Color.RED;
+ }
+}
+
+showAnswerFlag=false; // set back to false
+
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+mys=my;
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>zoom</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//xmin = (xmin-0)*zoom;
+//xmax = (xmax-0)*zoom;
+//ymin = (ymin-0)*zoom;
+//ymax =  (ymax-0)*zoom;
+if (showmagnify ==true) // to make magnify enable only after show ==true
+{
+  xmagnify=mx;
+  ymagnify=my;
+  }
+if (xmagnify >xmax)xmagnify = xmax; // prevent magnifer from going beyond
+if (xmagnify <xmin)xmagnify = xmin;
+if (ymagnify >ymax)ymagnify = ymax;
+if (ymagnify <xmin)ymagnify = xmin;
+  
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>chinese</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void zh_tw () {
+ l_play="����";
+ l_init="��l��";
+ l_reset="���]";
+ l_pause="�Ȱ�";
+ l_step="�e�i�@��";
+ label=l_play;
+}
+public void locale(String type){
+ if(type.equals("zh_tw"))zh_tw();
+ _initialize();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>lock</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void lock () {
+
+if ( lock ) {
+  lock=false;
+                  }
+else {
+lock=true;
+                    }
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>displaynumber</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+double dv;
+public String double2String(double v,double divider){
+ if(v>0)dv=0.5;
+ else if(v<0)dv=-0.5;
+ else dv=0;
+ return (int)(v*divider+dv)/divider+"";
+}
+
+// this code has to do with displaying the number 2.3 instead of 2.300000001 when using % %
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>check</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+double ddv;
+public Double ddouble2String(double v,double divider){
+ if(v>0)ddv=0.5;
+ else if(v<0)ddv=-0.5;
+ else ddv=0;
+ return (int)(v*divider+ddv)/divider;
+}
+
+// this code has to do with displaying the number 2.3 instead of 2.300000001 when using % %
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Turn Micrometer</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+Thread upThread;
+
+public void startRachet () {
+  if(lock){
+    _view.alert("micrometerFrame","Locked position.","The micrometer position is locked.");
+    return;
+  }
+  Runnable ratchet = new Runnable() {
+    public synchronized void run() {
+      while(upThread!=null) {
+        _model._step();
+        step*=1.1; // slowly increase micrometer step to speed rotation
+        try {
+          Thread.sleep(100);
+        } catch(InterruptedException ie) {
+        }
+      }
+    }
+  } ;
+  upThread=new Thread(ratchet);
+  upThread.start();
+}
+
+public void stopRachet () {
+  upThread=null;
+  step=step0;
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">micrometerFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Micrometer Model "]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["700,450"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">micrometerFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel4</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">slider_width</Property>
+<Property name="parent">panel4</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Sliderw22</Property>
+<Property name="parent">slider_width</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[w2]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[w]]></Property>
+<Property name="dragaction"><![CDATA[if(d<w2 && y<0.75*size)w2=d;
+if(y<=size2) w2=Math.min(d,w2);]]></Property>
+<Property name="background"><![CDATA[DARKGRAY]]></Property>
+<Property name="tooltip"><![CDATA["slider for object to measure, now reset to randomise object length"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel2</Property>
+<Property name="parent">panel4</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label</Property>
+<Property name="parent">panel2</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA[" Type in your value in mm!  "]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="background"><![CDATA[K1fcorrectbackground]]></Property>
+<Property name="tooltip"><![CDATA[" Slide the teal rotation buttons to a new reading and  Challenge yourself, check your understanding"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel3</Property>
+<Property name="parent">panel2</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel9</Property>
+<Property name="parent">panel3</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">l_enterK1f</Property>
+<Property name="parent">panel9</Property>
+<Property name="variable"><![CDATA["l_enterK1f"]]></Property>
+<Property name="action"><![CDATA[showAnswerFlag=true;
+enterK1f= Double.parseDouble(l_enterK1f);]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label2</Property>
+<Property name="parent">panel9</Property>
+<Property name="text"><![CDATA[" mm "]]></Property>
+<Property name="background"><![CDATA[K1fcorrectbackground]]></Property>
+<Property name="tooltip"><![CDATA["millimeter"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">K1fcheck</Property>
+<Property name="parent">panel3</Property>
+<Property name="variable"><![CDATA[%K1fcorrect%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[K1fcorrectbackground]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel5</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">checkPanel</Property>
+<Property name="parent">panel5</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">auto</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="variable"><![CDATA[autoscale]]></Property>
+<Property name="text"><![CDATA["auto"]]></Property>
+<Property name="mnemonic"><![CDATA["a"]]></Property>
+<Property name="actionon"><![CDATA[autoscale=true]]></Property>
+<Property name="actionoff"><![CDATA[autoscale=false]]></Property>
+<Property name="tooltip"><![CDATA["autoscale"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">hint</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[showhint]]></Property>
+<Property name="text"><![CDATA[hint:]]></Property>
+<Property name="mnemonic"><![CDATA[h]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="tooltip"><![CDATA["Hint"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">show2</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[show]]></Property>
+<Property name="text"><![CDATA[answer:]]></Property>
+<Property name="mnemonic"><![CDATA[a]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="tooltip"><![CDATA["Answer"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">lock2</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="position">south</Property>
+<Property name="variable"><![CDATA[lock]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["lock"]]></Property>
+<Property name="mnemonic"><![CDATA["l"]]></Property>
+<Property name="foreground"><![CDATA[0,128,255]]></Property>
+<Property name="tooltip"><![CDATA["lock is to prevent the reading from changing, say after measuring you want to show your friends :)"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">sliderPanel</Property>
+<Property name="parent">panel5</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">zeroerrorpanelwithvalues</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="borderJustification"><![CDATA[CENTER]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field2</Property>
+<Property name="parent">zeroerrorpanelwithvalues</Property>
+<Property name="position">north</Property>
+<Property name="variable"><![CDATA[error/100.]]></Property>
+<Property name="format"><![CDATA[" zero error = 0.00 mm "]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">errorSlider22</Property>
+<Property name="parent">zeroerrorpanelwithvalues</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[error]]></Property>
+<Property name="minimum"><![CDATA[-15]]></Property>
+<Property name="maximum"><![CDATA[15]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[31]]></Property>
+<Property name="tooltip"><![CDATA[slider for zero error]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel6</Property>
+<Property name="parent">panel5</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Sliderd</Property>
+<Property name="parent">panel6</Property>
+<Property name="variable"><![CDATA[d]]></Property>
+<Property name="minimum"><![CDATA[dmin]]></Property>
+<Property name="maximum"><![CDATA[w*1.8]]></Property>
+<Property name="enabled"><![CDATA[!lock]]></Property>
+<Property name="dragaction"><![CDATA[if(y<size2 && d<w2)d=w2;
+L=L0-d;]]></Property>
+<Property name="background"><![CDATA[GREEN]]></Property>
+<Property name="tooltip"><![CDATA["thimble control slider for moving the micrometer"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">panel5</Property>
+<Property name="layout"><![CDATA[GRID:1,2,0,0]]></Property>
+<Property name="size"><![CDATA["100,50"]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">downRachetPanel</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="size"><![CDATA["50,50"]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">downLabel</Property>
+<Property name="parent">downRachetPanel</Property>
+<Property name="position">center</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepback.gif"]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="pressAction"><![CDATA[direction=-1;
+startRachet();]]></Property>
+<Property name="releaseAction"><![CDATA[stopRachet();]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">upRachetPanel</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="layout"><![CDATA[GRID:1,1,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">upLabel</Property>
+<Property name="parent">upRachetPanel</Property>
+<Property name="position">center</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="pressAction"><![CDATA[direction=+1;
+startRachet();]]></Property>
+<Property name="releaseAction"><![CDATA[stopRachet();]]></Property>
+<Property name="background"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">panel5</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="enabled"><![CDATA[_isPaused]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA[%l_reset%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">leftSliderPanel</Property>
+<Property name="parent">micrometerFrame</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[vbox]]></Property>
+<Property name="size"><![CDATA["40,0"]]></Property>
+<Property name="borderType"><![CDATA[RAISED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">ySlider</Property>
+<Property name="parent">leftSliderPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[y]]></Property>
+<Property name="minimum"><![CDATA[-2*size]]></Property>
+<Property name="maximum"><![CDATA[4*size]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="dragaction"><![CDATA[if(d<w2)y=Math.max(y,size2);
+if(d<w2&& y<size*0.75){
+  y=size*0.75;
+}
+if(y<size2)dmin=w2;
+else dmin=0;]]></Property>
+<Property name="background"><![CDATA[DARKGRAY]]></Property>
+<Property name="tooltip"><![CDATA[slider for inserting object to measure]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">micrometerDrawingPanel</Property>
+<Property name="parent">micrometerFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[autoscale]]></Property>
+<Property name="autoscaleY"><![CDATA[autoscale]]></Property>
+<Property name="minimumX"><![CDATA[(xmagnify)-ratio]]></Property>
+<Property name="maximumX"><![CDATA[(xmagnify)+ratio]]></Property>
+<Property name="minimumY"><![CDATA[(ymagnify)-ratio]]></Property>
+<Property name="maximumY"><![CDATA[(ymagnify)+ratio]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="x"><![CDATA[mx]]></Property>
+<Property name="y"><![CDATA[my]]></Property>
+<Property name="dragaction"><![CDATA[//if(mx>xi && Math.abs(y)<h)d=mx-xi;
+//if(y<size2 && d<w2)d=w2;
+//L=L0-d;;
+// {3*h,1.5*h,0,0,1.5*h,3*h}
+// {h2,h2,h,-h,-h2,-h2}
+
+if ((mx<xi+d+3*h&&mx>xi+d+0&&my<h2&&my>-h2)||(mx<xi+d+3*h+h&&mx>xi+d+3*h&&my<h/2&&my>-h/2))//inside the green or teal
+{
+  test = 1;
+if (my>mys) d = d-step/4; // move up
+if (my<mys) d = d+step/4; // move down
+d=Math.max(0,d);
+d=Math.min(160,d);
+if(y<size2 && d<w2)d=w2; // move the darkgreen
+L=L0-d; // move the darkgreen
+}
+test = 0;]]></Property>
+<Property name="showCoordinates"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">Frameorange2</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve2D</Type>
+<Property name="name">Frameorange</Property>
+<Property name="parent">Frameorange2</Property>
+<Property name="points"><![CDATA[36]]></Property>
+<Property name="min"><![CDATA[0]]></Property>
+<Property name="max"><![CDATA[Math.PI]]></Property>
+<Property name="variable"><![CDATA["cta"]]></Property>
+<Property name="functionx"><![CDATA["w*(Math.cos(cta)-1)"]]></Property>
+<Property name="functiony"><![CDATA["-w*Math.sin(cta)"]]></Property>
+<Property name="javaSyntax"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[ORANGE]]></Property>
+<Property name="lineWidth"><![CDATA[size*2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">_roundstest</Property>
+<Property name="parent">Frameorange2</Property>
+<Property name="x"><![CDATA[w*(Math.cos(Math.PI/2)-1)]]></Property>
+<Property name="y"><![CDATA[-w*Math.sin(Math.PI/2)-size2]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["2 rounds = 100 divisions = 1.00 mm"]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,16]]></Property>
+<Property name="elementposition"><![CDATA[NORTH]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">SmallestUnitText</Property>
+<Property name="parent">Frameorange2</Property>
+<Property name="x"><![CDATA[w*(Math.cos(Math.PI/2)-1)]]></Property>
+<Property name="y"><![CDATA[-w*Math.sin(Math.PI/2)+size2]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["0.01 mm"]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,16]]></Property>
+<Property name="elementposition"><![CDATA[NORTH]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">micrometersimpleparts</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">leftanvil2grey</Property>
+<Property name="parent">micrometersimpleparts</Property>
+<Property name="x"><![CDATA[-w*2+size2]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[size]]></Property>
+<Property name="sizeY"><![CDATA[size*1.5]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[null]]></Property>
+<Property name="fillColor"><![CDATA[200,220,208]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">leftanvil2greytip</Property>
+<Property name="parent">micrometersimpleparts</Property>
+<Property name="x"><![CDATA[-w*2+size2]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[size/2]]></Property>
+<Property name="sizeY"><![CDATA[size*1.5]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="lineColor"><![CDATA[null]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">right2magenta</Property>
+<Property name="parent">micrometersimpleparts</Property>
+<Property name="x"><![CDATA[zero]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[1.5*size]]></Property>
+<Property name="sizeY"><![CDATA[4*size]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[MAGENTA]]></Property>
+<Property name="fillColor"><![CDATA[MAGENTA]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rodgreen</Property>
+<Property name="parent">micrometersimpleparts</Property>
+<Property name="x"><![CDATA[-0.75*size]]></Property>
+<Property name="sizeX"><![CDATA[L]]></Property>
+<Property name="sizeY"><![CDATA[size*1.5]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="lineColor"><![CDATA[64,128,0]]></Property>
+<Property name="fillColor"><![CDATA[64,128,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rodgreentip</Property>
+<Property name="parent">micrometersimpleparts</Property>
+<Property name="x"><![CDATA[-0.75*size-L]]></Property>
+<Property name="sizeX"><![CDATA[+size/2]]></Property>
+<Property name="sizeY"><![CDATA[size*1.5]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="lineColor"><![CDATA[64,128,0]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">objectShape</Property>
+<Property name="parent">micrometersimpleparts</Property>
+<Property name="x"><![CDATA[-w*2+size]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizeX"><![CDATA[w2]]></Property>
+<Property name="sizeY"><![CDATA[6*size]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[0]]></Property>
+<Property name="dragAction"><![CDATA[if(d<w2)y=Math.max(y,size2);
+if(d<w2&& y<size*0.75){
+  y=size*0.75;
+}
+
+y=Math.max(y,-2*size);]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_WEST]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">Stockyellow</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">stockruleryellow</Property>
+<Property name="parent">Stockyellow</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[xmax]]></Property>
+<Property name="sizeY"><![CDATA[6*size]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet2D</Type>
+<Property name="name">verticallinesonstock</Property>
+<Property name="parent">Stockyellow</Property>
+<Property name="numberOfElements"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[xv]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[zero]]></Property>
+<Property name="sizeY"><![CDATA[yv]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">horizontallineonstock</Property>
+<Property name="parent">Stockyellow</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[xmax]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet2D</Type>
+<Property name="name">textSetonstock</Property>
+<Property name="parent">Stockyellow</Property>
+<Property name="numberOfElements"><![CDATA[n2]]></Property>
+<Property name="x"><![CDATA[tx]]></Property>
+<Property name="y"><![CDATA[2*size]]></Property>
+<Property name="sizeX"><![CDATA[size]]></Property>
+<Property name="sizeY"><![CDATA[size]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%txt%]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,21]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">textredhint2</Property>
+<Property name="parent">Stockyellow</Property>
+<Property name="x"><![CDATA[xi+d]]></Property>
+<Property name="y"><![CDATA[h*2]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[showhint]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%l_integerd%]]></Property>
+<Property name="font"><![CDATA[Arial Black,PLAIN,30]]></Property>
+<Property name="elementposition"><![CDATA[EAST]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">Spindledarkgreen</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon2D</Type>
+<Property name="name">spindlegreen</Property>
+<Property name="parent">Spindledarkgreen</Property>
+<Property name="xData"><![CDATA[xp]]></Property>
+<Property name="yData"><![CDATA[yp]]></Property>
+<Property name="x"><![CDATA[xi+d]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="dragAction"><![CDATA[//startRachet ();
+ // step=step0;]]></Property>
+<Property name="releaseAction"><![CDATA[//stopRachet ()]]></Property>
+<Property name="exitedAction"><![CDATA[//stopRachet ()]]></Property>
+<Property name="lineColor"><![CDATA[GREEN]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">Thimblegreen</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet2D</Type>
+<Property name="name">textSetthimble</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="numberOfElements"><![CDATA[tc]]></Property>
+<Property name="x"><![CDATA[xzero+2*size]]></Property>
+<Property name="y"><![CDATA[yt]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%txty%]]></Property>
+<Property name="font"><![CDATA[Arial,BOLD,17]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet2D</Type>
+<Property name="name">shorthorizontallinethimbleblack2</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="numberOfElements"><![CDATA[n3]]></Property>
+<Property name="x"><![CDATA[xzero]]></Property>
+<Property name="y"><![CDATA[hy]]></Property>
+<Property name="sizeX"><![CDATA[hdx]]></Property>
+<Property name="sizeY"><![CDATA[zero]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet2D</Type>
+<Property name="name">threadonthimblegraduationmarksblue2</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="numberOfElements"><![CDATA[n3]]></Property>
+<Property name="x"><![CDATA[xzero+7*size]]></Property>
+<Property name="y"><![CDATA[hythread]]></Property>
+<Property name="sizeX"><![CDATA[hdx]]></Property>
+<Property name="sizeY"><![CDATA[zero]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet2D</Type>
+<Property name="name">threadonthimblegreenforlonglinesblue2</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="numberOfElements"><![CDATA[n3]]></Property>
+<Property name="x"><![CDATA[xzero+7*size]]></Property>
+<Property name="y"><![CDATA[hythread]]></Property>
+<Property name="sizeX"><![CDATA[hdxthread]]></Property>
+<Property name="sizeY"><![CDATA[zero]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrowhoriaontalguide2</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="x"><![CDATA[xi+d+2*xi]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[-xi*2]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showhint]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrowverticalguide2</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="x"><![CDATA[xi+d+2*xi]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeY"><![CDATA[-size*6]]></Property>
+<Property name="visible"><![CDATA[showhint]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">textredhint3</Property>
+<Property name="parent">Thimblegreen</Property>
+<Property name="x"><![CDATA[xi+d+2*xi]]></Property>
+<Property name="y"><![CDATA[-size*6]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[showhint]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%l_decimald%]]></Property>
+<Property name="font"><![CDATA[Arial Black,PLAIN,30]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH_EAST]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">Ratchetteal</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rachetteal</Property>
+<Property name="parent">Ratchetteal</Property>
+<Property name="x"><![CDATA[xi+d+3*h]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[h]]></Property>
+<Property name="sizeY"><![CDATA[h]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[ROUND_RECTANGLE]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="lineColor"><![CDATA[CYAN]]></Property>
+<Property name="fillColor"><![CDATA[CYAN]]></Property>
+<Property name="drawingFill"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet2D</Type>
+<Property name="name">threadonrachet2</Property>
+<Property name="parent">Ratchetteal</Property>
+<Property name="numberOfElements"><![CDATA[n3]]></Property>
+<Property name="x"><![CDATA[xzero+10*size]]></Property>
+<Property name="y"><![CDATA[hythreadrachet]]></Property>
+<Property name="sizeX"><![CDATA[hdx]]></Property>
+<Property name="sizeY"><![CDATA[zero]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">lock</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+<Property name="x"><![CDATA[zero]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[size]]></Property>
+<Property name="sizeY"><![CDATA[size]]></Property>
+<Property name="visible"><![CDATA[!lock]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">circle</Property>
+<Property name="parent">lock</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[size/7]]></Property>
+<Property name="sizeY"><![CDATA[size/7]]></Property>
+<Property name="transformation"><![CDATA[ro:45d]]></Property>
+<Property name="measured"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[lock ();]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[0,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rod</Property>
+<Property name="parent">lock</Property>
+<Property name="x"><![CDATA[1.3]]></Property>
+<Property name="y"><![CDATA[-size/7]]></Property>
+<Property name="sizeX"><![CDATA[size/20]]></Property>
+<Property name="sizeY"><![CDATA[size/4]]></Property>
+<Property name="transformation"><![CDATA[ro:45d]]></Property>
+<Property name="measured"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[lock();]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="fillColor"><![CDATA[0,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">segment2</Property>
+<Property name="parent">lock</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[size/9]]></Property>
+<Property name="transformation"><![CDATA[ro:45d]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[lock();]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">locked</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+<Property name="x"><![CDATA[zero]]></Property>
+<Property name="y"><![CDATA[zero]]></Property>
+<Property name="sizeX"><![CDATA[size]]></Property>
+<Property name="sizeY"><![CDATA[size]]></Property>
+<Property name="visible"><![CDATA[lock]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">circle2</Property>
+<Property name="parent">locked</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[size/7]]></Property>
+<Property name="sizeY"><![CDATA[size/7]]></Property>
+<Property name="transformation"><![CDATA[ro:-45d]]></Property>
+<Property name="measured"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[lock ();]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[0,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">rod2</Property>
+<Property name="parent">locked</Property>
+<Property name="x"><![CDATA[-1.3]]></Property>
+<Property name="y"><![CDATA[-size/7]]></Property>
+<Property name="sizeX"><![CDATA[size/20]]></Property>
+<Property name="sizeY"><![CDATA[size/4]]></Property>
+<Property name="transformation"><![CDATA[ro:-45d]]></Property>
+<Property name="measured"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[lock();]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="fillColor"><![CDATA[0,128,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">segment22</Property>
+<Property name="parent">locked</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[size/9]]></Property>
+<Property name="transformation"><![CDATA[ro:-45d]]></Property>
+<Property name="measured"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="pressAction"><![CDATA[lock();]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">AnswerBlue</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">Answerblue</Property>
+<Property name="parent">AnswerBlue</Property>
+<Property name="x"><![CDATA[-w*2+size+d/2]]></Property>
+<Property name="y"><![CDATA[-h*1.3]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%l_msg%]]></Property>
+<Property name="font"><![CDATA[Arial Black,PLAIN,30]]></Property>
+<Property name="elementposition"><![CDATA[WEST]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrowguideright</Property>
+<Property name="parent">AnswerBlue</Property>
+<Property name="x"><![CDATA[-w*2+size+d]]></Property>
+<Property name="y"><![CDATA[-h]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[h]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrowguideleft</Property>
+<Property name="parent">AnswerBlue</Property>
+<Property name="x"><![CDATA[-w*2+size]]></Property>
+<Property name="y"><![CDATA[-h]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[h]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrowtoshowanswer</Property>
+<Property name="parent">AnswerBlue</Property>
+<Property name="x"><![CDATA[-w*2+size]]></Property>
+<Property name="y"><![CDATA[-h]]></Property>
+<Property name="sizeX"><![CDATA[d]]></Property>
+<Property name="sizeY"><![CDATA[zero]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrowverticallineforhint2</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+<Property name="x"><![CDATA[d+xi]]></Property>
+<Property name="y"><![CDATA[h*2]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[-2*h]]></Property>
+<Property name="visible"><![CDATA[showhint]]></Property>
+<Property name="enabledSize"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">magnify</Property>
+<Property name="parent">micrometerDrawingPanel</Property>
+<Property name="x"><![CDATA[xmagnify]]></Property>
+<Property name="y"><![CDATA[ymagnify]]></Property>
+<Property name="sizeX"><![CDATA[wmagnify]]></Property>
+<Property name="sizeY"><![CDATA[wmagnify]]></Property>
+<Property name="visible"><![CDATA[showmagnify]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[255,0,0,25]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">zoom</Property>
+<Property name="parent">micrometerFrame</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel7</Property>
+<Property name="parent">zoom</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">slider</Property>
+<Property name="parent">panel7</Property>
+<Property name="variable"><![CDATA[factor]]></Property>
+<Property name="minimum"><![CDATA[1.0]]></Property>
+<Property name="maximum"><![CDATA[5]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="enabled"><![CDATA[showmagnify]]></Property>
+<Property name="dragaction"><![CDATA[ratio=wmagnify/factor;]]></Property>
+<Property name="background"><![CDATA[RED]]></Property>
+<Property name="tooltip"><![CDATA["magnifier"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">checkBox</Property>
+<Property name="parent">panel7</Property>
+<Property name="variable"><![CDATA[showmagnify]]></Property>
+<Property name="background"><![CDATA[RED]]></Property>
+<Property name="tooltip"><![CDATA["show magnify, uncheck to resume normal mouse click use"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel8</Property>
+<Property name="parent">zoom</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field</Property>
+<Property name="parent">panel8</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[range]]></Property>
+<Property name="format"><![CDATA["range=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field3</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[xmin]]></Property>
+<Property name="format"><![CDATA["xmin=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field4</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[xmax]]></Property>
+<Property name="format"><![CDATA["xmax=0"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field5</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[ymin]]></Property>
+<Property name="format"><![CDATA["ymin=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field32</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[ymax]]></Property>
+<Property name="format"><![CDATA["ymax=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field322</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[mx]]></Property>
+<Property name="format"><![CDATA["mx=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field323</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[my]]></Property>
+<Property name="format"><![CDATA["my=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field3232</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[id]]></Property>
+<Property name="format"><![CDATA["id=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field32332</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[integerd]]></Property>
+<Property name="format"><![CDATA["integerd=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field32333</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[decimald]]></Property>
+<Property name="format"><![CDATA["decimald=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field323332</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[error]]></Property>
+<Property name="format"><![CDATA["error=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field3233322</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[ratio]]></Property>
+<Property name="format"><![CDATA["ratio=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field32333222</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[xmagnify]]></Property>
+<Property name="format"><![CDATA["xmagnify=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field32333223</Property>
+<Property name="parent">panel8</Property>
+<Property name="variable"><![CDATA[ymagnify]]></Property>
+<Property name="format"><![CDATA["ymagnifyo=0.00"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

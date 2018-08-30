@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+  </head>
+  <body>
+    <h1 align="left">
+      <font size="5">An Introduction to Computer Simulation Methods:<br>
+      Chapter 17 Examples</font></h1>
+    <p align="center"><img src="affine2d.jpg"></p>
+    <p align="center">Affine transformations are used to rotate a polygon and a vector.</p>
+    <h1>
+      Affine Transformations in Two Dimensions</h1>
+    <p align="left">The Affine Transformations in Two Dimensions example shows how to define objects using
+    <a href="http://en.wikipedia.org/wiki/Homogeneous_coordinates">homogeneous coordinates</a> and how to manipulate them using
+    <a href="http://en.wikipedia.org/wiki/Affine_transformation">affine transformations</a> represented by matrices.&nbsp; The model transforms a polygon with n vertices 
+    and an arrow.&nbsp; Data for the polygon is stored in a double[n][3] array and data for the arrow components is stored in a double[3] array.&nbsp; Each polygon vertex transforms as a 3D point located at (x,y) 
+    and is stored using homogeneous 2D coordinates as double[] {x,y,1}. 
+    The arrow components (vx, vy) are stored in homogeneous coordinates as double[] {x,y,0}.&nbsp; Because the arrow represents a vector, it can change direction but remains invariant 
+    under translation.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">The Affine Transformation in Two Dimensions example uses matrix multiplication to directly transform data in the model.&nbsp; The polygon and the 
+    arrow can also be transformed using property fields in their inspector panels.&nbsp; An integer value Transform property will rotate a 2D Element by the given number 
+    of degrees and a double value will rotate the Element by the given number of radians.&nbsp; The position property fields translate a 2D Element.&nbsp; Behind the 
+    scene EJS converts these property values into affine transformations just as we have done in this model.&nbsp; The EJS 2D Implementation page 
+    describes the algorithms that have been implemented within EJS to produce 2D transformations.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">See the <a href="http://www.um.es/fem/EjsWiki/Main/2DTransformations">2D Transformations</a> page on the EJS Wiki for more complete information.</p>
+    <font size="3"><h2>Related Models</h2>
+    <p>The following EJS models are described in <a href="http://www.compadre.org/OSP/items/detail.cfm?ID=10680">Chapter 17</a> of the EJS adaptation of <em>An Introduction to Computer Simulation Methods </em>available in the ComPADRE digital 
+    library.</p>
+    <p>&nbsp;</p>
+    <ul>
+        <li>
+        Affine Transformation in 2D: Shows how homogeneous coordinates are used in two dimensions. </li>
+        <li>
+        Affine Transformation in 3D: Shows how homogeneous coordinates are used in three dimensions.</li>
+        <li>
+        Euler Angle Demo:&nbsp; Displays the orientation of a rigid body subject to three Euler angle rotations.</li>
+        <li>
+        Quaternion Demo:&nbsp; Displays the orientation of a rigid body subject to a quaternion rotation.</li>
+        <li>
+        Rotation About a Fixed Axis: Computes the angular momentum of a box attached to an axle.</li>
+        <li>
+        Feynman Plate: Computes the wobble of a spinning plate using a simple quaternion rate equation.</li>
+        <li>
+        Free Rotation: Computes and displays the trajectory of a rigid body rotating about its center of mass in the absence of external torque.</li>
+        <li>
+        Gyroscope:&nbsp; Computes and displays the dynamics of a gyroscope under the influence of a gravitational torque.</li>
+    </ul>
+
+    </font>
+
+    <h2>Credits</h2>
+    <p>The Affine Transformation in Two Dimensions example was developed by Wolfgang Christian using the Easy Java Simulations (EJS) modeling tool version 4.3.&nbsp; 
+    You can examine and modify the model for this simulation if you have EJS installed by right-clicking within the program and selecting &quot;Open Ejs Model&quot; from the pop-up 
+    menu.&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>Information about EJS is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+
+  </body>
+</html>

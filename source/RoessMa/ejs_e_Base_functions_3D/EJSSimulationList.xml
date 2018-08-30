@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="ejs_e_Base_functions_3D.jar">
+  <simulation name="e_Base_functions_3D">
+    <title></title>
+    <class>RoessMa.Plotter_f_x_y_.e_Base_functions_3D_pkg.e_Base_functions_3D</class>
+    <applet>RoessMa.Plotter_f_x_y_.e_Base_functions_3D_pkg.e_Base_functions_3DApplet</applet>
+  </simulation>
+</package>

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('./digital-7/digital-7.ttf');
+}
+
+@font-face {
+  font-family: 'IndieFlower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url('IndieFlower.woff') format('woff');
+}
+
+h1 {
+  color: Red;
+  }

@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+fixed-navbar: true
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: stormwaterpit.ejss
+main-script: 
+main-simulation: stormwaterpit_Simulation.xhtml
+available-languages: 
+html-description: stormwaterpit_Intro_1.html
+html-contents: stormwaterpit_Contents.xhtml
+html-main: stormwaterpit.xhtml
+page-title: Intro Page
+page-index: stormwaterpit_Intro_1.html
+page-title: Simulation
+page-index: stormwaterpit_Simulation.xhtml
+resource: stormwaterpit and pump diagram.PNG

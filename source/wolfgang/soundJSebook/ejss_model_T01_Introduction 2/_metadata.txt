@@ -1,0 +1,22 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170104. Visit http://www.um.es/fem/Ejs
+title: Time and Beats
+logo-image: T01_Introduction/Beats.png
+author: W. Christian; Kyle Forinash
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: images/wc_icon.png;./images/kyle_icon.png
+main-script: T01_Introduction_Simulation.js
+main-simulation: T01_Introduction_Simulation.xhtml
+available-languages: 
+html-contents: T01_Introduction_Contents.xhtml
+html-main: T01_Introduction.xhtml
+page-title: Time and Beats
+page-index: T01_Introduction_Simulation.xhtml
+resource: T01_Introduction/Beats.png
+resource: images/kyle_icon.png
+resource: T01_Introduction/T01_Introduction.xhtml
+resource: images/mute.png
+resource: images/speaker.png
+resource: images/wc_icon.png
+resource: css/ejss.css

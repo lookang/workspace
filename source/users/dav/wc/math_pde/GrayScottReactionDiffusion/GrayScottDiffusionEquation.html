@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<link href="../../../../../_ejs_library/css/ejsPage.css" rel="stylesheet" type="text/css">
+<title>Gray Scott Reaction Diffusion Equation</title>
+<style type="text/css">
+.auto-style2 {
+	text-align: center;
+}
+.auto-style3 {
+	text-align: left;
+}
+</style>
+</head>
+
+<body>
+
+<p align="center"><img height="273" src="GrayScott.jpg" width="273"></p>
+<p align="center">U concentration at t=5000 with Du=0.2, Dv=0.1, f=0.03 and k=0.06.</p>
+<h1>Gray-Scott Reaction Diffusion Model</h1>
+<p>The Gray-Scott Reaction Diffusion Model <span>displays the spatial 
+concentration of chemical species U and V under the influence of diffusion and 
+the autocatalytic reaction U+2V-&gt;3V and V-&gt;P where P is inert.&nbsp; </span>This <a href="http://en.wikipedia.org/wiki/Reaction–diffusion_system">
+reaction-diffusion system</a> can be modeled by the following coupled partial differential equations.</p>
+<p>&nbsp;</p>
+<p><img src="GrayScottReactionDiffusionEqn.gif"></p>
+<p>&nbsp;</p>
+<p>The UV^2 term represents the U+2V-&gt;3V reaction and is negative in the first 
+equation because it decreases U and positive in the second equation because it 
+increases V.&nbsp; The flow rate f represents the constant addition of U and the 
+terms -fU and -fV represent the removal due to that flow.&nbsp; The k reaction 
+rate represents the removal of V by the reaction V-&gt;P.&nbsp; <span>The 
+simulation shows that this system has a surprising variety of spatiotemporal 
+patterns when starting in the initial state U=1 and B=0 except for a square grid 
+at the center where U=1/2 and V=1/4.&nbsp; </span></p>
+<h3>Parameter Values</h3>
+<p>The following table gives suggested values 
+assuming Du=0.2 and Dv=0.1.</p>
+<p>&nbsp;</p>
+<table style="width: 400">
+	<tr>
+		<th>Pattern</th>
+		<th>f</th>
+		<th>k</th>
+	</tr>
+	<tr>
+		<td class="auto-style2">spots</td>
+		<td class="auto-style2">0.02</td>
+		<td class="auto-style2">0.055</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">regular spots</td>
+		<td class="auto-style2">0.015</td>
+		<td class="auto-style2">0.055</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">mitosing spots </td>
+		<td class="auto-style2">0.03</td>
+		<td class="auto-style2">0.0625</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">labyrinth I</td>
+		<td class="auto-style2">0.05</td>
+		<td class="auto-style2">0.0625</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">labyrinth II</td>
+		<td class="auto-style2">0.035</td>
+		<td class="auto-style2">0.06</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">spawned spots</td>
+		<td class="auto-style2">0.05</td>
+		<td class="auto-style2">0.06</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">spots to stripes</td>
+		<td class="auto-style2">0.03</td>
+		<td class="auto-style2">0.057</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">kaleidoscope</td>
+		<td class="auto-style2">0.015</td>
+		<td class="auto-style2">0.05</td>
+	</tr>
+	<tr>
+		<td class="auto-style2">periodic</td>
+		<td class="auto-style2">0.015</td>
+		<td class="auto-style2">0.045</td>
+	</tr>
+	</table>
+<div class="auto-style3">
+<p>&nbsp;</p>
+	<p>Note that the Gray-Scott Reaction Diffusion Equation Model uses scaled diffusivities Du and Dv so that the cell 
+size dx=dy=1 and the 
+cell-to-cell diffusion times are of the order of unity.&nbsp; Users may change 
+the NxN grid but may need to adjust the timestep if the diffusivity is changed 
+in order to
+<a href="http://en.wikipedia.org/wiki/Courant–Friedrichs–Lewy_condition">
+maintain stability</a>.&nbsp; This stability criterion limits the timestep for 
+the 2D diffusion equation to</p>
+<p>&nbsp;</p>
+<p><img src="Stability_eqn.gif"></p>
+<p>&nbsp;</p>
+<p>where D is the largest diffusivity.&nbsp; </p>
+</div>
+<h3>References:</h3>
+<ul>
+	<li>Evelyn Strombom, Carlos E. Caicedo-Carvajal, N. Nirmal Thyagu, Daniel 
+	Palumbo<br>and Troy Shinbrot, &quot;Simple, simpler, simplest: spontaneous 
+	pattern formation in a commonplace system,&quot; American Journal of 
+	Physics, submitted 10/13/11. </li>
+	<li>John E. Pearson, &quot;<a href="http://www.sciencemag.org/content/261/5118/189">Complex 
+	Patterns in a Simple System</a>,&quot; Science 261 (5118) pp. 189-192 (1993).</li>
+	<li>H. Gould, J. Tobochnik, and W. Christian, <i>An Introduction to Computer 
+	Simulation Methods: Applications to Physical Systems,</i> Addison-Wesley (2007), 
+	<a href="http://www.compadre.org/osp/items/detail.cfm?ID=7375">Chapter 7</a>.&nbsp; 
+	Project 7.42 discusses pattern formation and the Gray-Scott model.</li>
+</ul>
+<h3>Credits:</h3>
+<p>The Gray-Scott Reaction Diffusion Equation Model was developed by Wolfgang Christian using the Easy Java Simulations (EJS) version 4.3 authoring and modeling 
+tool.</p>
+<p>&nbsp;</p>
+<p>You can examine and modify a compiled EJS model if you run the model (double 
+click on the model's jar file), right-click within a plot, and select "Open Ejs 
+Model" from the pop-up menu.&nbsp; You must, of course, have EJS installed on your 
+computer.&nbsp; Information about Ejs is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; 
+and in the OSP ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+
+</body>
+
+</html>

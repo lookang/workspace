@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="Workdone16ejss"
+author="Nur Shahzreen"
+description="Many thanks to Mr Wee, Mr Felix and Mr Paco!"
+screenshot=""
+thumbnail="">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="Workdone16ejss_Simulation.xhtml"/>
+</Module>

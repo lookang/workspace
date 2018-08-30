@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+    <style type="text/css">
+.style1 {
+	font-family: Verdana;
+}
+</style>
+  </head>
+  <body>
+    <h1 align="left">
+      <font size="5">An Introduction to Computer Simulation Methods:<br>
+      Chapter 17 Examples</font></h1>
+    <p align="center"><img src="rotated_box.jpg"></p>
+    <p align="center"><font size="2">A quaternion orients a body in space.</font></p>
+    <h1>
+      Quaternion Demo</h1>
+    <p align="left">The Quaternion Demonstration shows how to specify the orientation of a three-dimensional object using a
+    <a href="http://en.wikipedia.org/wiki/Quaternion">quaternion</a>. All possible orientations of an object can be represented using quaternions and the equations of 
+    rigid body dynamics can be formulated using quaternions.&nbsp; (See the OSP gyroscope model.)&nbsp; This simulation is designed to test the quaternion representation.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">The rotation of a two-dimensional vector A=(a<sub>x</sub>, a<sub>y</sub>) through an angle <span class="style1">&#952;</span> to produce A' can be 
+    reformulated by the 
+    multiplication of two complex numbers as</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img src="complex_number_eqn.gif"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">where the real and imaginary parts of a and a' are the x- and y-components of the vectors A and A'.&nbsp; This idea can be extended to three 
+    dimensions using quaternions.&nbsp; A quaternion can be represented using hypercomplex number as</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img src="hypercomplex_number_eqn.gif"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">where the hypercomplex components i, j, and k obey Hamilton's rules</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img src="hamilton_rules_eqn.gif"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">Note that hypercomplex numbers do not commute.&nbsp; It can be shown that a rotation through an angle <span class="style1">&#952; about an axis with 
+    direction cosines (u<sub>1</sub>, u<sub>2</sub>, u<sub>3</sub>) can be represented as a <a href="http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">unit 
+    quaternion</a> with components</span></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img src="rotation_quaternion_eqn.gif"></p>
+    <font size="3"><h2>Related Models</h2>
+    <p>The following EJS models are described in <a href="http://www.compadre.org/OSP/items/detail.cfm?ID=10680">Chapter 17</a> of the EJS adaptation of <em>An Introduction to Computer Simulation Methods </em>available in the ComPADRE digital 
+    library.</p>
+    <p>&nbsp;</p>
+    <ul>
+        <li>
+        Affine Transformation in 2D: Shows how homogeneous coordinates are used in two dimensions. </li>
+        <li>
+        Affine Transformation in 3D: Shows how homogeneous coordinates are used in three dimensions.</li>
+        <li>
+        Euler Angle Demo:&nbsp; Displays the orientation of a rigid body subject to three Euler angle rotations.</li>
+        <li>
+        Quaternion Demo:&nbsp; Displays the orientation of a rigid body subject to a quaternion rotation.</li>
+        <li>
+        Rotation About a Fixed Axis: Computes the angular momentum of a box attached to an axle.</li>
+        <li>
+        Feynman Plate: Computes the wobble of a spinning plate using a simple quaternion rate equation.</li>
+        <li>
+        Free Rotation: Computes and displays the trajectory of a rigid body rotating about its center of mass in the absence of external torque.</li>
+        <li>
+        Gyroscope:&nbsp; Computes and displays the dynamics of a gyroscope under the influence of a gravitational torque.</li>
+    </ul>
+
+    <h2>Credits</h2>
+    <p>The Quaternion Demonstration was developed by Wolfgang Christian using the Easy Java Simulations (EJS) modeling tool version 4.3.&nbsp; You can examine and modify 
+    the model for this simulation if you have EJS installed by right-clicking within the program and selecting &quot;Open Ejs Model&quot; from the pop-up menu.&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>Information about EJS is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+    </font>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170525. Visit http://www.um.es/fem/Ejs
+title: Oscilloscope
+logo-image: CRO/2015-06-15_1351s.png
+author: Fu-Kwun Hwang - Dept. of Physics,National Taiwan normal Univ.; lookang
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 01authorfu-kwun.hwang.png;./01authorlooakng50x50.png
+source: oscilloscopeweev2.ejss
+main-script: 
+main-simulation: oscilloscopeweev2_Simulation.xhtml
+available-languages: 
+html-description: oscilloscopeweev2_Intro_1.html
+html-contents: oscilloscopeweev2_Contents.xhtml
+html-main: oscilloscopeweev2.xhtml
+page-title: Intro Page
+page-index: oscilloscopeweev2_Intro_1.html
+page-title: Oscilloscope
+page-index: oscilloscopeweev2_Simulation.xhtml
+resource: CRO/2015-06-15_1351s.png
+resource: 01authorlooakng50x50.png
+resource: CRO/CRO.png
+resource: 01authorfu-kwun.hwang.png
+resource: 800px-Tektronix_465_Oscilloscope_croppedsmall.jpg

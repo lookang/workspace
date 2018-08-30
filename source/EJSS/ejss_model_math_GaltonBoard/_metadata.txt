@@ -1,0 +1,17 @@
+title: Galton Board
+logo-image: GaltonBoard/Galton_icon.png
+author: Wolfgang Christian
+copyright: 
+author-image: images/WC_logo.png
+main-script: 
+main-simulation: GaltonBoard_Simulation.xhtml
+html-contents: GaltonBoard_Contents.xhtml
+html-main: GaltonBoard.xhtml
+page-title: Galton Board
+page-index: GaltonBoard/GaltonBoard.xhtml
+page-index: GaltonBoard_Simulation.xhtml
+resource: GaltonBoard/ejsDescription.css
+resource: GaltonBoard/GaltonBoard.gif
+resource: GaltonBoard/GaltonBoard.xhtml
+resource: GaltonBoard/Galton_icon.png
+resource: images/WC_logo.png

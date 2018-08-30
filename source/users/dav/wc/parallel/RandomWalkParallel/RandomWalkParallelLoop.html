@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+	
+	<head>
+		<title>Random Walk: Synchronized Parallel Region Implementation</title>
+		<link href="../ejss.css" rel="stylesheet" type="text/css" />
+	</head>
+<body><p>
+			<img src="ParallelLoop.png" class="centered" />
+		</p><p style="text-align:center">The trajectories of 500 random walks on a two-dimensional lattice. Data
+			points are taken every 10000 steps.</p>
+	
+	<h1>Parallel Loop Computation of a 2D Random Walk</h1>
+	
+		<p>A Parallel Loop produces the fastest two-dimensional random walk with a large number of
+			particles.  In this simulation, a 2016 iMac with a quad-core Intel processor computes over
+			50000 random steps per millisecond.</p>
+		<p>The Parallel Loop iterates to advances the position N random walks. Each thread is assigned a
+			different subrange (chunk) and performs a given number of random steps before iterating to
+			next walk in the chunk. If a thread completes its chunk, it is assigned additional chunks
+			until all iterations have been performed. This assignment is done automatically by the
+			Parallel Loop scheduling algorithm and guarantees that all processor cores are fully utilized
+			at all times.</p>
+	
+	<p>The Parallel Loop implementation of the Random Walk on a lattice uses the EJS adaptation of the
+			Parallel Java library developed by Alan Kaminsky. Addition examples are available in the Open
+			Source Physics Collection in ComPADRE.</p>
+	
+	<h1>User Interface</h1><h3>Main Window
+			Bottom</h3><ul>
+			<li><b>Buttons</b>
+				<ul
+					style="color: rgb(0, 0, 0); font-family: Times; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="text-align: left; margin-top: 1em; margin-bottom: 1em !important;"
+							><b>Play/Pause:</b> Starts and stops the simulation.</li>
+					<li style="text-align: left; margin-top: 1em; margin-bottom: 1em !important;"><b>Reset:
+						</b>Clears data and restores the default parameter values.</li>
+				</ul></li>
+			<li><b>Threads:</b>Number of processor threads. The initial value is twice the number of
+				processor cores minus two.</li>
+			<li><b>Steps/point:</b>Number of random steps between screen updates.</li>
+			<li><b>Show </b><ul>
+					<li><b>trajectories: </b> Shows trajectories in the position plot.  In order to improve
+						performance, only the last 1000 positions are shown in each trajectory and only the
+						first 1000 trajectories are shown.</li>
+					<li><b>&lt; r(t) >:</b> Shows the average displacement graph.</li>
+				</ul></li>
+		</ul><h3>Main Window Top</h3><p>The initial wave function and potential are set using the drop
+			down menu at the bottom. Select the <i>Custom</i> option to edit these fields.</p><ul>
+			<li><b># steps: </b>Total number of random steps performed by all threads.</li>
+			<li><b>steps/ms: </b>Total steps/milliseconds performed by all threads.</li>
+			<li><b>steps/ms/thread: </b>Average number of random steps/millisecond performed by each
+				thread.</li>
+			<li><b>&lt;r>: </b> The average displacement from the random walk start at (0, 0).</li>
+		</ul><h3>References</h3><ul>
+			<li>
+				<p>Harvey Gould, Jan Tobochnik, and Wolfgang Christian,  <i>An Introduction to Computer
+						Simulation Methods</i>, Addison-Wesley ISBN  (2007).  Chapter 7 introduces random walks
+					in the context of several simple systems including random walks on a lattice.</p>
+			</li>
+		</ul><p>The Parallel Java library implements the Parallel Region object used in this simulation.</p><ul>
+			<li>
+				<p>Alan Kaminsky, <em>Building Parallel Programs</em>, Course Technology, Cengage Learning
+					ISBN-13: 978-1423901983 (2009). </p>
+			</li>
+		</ul><h3> Credits: </h3><p> The synchronized Parallel Region Random Walk model was developed by Wolfgang Christian and
+			Francisco Esquembre using the Easy Java/JavaScript Simulations (EJS) version 5 modeling tool.
+			It is based on a Java program from <em>An Introduction to Computer Simulation Methods </em>
+			and is distributed as a ready-to-run Java program (jar file).</p><p> You can examine and modify a compiled EJS Java
+			model if you run the model (double click on the model's jar file), right-click within a plot,
+			and select &quot;Open Ejs Model&quot; from the pop-up menu. You must, of course, have EJS
+			installed on your computer. Information about EJS is available at: &lt;<b><a
+					href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP
+			ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/"
+					>http://www.compadre.org/OSP/</a></b>&gt;.</p></body>
+</html>

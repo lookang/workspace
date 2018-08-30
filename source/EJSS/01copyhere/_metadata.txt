@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170928. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: ruler.ejss
+main-script: 
+main-simulation: index.html
+available-languages: 
+html-description: ruler_Intro_1.html
+html-contents: ruler_Contents.xhtml
+html-main: ruler.xhtml
+page-title: Jessie measures
+page-index: ruler_Intro_1.html
+page-title: Simulation
+page-index: index.html
+resource: IMG_2295.JPG
+resource: IMG_2257.JPG

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+    <style type="text/css">
+.style1 {
+	font-family: Verdana;
+}
+</style>
+  </head>
+  <body>
+    <h1 align="left">
+      <font size="5">An Introduction to Computer Simulation Methods:<br>
+      Chapter 17 Examples</font></h1>
+    <p align="center"><img src="gyroscope.jpg"></p>
+    <p align="center"><font size="2">The gyroscope path shows precession and nutation.</font></p>
+    <h1>Gyroscope</h1>
+    <p>The Gyroscope example computes and displays the dynamics of <a href="http://en.wikipedia.org/wiki/Gyroscope">gyroscope</a> under the influence of a gravitational 
+    <a href="http://en.wikipedia.org/wiki/Torque">torque</a> acting on the <a href="http://en.wikipedia.org/wiki/Center_of_mass">center of mass</a>.&nbsp; The gyroscope 
+    is supported at one end and given an initial angular velocity component about its axis of symmetry and a component perpendicular to its axis of symmetry.&nbsp; The numerical 
+    solution shows the motion for all initial conditions including zero initial angular momentum. The model is designed to show the cycloidal motion (<a href="http://en.wikipedia.org/wiki/Precession">precession</a> and 
+    <a href="http://en.wikipedia.org/wiki/Nutation">nutation</a>) 
+    of the gyroscope axle when the initial angular velocity is large.&nbsp;&nbsp; Users can very the position and radius of the spinning mass as well as the initial angle 
+    and can display the angular momentum L, angular velocity <span class="style1">&#969;</span>, and torque N vectors.&nbsp; A second window shows the elevation angle of the 
+    axle and the angular momentum vector.</p>
+    <p>&nbsp;</p>
+    <p>Units are chosen such that the total mass M and the 
+    acceleration of gravity g are one.&nbsp; The rotor is an ellipsoid with a uniform mass distribution and with major axes 2*R and minor axis R/5.&nbsp; The ellipsoid's 
+    moment of inertia through the center of mass is 4MR<sup>2</sup>/5 about the major axes and 26MR<sup>2</sup>/125 about the minor axis.</p>
+    <h2>Related Models</h2>
+    <p>The following EJS models are described in <a href="http://www.compadre.org/OSP/items/detail.cfm?ID=10680">Chapter 17</a> of the EJS adaptation of <em>An Introduction to Computer Simulation Methods </em>available in the ComPADRE digital 
+    library.</p>
+    <p>&nbsp;</p>
+    <ul>
+        <li>
+        Affine Transformation in 2D: Shows how homogeneous coordinates are used in two dimensions. </li>
+        <li>
+        Affine Transformation in 3D: Shows how homogeneous coordinates are used in three dimensions.</li>
+        <li>
+        Euler Angle Demo:&nbsp; Displays the orientation of a rigid body subject to three Euler angle rotations.</li>
+        <li>
+        Quaternion Demo:&nbsp; Displays the orientation of a rigid body subject to a quaternion rotation.</li>
+        <li>
+        Rotation About a Fixed Axis: Computes the angular momentum of a box attached to an axle.</li>
+        <li>
+        Feynman Plate: Computes the wobble of a spinning plate using a simple quaternion rate equation.</li>
+        <li>
+        Free Rotation: Computes and displays the trajectory of a rigid body rotating about its center of mass in the absence of external torque.</li>
+        <li>
+        Gyroscope:&nbsp; Computes and displays the dynamics of a gyroscope under the influence of a gravitational torque.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+    <h2 style="margin-top: 0">References:</h2>
+    <ul>
+        <li>
+        <p style="margin-top: 0">R. Feynman, R. Leighton, and M. Sands, <em>The Feynman Lectures in Physics</em> vol 1, p20-5 to 20-8, Addison-Wesley (1963)</p>
+        </li>
+        <li>
+        <p style="margin-top: 0">Svilen Kostov, &quot;It has to Go Down a Little, In Order to Go Around-- Revisiting Feynman on the Gyroscope,&quot; The Physics Teacher, (in press).</p>
+        </li>
+        <li>
+        <p style="margin-top: 0">Herbert Goldstein, Charles P. Poole, and John L. Safko, <em>Classical Mechanics</em>, third edition, Addison-Wesley (2002). Chapter 4 discusses 
+        the kinematics of rigid body motion.</p>
+        </li>
+        <li>
+        <p style="margin-top: 0">Dennis C. Rapaport, <em>The Art of Molecular Dynamics Simulation</em>, second edition, Cambridge University Press (2004). Chapter 8 discusses 
+        the molecular dynamics of rigid molecules using quaternions.</p>
+        </li>
+        <li>
+        <p style="margin-top: 0">Harvey Gould, Jan Tobochnik, and Wolfgang Christian, <em>An Introduction to Computer Simulation Methods,</em> third edition, Addison Wesley 
+        (2007).&nbsp; Chapter 17 describes the quaternion-based numerical algorithm used in this model.</p>
+        </li>
+    </ul>
+
+    <h2>Credits</h2>
+    <p>The Gyroscope example was developed by Wolfgang Christian using the Easy Java Simulations (EJS) modeling tool version 4.3.&nbsp; You can examine and modify the model 
+    for this simulation if you have EJS installed by right-clicking within the program and selecting &quot;Open Ejs Model&quot; from the pop-up menu.&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>Information about EJS is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="decaychangeNweethreestatev2expt"
+author="Fu-Kwun Hwang - Dept. of Physics, National Taiwan Normal Univ.; lookang"
+description="hwang@phy.ntnu.edu.tw
+weelookang@gmail.com
+http://weelookang.blogspot.sg/2015/12/ejss-three-state-radioactive-decay-model.html
+http://weelookang.blogspot.sg/2015/12/ejss-radioactive-decay-model.html"
+screenshot=""
+thumbnail="">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="decaychangeNweethreestatev2expt_Simulation.xhtml"/>
+</Module>

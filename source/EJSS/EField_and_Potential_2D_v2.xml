@@ -1,0 +1,1139 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2.7" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Electric Field and Potential in Two Dimensions</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <h1>
+      Electric Field and Potential in Two Dimensions
+    </h1>
+    <p>
+      In this simulation, you can explore the concepts of the electric field 
+      and the electric potential, in a two-dimensional situation. You can turn 
+      on 1 to 5 charged particles, and move a test charge around the plane 
+      near these charged particles to sample both the electric field and the 
+      electric potential, produced by the charged particles, at various 
+      points. You can also turn on a grid of field vectors, which show the 
+      direction and, qualitatively, the magnitude of the field at a grid of 
+      equally spaced points in the plane in which the charged particles are 
+      located.
+    </p>
+    <p>
+      Here are some facts about the electric field from point charges:
+    </p>
+    <ul>
+      <li>
+        the magnitude of the electric field (E) produced by a point charge 
+        with a charge of magnitude Q, at a point a distance r away from the 
+        point charge, is given by the equation E = kQ/r<sup>2</sup>, where k 
+        is a constant with a value of 8.99 x 10<sup>9</sup> N m<sup>2</sup>/C<sup>2</sup>.
+      </li>
+      <li>
+        the direction of the electric field produced by a point charge is away 
+        from the charge if the charge is positive, and toward the charge if 
+        the charge is negative.
+      </li>
+      <li>
+        electric field is a vector, so when there are multiple point charges 
+        present, the net electric field at any point is the vector sum of the 
+        electric fields due to the individual charges.
+      </li>
+    </ul>
+    <p>
+      &#160;Here are some facts about the electric potential from point charge
+    </p>
+    <ul>
+      <li>
+        the electric potential (V) produced by a point charge with a charge of 
+        magnitude Q, at a point a distance r away from the point charge, is 
+        given by the equation: V = kQ/r, where k is a constant with a value of 
+        8.99 x 10<sup>9</sup> N m<sup>2</sup>/.
+      </li>
+      <li>
+        electric potential is a scalar, so when there are multiple point 
+        charges present, the net electric potential at any point is the sum of 
+        the electric potentials due to the individual charges.
+      </li>
+    </ul>
+    <p>
+      &#160;
+    </p>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Activities</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <h1>
+      Activities
+    </h1>
+    <ol>
+      <li>
+        At first, just a single charge is present, and there is also a small 
+        positive test charge that you can drag around the screen to sample the 
+        electric field and the electric potential at any one point. The 
+        charged object can also be dragged around the screen. Note that you 
+        can change the charge on the charged particle by using the &quot;Charge on 
+        particle 1&quot; slider. If you reduce the charge on the charged particle 
+        by a factor of 2, what happens to the electric potential everywhere? 
+        If you increase the distance between the charged particle and the test 
+        charge by a factor of 2, what happens to the electric potential at the 
+        location of the test charge? If you flip the sign on the charge of the 
+        charged particle, while keeping the magnitude of the charge the same, 
+        what happens to the electric potential everywhere?
+      </li>
+      <li>
+        Now, explore what happens when there is a second charged particle 
+        present, by moving the &quot;Number of charges&quot; slider to 2. Choose a 
+        particular sign, magnitude, and position for charge 1, and a 
+        particular sign, magnitude, and position for charge 2, and then 
+        position the test charge somewhere. Note that you can turn off the 
+        first charge by setting its charge to zero, and you can turn off the 
+        second charge either by setting its charge to zero, or by re-setting 
+        the &quot;Number of charges&quot; to zero. Record the electric potential at the 
+        position of the test charge from charge 1 only, from charge 2 only, 
+        and then when both charge 1 and charge 2 are turned on. Describe how 
+        the net potential, when both charges are on, is obtained from the 
+        individual potentials. Compare this method of finding the net electric 
+        potential with the method for finding net electric field.
+      </li>
+    </ol>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>variables</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[9000]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Constant in Coulomb's Law]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[i]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[loop index]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[i2]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[j]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[second index for loops]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vectorIndex]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[current number of charges]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nMax]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[maximum number of charges]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nVectors]]></Name>
+<Value><![CDATA[11]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nVectorsSq]]></Name>
+<Value><![CDATA[nVectors*nVectors]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[-2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[x-coordinate of the charged particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xtest]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-coordinate of the test charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[-2.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[y-coordinate of the charged particles]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ytest]]></Name>
+<Value><![CDATA[0.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-coordinate of the test charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[Charge on the first particle, in nC]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[qtest]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Charge on the test charge, in nC]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q0]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q1]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q2]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q3]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q4]]></Name>
+<Value><![CDATA[5.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Ex]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[x-component of the field at the test charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Ey]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[y-component of the field at the test charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Enetx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x-component of the net field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Enety]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y-component of the net field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Enet]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[magnitude of the net field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Vnet]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[The net electric potential at the location of the test charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fieldmag]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fieldx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Fieldy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Vectorx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Vectory]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[posx]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[posy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[chargeLabel]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpLabel]]></Name>
+<Value><![CDATA["Show Help"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[FieldFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[helpFlag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zeroval]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Always zero]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rSquared]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Square of the distance between two charges]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[feedback]]></Name>
+<Value><![CDATA["Look for feedback here"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[answerchoice]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Choice of answer to the ranking question]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[scramble]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[randnum]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[backgroundColor]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[movableflag]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showlinesflag]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>color variables</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[redness]]></Name>
+<Value><![CDATA[220]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[greenness]]></Name>
+<Value><![CDATA[220]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[blueness]]></Name>
+<Value><![CDATA[220]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[colorball]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[[nMax]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[colorVectors]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[[nVectorsSq]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[backColor]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+backColor = new java.awt.Color(redness,greenness,blueness);
+backgroundColor = backColor;
+
+x[0] = -2.5;
+y[0] = 0.0;
+x[1] = +2.5;
+y[1] = 0.0;
+x[2] = 0.0;
+y[2] = 1.5;
+x[3] = -1.5;
+y[3] = -1.5;
+x[4] = 1.5;
+y[4] = -1.5;
+chargeLabel[0] = "1";
+chargeLabel[1] = "2";
+chargeLabel[2] = "3";
+chargeLabel[3] = "4";
+chargeLabel[4] = "5";
+for (i = 0; i < nMax; i++ )
+{
+  q[i] = 5.0;
+}
+
+for (i = 0; i < nVectors; i++)
+{
+  for (j = 0; j < nVectors; j++)
+  {
+    vectorIndex = i+nVectors*j;
+    Vectorx[vectorIndex] = -5.0+i;
+    Vectory[vectorIndex] = -5.0+j;
+  }
+}
+
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+q[0] = q0;
+q[1] = q1;
+q[2] = q2;
+q[3] = q3;
+q[4] = q4;
+
+// Field and potential at the test charge position
+
+Enetx = 0.0;
+Enety = 0.0;
+Vnet = 0.0;
+
+for (i = 0; i < n; i++)
+{
+rSquared=(x[i]-xtest)*(x[i]-xtest)+(y[i]-ytest)*(y[i]-ytest);
+Ex[i]=k*q[i]*(xtest-x[i])/(rSquared*Math.sqrt(rSquared));
+Ey[i]=k*q[i]*(ytest-y[i])/(rSquared*Math.sqrt(rSquared));
+Enetx = Enetx + Ex[i];
+Enety = Enety + Ey[i];
+Vnet = Vnet + k*q[i]/(Math.sqrt(rSquared));
+}
+
+Enet = Math.sqrt(Enetx*Enetx+Enety*Enety);
+
+// Field for the vectors
+for (i = 0; i < nVectors; i++)
+{
+  for (j = 0; j < nVectors; j++)
+  {
+    vectorIndex = i+nVectors*j;
+    Fieldx[vectorIndex] = 0.0;
+    Fieldy[vectorIndex] = 0.0;
+  }
+}
+
+
+for (i2 = 0; i2 < n; i2++)
+{
+  for (i = 0; i < nVectors; i++)
+  {
+    for (j = 0; j < nVectors; j++)
+    {
+      vectorIndex = i+nVectors*j;
+      rSquared=(x[i2]-Vectorx[vectorIndex])*(x[i2]-Vectorx[vectorIndex])+(y[i2]-Vectory[vectorIndex])*(y[i2]-Vectory[vectorIndex]);
+      Fieldx[vectorIndex]=Fieldx[vectorIndex]+k*q[i2]*(Vectorx[vectorIndex]-x[i2])/(rSquared*Math.sqrt(rSquared));
+      Fieldy[vectorIndex]=Fieldy[vectorIndex]+k*q[i2]*(Vectory[vectorIndex]-y[i2])/(rSquared*Math.sqrt(rSquared));
+    }
+  }
+}
+
+for (i = 0; i < nVectors; i++)
+{
+  for (j = 0; j < nVectors; j++)
+  {
+    vectorIndex = i+nVectors*j;
+    Fieldmag=Math.sqrt(Fieldx[vectorIndex]*Fieldx[vectorIndex]+Fieldy[vectorIndex]*Fieldy[vectorIndex]);
+    if (Fieldmag > 0.0)
+     {
+       Fieldx[vectorIndex]=0.8*Fieldx[vectorIndex]/Fieldmag;
+       Fieldy[vectorIndex]=0.8*Fieldy[vectorIndex]/Fieldmag;
+     }
+    posx[vectorIndex]=Vectorx[vectorIndex]-0.5*Fieldx[vectorIndex];
+    posy[vectorIndex]=Vectory[vectorIndex]-0.5*Fieldy[vectorIndex];
+    Fieldmag=Math.min(10000,Fieldmag);
+    redness=255-(int)(255*Fieldmag/10000);
+    colorVectors[vectorIndex]= new java.awt.Color(redness,redness,redness);
+  }
+}
+
+// Setting the colors (red for +, blue for -)
+for (i = 0; i < n; i++)
+{
+  if (q[i] > 0.0)
+  {
+  redness = 250;
+  greenness = 0;
+  blueness = 0;
+  colorball[i] = new java.awt.Color(redness,greenness,blueness);
+  }
+  else
+  {
+    if (q[i] < 0.0)
+    {
+    redness = 100;
+    greenness = 100;
+    blueness = 250;
+    colorball[i] = new java.awt.Color(redness,greenness,blueness);
+    }
+    else
+    {
+    redness = 200;
+    greenness = 200;
+    blueness = 200;
+    colorball[i] = new java.awt.Color(redness,greenness,blueness);
+    }  
+  }
+}
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">MainWindow</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Electric Field and Potential in Two Dimensions"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["680,620"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">RightPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+<Property name="size"><![CDATA[200,420]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ButtonsPanel</Property>
+<Property name="parent">RightPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="size"><![CDATA["200,460"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">redmessage</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="value"><![CDATA[Red means positive.]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">bluemessage</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="value"><![CDATA[Blue means negative.]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="foreground"><![CDATA[BLUE]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">FieldFlag</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[FieldFlag]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["Show field vectors"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">numCharges</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[n]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[5]]></Property>
+<Property name="format"><![CDATA["Number of charges = #"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[5]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge1Value</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q0]]></Property>
+<Property name="minimum"><![CDATA[-5.0]]></Property>
+<Property name="maximum"><![CDATA[5.0]]></Property>
+<Property name="format"><![CDATA["Charge on particle 1 = #"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge2Value</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q1]]></Property>
+<Property name="minimum"><![CDATA[-5.0]]></Property>
+<Property name="maximum"><![CDATA[5.0]]></Property>
+<Property name="format"><![CDATA["Charge on particle 2 = #"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge3Value</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q2]]></Property>
+<Property name="minimum"><![CDATA[-5.0]]></Property>
+<Property name="maximum"><![CDATA[5.0]]></Property>
+<Property name="format"><![CDATA["Charge on particle 3 = #"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge4Value</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q3]]></Property>
+<Property name="minimum"><![CDATA[-5.0]]></Property>
+<Property name="maximum"><![CDATA[5.0]]></Property>
+<Property name="format"><![CDATA["Charge on particle 4 = #"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">charge5Value</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="variable"><![CDATA[q4]]></Property>
+<Property name="minimum"><![CDATA[-5.0]]></Property>
+<Property name="maximum"><![CDATA[5.0]]></Property>
+<Property name="format"><![CDATA["Charge on particle 5 = #"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">reset</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[Reset Simulation]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">instructions</Property>
+<Property name="parent">ButtonsPanel</Property>
+<Property name="text"><![CDATA[%helpLabel%]]></Property>
+<Property name="action"><![CDATA[if (helpFlag)
+{
+helpFlag = false;
+helpLabel = "Show Help";
+}
+else
+{
+helpFlag = true;
+helpLabel = "Hide Help";
+}]]></Property>
+<Property name="background"><![CDATA[BLUE]]></Property>
+<Property name="foreground"><![CDATA[YELLOW]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-5.0]]></Property>
+<Property name="maximumX"><![CDATA[5.0]]></Property>
+<Property name="minimumY"><![CDATA[-5.0]]></Property>
+<Property name="maximumY"><![CDATA[5.0]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Electric Field and Potential in Two Dimensions"]]></Property>
+<Property name="titleX"><![CDATA[x-position (m)]]></Property>
+<Property name="majorTicksX"><![CDATA[true]]></Property>
+<Property name="titleY"><![CDATA[y-position (m)]]></Property>
+<Property name="majorTicksY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ArrowSet</Type>
+<Property name="name">arrowSet</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="elementnumber"><![CDATA[nVectorsSq]]></Property>
+<Property name="x"><![CDATA[posx]]></Property>
+<Property name="y"><![CDATA[posy]]></Property>
+<Property name="sizex"><![CDATA[Fieldx]]></Property>
+<Property name="sizey"><![CDATA[Fieldy]]></Property>
+<Property name="visible"><![CDATA[FieldFlag]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[colorVectors]]></Property>
+<Property name="secondaryColor"><![CDATA[colorVectors]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParticleSet</Type>
+<Property name="name">charges</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="elementnumber"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="sizex"><![CDATA[0.5]]></Property>
+<Property name="sizey"><![CDATA[0.5]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[colorball]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">testcharge</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[xtest]]></Property>
+<Property name="y"><![CDATA[ytest]]></Property>
+<Property name="sizex"><![CDATA[0.2]]></Property>
+<Property name="sizey"><![CDATA[0.2]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">netField</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[xtest]]></Property>
+<Property name="y"><![CDATA[ytest]]></Property>
+<Property name="sizex"><![CDATA[Enetx]]></Property>
+<Property name="sizey"><![CDATA[Enety]]></Property>
+<Property name="scalex"><![CDATA[1e-4]]></Property>
+<Property name="scaley"><![CDATA[1e-4]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="color"><![CDATA[192,64,192]]></Property>
+<Property name="secondaryColor"><![CDATA[192,64,192]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet</Type>
+<Property name="name">Labels</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="elementnumber"><![CDATA[n]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[%chargeLabel%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Table</Property>
+<Property name="parent">MainWindow</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:4,2,3,3]]></Property>
+<Property name="size"><![CDATA[300,120]]></Property>
+<Property name="border"><![CDATA[50]]></Property>
+<Property name="borderType"><![CDATA[MATTE]]></Property>
+<Property name="borderColor"><![CDATA[CYAN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">ExLabel</Property>
+<Property name="parent">Table</Property>
+<Property name="value"><![CDATA["x-component of the net field (V/m)"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[backgroundColor]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">Ex</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[Enetx]]></Property>
+<Property name="format"><![CDATA["0.#"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">EyLabel</Property>
+<Property name="parent">Table</Property>
+<Property name="value"><![CDATA["y-component of the net field (V/m)"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[backgroundColor]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">Ey</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[Enety]]></Property>
+<Property name="format"><![CDATA["0.#"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">EnetLabel</Property>
+<Property name="parent">Table</Property>
+<Property name="value"><![CDATA["magnitude of the net field (V/m)"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="background"><![CDATA[backgroundColor]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">Enet</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[Enet]]></Property>
+<Property name="format"><![CDATA["0.#"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">VnetLabel</Property>
+<Property name="parent">Table</Property>
+<Property name="value"><![CDATA["net electric potential (volts)"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA[200,40]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">Vnet</Property>
+<Property name="parent">Table</Property>
+<Property name="variable"><![CDATA[Vnet]]></Property>
+<Property name="format"><![CDATA["0.#"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,18]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">helpBox</Property>
+<Property name="title"><![CDATA[Help]]></Property>
+<Property name="layout"><![CDATA[grid:0,1,0,0]]></Property>
+<Property name="visible"><![CDATA[helpFlag]]></Property>
+<Property name="onClosing"><![CDATA[helpFlag = false;
+helpLabel = "Show Help";]]></Property>
+<Property name="location"><![CDATA["9,29"]]></Property>
+<Property name="size"><![CDATA["700,268"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line1</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["Red indicates a positive charge, while blue indicates a negative charge."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line2</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["Set the number of charges present by adjusting the Number of charges slider"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line2a</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["The small positive test charge measures the field at the test charge location."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line3</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["That field is represented by the arrow on the test charge, and in the table at the bottom."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line3a</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["The test charge also measures the electric potential at the test charge location."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line3b</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["The value of the electric potential is shown in the table at the bottom."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line4</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["You can click-and-drag the charges (and the test charge) to move them around the screen."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line5</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["Adjust the signs and magnitudes of the charges using the Charge on particle x sliders."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line6</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["The units on the charges are microcoulombs."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">line7</Property>
+<Property name="parent">helpBox</Property>
+<Property name="value"><![CDATA["Reset the simulation, to the original settings, using the Reset Simulation button."]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="font"><![CDATA[Dialog,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

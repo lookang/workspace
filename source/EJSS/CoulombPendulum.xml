@@ -1,0 +1,577 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Coulomb Pendulum]]></Title>
+<Author><![CDATA[Anne J Cox]]></Author>
+<Keywords><![CDATA[Coulomb, charge, force]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[introductory]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[coxaj@eckerd.edu]]></Abstract>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[./CoulombPendulum/;]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[./CoulombPendulum/CoulombPendulum.html;]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EXTERNAL_EDITOR</Type>
+<Name>Coulomb Pendulum</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+./CoulombPendulum/CoulombPendulum.html
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Dynamic</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[x position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[y position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[phi]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[angle]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[angular velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[acc]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[angular acceleration]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Constant</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[color]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[charge color]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xDrag]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[x position of 'drag me' spot]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yDrag]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[2]]]></Dimension>
+<Comment><![CDATA[y position of 'Drag me' spot.]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[qGreen]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[green charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[qRed]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[red charge]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+phi[0]=-1;
+phi[1]=-2;
+for (int j=0; j<2; j++){
+  x[j]=Math.cos(phi[j]);
+  y[j]=Math.sin(phi[j]);
+  xDrag[j]=x[j]/2;
+  yDrag[j]=y[j]/2;
+  color[j]=j;
+  }
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+double sinDiff=Math.sin(phi[1]-phi[0]);
+double cosDiff=Math.cos(phi[1]-phi[0]);
+double q2=qRed*qGreen;
+double k=q2*9e-3/.017;
+for (int j=0;j<2;j++){
+  acc[j]=-k*Math.pow(-1,j)*sinDiff/Math.pow(1-cosDiff,1.5)-9.8*Math.cos(phi[j]);
+  }
+
+/*
+angular acc due to Coulomb force (F=kq^2/r^2)
+angular acc= (k*q^2/m*r^3)*sin(angle)/(2-2*cos(angle))^(3/2)
+where the angle is the angle between the two charges
+and r is the length of the pendulum support
+*/
+
+
+]]></Code>
+</PreliminaryCode>
+<ErrorCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</ErrorCode>
+<IndependentVariable>t</IndependentVariable>
+<Increment>0.05</Increment>
+<Rate state="phi[i]">omega[i]</Rate>
+<Rate state="omega[i]">acc[i]</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>0.00001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+for (int j=0; j<2; j++){
+  x[j]=Math.cos(phi[j]);
+  y[j]=Math.sin(phi[j]);
+  xDrag[j]=x[j]/2;
+  yDrag[j]=y[j]/2;
+  }
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>new Position</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[method called on Drag of 'drag me' points]]></Comment>
+<Code><![CDATA[
+public void newPosition () {
+  for (int j=0;j<2;j++) {
+    phi[j]=Math.atan2(yDrag[j],xDrag[j]);
+    t=0;
+    omega[j]=0;
+  }
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Coulomb Pendulum"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA["397,375"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.0]]></Property>
+<Property name="maximumX"><![CDATA[1.0]]></Property>
+<Property name="minimumY"><![CDATA[-1.0]]></Property>
+<Property name="maximumY"><![CDATA[1.0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">axisGroup</Property>
+<Property name="parent">drawingPanel</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">xAxis</Property>
+<Property name="parent">axisGroup</Property>
+<Property name="x"><![CDATA[-1]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[128,0,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">yAxis</Property>
+<Property name="parent">axisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-1]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[2]]></Property>
+<Property name="lineColor"><![CDATA[128,0,255]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">supportPoint</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[.05]]></Property>
+<Property name="sizeY"><![CDATA[.05]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ShapeSet2D</Type>
+<Property name="name">chargeSet</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="numberOfElements"><![CDATA[2]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="fillColor"><![CDATA[color]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.SegmentSet2D</Type>
+<Property name="name">supportSet</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="numberOfElements"><![CDATA[2]]></Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[x]]></Property>
+<Property name="sizeY"><![CDATA[y]]></Property>
+<Property name="lineColor"><![CDATA[color]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ShapeSet2D</Type>
+<Property name="name">dragParticleSet</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="numberOfElements"><![CDATA[2]]></Property>
+<Property name="x"><![CDATA[xDrag]]></Property>
+<Property name="y"><![CDATA[yDrag]]></Property>
+<Property name="sizeX"><![CDATA[.05]]></Property>
+<Property name="sizeY"><![CDATA[.05]]></Property>
+<Property name="visible"><![CDATA[_isPaused();]]></Property>
+<Property name="enabledPosition"><![CDATA[_isPaused();]]></Property>
+<Property name="dragAction"><![CDATA[newPosition ()]]></Property>
+<Property name="lineColor"><![CDATA[GRAY]]></Property>
+<Property name="fillColor"><![CDATA[GRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">dragTextGroup</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="y"><![CDATA[.1]]></Property>
+<Property name="visible"><![CDATA[_isPaused();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet2D</Type>
+<Property name="name">dragText</Property>
+<Property name="parent">dragTextGroup</Property>
+<Property name="numberOfElements"><![CDATA[2]]></Property>
+<Property name="x"><![CDATA[xDrag]]></Property>
+<Property name="y"><![CDATA[yDrag]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Drag Me"]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="size"><![CDATA["30,20"]]></Property>
+<Property name="tooltip"><![CDATA["Play/Pause."]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step();]]></Property>
+<Property name="size"><![CDATA["30,20"]]></Property>
+<Property name="tooltip"><![CDATA["Step."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="size"><![CDATA["30,20"]]></Property>
+<Property name="tooltip"><![CDATA["Reset."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">pdfButton</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">north</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/value.gif"]]></Property>
+<Property name="action"><![CDATA[_view.showDocument("./CoulombPendulum/CoulombPendulumStudentWorksheet.pdf")]]></Property>
+<Property name="size"><![CDATA["30,20"]]></Property>
+<Property name="tooltip"><![CDATA["Worksheet (pdf)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">anglePanel</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">phi1Label</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="text"><![CDATA["  $\\phi$ Green"]]></Property>
+<Property name="foreground"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">phi1</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[phi[1]*180/Math.PI+90]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["Angle between green charge and vertical."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">phi0Label</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="text"><![CDATA["  $\\phi$ Red"]]></Property>
+<Property name="foreground"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">phi0</Property>
+<Property name="parent">anglePanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[phi[0]*180/Math.PI+90]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["Angle between red charge and vertical."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">dampPanel</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">dampButton</Property>
+<Property name="parent">dampPanel</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA["v =0"]]></Property>
+<Property name="action"><![CDATA[for (int j=0;j<2;j++){
+  omega[j]=0;
+  }]]></Property>
+<Property name="tooltip"><![CDATA["Set v=0 for both charges."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">leftPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="borderType"><![CDATA[ROUNDED_TITLED]]></Property>
+<Property name="borderTitle"><![CDATA["I"]]></Property>
+<Property name="font"><![CDATA[Times New Roman,BOLD,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">greenChargePanel</Property>
+<Property name="parent">leftPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">greenSlider</Property>
+<Property name="parent">greenChargePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[qGreen]]></Property>
+<Property name="value"><![CDATA[2]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[4]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="background"><![CDATA[1]]></Property>
+<Property name="tooltip"><![CDATA["Green charge"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">greenChargeField</Property>
+<Property name="parent">greenChargePanel</Property>
+<Property name="position">south</Property>
+<Property name="variable"><![CDATA[qGreen]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[qGreen=Math.max(qGreen,1);
+qGreen=Math.min(qGreen,4);]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Green charge"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">redChargePanel</Property>
+<Property name="parent">leftPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">redSlider</Property>
+<Property name="parent">redChargePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[qRed]]></Property>
+<Property name="value"><![CDATA[2]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[4]]></Property>
+<Property name="orientation"><![CDATA[VERTICAL]]></Property>
+<Property name="background"><![CDATA[0]]></Property>
+<Property name="tooltip"><![CDATA["Red Charge"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">redCurrentField</Property>
+<Property name="parent">redChargePanel</Property>
+<Property name="position">south</Property>
+<Property name="variable"><![CDATA[qRed]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[qRed=Math.max(qRed,1);
+qRed=Math.min(qRed,4);]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Charge Red"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

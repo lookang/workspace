@@ -1,0 +1,1571 @@
+<Osejs version="3.3">
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>About</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <b><i><u>Ball and Beam</u></i><u>:</u></b><br><br>This system is composed 
+    of a beam attached to a motor, and a ball placed on the beam.<br>The ball 
+    is allowed to roll with one degree of freedom along the length of the beam.<br><img src="laboratoriosTexto/Imagenes/EsquemaBallBeam.gif"><br>
+The control goal is to place the ball at certain desired position, by changing 
+    the beam angle.This kind of system type is often encountered in control 
+    applications. This unstable system is a good example for learning how 
+    control techniques can be applied to stabilize a plant.<br>Two different 
+    control strategies have been implemented: manual control and PID control.
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Simulation Algorithm</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Next, the flow diagram of the simulation algorithm is shown:<br><img src="laboratoriosTexto/Imagenes/DiagramaBallBeam.gif">
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>HTML_EDITOR</Type>
+<Name>Author</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    Carla Mart&#237;n<br>Dpto. de Inform&#225;tica y Autom&#225;tica<br>E.T.S. 
+    de Ingenier&#237;a Inform&#225;tica, UNED<br>Juan del Rosal 16, 28040 
+    Madrid, Espa&#241;a
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>drawingPanel</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>xDPmin</Name>
+<Value><![CDATA[-0.5]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[minima posicion x del drawingPanel]]></Comment>
+</Variable>
+<Variable>
+<Name>xDPmax</Name>
+<Value><![CDATA[0.5]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maxima posicion x del drawingPanel]]></Comment>
+</Variable>
+<Variable>
+<Name>yDPmin</Name>
+<Value><![CDATA[-0.3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[minima posicion y del drawingPanel]]></Comment>
+</Variable>
+<Variable>
+<Name>yDPmax</Name>
+<Value><![CDATA[0.3]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maxima posicion y del drawingPanel]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>VariablesDibujo</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>npball</Name>
+<Value><![CDATA[20]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[numero de puntos del poligono que forma la bola]]></Comment>
+</Variable>
+<Variable>
+<Name>npbeam</Name>
+<Value><![CDATA[4]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[numero de puntos del poligono que forma la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>xdball0</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npball</Dimension>
+<Comment><![CDATA[coordenadas x iniciales de la bola si esta estuviese en el centro de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>ydball0</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npball</Dimension>
+<Comment><![CDATA[coordenadas y iniciales de la bola]]></Comment>
+</Variable>
+<Variable>
+<Name>xdball</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npball</Dimension>
+<Comment><![CDATA[coordenadas x  de la bola]]></Comment>
+</Variable>
+<Variable>
+<Name>ydball</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npball</Dimension>
+<Comment><![CDATA[coordenadas y de la bola]]></Comment>
+</Variable>
+<Variable>
+<Name>xdbeam0</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npbeam</Dimension>
+<Comment><![CDATA[coordenadas x iniciales de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>ydbeam0</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npbeam</Dimension>
+<Comment><![CDATA[coordenadas y iniciales de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>xdbeam</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npbeam</Dimension>
+<Comment><![CDATA[coordenadas x  de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>ydbeam</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>npbeam</Dimension>
+<Comment><![CDATA[coordenadas y de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>Nplot</Name>
+<Value><![CDATA[5000]]></Value>
+<Type>int</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Numero de puntos en el grafico]]></Comment>
+</Variable>
+<Variable>
+<Name>triangx</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>3</Dimension>
+<Comment><![CDATA[coordenadas x de la base triangular]]></Comment>
+</Variable>
+<Variable>
+<Name>triangy</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension>3</Dimension>
+<Comment><![CDATA[coordenadas y de la base triangular]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Parametros</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>g</Name>
+<Value><![CDATA[9.81]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[constante de gravedad (m/s/s)]]></Comment>
+</Variable>
+<Variable>
+<Name>lbeam</Name>
+<Value><![CDATA[0.8]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[longitud de la varilla (m)]]></Comment>
+</Variable>
+<Variable>
+<Name>xmax</Name>
+<Value><![CDATA[lbeam/2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maxima posicion de la bola (m)]]></Comment>
+</Variable>
+<Variable>
+<Name>thmax</Name>
+<Value><![CDATA[Math.PI/18]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maximo angulo que puede alcanzar la varilla (rad)]]></Comment>
+</Variable>
+<Variable>
+<Name>wbeam</Name>
+<Value><![CDATA[0.012]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[anchura de la varilla (m)]]></Comment>
+</Variable>
+<Variable>
+<Name>rball</Name>
+<Value><![CDATA[0.015]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[radio de la bola (m)]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>varOInteractivos</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>sizex</Name>
+<Value><![CDATA[xDPmax*0.03]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>sizey</Name>
+<Value><![CDATA[yDPmax*0.03]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>xiball</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[coordenada x del punto interactivo de la bola]]></Comment>
+</Variable>
+<Variable>
+<Name>yiball</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[coordenada y del punto interactivo de la bola]]></Comment>
+</Variable>
+<Variable>
+<Name>xibeam</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[coordenada x del punto interactivo de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>yibeam</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[coordenada y del punto interactivo de la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>Refx</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[coordenada x de la flecha que senala la flecha interactiva que indica la referencia]]></Comment>
+</Variable>
+<Variable>
+<Name>Refy</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[coordenada x de la flecha que senala la flecha interactiva que indica la referencia]]></Comment>
+</Variable>
+<Variable>
+<Name>sizeRefx</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Tamano en el eje x de la flecha que senala la referencia]]></Comment>
+</Variable>
+<Variable>
+<Name>sizeRefy</Name>
+<Value><![CDATA[-yDPmax*0.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Tamano en el eje y de la flecha que senala la referencia]]></Comment>
+</Variable>
+<Variable>
+<Name>sizexHand</Name>
+<Value><![CDATA[xDPmax*0.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Tamano en el eje x de la mano que permite mover la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name>sizeyHand</Name>
+<Value><![CDATA[yDPmax*0.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Tamano en el eje x de la mano que permite mover la varilla]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Variables</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>theta</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[angulo de la varilla (rad)]]></Comment>
+</Variable>
+<Variable>
+<Name>xball</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[distancia de la bola al centro de la varilla (m)]]></Comment>
+</Variable>
+<Variable>
+<Name>vball</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[velocidad de la bola (m/s)]]></Comment>
+</Variable>
+<Variable>
+<Name>time</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[tiempo (s)]]></Comment>
+</Variable>
+<Variable>
+<Name>dt</Name>
+<Value><![CDATA[0.01]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>derxball</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>dervball</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>PControlador</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Variable>
+<Name>Reference</Name>
+<Value><![CDATA[lbeam/4]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Referencia [m]]]></Comment>
+</Variable>
+<Variable>
+<Name>B</Name>
+<Value><![CDATA[1]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parametro B]]></Comment>
+</Variable>
+<Variable>
+<Name>Btooltip</Name>
+<Value><![CDATA["Fraction of SP in the proportional term"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parametro B]]></Comment>
+</Variable>
+<Variable>
+<Name>Kp</Name>
+<Value><![CDATA[-2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parametro Kp]]></Comment>
+</Variable>
+<Variable>
+<Name>Kptooltip</Name>
+<Value><![CDATA["PID gain"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parameter]]></Comment>
+</Variable>
+<Variable>
+<Name>Ti</Name>
+<Value><![CDATA[10]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parameter]]></Comment>
+</Variable>
+<Variable>
+<Name>Titooltip</Name>
+<Value><![CDATA["Integral time"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Td</Name>
+<Value><![CDATA[0.2]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parameter]]></Comment>
+</Variable>
+<Variable>
+<Name>Tdtooltip</Name>
+<Value><![CDATA["Derivative time"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parameter]]></Comment>
+</Variable>
+<Variable>
+<Name>N</Name>
+<Value><![CDATA[50]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[PID parameter]]></Comment>
+</Variable>
+<Variable>
+<Name>Ntooltip</Name>
+<Value><![CDATA["Maximum derivative gain"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Tt</Name>
+<Value><![CDATA[10*Ti]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Parametro del PID Tt]]></Comment>
+</Variable>
+<Variable>
+<Name>Tttooltip</Name>
+<Value><![CDATA["Reset time"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Tt]]></Comment>
+</Variable>
+<Variable>
+<Name>pControl</Name>
+<Value><![CDATA[false]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[variable que cuando true fuerza a ignorar la accion integral del controlador PID]]></Comment>
+</Variable>
+<Variable>
+<Name>manual</Name>
+<Value><![CDATA[false]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[angulo theta manipulado por el usuario]]></Comment>
+</Variable>
+<Variable>
+<Name>tSample</Name>
+<Value><![CDATA[dt*5]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[tiempo de muestreo]]></Comment>
+</Variable>
+<Variable>
+<Name>tSampleCounter</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>thmaxC</Name>
+<Value><![CDATA[thmax]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maximo angulo de la varilla [rad]]]></Comment>
+</Variable>
+<Variable>
+<Name>thmaxtooltip</Name>
+<Value><![CDATA["Maximum limit of the output"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[maximo angulo de la varilla [rad]]]></Comment>
+</Variable>
+<Variable>
+<Name>thminC</Name>
+<Value><![CDATA[-thmax]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[minimo angulo de la varilla [rad]]]></Comment>
+</Variable>
+<Variable>
+<Name>thmintooltip</Name>
+<Value><![CDATA["Minimum limit of the output"]]></Value>
+<Type>String</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>PID</Name>
+<Value><![CDATA[true]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name>Robust</Name>
+<Value><![CDATA[true]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Cuando esta a true el controlador robusto esta seleccionado]]></Comment>
+</Variable>
+<Variable>
+<Name>SelectW1</Name>
+<Value><![CDATA[true]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Cuando esta a true la funcion de peso W1 esta seleccionada]]></Comment>
+</Variable>
+<Variable>
+<Name>showParams</Name>
+<Value><![CDATA[false]]></Value>
+<Type>boolean</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Cuando true se muestra una ventana con Parametros.]]></Comment>
+</Variable>
+<Variable>
+<Name>Bi</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Variable calculada a partir de los parametros del PID]]></Comment>
+</Variable>
+<Variable>
+<Name>Ar</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Variable calculada a partir de los parametros del PID]]></Comment>
+</Variable>
+<Variable>
+<Name>Ad</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Variable calculada a partir de los parametros del PID]]></Comment>
+</Variable>
+<Variable>
+<Name>Bd</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Variable calculada a partir de los parametros del PID]]></Comment>
+</Variable>
+<Variable>
+<Name>P</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Termino proporcional del controlador PID]]></Comment>
+</Variable>
+<Variable>
+<Name>I0</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Termino integral del controlador PID en ese tiempo de muestreo]]></Comment>
+</Variable>
+<Variable>
+<Name>I</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Termino integral del controlador PID para el tiempo de muestreo siguiente]]></Comment>
+</Variable>
+<Variable>
+<Name>D0</Name>
+<Value><![CDATA[0]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Termino derivativo del controlador PID en el  tiempo de muestreo anterior]]></Comment>
+</Variable>
+<Variable>
+<Name>D</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Termino derivativo del controlador PID en ese tiempo de muestreo]]></Comment>
+</Variable>
+<Variable>
+<Name>u</Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Señal de control no saturada]]></Comment>
+</Variable>
+<Variable>
+<Name>xball0</Name>
+<Value><![CDATA[xball]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[Posicion de la bola en el tiempo de muestreo anterior]]></Comment>
+</Variable>
+<Variable>
+<Name></Name>
+<Value><![CDATA[]]></Value>
+<Type>double</Type>
+<Dimension></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Ball</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// Posiciones iniciales de los vertices del poligono que forman la bola
+// considerando que la bola esta en el centro de la varilla
+for (int i=0; i<npball; i++){
+      xdball0[i] = rball*Math.cos(2*Math.PI*i/npball);
+      ydball0[i] = rball*Math.sin(2*Math.PI*i/npball)+wbeam/2+rball;
+}
+
+//Posiciones iniciales de los vertices del poligono que forman la bola teniendo 
+//en cuenta que el centro de la bola esta a una distancia xball del centro de la varilla
+for (int i=0; i<npball; i++){
+     xdball[i] = (xdball0[i]+xball)*Math.cos(theta) - ydball0[i]*Math.sin(theta);
+     ydball[i] = (xdball0[i]+xball)*Math.sin(theta) + ydball0[i]*Math.cos(theta);
+}
+
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Beam</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//Posicion de los vertices del poligono que forma la varilla considerando que la 
+//varilla esta en posicion horizontal
+xdbeam0[0] = lbeam/2;
+xdbeam0[1] = lbeam/2;
+xdbeam0[2] = -lbeam/2;
+xdbeam0[3] = -lbeam/2;
+
+ydbeam0[0] = -wbeam/2;
+ydbeam0[1] = wbeam/2;
+ydbeam0[2] = wbeam/2;
+ydbeam0[3] = -wbeam/2;
+
+//Posicion de los vertices del poligono que forma la varilla teniendo en cuenta que este
+//forma un angulo theta respecto a la horizontal.
+for (int i=0; i<npbeam; i++){
+     xdbeam[i] = xdbeam0[i]*Math.cos(theta) - ydbeam0[i]*Math.sin(theta);
+     ydbeam[i] = xdbeam0[i]*Math.sin(theta) + ydbeam0[i]*Math.cos(theta);
+}
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>ObjetosInteractivos</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//Posicion del punto de la bola que es interactivo
+xiball = xdball[0];
+yiball = ydball[0];
+
+//Posicion del punto de la varilla que es interactivo
+xibeam = xdbeam[0];
+yibeam = ydbeam[0];
+
+//Coordenadas x e y de la referencia
+Refx =-( Reference*Math.cos(theta) - ydbeam0[0]*Math.sin(theta));
+Refy = -(Reference*Math.sin(theta) + ydbeam0[0]*Math.cos(theta)-sizeRefy*1.05);
+
+//Dimensiones segun x e y de la flecha que indica la referencia
+sizeRefx =  -yDPmax*0.2*Math.sin(theta);
+sizeRefy =  yDPmax*0.2*Math.cos(theta);
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Base</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//Posiciones de los vertices de la base triangular
+triangx[0] = 0;
+triangy[0] = 0;
+triangx[1] = -lbeam/8;
+triangy[1] = -lbeam/6;
+triangx[2] = lbeam/8;
+triangy[2] = -lbeam/6;
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>CODE_EDITOR</Type>
+<Name>PaginaControl</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if (tSampleCounter>=tSample) {
+  tSampleCounter = 0.0;
+   if (!manual) {
+  //Calculo del termino integral para el siguiente tiempo de muestreo
+   I=I0+Bi*(Reference-xball)+Ar*(theta-u);
+   xball0=xball;
+}
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>PaginaEvolucion</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<IndependentVariable>time</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="xball">vball</Rate>
+<Rate state="vball">-g*5/7*Math.sin(theta)</Rate>
+<Method>RungeKutta</Method>
+<Tolerance></Tolerance>
+<Comment><![CDATA[]]></Comment>
+<Events></Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>CalculoDerivadas</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+derxball = vball;
+dervball =-g*5/7*Math.sin(theta);
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Cons Page</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//La posicion de la bola se limita a la long. de la varilla
+//haciendo que la velocidad cero cuando se alcanza el final de la varilla
+
+if (xball>xmax) {
+   xball = xmax;
+   vball = 0;
+}
+if (xball<-xmax) {
+   xball = -xmax;
+   vball = 0;
+}
+
+// pseudo-friccion (Friction de la bola rodando sobre la varilla se simula haciendo
+// la velocidad cero si la velocidad de la bola y el angulo de la varilla son 
+//suficientemente pequenos
+if ( (Math.abs(theta)<0.02 )&&(Math.abs(vball)<0.002) ){
+   vball = 0;
+}
+
+//La senal de control es el angulo de la varilla, que esta limitado entre (-thmax,thmax)
+if (theta<-thmax) theta = -thmax;
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Dibujo</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//Posiciones de los vertices del poligono que forman la bola teniendo 
+//en cuenta que el centro de la bola esta a una distancia xball del centro de la varilla
+for (int i=0; i<npball; i++){
+     xdball[i] = (xdball0[i]+xball)*Math.cos(theta) - ydball0[i]*Math.sin(theta);
+     ydball[i] = (xdball0[i]+xball)*Math.sin(theta) + ydball0[i]*Math.cos(theta);
+}
+
+//Posicion de los vertices del poligono que forma la varilla teniendo en cuenta que este
+//forma un angulo theta respecto a la horizontal.
+for (int i=0; i<npbeam; i++){
+     xdbeam[i] = xdbeam0[i]*Math.cos(theta) - ydbeam0[i]*Math.sin(theta);
+     ydbeam[i] = xdbeam0[i]*Math.sin(theta) + ydbeam0[i]*Math.cos(theta);
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>interactObjs</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//Posicion del punto de la bola que es interactivo
+xiball = xdball[0];
+yiball = ydball[0];
+
+//Posicion del punto de la varilla que es interactivo
+xibeam = xdbeam[0];
+yibeam = ydbeam[0];
+
+//Dimensiones segun x e y de la flecha que indica la referencia
+sizeRefx =  -yDPmax*0.2*Math.sin(theta);
+sizeRefy =  yDPmax*0.2*Math.cos(theta);
+
+//Coordenadas x e y de la referencia
+Refx =( Reference*Math.cos(theta) - ydbeam0[0]*Math.sin(theta));
+Refy = (Reference*Math.sin(theta) + ydbeam0[0]*Math.cos(theta)-sizeRefy*1.05);
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>PáginaControlador</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+tSampleCounter += dt;
+if (tSampleCounter>=tSample) {
+ if (!manual) {
+ Bi = Kp*tSample/Ti;
+ Ar = tSample/Tt;
+ Ad = Td/(Td+N*tSample);
+ Bd = Kp*N*Ad;
+ //Calculo de los terminos proporcional (P) y derivativo (D) para 
+ //ese tiempo de muestreo
+ P = Kp*(B*Reference-xball);
+ D = Ad*D0-Bd*(xball-xball0);
+ //Calculo del valor de la señal de control no saturada
+ u = P+I0+D;
+ //Calculo del valor saturado de la señal de control
+ theta = Math.min(thmaxC, Math.max(thminC,u));
+}
+}
+
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Actions</Name>
+<Active>true</Active>
+<Visible>true</Visible>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//Pagina de acciones
+
+//Accion que se produce cuando se arrastra la bola con el raton
+public void ChangeBallPos () {
+xball = xiball;
+if (xball>xmax) {
+   xball = xmax; vball = 0;}
+if (xball<-xmax) {
+   xball = -xmax; vball = 0;}
+for (int i=0; i<npball; i++){
+     xdball[i] = (xdball0[i]+xball)*Math.cos(theta) - ydball0[i]*Math.sin(theta);
+     ydball[i] = (xdball0[i]+xball)*Math.sin(theta) + ydball0[i]*Math.cos(theta);
+}
+xiball = xdball[0];
+yiball = ydball[0];
+}
+
+//Accion que se produce cuando se arrastra con el raton la varilla
+public void ChangeBeamAngle () {
+theta = Math.atan2(yibeam, xibeam);
+if (theta>thmax) theta = thmax;
+if (theta<-thmax) theta = -thmax;
+for (int i=0; i<npbeam; i++){
+     xdbeam[i] = xdbeam0[i]*Math.cos(theta) - ydbeam0[i]*Math.sin(theta);
+     ydbeam[i] = xdbeam0[i]*Math.sin(theta) + ydbeam0[i]*Math.cos(theta);
+}
+xibeam = xdbeam[0];
+yibeam = ydbeam[0];
+}
+
+//Accion que se produce cuando se cambia la Referencia
+public void ChangeReference () {
+Reference = Refx;
+if (Reference>xmax) {
+   Reference = xmax; }
+if (Reference<-xmax) {
+   Reference = -xmax;}
+
+}
+
+//Accion que se produce cuando se cambia de modo manual a 
+//automatico o viceversa
+public void ChangeControl () {
+//Reinicializacion del controlador
+I0 = 0;
+D0=0;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[mainFrame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA[372,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[xDPmin]]></Property>
+<Property name="maximumX"><![CDATA[xDPmax]]></Property>
+<Property name="minimumY"><![CDATA[yDPmin]]></Property>
+<Property name="maximumY"><![CDATA[yDPmax]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">Ball</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xiball]]></Property>
+<Property name="y"><![CDATA[yiball]]></Property>
+<Property name="sizex"><![CDATA[sizex]]></Property>
+<Property name="sizey"><![CDATA[sizey]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[ChangeBallPos()]]></Property>
+<Property name="color"><![CDATA[white]]></Property>
+<Property name="secondaryColor"><![CDATA[white]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">BallPoligon</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[npball]]></Property>
+<Property name="x"><![CDATA[xdball]]></Property>
+<Property name="y"><![CDATA[ydball]]></Property>
+<Property name="color"><![CDATA[red]]></Property>
+<Property name="secondaryColor"><![CDATA[red]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">BeamPoligon</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[npbeam]]></Property>
+<Property name="x"><![CDATA[xdbeam]]></Property>
+<Property name="y"><![CDATA[ydbeam]]></Property>
+<Property name="color"><![CDATA[black]]></Property>
+<Property name="secondaryColor"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image</Type>
+<Property name="name">ImageBeam</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[xibeam]]></Property>
+<Property name="y"><![CDATA[yibeam]]></Property>
+<Property name="sizex"><![CDATA[sizexHand]]></Property>
+<Property name="sizey"><![CDATA[sizeyHand]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[ChangeBeamAngle()]]></Property>
+<Property name="image"><![CDATA[_examples/_data/graspingHand.gif]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">Poligonbase</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="maxpoints"><![CDATA[3]]></Property>
+<Property name="x"><![CDATA[triangx]]></Property>
+<Property name="y"><![CDATA[triangy]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="closed"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[orange]]></Property>
+<Property name="secondaryColor"><![CDATA[orange]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">Arrow</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[Refx]]></Property>
+<Property name="y"><![CDATA[Refy]]></Property>
+<Property name="sizex"><![CDATA[sizeRefx]]></Property>
+<Property name="sizey"><![CDATA[sizeRefy]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="dragaction"><![CDATA[ChangeReference()]]></Property>
+<Property name="color"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">InteractArrow</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[Refx]]></Property>
+<Property name="y"><![CDATA[Refy]]></Property>
+<Property name="sizex"><![CDATA[sizex]]></Property>
+<Property name="sizey"><![CDATA[sizey]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[ChangeReference()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panelButtons</Property>
+<Property name="parent">panel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:2,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Play</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="text"><![CDATA[Play]]></Property>
+<Property name="enabled"><![CDATA[_isPaused]]></Property>
+<Property name="action"><![CDATA[_play()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Pause</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="text"><![CDATA[Pause]]></Property>
+<Property name="enabled"><![CDATA[_isPlaying]]></Property>
+<Property name="action"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelD</Property>
+<Property name="parent">panelButtons</Property>
+<Property name="layout"><![CDATA[grid:1,1,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">CheckBoxPlot</Property>
+<Property name="parent">PanelD</Property>
+<Property name="variable"><![CDATA[showPlot]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[Plots]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelControls</Property>
+<Property name="parent">panel</Property>
+<Property name="layout"><![CDATA[grid:2,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">ButtomManual</Property>
+<Property name="parent">PanelControls</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[manual]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[Manual]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">PIDControl</Property>
+<Property name="parent">PanelControls</Property>
+<Property name="variable"><![CDATA[PID]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[PID]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">ParamController</Property>
+<Property name="parent">PanelControls</Property>
+<Property name="variable"><![CDATA[showParams]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA[CParams]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">DialogPlots</Property>
+<Property name="title"><![CDATA[DialogPlots]]></Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+<Property name="visible"><![CDATA[showPlot]]></Property>
+<Property name="location"><![CDATA[380,0]]></Property>
+<Property name="size"><![CDATA[370,301]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel</Property>
+<Property name="parent">DialogPlots</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[grid:2,1,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel3</Property>
+<Property name="parent">Panel</Property>
+<Property name="layout"><![CDATA[grid:1,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">vball</Property>
+<Property name="parent">Panel3</Property>
+<Property name="titleX"><![CDATA[time (s)]]></Property>
+<Property name="titleY"><![CDATA[vball (m/s)]]></Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Tracev</Property>
+<Property name="parent">vball</Property>
+<Property name="x"><![CDATA[time]]></Property>
+<Property name="y"><![CDATA[vball]]></Property>
+<Property name="maxpoints"><![CDATA[Nplot]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">xball</Property>
+<Property name="parent">Panel3</Property>
+<Property name="position">center</Property>
+<Property name="titleX"><![CDATA[time (s)]]></Property>
+<Property name="titleY"><![CDATA[xball (m)]]></Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">Tracex</Property>
+<Property name="parent">xball</Property>
+<Property name="x"><![CDATA[time]]></Property>
+<Property name="y"><![CDATA[xball]]></Property>
+<Property name="maxpoints"><![CDATA[Nplot]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">TraceRef</Property>
+<Property name="parent">xball</Property>
+<Property name="x"><![CDATA[time]]></Property>
+<Property name="y"><![CDATA[Reference]]></Property>
+<Property name="maxpoints"><![CDATA[Nplot]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[red]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">PlotTheta</Property>
+<Property name="parent">Panel</Property>
+<Property name="titleX"><![CDATA[time (s)]]></Property>
+<Property name="titleY"><![CDATA[theta (rad)]]></Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">TraceTh</Property>
+<Property name="parent">PlotTheta</Property>
+<Property name="x"><![CDATA[time]]></Property>
+<Property name="y"><![CDATA[theta]]></Property>
+<Property name="maxpoints"><![CDATA[Nplot]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelValues</Property>
+<Property name="parent">DialogPlots</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,8,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">xball</Property>
+<Property name="parent">PanelValues</Property>
+<Property name="variable"><![CDATA[xball]]></Property>
+<Property name="format"><![CDATA[xball = 0.###]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">ReferenceV</Property>
+<Property name="parent">PanelValues</Property>
+<Property name="variable"><![CDATA[Reference]]></Property>
+<Property name="format"><![CDATA[Ref  = 0.###]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">vball</Property>
+<Property name="parent">PanelValues</Property>
+<Property name="variable"><![CDATA[vball]]></Property>
+<Property name="format"><![CDATA[vball = 0.##]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">theta</Property>
+<Property name="parent">PanelValues</Property>
+<Property name="variable"><![CDATA[theta]]></Property>
+<Property name="format"><![CDATA[theta = 0.##]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">DialogC</Property>
+<Property name="title"><![CDATA[DialogC]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showParams]]></Property>
+<Property name="location"><![CDATA[0,320]]></Property>
+<Property name="size"><![CDATA[250,303]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel2</Property>
+<Property name="parent">DialogC</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[grid:8,2,0,0]]></Property>
+<Property name="border"><![CDATA[0,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">BF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[B]]></Property>
+<Property name="format"><![CDATA[B = 0.00]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%Btooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderB</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[B]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1.5]]></Property>
+<Property name="format"><![CDATA[0.0]]></Property>
+<Property name="tooltip"><![CDATA[%Btooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">KpF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Kp]]></Property>
+<Property name="format"><![CDATA[Kp = 0.00]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%Kptooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderKp</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Kp]]></Property>
+<Property name="minimum"><![CDATA[-30]]></Property>
+<Property name="maximum"><![CDATA[1]]></Property>
+<Property name="tooltip"><![CDATA[%Kptooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">TiF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Ti]]></Property>
+<Property name="format"><![CDATA[Ti = 0.00]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%Titooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderTi</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Ti]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1000]]></Property>
+<Property name="tooltip"><![CDATA[%Titooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">TdF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Td]]></Property>
+<Property name="format"><![CDATA[Td = 0.00]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%Tdtooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderTd</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Td]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="tooltip"><![CDATA[%Tdtooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">NF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[N]]></Property>
+<Property name="format"><![CDATA[N = 0.00]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%Ntooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderN</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[N]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1000]]></Property>
+<Property name="tooltip"><![CDATA[%Ntooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">TtField</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Tt]]></Property>
+<Property name="format"><![CDATA[Tt = 0.#]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%Tttooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderTT</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[Tt]]></Property>
+<Property name="minimum"><![CDATA[5]]></Property>
+<Property name="maximum"><![CDATA[20]]></Property>
+<Property name="tooltip"><![CDATA[%Tttooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">ThmaxF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[thmaxC]]></Property>
+<Property name="format"><![CDATA[ThMax(rad) = 0.000]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%thmaxtooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderThmax</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[thmaxC]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[0.300]]></Property>
+<Property name="tooltip"><![CDATA[%thmaxtooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Field</Type>
+<Property name="name">ThminF</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[thminC]]></Property>
+<Property name="format"><![CDATA[Thmin(rad) = 0.000]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[ChangeControl()]]></Property>
+<Property name="tooltip"><![CDATA[%thmintooltip%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderThmin</Property>
+<Property name="parent">Panel2</Property>
+<Property name="variable"><![CDATA[thminC]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[0.300]]></Property>
+<Property name="tooltip"><![CDATA[%thmintooltip%]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+</Osejs>

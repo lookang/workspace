@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="mirrorv11v1"
+author="Leong Tze Kwang; lookang"
+description="http://weelookang.blogspot.sg/2015/08/ejss-light-reflection-model.html"
+screenshot="./mirror/2015-04-17_1719s.png"
+thumbnail="./mirror/2015-04-17_1719s.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="mirrorv11v1_Simulation.xhtml"/>
+</Module>

@@ -1,0 +1,25 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 160503. Visit http://www.um.es/fem/Ejs
+title: Bound Eigenstate Superposition
+logo-image: BoundEigenstateSuperposition/BoundEigenstateSuperpositionIcon.png
+author: Wolfgang Christian
+copyright: W. Christian
+preferred-width: 800
+preferred-height: 600
+author-image: wc_icon.png
+source: BoundEigenstateSuperposition.ejss
+main-script: BoundEigenstateSuperposition_Simulation.js
+main-simulation: BoundEigenstateSuperposition_Simulation.xhtml
+available-languages: 
+html-contents: BoundEigenstateSuperposition_Contents.xhtml
+html-main: BoundEigenstateSuperposition.xhtml
+page-title: Bound Eigenstate Superposition
+page-index: BoundEigenstateSuperposition/BoundEigenstateSuperposition.xhtml
+page-index: BoundEigenstateSuperposition_Simulation.xhtml
+resource: jslib/Factorials.js
+resource: wc_icon.png
+resource: jslib/Polynomial.js
+resource: jslib/Hermite.js
+resource: BoundEigenstateSuperposition/superposition_principle.gif
+resource: BoundEigenstateSuperposition/schroedinger_au.gif
+resource: BoundEigenstateSuperposition/BoundEigenstateSuperpositionIcon.png
+resource: BoundEigenstateSuperposition/BoundEigenstateSuperposition.xhtml

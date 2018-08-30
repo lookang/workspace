@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 160929. Visit http://www.um.es/fem/Ejs
+title: Four Spring Accelerometer
+logo-image: FourSpringAccelerometer/FourSpringAccelerometer.png
+author: W. Christian
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: images/WC_logo.png
+source: FourSpringAccelerometer.ejss
+main-script: FourSpringAccelerometer_Simulation.js
+main-simulation: FourSpringAccelerometer_Simulation.xhtml
+available-languages: 
+html-contents: FourSpringAccelerometer_Contents.xhtml
+html-main: FourSpringAccelerometer.xhtml
+page-title: Four Spring Accelerometer
+page-index: FourSpringAccelerometer_Simulation.xhtml
+resource: FourSpringAccelerometer/FourSpringAccelerometer.png
+resource: FourSpringAccelerometer/FourSpringAccelerometer.xhtml
+resource: FourSpringAccelerometer/MassAndSpringWithAccelerometer.png
+resource: images/WC_logo.png
+resource: ejss.css

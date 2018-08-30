@@ -1,0 +1,17 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 161123. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: fractions.ejss
+main-script: 
+main-simulation: fractions_Simulation.xhtml
+available-languages: 
+html-contents: fractions_Contents.xhtml
+html-main: fractions.xhtml
+page-title: Simulation
+page-index: fractions_Simulation.xhtml
+resource: semicircle.png

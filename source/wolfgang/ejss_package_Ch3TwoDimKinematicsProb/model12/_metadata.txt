@@ -1,0 +1,20 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+title: Prob 3.11: A Ball Slides Off of a Table
+logo-image: prob03_11/prob03_11.png
+author: Andreu Glasmann; Wolfgang Christian; Mario Belloni
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 500
+author-image: ag.png;./wc_icon.png;./mjb_icon.png
+main-script: prob03_11_Simulation.js
+main-simulation: prob03_11_Simulation.xhtml
+available-languages: 
+html-contents: prob03_11_Contents.xhtml
+html-main: prob03_11.xhtml
+page-title: Prob 3.11: A Ball Slides Off of a Table
+page-index: prob03_11_Simulation.xhtml
+resource: wc_icon.png
+resource: ag.png
+resource: prob03_11/prob03_11.png
+resource: prob03_11/ejss_html_prob03_11.html
+resource: mjb_icon.png

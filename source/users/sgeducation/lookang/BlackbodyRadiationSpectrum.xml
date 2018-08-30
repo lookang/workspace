@@ -1,0 +1,1406 @@
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="5.3" password="">
+<Osejs.Information>
+<Title><![CDATA[blackbody radiation]]></Title>
+<Copyright><![CDATA[Creative Commons Attribution]]></Copyright>
+<Keywords><![CDATA[black body light intensity wavelength]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[A level]]></Level>
+<Language><![CDATA[english]]></Language>
+<Abstract><![CDATA[Designed by Fu-Kwun Hwang http://www.phy.ntnu.edu.tw/ntnujava/
+ 
+Ejs Open source java applet Blackbody radiation curves customised for nm written by Fu-Kwun Hwang and customized by Loo Kang WEE 
+
+ This applet will show 5(with temperature text) to 10(in total) black curves of black body radiation curve between Tmin and Tmax.
+Minimum temperature shown can be adjusted with left slider bar, Tmin=
+Another curve in red is also shown (it's temperature can be adjusted with middle slider bar), T= Maximum temperature shown can be adjusted with right slider bar, Tmax= You can use it for study the intensity for black body radiation. If you want to study different temperature range, You can change Tmin and Tmax, to change the temperature range,too, currently it is set to 100 K to 10000 K. 
+The x-axis shows the wavelength ? is in nanometre for prefix 10-9 SI units.
+The intensity is in W.e-5 / (m2.nm)
+The wavelength unit in the simulation is nm (nanometre), remixed from
+http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=427.msg3833#new for original � (angstrom) version by Fu-Kwun Hwang.
+ Please note that this resource requires at least version 1.5 of Java (JRE).]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>true</LanguageTools>
+<AppletColSupport>false</AppletColSupport>
+<UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
+<RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
+<UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
+<ModelTab></ModelTab>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<StaticImages>
+</StaticImages>
+<HTMLHead><![CDATA[]]></HTMLHead>
+<Logo>./Blackbody Radiation/Blackbody Radiation.png</Logo>
+<Author><![CDATA[Designed by Fu-Kwun Hwang http://www.phy.ntnu.edu.tw/ntnujava/ and weelookang@gmail.com; lookang]]></Author>
+<AuthorLogo>./01authorfu-kwun.hwang.png;./1authorlookangphoto.png</AuthorLogo>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./01authorfu-kwun.hwang.png;./1authorlookangphoto.png;./Blackbody Radiation/Blackbody Radiation.png;./BlackbodyRadiationSpectrum/BlackbodyRadiationSpectrum.html;./BlackbodyRadiationSpectrum/blackbodyradiation.gif;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./BlackbodyRadiationSpectrum/;./Blackbody Radiation/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Blackbody Radiation Spectrum</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Blackbody Radiation Spectrum</Title>
+  <External>true</External>
+  <![CDATA[
+./BlackbodyRadiationSpectrum/BlackbodyRadiationSpectrum.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Intro Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Intro Page</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify; font-family: Georgia, Times New Roman, Times, serif }
+        a:link { color: blue }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
+        ﻿ body { margin-left: 3%; margin-top: 2%; margin-bottom: 5%; font-size: medium; text-align: justify; margin-right: 3% }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <a href="http://weelookang.blogspot.sg/2010/06/ejs-open-source-java-applet-blackbody.html">http://weelookang.blogspot.sg/2010/06/ejs-open-source-java-applet-blackbody.html</a>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>coordinate</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[range]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[�d��]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmin]]></Name>
+<Value><![CDATA[-range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x ���p]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmax]]></Name>
+<Value><![CDATA[range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[x���j]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymin]]></Name>
+<Value><![CDATA[-range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y���p]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymax]]></Name>
+<Value><![CDATA[range/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[y���j]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[time]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[�ɶ�]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[�ɶ����Z]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[range/40]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[�ɤl��ܪ��j�p]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[label]]></Name>
+<Value><![CDATA["play"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[T1]]></Name>
+<Value><![CDATA[1000.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[T2]]></Name>
+<Value><![CDATA[6000.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nz]]></Name>
+<Value><![CDATA[16]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[z]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nz][2]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>basic</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[h]]></Name>
+<Value><![CDATA[6.626068e-34]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[PLANCK = 6.6252 E-34]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h4]]></Name>
+<Value><![CDATA[8.*h*1.e57]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[change to 8.*h*1.e57 in new 4 . * Planck's constant * 1.e47 = 2.6504272 � 10^14 m2 kg / s]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[c]]></Name>
+<Value><![CDATA[299792458]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[the speed of light = 299 792 458 m / s]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eightpihc2]]></Name>
+<Value><![CDATA[8*Math.PI*h*c*c*1.e40]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[8*Math.PI*h*c*c*1.e36 instead of 8*Math.PI*h*c*c*1.e40 for nm]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[twohc2]]></Name>
+<Value><![CDATA[8*Math.PI*h*c*c*1.e40]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[1.38e-23]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[Boltzman k, 1.38E-23 J/K]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[cst]]></Name>
+<Value><![CDATA[h*c/(k*1.e-9)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[(h * c) / (k * 1.e-10) = 143 877 506 m K, change to e-9 for nm]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[f6000]]></Name>
+<Value><![CDATA["h4/((Math.exp(cst/(r*6000))-1)*(r*r*r))"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[no used]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[f3000]]></Name>
+<Value><![CDATA["h4/((Math.exp(cst/(r*3000))-1)*(r*r*r))"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[no used]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[f2000]]></Name>
+<Value><![CDATA["h4/((Math.exp(cst/(r*2000))-1)*(r*r*r))"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[no used]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fT]]></Name>
+<Value><![CDATA["twohc2/((Math.exp(cst/(r*T))-1)*(r*r*r*r*r))"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[old "h4/((Math.exp(cst/(r*T))-1)*(r*r*r*r*r))" older "h4/((Math.exp(cst/(r*T))-1)*(r*r*r))"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fT2]]></Name>
+<Value><![CDATA[fT+"/Imax"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rmin]]></Name>
+<Value><![CDATA[100]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rmax]]></Name>
+<Value><![CDATA[3000.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[np]]></Name>
+<Value><![CDATA[1000]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Imin]]></Name>
+<Value><![CDATA[1.e-50]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[Imax]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[increase to 10 from 7]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TS0]]></Name>
+<Value><![CDATA[{0.5,1,2,3,4,5,6}]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[unused]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TS]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[old {0.5,1,2,3,4,5,6} now 0]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[T]]></Name>
+<Value><![CDATA[4000.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[scale]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[logscale]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nTshow]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[control the number of text to display]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TX]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TY]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TMSG]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[[n]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xm]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TXred]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TYred]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[TMSGred]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmred]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>language</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[l_title]]></Name>
+<Value><![CDATA["$\theta$"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[ blackbody radiation]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_xtitle]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA["$\lamda$(visible light:yellow region)"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_ytitle]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA["Intensity MW/m^{2}/.m"]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_T]]></Name>
+<Value><![CDATA["T=0.0 K"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_Tmin]]></Name>
+<Value><![CDATA["Tmin=0. K"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_Tmax]]></Name>
+<Value><![CDATA["Tmax=0. K"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[l_lambda]]></Name>
+<Value><![CDATA["xmax=0. A"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>object</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[vr]]></Name>
+<Value><![CDATA[255]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[red]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vg]]></Name>
+<Value><![CDATA[150]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[green]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vb]]></Name>
+<Value><![CDATA[99]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[blue]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vcolor]]></Name>
+<Value><![CDATA[new java.awt.Color(vr,vg,vb)]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[color light]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vcolorr]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vcolorg]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vcolorb]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vresultado]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[(T-300.0)/(5000.0-300.0)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mode]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+_view.PlottingPanel.setAntialiasTextOn(true);
+_view.PlottingPanel.setAntialiasShapeOn(true);
+
+_view.drawingPanel.setAntialiasTextOn(true);
+_view.drawingPanel.setAntialiasShapeOn(true);
+
+//zh_tw();
+double dz=1./nz;
+for(int i=0;i<nz;i++){
+ z[i][0]=z[i][1]=i*dz;
+}
+//for(int i=0;i<n;i++){
+// TS[i]=TS0[i]*T1;
+//}
+changeRange();
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>function</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if(mode.equals("")){
+T = T;
+t = (T-300.0)/(5000.0-300.0);
+}
+else if(mode.equals("earth")){
+T = 300;
+t = (T-300.0)/(5000.0-300.0);
+}
+else if(mode.equals("oven")){
+T = 660;
+t = (T-300.0)/(5000.0-300.0);
+}
+else if(mode.equals("light_blub")){
+T = 3000;
+t = (T-300.0)/(5000.0-300.0);
+}
+else if(mode.equals("sun")){
+T = 5700;
+t = (T-300.0)/(5000.0-300.0);
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// adapted from http://www.compadre.org/osp/items/detail.cfm?ID=10528&S=2
+vr = funcion(t,0.2,10.0);
+vg = funcion(t,0.7,2.0);
+vb = funcion(t,0.9,2.0);
+
+vresultado = vr;
+vcolor = new java.awt.Color(vr,vg,vb,255);
+
+// by lookang
+vcolorr= new java.awt.Color(vr,0,0,255);
+vcolorg= new java.awt.Color(0,vg,0,255);
+vcolorb= new java.awt.Color(0,0,vb,255);
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>zh_tw</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void zh_tw () {
+ l_title="�����g";
+ l_xtitle="�i��(���J) 4000-7000����ϰ쬰�i������";
+ l_ytitle="�۹�j��";
+ l_T="�ū�=0.0K";
+ l_Tmin="���u�C��=0. K";
+ l_Tmax="�̰���=0. K";
+ l_lambda="�i���̤j= 0 �J";
+ _initialize();
+}
+public void init(String type){
+ if(type.equals("zh_tw"))zh_tw();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>changeRange</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+double dT=0.,I,r,dr;
+public void changeRange () {
+
+ dT=(T2-T1)/(n-1);
+ for(int i=0;i<n;i++){
+   TS[i]=T2-i*dT;
+//  xm=TX[i]=h*c/(4.97*k*TS[i])*1.e10;
+// code to appear Tmax top position
+// taken from http://en.wikipedia.org/wiki/Planck%27s_law
+// This function peaks for hc = 4.97?kT, a factor of 1.76 shorter in wavelength (higher in frequency) than the frequency peak. It is the more commonly used peak in Wien's displacement law.
+// xm is ? where peak occurs
+ xm=TX[i]=h*c/(4.97*k*TS[i])*1.e9; // cos weelk doing nm instead of Am
+ xmred=TXred=h*c/(4.97*k*T)*1.e9;
+//  TMSG[i]="T="+((int)(TS[i]*10+0.5)/10.)+"K, peak at "+(int)(xm*10+0.5)/10. +"A";
+ TMSG[i]="T="+((int)((TS[i]*10+0.5)/10.))+"K, peak at "+(int)((xm*10+0.5)/10.) +" nm";
+ TMSGred="T="+((int)((T*10+0.5)/10.))+"K, peak at "+(int)((xmred*10+0.5)/10.) +" nm";
+
+//   TY[i]=twohc2/((Math.exp(cst/(xm*TS[i]))-1)*(xm*xm*xm*xm*xm));
+// calculate position of text top
+ TY[i]=twohc2/((Math.exp(cst/(xm*TS[i]))-1)*(xm*xm*xm*xm*xm));
+ TYred=twohc2/((Math.exp(cst/(xmred*T))-1)*(xmred*xmred*xmred*xmred*xmred));
+
+}
+ if(T<T1)T=T1;
+ if(T>T2)T=T2;
+Imax=0;
+dr=(rmax-rmin)/(np-1);
+for(int i=0;i<np;i++){
+  r=rmin+i*dr;
+   I=twohc2/((Math.exp(cst/(r*T2))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+   I=twohc2/((Math.exp(cst/(r*T1))-1)*(r*r*r*r*r));
+// if(I>Imax)Imax=I;
+//   I=twohc2/((Math.exp(cst/(r*T))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+}
+Imax=Imax*1.05;
+}
+
+
+//
+/*
+double dT=0.,I,r,dr;
+public void changeRange () {
+
+ dT=(T2-T1)/(n-1);
+ for(int i=0;i<n;i++){
+   TS[i]=T1+i*dT;
+ }
+ if(T<T1)T=T1;
+ if(T>T2)T=T2;
+Imax=0;
+dr=(rmax-rmin)/(np-1);
+for(int i=0;i<np;i++){
+  r=rmin+i*dr;
+   I=eightpihc2/((Math.exp(cst/(r*T2))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+   I=eightpihc2/((Math.exp(cst/(r*T1))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+   I=eightpihc2/((Math.exp(cst/(r*T))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+}
+Imax=Imax*1.0; // change to 1.0 instead 1.2 for bigger view
+}
+*/
+
+/* v1
+double dT=0.,I,r,dr;
+public void changeRange () {
+
+ dT=(T2-T1)/(n-1);
+ for(int i=0;i<n;i++){
+   TS[i]=T1+i*dT;
+ }
+ if(T<T1)T=T1;
+ if(T>T2)T=T2;
+Imax=0;
+dr=(rmax-rmin)/(np-1);
+for(int i=0;i<np;i++){
+  r=rmin+i*dr;
+   I=h4/((Math.exp(cst/(r*T2))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+   I=h4/((Math.exp(cst/(r*T1))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+   I=h4/((Math.exp(cst/(r*T))-1)*(r*r*r*r*r));
+ if(I>Imax)Imax=I;
+}
+Imax=Imax*1.2;
+}
+*/
+
+/*
+double dT=0.,I,r,dr;
+public void changeRange () {
+for(int i=0;i<n;i++){
+  TS[i]=TS0[i]*T1;
+}
+ if(T1<10)T1=10.;
+ else if(T2<T1)T2=T1+100;
+ dT=(T2-T1)/(n-1);
+ for(int i=0;i<n;i++){
+   TS[i]=T1+i*dT;
+ }
+Imax=0;
+dr=(rmax-rmin)/(np-1);
+for(int i=0;i<np;i++){
+  r=rmin+i*dr;
+   I=h4/((Math.exp(cst/(r*T2))-1)*(r*r*r));
+ if(I>Imax)Imax=I;
+}
+ _initialize();
+}
+*/
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>function</Name>
+<Active>true</Active>
+<Internal>false</Internal>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public int funcion( double t , double origen, double factor) {
+double resultado;
+
+resultado = 128.0+128.0*(Math.exp( factor*(t-origen) )-Math.exp(-factor*(t-origen)))/(Math.exp(factor*(t-origen))+Math.exp(-factor*(t-origen)));
+
+return( (int)resultado );
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">spectrumFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Blackbody Radiation Model"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["9,105"]]></Property>
+<Property name="size"><![CDATA["700,600"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">PlottingPanel</Property>
+<Property name="parent">spectrumFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="minimumX"><![CDATA[rmin]]></Property>
+<Property name="maximumX"><![CDATA[rmax]]></Property>
+<Property name="minimumY"><![CDATA[0]]></Property>
+<Property name="maximumY"><![CDATA[1.2]]></Property>
+<Property name="title"><![CDATA["Spectrum"]]></Property>
+<Property name="axesType"><![CDATA[Cartesian1]]></Property>
+<Property name="titleX"><![CDATA["$\lamda$  wavelength nm"]]></Property>
+<Property name="xaxisType"><![CDATA[LINEAR]]></Property>
+<Property name="majorTicksX"><![CDATA[true]]></Property>
+<Property name="titleY"><![CDATA["Intensity W.e^{-5} /(m^{2}nm)"]]></Property>
+<Property name="yaxisType"><![CDATA[scale]]></Property>
+<Property name="showCoordinates"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ZInterpolatedPlot</Type>
+<Property name="name">InterpolatedPlot</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="z"><![CDATA[z]]></Property>
+<Property name="autoscaleZ"><![CDATA[true]]></Property>
+<Property name="minimumZ"><![CDATA[0]]></Property>
+<Property name="maximumZ"><![CDATA[1]]></Property>
+<Property name="minimumX"><![CDATA[400]]></Property>
+<Property name="maximumX"><![CDATA[700]]></Property>
+<Property name="minimumY"><![CDATA[0]]></Property>
+<Property name="maximumY"><![CDATA[Imax]]></Property>
+<Property name="levels"><![CDATA[nz]]></Property>
+<Property name="colormode"><![CDATA[SPECTRUM]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">text</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="x"><![CDATA[TXred]]></Property>
+<Property name="y"><![CDATA[TYred]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[!logscale]]></Property>
+<Property name="text"><![CDATA[%TMSGred%]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve</Type>
+<Property name="name">redcurve</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="points"><![CDATA[np]]></Property>
+<Property name="min"><![CDATA[rmin]]></Property>
+<Property name="max"><![CDATA[rmax]]></Property>
+<Property name="variable"><![CDATA[r]]></Property>
+<Property name="functionx"><![CDATA[r]]></Property>
+<Property name="functiony"><![CDATA[%fT%]]></Property>
+<Property name="javaSyntax"><![CDATA[true]]></Property>
+<Property name="color"><![CDATA[vcolor]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve</Type>
+<Property name="name">family</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="points"><![CDATA[np]]></Property>
+<Property name="min"><![CDATA[rmin]]></Property>
+<Property name="max"><![CDATA[rmax]]></Property>
+<Property name="variable"><![CDATA["r"]]></Property>
+<Property name="functionx"><![CDATA[r]]></Property>
+<Property name="functiony"><![CDATA[%fT%]]></Property>
+<Property name="javaSyntax"><![CDATA[true]]></Property>
+<Property name="parameterName"><![CDATA["T"]]></Property>
+<Property name="parameterValues"><![CDATA[TS]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextSet2D</Type>
+<Property name="name">textSet2</Property>
+<Property name="parent">PlottingPanel</Property>
+<Property name="numberOfElements"><![CDATA[nTshow]]></Property>
+<Property name="x"><![CDATA[TX]]></Property>
+<Property name="y"><![CDATA[TY]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="visible"><![CDATA[!logscale]]></Property>
+<Property name="text"><![CDATA[%TMSG%]]></Property>
+<Property name="elementposition"><![CDATA[SOUTH]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">spectrumFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel4</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel5</Property>
+<Property name="parent">panel4</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">panel5</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.0]]></Property>
+<Property name="maximumX"><![CDATA[1.0]]></Property>
+<Property name="minimumY"><![CDATA[-1.0]]></Property>
+<Property name="maximumY"><![CDATA[1.0]]></Property>
+<Property name="size"><![CDATA["0,50"]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">group</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[-0.15]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">actual</Property>
+<Property name="parent">group</Property>
+<Property name="sizeX"><![CDATA[40]]></Property>
+<Property name="sizeY"><![CDATA[40]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[ELLIPSE]]></Property>
+<Property name="lineColor"><![CDATA[vcolor]]></Property>
+<Property name="fillColor"><![CDATA[vcolor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">actual22</Property>
+<Property name="parent">group</Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Actual"]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">g</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[-.57]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">green3</Property>
+<Property name="parent">g</Property>
+<Property name="sizeX"><![CDATA[40]]></Property>
+<Property name="sizeY"><![CDATA[40]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[vcolorg]]></Property>
+<Property name="fillColor"><![CDATA[vcolorg]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">green22</Property>
+<Property name="parent">g</Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Green"]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">r</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[-.43]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">r2</Property>
+<Property name="parent">r</Property>
+<Property name="sizeX"><![CDATA[40]]></Property>
+<Property name="sizeY"><![CDATA[40]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[vcolorr]]></Property>
+<Property name="fillColor"><![CDATA[vcolorr]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">r3</Property>
+<Property name="parent">r</Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Red"]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">b</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[-.71]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">b2</Property>
+<Property name="parent">b</Property>
+<Property name="sizeX"><![CDATA[40]]></Property>
+<Property name="sizeY"><![CDATA[40]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[vcolorb]]></Property>
+<Property name="fillColor"><![CDATA[vcolorb]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">b3</Property>
+<Property name="parent">b</Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Blue"]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Panel</Type>
+<Property name="name">panel6</Property>
+<Property name="parent">panel4</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">sliderPanel</Property>
+<Property name="parent">panel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">sliderT1</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="variable"><![CDATA[T1]]></Property>
+<Property name="minimum"><![CDATA[100.0]]></Property>
+<Property name="maximum"><![CDATA[2000.]]></Property>
+<Property name="format"><![CDATA["Tmin=0 K"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[changeRange();
+_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["Minimum Temperature"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ComboBox</Type>
+<Property name="name">ComboBox</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="options"><![CDATA["_;earth;oven;light_blub;sun"]]></Property>
+<Property name="variable"><![CDATA[mode]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel2</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panel3</Property>
+<Property name="parent">panel2</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label</Property>
+<Property name="parent">panel3</Property>
+<Property name="text"><![CDATA[" T ="]]></Property>
+<Property name="background"><![CDATA[vcolor]]></Property>
+<Property name="tooltip"><![CDATA["Temperature"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">field4</Property>
+<Property name="parent">panel3</Property>
+<Property name="variable"><![CDATA[T]]></Property>
+<Property name="format"><![CDATA["0"]]></Property>
+<Property name="action"><![CDATA[mode="_";
+t = (T-300.0)/(5000.0-300.0);
+
+
+
+
+changeRange();
+_initialize();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">label2</Property>
+<Property name="parent">panel3</Property>
+<Property name="text"><![CDATA[" K "]]></Property>
+<Property name="background"><![CDATA[vcolor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderT</Property>
+<Property name="parent">panel2</Property>
+<Property name="variable"><![CDATA[T]]></Property>
+<Property name="minimum"><![CDATA[T1]]></Property>
+<Property name="maximum"><![CDATA[T2]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="dragaction"><![CDATA[mode="_";
+t = (T-300.0)/(5000.0-300.0);
+
+
+
+
+changeRange();
+_initialize();]]></Property>
+<Property name="background"><![CDATA[vcolor]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">sliderT2</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="variable"><![CDATA[T2]]></Property>
+<Property name="minimum"><![CDATA[T1*2]]></Property>
+<Property name="maximum"><![CDATA[10000]]></Property>
+<Property name="format"><![CDATA["Tmax=0 K"]]></Property>
+<Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
+<Property name="dragaction"><![CDATA[changeRange();
+_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["Maximum Temperature"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderRMAX</Property>
+<Property name="parent">sliderPanel</Property>
+<Property name="variable"><![CDATA[rmax]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[3000]]></Property>
+<Property name="format"><![CDATA["$\lamda$_max = 000 nm"]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="tooltip"><![CDATA["Maximum Wavelength"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">checkPanel</Property>
+<Property name="parent">panel</Property>
+<Property name="layout"><![CDATA[VBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBoxMenuItem</Type>
+<Property name="name">checkBoxMenuItemlogscale</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[logscale]]></Property>
+<Property name="text"><![CDATA["Log"]]></Property>
+<Property name="action"><![CDATA[if(logscale)scale=1;
+else scale=0;]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">checkPanel</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">button</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="size"><![CDATA["60,23"]]></Property>
+<Property name="tooltip"><![CDATA["reset"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.HtmlView>
+</Osejs.HtmlView>
+</Osejs>

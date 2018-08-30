@@ -1,0 +1,977 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.7" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[Dieter Roess - WEH- Foundation]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[dieter.roess@t-online.de]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<AppletColSupport>false</AppletColSupport>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Description</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Description</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: white; font-family: Georgia, Times New Roman, Times, serif; color: black }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h1 align="center">
+      Animated <i>M&#246;bius strip</i>
+    </h1>
+    <h2 align="center">
+      and other <i>3D</i> strips
+    </h2>
+    <p style="margin-top: 0">
+      This function plotter displays animated surfaces in <i>3D</i> that may 
+      be closed or intersecting. Its predefined function presents open or 
+      closed twisted bands, among them the famous <i><b>M&#246;bius strip</b></i>.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <i>x = f<sub>x</sub>( p, q , t ); y = f<sub>y</sub>( p, q, t ); z = f<sub>z</sub>( 
+    p, q, t )</i>
+
+    <p>
+      The coordinate functions <i>f<sub>x</sub>, f<sub>y,</sub>, f<sub>z </sub></i>, 
+      which in the simulation are shown in three editable text fields, map the 
+      points of the plane of variables <i>p, q </i>unambiguously into a 
+      surface in space <i>x y z </i>. If <i>f<sub>x</sub>, f<sub>y,</sub>, f<sub>z</sub> 
+      </i>contain periodic functions of the variables <i>p </i>and<i> q,</i> 
+      closed or intersecting surfaces may be produced.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The functions may contain three constants <i>a, b, v</i> that can be 
+      changed by sliders. In the predefined functions <i>v </i>is used to 
+      animate the surfaces by oscillating one or more of the coordinates via 
+      time dependent terms.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      At start of the simulation you will see the projection of a closed band 
+      in space, viewed under perspective distortion. It is embedded into an <i>x 
+      y z </i>tripod, and is accompanied by the <i><b>x y- </b></i><b>plane</b> 
+      <i>z = 0. </i>This plane can be deactivated by its <b>check box. </b>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The band is a <i><b>M&#246;bius strip</b></i>, which is a band twisted 
+      by one half turn. It has only one surface: when one walks around its 
+      axis in the <i>xy</i>-plane, one passes both sides of the strip without 
+      needing to penetrate the surface.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The 3 coordinate functions contain periodic modulation terms, controlled 
+      by time <i>t</i> and the parameter <i>v</i>, which is defined by <b>slider 
+      <i>v</i></b>:
+    </p>
+    <p style="margin-top: 0" align="center">
+      
+    </p>
+    <p style="margin-top: 0" align="left">
+      <i>f<sub>x</sub> = cosp (1+q/2&#960; cos(a/2 p-vt)</i>
+    </p>
+    <p style="margin-top: 0" align="left">
+      <i>f<sub>y</sub> = sinp (1+q/2&#960; cos(a/2 p-vt) </i>
+    </p>
+    <p style="margin-top: 0" align="left">
+      <i>f<sub>z </sub>= b q/2&#960; sin(a/2 p-vt)</i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      
+    </p>
+    <p style="margin-top: 0">
+      The height of the band is defined by <b>slider<i> b</i></b><i>.</i>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Slider <i>a</i> </b>defines the number of half turns of the band. For 
+      an integer the band is closed. <i>a =&#160; 1</i> results in the <i>M&#246;bius 
+      strip</i>. With <i>a &gt; 0</i> an even integers create normal bands 
+      with 2 surfaces and <i>a/2 </i>full twists. With <i>a</i> an uneven 
+      integer <i>M&#246;bius</i>-similar bands are created with <i>a</i> half 
+      twists.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      If <i>a</i> is not an integer, the band is not closed. By varying <i>a</i> 
+      a closed band can be <b>cut open</b> and closed again for a different 
+      number of half twists. Slider <i>a</i> is adjusted in such a way that it 
+      jumps to the next integer, when<i> a</i> is close to one.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Play</b> starts the animation program by increasing <i>t</i> linear 
+      in time, starting from zero. The periodic modulation generates a band 
+      that is rotating around its symmetry axis. <b>Slider <i>v</i> </b>defines 
+      the speed of rotation. <b>Pause</b> freezes the animation at any 
+      orientation, <b>Reset </b>recreates the initial parameters and 
+      projection.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Scales of <i>x, y</i> <i>z</i> extend from -1 to +1 . The <i>x y-</i>plane 
+      crosses the <i>z</i>-axis at <i>z </i>= 0.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The range of variables <i>p</i> and <i>q</i> extend from <i>-&#960;</i> 
+      to <i>+&#960;, </i>creating full cycles in the periodic terms.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The orientation of the tripod in space can be changed by drawing with 
+      the mouse.
+    </p>
+    <p style="margin-top: 0">
+      Other ways of visualization are described in the next page.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>You can edit the formulas in the formula fields or input completely 
+      different ones</b>. Don not forget to hit the <i>ENTER</i> key after 
+      every change.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Visualization</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Visualization</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: white; font-family: Georgia, Times New Roman, Times, serif; color: black }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      
+    </p>
+    <h1 align="center">
+      Visualization alternatives
+    </h1>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Rotation:&#160; </b>Mark any point within the tripod using the mouse 
+      pointer and <i>draw</i> (while the left mouse key stays pressed).
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Shift:&#160;</b> <i>Draw</i> while the <b>Strg</b> key is pressed.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Zoom:&#160; </b><i>Draw</i> while the <b>Shift<i> </i></b>key is 
+      pressed.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Correction: </b>To return to the default projection activate <b>Reset<i>.</i></b>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Show coordinates:</b>&#160; Mark a point on the surface while pressing the <b>Alt</b> 
+      key. When you <i>draw</i>, a cutting plane will pass through the 
+      surface. Depending on orientation, different cuts can be evaluated.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Camera- Inspector: </b>Press the <i><b>right</b></i> mouse key. A 
+      context menu will appear. Choose <i>Elements option/ drawing 3D panel/ 
+      Camera. </i>The <i><b>Camera Inspector</b></i> will appear. It will stay 
+      visible until it is deactivated. It offers the following options:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Perspective:</b>&#160; Distant lines appear shorter than near ones.
+    </p>
+    <p style="margin-top: 0">
+      <b>No perspective:&#160;</b> No perspective distortion.
+    </p>
+    <p style="margin-top: 0">
+      <b>Planar <i>xy</i> or <i>yz</i> or <i>yx</i> </b>: One looks onto the 
+      respective planes.
+    </p>
+    <p style="margin-top: 0">
+      <b>Other options: </b>Degree and angle of perspective can be defined.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Optimizing&#160;</b> <b>parameters.</b> The spatial impression can be 
+      optimized by adjusting parameters. The optimum will be different for 
+      different projections.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The context menu also offers programs for producing a <b>picture</b> or a<b> 
+      video.</b>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Functions</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Functions</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: white; font-family: Georgia, Times New Roman, Times, serif; color: black }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      These are the predefined functions for the bands (as code in <i>InitPage</i>)
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      x_functions = &quot;cos(p)*(1+q/(2*pi)*cos(a/2*p.v*t))&quot;;
+    </p>
+    <p style="margin-top: 0">
+      y_functions = &quot;sin(p)*(1+q/(2*pi)*cos(a/2*p-v*t))&quot;;
+    </p>
+    <p style="margin-top: 0">
+      z_functions = &quot;b*q/(pi)*sin(a/2*p-v*t)&quot;;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      pi&#160; = &#960;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      a number of half twists
+    </p>
+    <p style="margin-top: 0">
+      a = 1.0 common Moebius strip.
+    </p>
+    <p style="margin-top: 0">
+      b defines height;
+    </p>
+    <p style="margin-top: 0">
+      p and q range <i>-&#960;</i> to <i>+&#960; </i>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Experiments</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Experiments</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: white; font-family: Georgia, Times New Roman, Times, serif; color: black }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <b>E1:&#160;</b>Run the animation and rotate the <i>3D</i> frame. Follow 
+      the band around its periphery with the mouse pointer to confirm that it 
+      has a single surface, yet two sides.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E2:</b>&#160;Choose <i>a</i> = <i>0</i>. You will see a truncated, 
+      reversing cone. With <i>b = 0</i> a breathing ring is displayed.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E3: </b>Reset<b>. </b>Vary <i>a</i> from 1 to a slightly higher 
+      value. The band will be cut. When will it be closed again?
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E4:&#160;</b>When do you get M&#246;bius type strips, when normal bands?
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E5: </b>Change signs in the formulas and observe the results.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E6: </b>Make more drastic changes in the formulas, trying to still 
+      create bands.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E7:&#160;</b>Consider beforehand what kind of band will be created by 
+      a certain change.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E8:</b> Work with different modulation terms.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E9:&#160;</b>Delete the modulation term and use the now free 
+      parameter <i>v</i> in the formulas.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E10:</b> Load the <i>Camera Inspector </i>(use the right mouse key, 
+      search in the uppermost line of the appearing context menu).&#160; Test the 
+      various projections. Change <i>a</i> and interpret the results.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E11:</b> Can you construct formulas for a band with a knot?
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Authors</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Authors</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: white; font-family: Georgia, Times New Roman, Times, serif; color: black }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      this file was created by Dieter Roess in March 2010
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This simulation is part of
+    </p>
+    <p style="margin-top: 0">
+      &#8220;<a href="http://www.degruyter.de/cont/fb/ma/detail.cfm?id=IS-9783110250053-1">Learning 
+      and Teaching Mathematics using Simulations </a>
+    </p>
+    <p style="margin-top: 0">
+      &#8211; Plus 2000 Examples from Physics&#8221;
+    </p>
+    <p style="margin-top: 0">
+      ISBN 978-3-11-025005-3, Walter de Gruyter GmbH &amp; Co. KG
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Basic</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[50]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m]]></Name>
+<Value><![CDATA[50]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0.00]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[p]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[q]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[max]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Parameters</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[v]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zeigen]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Functions</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x_functions]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[String mit Formeln zur Initialisierung der Combo-Box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y_functions]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[String mit Formeln zur Initialisierung der Combo-Box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[z_functions]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[String mit Formeln zur Initialisierung der Combo-Box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[description]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[die zur gewaehlten Formel passende Beschreibung]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+a=1.0;
+v=0.2;
+t=0.0;
+zeigen=false;
+description = "           Moebius strip & other strips";
+x_functions = "cos(p)*(1+q/(2*pi)*cos(a/2*p-v*t))";
+y_functions = "sin(p)*(1+q/(2*pi)*cos(a/2*p-v*t))";
+z_functions = "b*q/(2*pi)*sin(a/2*p-v*t)";
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>html-start</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// for the html- Link version this start the description window 
+//together with the simulation windows
+Thread thread = new Thread(new Runnable() {
+  public void run() {
+    try { Thread.sleep(500); }
+    catch (Exception exc) {}
+    _view.showDescription(true);
+  }
+});
+thread.start();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Zeitverlauf</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+t = t + 0.05;
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Animated 3D strips"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["600,668"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">drawingPanel3D</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-max]]></Property>
+<Property name="maximumX"><![CDATA[max]]></Property>
+<Property name="minimumY"><![CDATA[-max]]></Property>
+<Property name="maximumY"><![CDATA[max]]></Property>
+<Property name="minimumZ"><![CDATA[-max]]></Property>
+<Property name="maximumZ"><![CDATA[max]]></Property>
+<Property name="cameraX"><![CDATA[2.6194282336694843]]></Property>
+<Property name="cameraY"><![CDATA[0.7644681847059338]]></Property>
+<Property name="cameraZ"><![CDATA[0.8586375561258475]]></Property>
+<Property name="cameraAzimuth"><![CDATA[0.3]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.3]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.5]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.22]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.04000000000000002]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[3.5]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="decorationType"><![CDATA[NONE]]></Property>
+<Property name="useColorDepth"><![CDATA[true]]></Property>
+<Property name="showCoordinates"><![CDATA[BOTTOM_LEFT]]></Property>
+<Property name="background"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticSurface3D</Type>
+<Property name="name">xyEbene</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="points1"><![CDATA[3]]></Property>
+<Property name="min1"><![CDATA[-1]]></Property>
+<Property name="max1"><![CDATA[1]]></Property>
+<Property name="variable1"><![CDATA["p"]]></Property>
+<Property name="points2"><![CDATA[3]]></Property>
+<Property name="min2"><![CDATA[-1]]></Property>
+<Property name="max2"><![CDATA[1]]></Property>
+<Property name="variable2"><![CDATA["q"]]></Property>
+<Property name="functionx"><![CDATA["p"]]></Property>
+<Property name="functiony"><![CDATA["q"]]></Property>
+<Property name="functionz"><![CDATA["0"]]></Property>
+<Property name="visible"><![CDATA[zeigen]]></Property>
+<Property name="lineColor"><![CDATA[WHITE]]></Property>
+<Property name="fillColor"><![CDATA[5,255,192,100]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticSurface3D</Type>
+<Property name="name">Raumflaeche</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="points1"><![CDATA[200]]></Property>
+<Property name="min1"><![CDATA[-Math.PI]]></Property>
+<Property name="max1"><![CDATA[Math.PI]]></Property>
+<Property name="variable1"><![CDATA["p"]]></Property>
+<Property name="points2"><![CDATA[100]]></Property>
+<Property name="min2"><![CDATA[-Math.PI]]></Property>
+<Property name="max2"><![CDATA[Math.PI]]></Property>
+<Property name="variable2"><![CDATA["q"]]></Property>
+<Property name="functionx"><![CDATA[%x_functions%]]></Property>
+<Property name="functiony"><![CDATA[%y_functions%]]></Property>
+<Property name="functionz"><![CDATA[%z_functions%]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[192,192,128]]></Property>
+<Property name="fillColor"><![CDATA[0,255,128]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="size"><![CDATA["600,135"]]></Property>
+<Property name="borderType"><![CDATA[RAISED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Eingabebehaelter</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[GRID:2,2,0,0]]></Property>
+<Property name="size"><![CDATA[400,50]]></Property>
+<Property name="foreground"><![CDATA[cyan]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">x</Property>
+<Property name="parent">Eingabebehaelter</Property>
+<Property name="text"><![CDATA["   fx (p, q, t) = "]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">y</Property>
+<Property name="parent">Eingabebehaelter</Property>
+<Property name="text"><![CDATA["                  fy (p, q, t) ="]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">z</Property>
+<Property name="parent">Eingabebehaelter</Property>
+<Property name="text"><![CDATA["                 fz (p, q, t) = "]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">xFunktion</Property>
+<Property name="parent">Eingabebehaelter</Property>
+<Property name="variable"><![CDATA[%x_functions%]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">yFunktion</Property>
+<Property name="parent">Eingabebehaelter</Property>
+<Property name="variable"><![CDATA[%y_functions%]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">zFunktion</Property>
+<Property name="parent">Eingabebehaelter</Property>
+<Property name="variable"><![CDATA[%z_functions%]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="foreground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Schieberbehaelter</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="size"><![CDATA["0,45"]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_BEVEL]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderA</Property>
+<Property name="parent">Schieberbehaelter</Property>
+<Property name="variable"><![CDATA[a]]></Property>
+<Property name="value"><![CDATA[1.0]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[10.0]]></Property>
+<Property name="format"><![CDATA["half turns a = 0.00"]]></Property>
+<Property name="ticks"><![CDATA[51]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="foreground"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderB</Property>
+<Property name="parent">Schieberbehaelter</Property>
+<Property name="variable"><![CDATA[b]]></Property>
+<Property name="value"><![CDATA[1.0]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[3.0]]></Property>
+<Property name="format"><![CDATA["height b = 0.00"]]></Property>
+<Property name="ticks"><![CDATA[21]]></Property>
+<Property name="foreground"><![CDATA[black]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SchieberP</Property>
+<Property name="parent">Schieberbehaelter</Property>
+<Property name="variable"><![CDATA[v]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[3.0]]></Property>
+<Property name="format"><![CDATA["speed v = 0.0"]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="size"><![CDATA["160,50"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelButtons</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="size"><![CDATA["40,40"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">textField</Property>
+<Property name="parent">PanelButtons</Property>
+<Property name="variable"><![CDATA[%description%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["70,0"]]></Property>
+<Property name="background"><![CDATA[255,255,192]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="font"><![CDATA[Times New Roman,BOLD,16]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">twoStateButton</Property>
+<Property name="parent">PanelButtons</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA["play"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="foreground"><![CDATA[RED]]></Property>
+<Property name="textOff"><![CDATA["pause"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+<Property name="foregroundOff"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">Reset</Property>
+<Property name="parent">PanelButtons</Property>
+<Property name="text"><![CDATA["reset"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">xy_ebene</Property>
+<Property name="parent">PanelButtons</Property>
+<Property name="variable"><![CDATA[zeigen]]></Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["show xy plane"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

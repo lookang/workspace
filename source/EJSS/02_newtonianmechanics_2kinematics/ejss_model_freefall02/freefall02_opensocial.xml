@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="freefall02"
+author="weelookang@gmail.com; Francisco Esquembre; Félix J. García"
+description="http://weelookang.blogspot.sg/2013/12/ejss-free-fall-model.html
+
+ball taken from: http://psychology.wikia.com/wiki/File:Soccer_ball.svg
+http://weelookang.blogspot.sg/2013/12/ejss-free-fall-model.html
+https://pixabay.com/en/parachuting-parachute-glide-falling-1781587/
+https://pixabay.com/en/parachute-adhesive-decoration-1808858/"
+screenshot="./freefall/Screen Shot 2017-02-24 at 1.34.41 PM (2).png"
+thumbnail="./freefall/Screen Shot 2017-02-24 at 1.34.41 PM (2).png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="freefall02_Simulation.xhtml"/>
+</Module>

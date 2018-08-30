@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+title: Prob 3.6: Hot-Air Balloon Takes Off
+logo-image: prob03_06/prob03_06.png
+author: Andreu Glasmann; Wolfgang Christian; Mario Belloni
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: ag.png;./wc_icon.png;./mjb_icon.png
+main-script: prob03_06_Simulation.js
+main-simulation: prob03_06_Simulation.xhtml
+available-languages: 
+html-contents: prob03_06_Contents.xhtml
+html-main: prob03_06.xhtml
+page-title: Prob 3.6: Hot-Air Balloon Takes Off
+page-index: prob03_06_Simulation.xhtml
+resource: wc_icon.png
+resource: ag.png
+resource: prob03_06/ejss_html_prob03_06.html
+resource: prob03_06/prob03_06.png
+resource: prob03_06/balloon_color_sm.gif
+resource: mjb_icon.png

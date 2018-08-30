@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170928. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: workdone.ejss
+main-script: 
+main-simulation: workdone_Simulation.xhtml
+available-languages: 
+html-contents: workdone_Contents.xhtml
+html-main: workdone.xhtml
+page-title: Simulation
+page-index: workdone_Simulation.xhtml

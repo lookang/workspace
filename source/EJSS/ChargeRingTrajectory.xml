@@ -1,0 +1,737 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Charge Ring Trajectory]]></Title>
+<Author><![CDATA[Anne J Cox]]></Author>
+<Keywords><![CDATA[Coulomb's law, electric field]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[introductory]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[./ChargeRingTrajectory/;]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[./ChargeRingTrajectory/ChargeRingTrajectory.html;]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EXTERNAL_EDITOR</Type>
+<Name>Charge Ring Trajectory</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+./ChargeRingTrajectory/ChargeRingTrajectory.html
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time increment]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x position of charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y position of charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[z]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[z position of charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y velocity]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vz]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[z velocity]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Constant</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[scale of the windows]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nCharges]]></Name>
+<Value><![CDATA[20]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of charges in ring]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[aRing]]></Name>
+<Value><![CDATA[8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[radius of ring]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yLocation]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nCharges]]]></Dimension>
+<Comment><![CDATA[y position of charges on ring]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zLocation]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nCharges]]]></Dimension>
+<Comment><![CDATA[z position of charges on ring]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[5]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of field vectors]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][n][n]]]></Dimension>
+<Comment><![CDATA[x component of the field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][n][n]]]></Dimension>
+<Comment><![CDATA[y component of the field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[zField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][n][n]]]></Dimension>
+<Comment><![CDATA[z component of the field]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[eField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][n][n]]]></Dimension>
+<Comment><![CDATA[field magnitude]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showE]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[show field vectors if true]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+t=0;
+double dphi=2*Math.PI/nCharges;  
+for (int i=0;i<nCharges;i++){            //set up ring of charges
+  yLocation[i]=aRing*Math.cos(dphi*i);
+  zLocation[i]=aRing*Math.sin(dphi*i);
+  }
+showField();
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+double e[]=getE(x,y,z);
+double ax=e[0];
+double ay=e[1];
+double az=e[2];
+
+]]></Code>
+</PreliminaryCode>
+<ErrorCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</ErrorCode>
+<IndependentVariable>t</IndependentVariable>
+<Increment>0.05</Increment>
+<Rate state="x">vx</Rate>
+<Rate state="vx">ax</Rate>
+<Rate state="y">vy</Rate>
+<Rate state="vy">ay</Rate>
+<Rate state="z">vz</Rate>
+<Rate state="vz">az</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>0.00001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>show Field</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void showField () {    //calculate the electric field vectors
+  double[] e=new double[3];
+  for (int i=0; i<n; i++) {
+    double xn=_view.vectorField3D.indexToX(i);
+    for (int j=0; j<n; j++) {
+      double yn=_view.vectorField3D.indexToY(j);
+      for(int k=0;k<n;k++) {
+        double zn=_view.vectorField3D.indexToZ(k);
+        e=getE(xn,yn,zn);
+        xField[i][j][k] = e[0];
+        yField[i][j][k] = e[1];
+        zField[i][j][k]=  e[2];
+        eField[i][j][k] = Math.sqrt(e[0]*e[0]+e[1]*e[1]+e[2]*e[2]);
+      }
+    }
+  }
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>get Field</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+//calculate the eletric field at the test charge's location
+//due to the n charges on the ring
+public double[] getE (double x, double y, double z) {
+  double[] e=new double[3];
+  for (int i=0; i<nCharges; i++) {
+    double deltay=(y-yLocation[i]);
+    double deltaz=(z-zLocation[i]);
+    double r2=x*x+deltay*deltay+deltaz*deltaz;
+    double r=Math.sqrt(r2);
+    double r3=r2*r;
+    e[0]+=-10*x/r3;
+    e[1]+=-10*deltay/r3;
+    e[2]+=-10*deltaz/r3;
+  }
+  return e;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">ChargeRing</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Ring of Charge"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["1,-6"]]></Property>
+<Property name="size"><![CDATA["437,404"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">drawingPanelCharges</Property>
+<Property name="parent">ChargeRing</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="minimumZ"><![CDATA[-size]]></Property>
+<Property name="maximumZ"><![CDATA[size]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-1.1079457828344341]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.4569367984779025]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.4000000000000001]]></Property>
+<Property name="cameraFocusY"><![CDATA[1.4000000000000004]]></Property>
+<Property name="cameraFocusZ"><![CDATA[-3.2000000000000006]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[59.400000000000006]]></Property>
+<Property name="decorationType"><![CDATA[CUBE]]></Property>
+<Property name="background"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.SimpleVectorField3D</Type>
+<Property name="name">vectorField3D</Property>
+<Property name="parent">drawingPanelCharges</Property>
+<Property name="minimumX"><![CDATA[-0.9*size]]></Property>
+<Property name="maximumX"><![CDATA[0.9*size]]></Property>
+<Property name="minimumY"><![CDATA[-0.9*size]]></Property>
+<Property name="maximumY"><![CDATA[0.9*size]]></Property>
+<Property name="minimumZ"><![CDATA[-0.9*size]]></Property>
+<Property name="maximumZ"><![CDATA[0.9*size]]></Property>
+<Property name="xcomponent"><![CDATA[xField]]></Property>
+<Property name="ycomponent"><![CDATA[yField]]></Property>
+<Property name="zcomponent"><![CDATA[zField]]></Property>
+<Property name="length"><![CDATA[1.5]]></Property>
+<Property name="visible"><![CDATA[showE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+<Property name="magnitude"><![CDATA[eField]]></Property>
+<Property name="autoscale"><![CDATA[false]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[3]]></Property>
+<Property name="levels"><![CDATA[15]]></Property>
+<Property name="invisibleLevel"><![CDATA[1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Circle3D</Type>
+<Property name="name">testCharge</Property>
+<Property name="parent">drawingPanelCharges</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="z"><![CDATA[z]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[1]]></Property>
+<Property name="sizeZ"><![CDATA[1]]></Property>
+<Property name="enabledPosition"><![CDATA[_isPaused();]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">testChargeTrail3D</Property>
+<Property name="parent">drawingPanelCharges</Property>
+<Property name="inputX"><![CDATA[x]]></Property>
+<Property name="inputY"><![CDATA[y]]></Property>
+<Property name="inputZ"><![CDATA[z]]></Property>
+<Property name="lineColor"><![CDATA[YELLOW]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.SphereSet3D</Type>
+<Property name="name">chargeRingsphereSet3D</Property>
+<Property name="parent">drawingPanelCharges</Property>
+<Property name="numberOfElements"><![CDATA[nCharges]]></Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[yLocation]]></Property>
+<Property name="z"><![CDATA[zLocation]]></Property>
+<Property name="radius"><![CDATA[.5]]></Property>
+<Property name="lineColor"><![CDATA[GREEN]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">ChargeRing</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="size"><![CDATA["33,24"]]></Property>
+<Property name="tooltip"><![CDATA["Play/pause."]]></Property>
+<Property name="imageOn"><![CDATA["/org/opensourcephysics/resources/controls/images/play.gif"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA["/org/opensourcephysics/resources/controls/images/pause.gif"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="size"><![CDATA["33,24"]]></Property>
+<Property name="tooltip"><![CDATA["Step."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="position">west</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="size"><![CDATA["33,24"]]></Property>
+<Property name="tooltip"><![CDATA["Reset."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">pdfButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/value.gif"]]></Property>
+<Property name="action"><![CDATA[_view.showDocument("./ChargeRingTrajectory/ChargeRingTrajectoryStudentWorksheet.pdf")]]></Property>
+<Property name="size"><![CDATA["33,24"]]></Property>
+<Property name="tooltip"><![CDATA["Worksheet (pdf)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">ringPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">ringRadiusSlider</Property>
+<Property name="parent">ringPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[aRing]]></Property>
+<Property name="minimum"><![CDATA[2.0]]></Property>
+<Property name="maximum"><![CDATA[size]]></Property>
+<Property name="action"><![CDATA[_initialize();]]></Property>
+<Property name="tooltip"><![CDATA["Radius of Ring of Charge (cm)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">ringRadiusLabel</Property>
+<Property name="parent">ringPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" R "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">ringRadiusField</Property>
+<Property name="parent">ringPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[aRing]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="action"><![CDATA[aRing=Math.max(aRing,2.0);
+aRing=Math.min(aRing,10.0);
+_initialize();]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Radius of ring of charge (cm)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">showFieldPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showFieldCheckBox</Property>
+<Property name="parent">showFieldPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[showE]]></Property>
+<Property name="text"><![CDATA["Show Field"]]></Property>
+<Property name="tooltip"><![CDATA["Show/Hide Electric Field."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">topPanel</Property>
+<Property name="parent">ChargeRing</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">xPanel</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[FLOW:left,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">xLabel</Property>
+<Property name="parent">xPanel</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA["x="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">xField</Property>
+<Property name="parent">xPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[x]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["x position (cm)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">vxLabel</Property>
+<Property name="parent">xPanel</Property>
+<Property name="text"><![CDATA[" vx="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">vxField</Property>
+<Property name="parent">xPanel</Property>
+<Property name="variable"><![CDATA[vx]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Velocity in x direction (cm/ms)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">yPanel</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:left,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">yLabel</Property>
+<Property name="parent">yPanel</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA["  y="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">yField</Property>
+<Property name="parent">yPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[y]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["y position (cm)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">vyLabel</Property>
+<Property name="parent">yPanel</Property>
+<Property name="text"><![CDATA[" vy="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">vyField</Property>
+<Property name="parent">yPanel</Property>
+<Property name="variable"><![CDATA[vy]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[_isPaused]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Velocity in y direction (cm/ms)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">zPanel</Property>
+<Property name="parent">topPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[FLOW:left,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">zLabel</Property>
+<Property name="parent">zPanel</Property>
+<Property name="position">north</Property>
+<Property name="text"><![CDATA[" z="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">zField</Property>
+<Property name="parent">zPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[z]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["z position(cm)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">vzLabel</Property>
+<Property name="parent">zPanel</Property>
+<Property name="text"><![CDATA[" vz="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">vzField</Property>
+<Property name="parent">zPanel</Property>
+<Property name="variable"><![CDATA[vz]]></Property>
+<Property name="format"><![CDATA["0.0"]]></Property>
+<Property name="editable"><![CDATA[_isPaused()]]></Property>
+<Property name="columns"><![CDATA[2]]></Property>
+<Property name="tooltip"><![CDATA["Velocity in z direction (cm/ms)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">plottingFrame</Property>
+<Property name="title"><![CDATA["Data Plot"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["-2,424"]]></Property>
+<Property name="size"><![CDATA["439,289"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Position and Velocity vs. Time"]]></Property>
+<Property name="titleX"><![CDATA["t (ms)"]]></Property>
+<Property name="titleY"><![CDATA["x(cm), vx (cm/ms)"]]></Property>
+<Property name="font"><![CDATA[Arial,PLAIN,12]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">xTrail</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="inputX"><![CDATA[t]]></Property>
+<Property name="inputY"><![CDATA[x]]></Property>
+<Property name="maximumPoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">vxTrail</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="inputX"><![CDATA[t]]></Property>
+<Property name="inputY"><![CDATA[vx]]></Property>
+<Property name="maximumPoints"><![CDATA[400]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel2</Property>
+<Property name="parent">plottingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">dataToolButton</Property>
+<Property name="parent">buttonsPanel2</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/wrench_monkey.gif"]]></Property>
+<Property name="action"><![CDATA[_tools.showDataTool(_view.xTrail);]]></Property>
+<Property name="tooltip"><![CDATA["Data analysis tool."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">clearButton</Property>
+<Property name="parent">buttonsPanel2</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/erase.gif"]]></Property>
+<Property name="action"><![CDATA[_view.clearData()]]></Property>
+<Property name="tooltip"><![CDATA["Clear data."]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

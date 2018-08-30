@@ -1,0 +1,18 @@
+generated-with: Easy Java/Javascript Simulations, version 5.3, build 250218. Visit http://www.um.es/fem/Ejs
+title: Light Intensity App
+logo-image: datalogger/Screen Shot 2017-10-13 at 4.26.48 PM.png
+author: Author name; Félix J. García Clemente
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 01authorFelix_J_Garcia_Clemente.png;
+source: spectrum.ejss
+main-script: 
+main-simulation: spectrum_Simulation.xhtml
+available-languages: 
+html-contents: spectrum_Contents.xhtml
+html-main: spectrum.xhtml
+page-title: Light Intensity App
+page-index: spectrum_Simulation.xhtml
+resource: datalogger/Screen Shot 2017-10-13 at 4.26.48 PM.png
+resource: 01authorFelix_J_Garcia_Clemente.png

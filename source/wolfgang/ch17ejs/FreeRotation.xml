@@ -1,0 +1,1136 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Free Rotation of a Rigid Body]]></Title>
+<Author><![CDATA[Wolfgang Christian - Davidson College]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[wochristian@davidson.edu]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>false</CaptureTools>
+<DataTools>false</DataTools>
+<LanguageTools>false</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<DetectedFiles><![CDATA[./FreeRotation/FreeRotation.html;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[./FreeRotation/;]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Free Rotation of a Rigid Body</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Free Rotation of a Rigid Body</Title>
+  <External>true</External>
+  <![CDATA[
+./FreeRotation/FreeRotation.html
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>10</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Vector Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[tilt]]></Name>
+<Value><![CDATA[Math.PI/24]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[tilt of initial omega from 3-axis]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omegaInitial]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[initial angular speed]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[angular velocity in body frame]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[LSpace]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[angular momentum in space frame]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[LBody]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[angular momentum in body frame]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tipX]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tipY]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tipZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Dynamic Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[q]]></Name>
+<Value><![CDATA[new double[]{1,0,0,0}]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[4]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[qDot]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[4]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[time step]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tol]]></Name>
+<Value><![CDATA[1.0E-8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[ODE solver tolerance]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Box Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[useJava3D]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showBodyView]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showBody]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showSpace]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showBox]]></Name>
+<Value><![CDATA[true]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[size of 3D space]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[size of 3D space]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[mass of box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omegaScale]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[scales omega arrow for better visibility]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[width of box along x axis; the 1 axis of the body]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[depth of box along y axis; the 2 axis of the body]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[c]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[height of box along z-axis; the 3 axis of the body]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[I1]]></Name>
+<Value><![CDATA[m*(b*b+c*c)/12]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[moment of inertia about 1 principal axis]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[I2]]></Name>
+<Value><![CDATA[m*(a*a+c*c)/12]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[moment of inertia about 2 principal axis]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[I3]]></Name>
+<Value><![CDATA[m*(b*b+a*a)/12]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[moment of inertia about 3 principal axis]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Initialize Vectors</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+t=0;
+// box may have changed so recompute principal moments
+I1=m*(b*b+c*c)/12;
+I2=m*(a*a+c*c)/12;
+I3=m*(b*b+a*a)/12;
+//unit quaternion because space frame and body frame coincide at start
+q[0]=1;
+q[1]=q[2]=q[3]=0;
+// compute body frame omega using tilt angle
+omega[0]=0;                            // 1-axis component
+omega[1]=omegaInitial*Math.sin(tilt);  // 2-axis component
+omega[2]=omegaInitial*Math.cos(tilt);  // 3-axis component
+// angular momentum is constant in space frame but will change in body frame
+LBody[0]=LSpace[0]=I1*omega[0];
+LBody[1]=LSpace[1]=I2*omega[1];
+LBody[2]=LSpace[2]=I3*omega[2];
+// set initial quaternion rate
+qDot[0]=0.5*(-q[1]*omega[0]-q[2]*omega[1]-q[3]*omega[2]);     // q0-dot
+qDot[1]=0.5*( q[0]*omega[0]-q[3]*omega[1]+q[2]*omega[2]);     // q1-dot
+qDot[2]=0.5*( q[3]*omega[0]+q[0]*omega[1]-q[1]*omega[2]);     // q2-dot
+qDot[3]=0.5*(-q[2]*omega[0]+q[1]*omega[1]+q[0]*omega[2]);     // q3-dot
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+// compute omega in body frame
+double w1 = 2*(-q[1]*qDot[0]+q[0]*qDot[1]+q[3]*qDot[2]-q[2]*qDot[3]);
+double w2 = 2*(-q[2]*qDot[0]-q[3]*qDot[1]+q[0]*qDot[2]+q[1]*qDot[3]);
+double w3 = 2*(-q[3]*qDot[0]+q[2]*qDot[1]-q[1]*qDot[2]+q[0]*qDot[3]);
+// evaluate Euler's equations of motion in body frame
+double w1dot = (I2-I3)*w3*w2/I1; 
+double w2dot = (I3-I1)*w1*w3/I2;
+double w3dot = (I1-I2)*w2*w1/I3;
+// compute quaternion acceleration
+double[] qAcc=new double[4];
+double sum = 0;
+for(int i = 0;i<4;i++) {// sum the q dot values
+  sum += qDot[i]*qDot[i];
+}
+sum = -2.0*sum;
+qAcc[0] = 0.5*(-q[1]*w1dot-q[2]*w2dot-q[3]*w3dot+q[0]*sum);
+qAcc[1] = 0.5*( q[0]*w1dot-q[3]*w2dot+q[2]*w3dot+q[1]*sum);
+qAcc[2] = 0.5*( q[3]*w1dot+q[0]*w2dot-q[1]*w3dot+q[2]*sum);
+qAcc[3] = 0.5*(-q[2]*w1dot+q[1]*w2dot+q[0]*w3dot+q[3]*sum);
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<IndependentVariable>t</IndependentVariable>
+<Increment>dt</Increment>
+<Rate state="q">qDot</Rate>
+<Rate state="qDot">qAcc</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>tol</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayKeepMemory><![CDATA[]]></DelayKeepMemory>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Orient Box</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// renormalize to eliminate drift
+double norm = 1/Math.sqrt(q[0]*q[0]+q[1]*q[1]+q[2]*q[2]+q[3]*q[3]); 
+q[0] *= norm; q[1] *= norm;
+q[2] *= norm; q[3] *= norm;
+// update quaternion transformation for toSpaceFrame method
+_view.bodyQuaternion.setCoordinates(q[0],q[1],q[2],q[3]);
+//compute angular momentum in body frame for drawing
+LBody= _view.bodyGroup.toBodyFrame(LSpace.clone());
+omega[0]=LBody[0]/I1;  // compute angular velocity in body frame
+omega[1]=LBody[1]/I2;
+omega[2]=LBody[2]/I3;
+// compute body vectors in space frame to draw trails
+tipX= _view.bodyGroup.toSpaceFrame(new double[]{6,0,0});
+tipY= _view.bodyGroup.toSpaceFrame(new double[]{0,6,0});
+tipZ= _view.bodyGroup.toSpaceFrame(new double[]{0,0,6});
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[Free Rotation (Space View)]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,0"]]></Property>
+<Property name="size"><![CDATA["501,499"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">upperPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">j3dCheck</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[useJava3D]]></Property>
+<Property name="text"><![CDATA["Java 3D  "]]></Property>
+<Property name="enabled"><![CDATA[_isPaused()]]></Property>
+<Property name="tooltip"><![CDATA["Use Java 3D package"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">boxPanel</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">boxText</Property>
+<Property name="parent">boxPanel</Property>
+<Property name="text"><![CDATA[" Box: "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">aPanel</Property>
+<Property name="parent">boxPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">aLabel</Property>
+<Property name="parent">aPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["a = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">aField</Property>
+<Property name="parent">aPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[a]]></Property>
+<Property name="format"><![CDATA["0.0#"]]></Property>
+<Property name="action"><![CDATA[a=Math.min(size,a);
+a=Math.max(a,0.01);
+_initialize();]]></Property>
+<Property name="size"><![CDATA[50,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bPanel</Property>
+<Property name="parent">boxPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">bLabel</Property>
+<Property name="parent">bPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["b = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">bField</Property>
+<Property name="parent">bPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[b]]></Property>
+<Property name="format"><![CDATA["0.0#"]]></Property>
+<Property name="action"><![CDATA[b=Math.min(size,b);
+b=Math.max(b,0.0);
+_initialize();]]></Property>
+<Property name="size"><![CDATA[50,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">cPanel</Property>
+<Property name="parent">boxPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">cLabel</Property>
+<Property name="parent">cPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["c = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">cField</Property>
+<Property name="parent">cPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[c]]></Property>
+<Property name="format"><![CDATA["0.0#"]]></Property>
+<Property name="action"><![CDATA[c=Math.min(size,c);
+c=Math.max(c,0.0);
+_initialize();]]></Property>
+<Property name="size"><![CDATA[50,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">showPanel</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[FLOW:right,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">showLabel</Property>
+<Property name="parent">showPanel</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA["   Show: "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showBoxCheck</Property>
+<Property name="parent">showPanel</Property>
+<Property name="variable"><![CDATA[showBox]]></Property>
+<Property name="text"><![CDATA["box"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showSpaceCheck</Property>
+<Property name="parent">showPanel</Property>
+<Property name="variable"><![CDATA[showSpace]]></Property>
+<Property name="text"><![CDATA["space"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showBodyCheck</Property>
+<Property name="parent">showPanel</Property>
+<Property name="variable"><![CDATA[showBody]]></Property>
+<Property name="text"><![CDATA["body"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">spaceViewDrawingPanel3D</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="minimumZ"><![CDATA[-size]]></Property>
+<Property name="maximumZ"><![CDATA[size]]></Property>
+<Property name="projectionMode"><![CDATA["PERSPECTIVE"]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-0.060000000000000005]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.4256709843331485]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[30.0]]></Property>
+<Property name="implementation"><![CDATA[useJava3D?1:0]]></Property>
+<Property name="decorationType"><![CDATA[showSpace?1:0]]></Property>
+<Property name="allowQuickRedraw"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">bodyGroup</Property>
+<Property name="parent">spaceViewDrawingPanel3D</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">omegaArrow</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[omega[0]*omegaScale]]></Property>
+<Property name="sizeY"><![CDATA[omega[1]*omegaScale]]></Property>
+<Property name="sizeZ"><![CDATA[omega[2]*omegaScale]]></Property>
+<Property name="fillColor"><![CDATA[PINK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">oneArrow</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[6]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">twoArrow</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[6]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">threeArrow</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[6]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">omegaText</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="x"><![CDATA[omega[0]*1.05*omegaScale]]></Property>
+<Property name="y"><![CDATA[omega[1]*1.05*omegaScale]]></Property>
+<Property name="z"><![CDATA[omega[2]*1.05*omegaScale]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[$\omega$]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Box3D</Type>
+<Property name="name">box</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="sizeX"><![CDATA[a]]></Property>
+<Property name="sizeY"><![CDATA[b]]></Property>
+<Property name="sizeZ"><![CDATA[c]]></Property>
+<Property name="visible"><![CDATA[showBox]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Quaternion3D</Type>
+<Property name="name">bodyQuaternion</Property>
+<Property name="parent">bodyGroup</Property>
+<Property name="q"><![CDATA[q]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">spaceAngularMomentum</Property>
+<Property name="parent">spaceViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[LSpace[0]]]></Property>
+<Property name="sizeY"><![CDATA[LSpace[1]]]></Property>
+<Property name="sizeZ"><![CDATA[LSpace[2]]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">xTrail</Property>
+<Property name="parent">spaceViewDrawingPanel3D</Property>
+<Property name="inputX"><![CDATA[tipX[0]]]></Property>
+<Property name="inputY"><![CDATA[tipX[1]]]></Property>
+<Property name="inputZ"><![CDATA[tipX[2]]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="maximumPoints"><![CDATA[2000]]></Property>
+<Property name="skippoints"><![CDATA[(int)(0.05/dt)]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">yTrail</Property>
+<Property name="parent">spaceViewDrawingPanel3D</Property>
+<Property name="inputX"><![CDATA[tipY[0]]]></Property>
+<Property name="inputY"><![CDATA[tipY[1]]]></Property>
+<Property name="inputZ"><![CDATA[tipY[2]]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="maximumPoints"><![CDATA[2000]]></Property>
+<Property name="skippoints"><![CDATA[(int)(0.05/dt)]]></Property>
+<Property name="lineColor"><![CDATA[GREEN]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">zTrail</Property>
+<Property name="parent">spaceViewDrawingPanel3D</Property>
+<Property name="inputX"><![CDATA[tipZ[0]]]></Property>
+<Property name="inputY"><![CDATA[tipZ[1]]]></Property>
+<Property name="inputZ"><![CDATA[tipZ[2]]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="maximumPoints"><![CDATA[2000]]></Property>
+<Property name="skippoints"><![CDATA[(int)(0.05/dt)]]></Property>
+<Property name="lineColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">LText</Property>
+<Property name="parent">spaceViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[LSpace[0]*1.05]]></Property>
+<Property name="y"><![CDATA[LSpace[1]*1.05]]></Property>
+<Property name="z"><![CDATA[LSpace[2]*1.05]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[L]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[GRID:1,3,0,0]]></Property>
+<Property name="size"><![CDATA["120,23"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="tooltip"><![CDATA["Starts and stops the simulation"]]></Property>
+<Property name="imageOn"><![CDATA["/org/opensourcephysics/resources/controls/images/play.gif"]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA["/org/opensourcephysics/resources/controls/images/pause.gif"]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+<Property name="tooltip"><![CDATA["Single steps the simulation"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">east</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+<Property name="tooltip"><![CDATA["Resets the simulation"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">inputPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[FLOW:right,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">tiltPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">tiltLabel</Property>
+<Property name="parent">tiltPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" $\\alpha$ = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">tiltField</Property>
+<Property name="parent">tiltPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[tilt]]></Property>
+<Property name="format"><![CDATA["0.00#"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="columns"><![CDATA[4]]></Property>
+<Property name="size"><![CDATA["0,25"]]></Property>
+<Property name="tooltip"><![CDATA["Tilt angle"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">omegaPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">omegaLabel</Property>
+<Property name="parent">omegaPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" $\\omega$ = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">omegaField</Property>
+<Property name="parent">omegaPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[omegaInitial]]></Property>
+<Property name="format"><![CDATA["0.00#"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="columns"><![CDATA[4]]></Property>
+<Property name="size"><![CDATA["0,25"]]></Property>
+<Property name="tooltip"><![CDATA["Angular velocity in radians/s"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">dtPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">dtLabel</Property>
+<Property name="parent">dtPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" $\Delta$t = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">dtField</Property>
+<Property name="parent">dtPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[dt]]></Property>
+<Property name="format"><![CDATA["0.00#"]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="columns"><![CDATA[4]]></Property>
+<Property name="size"><![CDATA["0,25"]]></Property>
+<Property name="tooltip"><![CDATA["Time"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">tPanel</Property>
+<Property name="parent">inputPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">tLabel</Property>
+<Property name="parent">tPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" t = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">tField</Property>
+<Property name="parent">tPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+<Property name="format"><![CDATA["0.00#"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[4]]></Property>
+<Property name="size"><![CDATA["0,25"]]></Property>
+<Property name="tooltip"><![CDATA["Time"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">bodyViewCheck</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[showBodyView]]></Property>
+<Property name="text"><![CDATA["Body view"]]></Property>
+<Property name="tooltip"><![CDATA["Shows the body view"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Dialog</Type>
+<Property name="name">bodyViewDialog</Property>
+<Property name="title"><![CDATA["Body View"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[showBodyView]]></Property>
+<Property name="location"><![CDATA["7,549"]]></Property>
+<Property name="size"><![CDATA["492,374"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">bodyViewDrawingPanel3D</Property>
+<Property name="parent">bodyViewDialog</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="minimumZ"><![CDATA[-size]]></Property>
+<Property name="maximumZ"><![CDATA[size]]></Property>
+<Property name="projectionMode"><![CDATA["PERSPECTIVE"]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-0.06000000000000001]]></Property>
+<Property name="cameraAltitude"><![CDATA[0.4263487416741173]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[41.51999999999993]]></Property>
+<Property name="implementation"><![CDATA[useJava3D?1:0]]></Property>
+<Property name="decorationType"><![CDATA[NONE]]></Property>
+<Property name="allowQuickRedraw"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">spaceAxisGroup</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">xArrow3D</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-size]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[size/3]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">yArrow3D</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-size]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[size/3]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">zArrow3D</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-size]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[size/3]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">xText</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="x"><![CDATA[size/2]]></Property>
+<Property name="y"><![CDATA[-size]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["X"]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">yText</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-size/2]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Y"]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">zText</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-size]]></Property>
+<Property name="z"><![CDATA[size/2]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["Z"]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Quaternion3D</Type>
+<Property name="name">spaceQuaternion</Property>
+<Property name="parent">spaceAxisGroup</Property>
+<Property name="q0"><![CDATA[q[0]]]></Property>
+<Property name="q1"><![CDATA[-q[1]]]></Property>
+<Property name="q2"><![CDATA[-q[2]]]></Property>
+<Property name="q3"><![CDATA[-q[3]]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">bodyAngularMomentum</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[LBody[0]]]></Property>
+<Property name="sizeY"><![CDATA[LBody[1]]]></Property>
+<Property name="sizeZ"><![CDATA[LBody[2]]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">bodyOmega</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[omega[0]*omegaScale]]></Property>
+<Property name="sizeY"><![CDATA[omega[1]*omegaScale]]></Property>
+<Property name="sizeZ"><![CDATA[omega[2]*omegaScale]]></Property>
+<Property name="fillColor"><![CDATA[PINK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">bodyOneArrow</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[6]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">bodyTwoArrow</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[6]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="fillColor"><![CDATA[GREEN]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">bodyThreeArrow</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[6]]></Property>
+<Property name="visible"><![CDATA[showBody]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">bodyOmegaText</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[omega[0]*1.05*omegaScale]]></Property>
+<Property name="y"><![CDATA[omega[1]*1.05*omegaScale]]></Property>
+<Property name="z"><![CDATA[omega[2]*1.05*omegaScale]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[$\omega$]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Box3D</Type>
+<Property name="name">bodyBox</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="sizeX"><![CDATA[a]]></Property>
+<Property name="sizeY"><![CDATA[b]]></Property>
+<Property name="sizeZ"><![CDATA[c]]></Property>
+<Property name="visible"><![CDATA[showBox]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">bodyOmegaTrail</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="inputX"><![CDATA[omega[0]*omegaScale]]></Property>
+<Property name="inputY"><![CDATA[omega[1]*omegaScale]]></Property>
+<Property name="inputZ"><![CDATA[omega[2]*omegaScale]]></Property>
+<Property name="lineColor"><![CDATA[PINK]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail3D</Type>
+<Property name="name">bodyAngularMomentumTrail</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="inputX"><![CDATA[LBody[0]]]></Property>
+<Property name="inputY"><![CDATA[LBody[1]]]></Property>
+<Property name="inputZ"><![CDATA[LBody[2]]]></Property>
+<Property name="lineWidth"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text3D</Type>
+<Property name="name">bodyAngularMomentumText</Property>
+<Property name="parent">bodyViewDrawingPanel3D</Property>
+<Property name="x"><![CDATA[LBody[0]*1.05]]></Property>
+<Property name="y"><![CDATA[LBody[1]*1.05]]></Property>
+<Property name="z"><![CDATA[LBody[2]*1.05]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[L]]></Property>
+<Property name="font"><![CDATA[Monospaced,BOLD,14]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="FermatPrinciplev3"
+author="Fu-Kwun Hwang; lookang; tina"
+description="http://weelookang.blogspot.sg/2015/07/ejss-fermats-principle-refraction-model.html
+http://www.phy.ntnu.edu.trw/ntnujava/
+hwang@phy.ntnu.edu.tw
+ Fermat Principle Model Refraction Example"
+screenshot="./fermatprinciple/2015-07-27_0911s.png"
+thumbnail="./fermatprinciple/2015-07-27_0911s.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="FermatPrinciplev3_Simulation.xhtml"/>
+</Module>

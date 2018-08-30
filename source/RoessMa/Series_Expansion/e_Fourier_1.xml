@@ -1,0 +1,1125 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.7" password="">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[Dieter Roess - WEH- Foundation]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[dieter.roess@t-online.de]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<AppletColSupport>false</AppletColSupport>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Fourier Coefficients</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Fourier Coefficients</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif; color: purple }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0" align="center">
+      
+    </p>
+    <h1 align="center">
+      Fourier coefficients
+    </h1>
+    <p style="margin-top: 0">
+      The Fourier series of a periodic function <i>f(x</i>) with period <i>x = 
+      2&#960;</i> is of the form
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i><small><big><font size="4">f(x) </font></big></small>= a<sub>0 </sub>/2 
+      + &#931; (a<sub>n</sub>cos(nx) + b<sub>n</sub>sin(nx)); n=1,2,3....&#8734;</i>
+    </p>
+    <p style="margin-top: 0">
+      To calculate the coefficients of the series, one starts with the 
+      following assumed identities:
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i><big>&#8747;</big>f(x)cos(mx)dx = <big>&#8747;<font size="4">cos(mx) </font></big><font size="6">&#931;</font><big>(</big>a<sub>0</sub>/2 
+      + &#931; a<sub>n</sub>cos(nx) + b<sub>n</sub>sin(nx))dx</i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i><big>&#8747;</big>f(x)sin(mx)dx = <big>&#8747;<font size="4">sin(mx) </font></big><font size="6">&#931;</font><big>(</big>a<sub>0</sub>/2 
+      + &#931; a<sub>n</sub>cos(nx) + b<sub>n</sub>sin(nx))dx</i>
+    </p>
+    <p style="margin-top: 0">
+      where one integrates over one base period <i>(m = 1)</i>.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Suppressing constants, the following types of integral are to be 
+      evaluated, summed over index <i>n</i>:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      With <i>m = 1,2,3...&#8734;</i> and <i>n = 1,2,3...</i>&#8734;: order of the 
+      harmonic (fundamental <i>m, n = </i>1)
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i>cos (mx) </i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i>sin (mx) </i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i>cos (mx) * (a*cos (nx) + b*sin (nx)) </i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i>sin (mx) * (a*cos (nx) + b*sin(nx)) </i>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      All integrals are zero except of those few where the indices are 
+      identical: <i>m = n</i> <u>and</u> the function types are the same (sine 
+      or cosine). Therefore every sum for a specific index <i>n</i> has only 
+      one member and the coefficients can easily be derived from the reduced 
+      equations as:&#160;
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i>a<sub>0</sub> = 2/T<big>&#8747;<small><font size="4">f(t) dt </font></small></big></i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      <i><small><font size="4"><big>a<sub>n</sub>= </big></font></small>2/T<big>&#8747;<font size="4">cos(nx) 
+      <small>f(t) dt </small></font></big></i>
+    </p>
+    <p style="margin-top: 0" align="center">
+      <big><font size="4"><i><small>b<sub>n </sub>= </small></i></font></big><i>2/T<big>&#8747;<font size="4">sin(nx) 
+      <small>f(t) dt </small></font></big></i>
+    </p>
+    <p style="margin-top: 0" align="left">
+      
+    </p>
+    <p style="margin-top: 0" align="left">
+      <big><font size="4"><small>This simulation demonstrates the different 
+      types of function and their integral. </small></font></big>
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Description</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Description</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif; color: purple }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0" align="center">
+      
+    </p>
+    <h1 align="center">
+      Operation of the simulation
+    </h1>
+    <p style="margin-top: 0">
+      A <b>ComboBox</b> holds a list of all function combinations described on 
+      the <i>Fourier Coefficients </i>page. When one is selected it is 
+      displayed in red. The antiderivative is calculated for the fundamental 
+      period and drawn as a blue curve. Its end value is the definite integral 
+      over one fundamental period, which is needed for the calculation of the 
+      coefficients. The integration process is slowed down to visualize more 
+      clearly the consequence of changes in parameters or indices.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Some of the selectable functions contain parameters <i>a</i> and<i> b</i> 
+      which can be changed continuously by <b>sliders<i> a/ b . </i></b>Two 
+      other <b>sliders <i>m/n </i></b>select the critical indices <i>m</i> and <i>n</i> 
+      as integers between 1 and 10.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Parameters and indices are maintained when functions are changed. 
+      Integration is started automatically at any change as long as the 
+      selection <b>Integral</b> remains active.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      By means of sliders <i>a</i> and <i>b</i> scaling of the ordinate can be 
+      adjusted to the specific function. They also allow phase shifting of 
+      functions.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Experiments</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Experiments</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif; color: purple }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <b>E1:</b> Choose <i>cosx</i> in the <b>comboBox</b>. It will be 
+      calculated and displayed in red. Activate the <b>Integral</b><i> </i>check 
+      box. The integration process will begin with the initial value of the 
+      function at <i>x = 0</i> and will progress in blue to the end of the 
+      fundamental period <i>x = 2 &#960;. </i>Reflect why the end value and 
+      hence the definite integral over the interval is zero
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E2:</b> Change index <i>n </i>with the slider and watch the integral 
+      curve. Reflect again why the definite integral is always zero.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E3:</b> Choose <i>sinx </i>and verify the experiments for it.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E4: </b>Choose<i> asinx</i> + <i>bcosnx </i>and assure yourself by 
+      varying <i>a, b, n</i> that the superposition is always a simple, phase 
+      shifted periodical, whose definite integral is zero.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E5: </b>Choose<i> cosx * sinx </i>and assure yourself that the 
+      definite integral is always zero.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E6:</b> Choose the remaining &quot;mixed&quot; functions and assure yourself 
+      that the definite integral is <u>non zero only</u> when both terms are 
+      of the same type and have identical indices.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E7: </b>Integrate some of the functions analytically and verify the 
+      experimental findings.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>E8:&#160;</b>Conclude in general which characteristics of the 
+      functions <i>sine </i>and <i>cosine</i> are the base of your results.
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Authors</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Authors</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { background-color: #C8DFD0; font-family: Georgia, Times New Roman, Times, serif; color: purple }
+        address { margin-top: 0; border-top: thin dotted; padding-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      this file was created by Dieter Roess November 2008
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      This simulation is part of
+    </p>
+    <p style="margin-top: 0">
+      &#8220;<a href="http://www.degruyter.de/cont/fb/ma/detail.cfm?id=IS-9783110250053-1">Learning 
+      and Teaching Mathematics using Simulations </a>
+    </p>
+    <p style="margin-top: 0">
+      &#8211; Plus 2000 Examples from Physics&#8221;
+    </p>
+    <p style="margin-top: 0">
+      ISBN 978-3-11-025005-3, Walter de Gruyter GmbH &amp; Co. KG
+    </p>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.RealTimeVariable></Osejs.Model.RealTimeVariable>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Basic</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[Parameter fuer die Evolution]]></PageComment>
+<Variable>
+<Name><![CDATA[q]]></Name>
+<Value><![CDATA[200]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Anzahl der berechneten Punkte]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[min]]></Name>
+<Value><![CDATA[-1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Startwert der Berechnung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[max]]></Name>
+<Value><![CDATA[2*Math.PI]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Endwert der Berechnung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[step]]></Name>
+<Value><![CDATA[(max-min)/q]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Schrittweite der Berechnung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ya0]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Startwert fuer das Integral]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yt]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Integralwert am Punkt t]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Schrittvariable fuer Evolution]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Zaehlvariable fuer die Berechnung des Integrals und der Ableitungen]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Parameter</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[Parameter fuer die Funktion]]></PageComment>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m]]></Name>
+<Value><![CDATA[2]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Results</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[Ergebnisse der Berechnung]]></PageComment>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[q+1]]]></Dimension>
+<Comment><![CDATA[x-werte]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[q+1]]]></Dimension>
+<Comment><![CDATA[Ergebnisse von f(x)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ya]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[q+1]]]></Dimension>
+<Comment><![CDATA[Ergebnisse der ersten Ableitung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ya2]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[q+1]]]></Dimension>
+<Comment><![CDATA[Ergebnisse der zweiten Ableitung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dy]]></Name>
+<Value><![CDATA[0.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[q+1]]]></Dimension>
+<Comment><![CDATA[Ergebnisse der Integrals]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Selection</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[Auswahl der angezeigten Graphen]]></PageComment>
+<Variable>
+<Name><![CDATA[showINT]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Integral]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Functions</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[Variablen fuer die Auswahl der Funktion]]></PageComment>
+<Variable>
+<Name><![CDATA[Fx]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[die aktuelle Formel]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[functions]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[String mit Formeln zur Initialisierung der Combo-Box]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[description]]></Name>
+<Value><![CDATA[""]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[die zur gewaehlten Formel passende Beschreibung]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[functionList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Liste mit Formeln]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[descriptionList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<String>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Liste mit Beschreibungen]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[minList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<Double>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Liste mit min-Werten]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[maxList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<Double>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Liste mit max-Werten]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[startwertList]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[java.util.ArrayList<Double>]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[Liste mit Startwerten fuer das Integral]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[f]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[org.colos.ejs.library.Function]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[fie aktuelle Funktion]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fa]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[org.colos.ejs.library.Function]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[erste Ableitung von f]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[fa2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[org.colos.ejs.library.Function]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[zweite Ableitung von f]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+initFunctions();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>html-start</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// for the html- Link version this start the description window 
+//together with the simulation windows
+Thread thread = new Thread(new Runnable() {
+  public void run() {
+    try { Thread.sleep(500); }
+    catch (Exception exc) {}
+    _view.showDescription(true);
+  }
+});
+thread.start();
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Events>
+</Events>
+<IndependentVariable>t</IndependentVariable>
+<Increment>step</Increment>
+<Rate state="yt">f==null ? 0: f.eval(t)</Rate>
+<Rate state=""></Rate>
+<Method>RungeKutta</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance></AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+<Osejs.Model.Evolution.Page>
+<Type>EVOLUTION_EDITOR</Type>
+<Name>Evol Page 2</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[get integral and calculate derivatives]]></Comment>
+<Code><![CDATA[
+// get integral
+if(k<(q-1)) {
+  dy[k+1] = yt;
+}
+//test for max value
+if(k<q) {
+	k++;
+}
+else {
+ _pause();
+}
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>initFunctions</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[Definition of functionand selection of the first one.]]></Comment>
+<Code><![CDATA[
+public void initFunctions() {
+	// list of formula
+	functionList = new java.util.ArrayList();
+	//List of function type
+	descriptionList = new java.util.ArrayList();
+        // List of start values
+        minList = new java.util.ArrayList();
+        // List of end values
+	maxList = new java.util.ArrayList();
+        // List of initial values
+	startwertList = new java.util.ArrayList();
+
+        // Lists are filled
+	functionList.add("       choose a function!");
+	descriptionList.add(" ");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(-1));
+		
+	functionList.add("a * cos(n*x)");
+	descriptionList.add("cos(nx)");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+	functionList.add("a * sin(n*x)");
+	descriptionList.add("sin(nx)");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+	functionList.add("a * sin(n*x) + b * cos(n*x)");
+	descriptionList.add("sin(nx) + cos(nx)");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+	functionList.add("cos(m*x) * b * sin(n*x)");
+	descriptionList.add("cos(mx) * sin(nx)");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+	functionList.add("cos(m*x) * a * cos(n*x)");
+	descriptionList.add("cos(mx) * cos(nx)");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+	functionList.add("sin(m*x) * b * sin(n*x)");
+	descriptionList.add("sin(mx) * sin(nx)");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+        functionList.add("cos(m*x) * (a*cos(n*x) +  b*sin(n*x))");
+	descriptionList.add("cos(mx) * (cos(nx) + sin(nx))");
+	minList.add(new Double(0));
+	maxList.add(new Double(2*Math.PI));
+	startwertList.add(new Double(0));
+	
+	// a string is built, seperated by colons 
+	// and filled into the ComboBox
+	String fu  = (String)functionList.get(0);
+	for (int i = 1; i < functionList.size(); i++ ){
+		String d = ((String)functionList.get(i)).trim();
+		fu = fu + "; " + d;
+	}
+      description = descriptionList.get(0);
+      functions = fu;
+        // get first function
+        changeFunction();
+       
+      }
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>changeFunction</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[Selection of functions]]></Comment>
+<Code><![CDATA[
+public void changeFunction() {
+	// with change of function type is fetched
+	if(functionList != null) {
+		// a^Where is the selectoed function in the function list ?
+		int pos = functionList.indexOf(Fx.trim());
+
+		if(pos >= 0) {
+			// fetch description
+			description = descriptionList.get(pos);
+			// set start value
+			Double mi = minList.get(pos);
+      	                if(mi != null) {
+      	                   min = mi.doubleValue(); 
+			}
+                        // set end value
+                        Double ma = maxList.get(pos);
+      	                if(ma != null) {
+      	                   max = ma.doubleValue(); 
+			}
+                        // set initial value
+			Double sw = startwertList.get(pos);
+      	                if(sw != null) {
+      	                    ya0 = sw.doubleValue(); 
+			}
+		}
+	}
+	else {
+		System.out.println("leere functionList");
+	}
+        /* die Funkion fetch derivative */
+        f = _view.getFunction("FieldFx2","function");
+	double h = (Math.abs(min) + Math.abs(max)) / (q*5); // step for approximation
+	 // calculate values
+        calculate();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>calculate</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[Calculation of graphs]]></Comment>
+<Code><![CDATA[
+
+public void calculate() {
+  // set step
+  step = (max - min) / (q-1);
+  // set x-value and calculate function
+  for (int i = 0; i<q; i++) {
+	x[i] = min + step * i;
+	y[i] = f.eval(x[i]);
+  }
+  // initialize evolution
+  t=min;
+  k=0;
+  yt=ya0;
+  dy[0] = ya0;
+  // start evolution to calculate integral and derivative
+  _play();
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Frame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Fourier series 1"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["-1,-1"]]></Property>
+<Property name="size"><![CDATA["650,600"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">Koordinatensystem</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[min]]></Property>
+<Property name="maximumX"><![CDATA[max]]></Property>
+<Property name="minimumY"><![CDATA[-2]]></Property>
+<Property name="maximumY"><![CDATA[2]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Integrals of Fourier terms"]]></Property>
+<Property name="axesType"><![CDATA[CARTESIAN3]]></Property>
+<Property name="titleX"><![CDATA["x"]]></Property>
+<Property name="titleY"><![CDATA["f(x)"]]></Property>
+<Property name="yaxisPos"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">funktion</Property>
+<Property name="parent">Koordinatensystem</Property>
+<Property name="maxpoints"><![CDATA[q]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="closed"><![CDATA[false]]></Property>
+<Property name="secondaryColor"><![CDATA[RED]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Poligon</Type>
+<Property name="name">integral</Property>
+<Property name="parent">Koordinatensystem</Property>
+<Property name="maxpoints"><![CDATA[q]]></Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[dy]]></Property>
+<Property name="visible"><![CDATA[showINT]]></Property>
+<Property name="closed"><![CDATA[false]]></Property>
+<Property name="secondaryColor"><![CDATA[BLUE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">Integrationsende</Property>
+<Property name="parent">Koordinatensystem</Property>
+<Property name="x"><![CDATA[2*Math.PI]]></Property>
+<Property name="y"><![CDATA[-3]]></Property>
+<Property name="sizex"><![CDATA[0]]></Property>
+<Property name="sizey"><![CDATA[6]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+<Property name="color"><![CDATA[BLUE]]></Property>
+<Property name="stroke"><![CDATA[2]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">Panel</Property>
+<Property name="parent">Frame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelFx</Property>
+<Property name="parent">Panel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[GRID:2,5,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Label</Property>
+<Property name="parent">PanelFx</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["function"]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">labelDescription</Property>
+<Property name="parent">PanelFx</Property>
+<Property name="text"><![CDATA["function type"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ComboBox</Type>
+<Property name="name">comboBoxFunktion</Property>
+<Property name="parent">PanelFx</Property>
+<Property name="options"><![CDATA[%functions%]]></Property>
+<Property name="variable"><![CDATA[%Fx%]]></Property>
+<Property name="value"><![CDATA["null"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[changeFunction ()]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TextField</Type>
+<Property name="name">textFieldDescription</Property>
+<Property name="parent">PanelFx</Property>
+<Property name="variable"><![CDATA[%description%]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[calculate ()]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">PanelParameters</Property>
+<Property name="parent">Panel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[HBOX]]></Property>
+<Property name="size"><![CDATA["0,60"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderA</Property>
+<Property name="parent">PanelParameters</Property>
+<Property name="variable"><![CDATA[a]]></Property>
+<Property name="value"><![CDATA[1.0]]></Property>
+<Property name="minimum"><![CDATA[-3.0]]></Property>
+<Property name="maximum"><![CDATA[3.0]]></Property>
+<Property name="format"><![CDATA[a = 0.00]]></Property>
+<Property name="ticks"><![CDATA[13]]></Property>
+<Property name="ticksFormat"><![CDATA[0.##]]></Property>
+<Property name="action"><![CDATA[calculate()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderB</Property>
+<Property name="parent">PanelParameters</Property>
+<Property name="variable"><![CDATA[b]]></Property>
+<Property name="value"><![CDATA[1]]></Property>
+<Property name="minimum"><![CDATA[-6]]></Property>
+<Property name="maximum"><![CDATA[6.0]]></Property>
+<Property name="format"><![CDATA[b = 0.00]]></Property>
+<Property name="ticks"><![CDATA[13]]></Property>
+<Property name="ticksFormat"><![CDATA[0.##]]></Property>
+<Property name="closest"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[calculate()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderM</Property>
+<Property name="parent">PanelParameters</Property>
+<Property name="variable"><![CDATA[m]]></Property>
+<Property name="value"><![CDATA[1]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="format"><![CDATA[m = 0]]></Property>
+<Property name="ticks"><![CDATA[13]]></Property>
+<Property name="ticksFormat"><![CDATA[0]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[calculate()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">SliderN</Property>
+<Property name="parent">PanelParameters</Property>
+<Property name="variable"><![CDATA[n]]></Property>
+<Property name="value"><![CDATA[1]]></Property>
+<Property name="minimum"><![CDATA[1]]></Property>
+<Property name="maximum"><![CDATA[10]]></Property>
+<Property name="format"><![CDATA[n = 0]]></Property>
+<Property name="ticks"><![CDATA[11]]></Property>
+<Property name="ticksFormat"><![CDATA[0]]></Property>
+<Property name="closest"><![CDATA[true]]></Property>
+<Property name="action"><![CDATA[calculate()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">panelSelection</Property>
+<Property name="parent">Panel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,4,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">Funktion</Property>
+<Property name="parent">panelSelection</Property>
+<Property name="text"><![CDATA["function"]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="background"><![CDATA[RED]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">checkBoxIntegral</Property>
+<Property name="parent">panelSelection</Property>
+<Property name="variable"><![CDATA[showINT]]></Property>
+<Property name="selected"><![CDATA[false]]></Property>
+<Property name="text"><![CDATA["integral"]]></Property>
+<Property name="alignment"><![CDATA[CENTER]]></Property>
+<Property name="background"><![CDATA[BLUE]]></Property>
+<Property name="foreground"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">HiddenPanel</Property>
+<Property name="parent">panelSelection</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA[0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Function</Type>
+<Property name="name">FieldFx2</Property>
+<Property name="parent">HiddenPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[%Fx%]]></Property>
+<Property name="independent"><![CDATA["x"]]></Property>
+<Property name="editable"><![CDATA[true]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

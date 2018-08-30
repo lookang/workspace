@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Differential Absorption - Technical Notes</title></head><body>
+  
+    <style type="text/css">
+      <!--
+        h3 { color: navy; text-indent: 0px; padding-left: 10px; margin-right: 20px; margin-top: 12pt; margin-bottom: 0pt; text-align: left; font-size: 110% !important; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h2 { color: #000000; text-indent: 0px; padding-left: 0px; margin-top: 16pt; margin-bottom: 2pt; text-align: left; font-size: 120% !important; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h1 { padding-right: 0; color: #777; padding-left: 0px; margin-bottom: 4pt; text-align: left; text-indent: 0px; padding-bottom: 0; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; line-height: 22px; padding-top: 0; margin-top: 12; font-size: 135% !important; margin-right: 0; margin-left: 0 }
+        #subnav { padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt }
+        body { color: black; background-color: white; font-family: Georgia, Times New Roman, Times, serif }
+        li { padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt; text-align: left }
+        p { margin-left: 0; padding-left: 10px; margin-right: 20px; line-height: 1.5em; margin-top: 0pt; margin-bottom: 0pt; text-align: justify; font-family: Georgia, Times New Roman, Times, serif }
+        ﻿ body { margin-left: 3%; margin-right: 3%; margin-top: 2%; margin-bottom: 5%; font-size: medium; text-align: justify }
+        table { margin-left: 0pt; padding-left: 0pt; margin-right: 0pt; padding-top: 0pt; padding-bottom: 0pt; margin-top: 0pt; margin-bottom: 0pt; padding-right: 0pt }
+        td { margin-left: 0pt; padding-left: 0pt; margin-right: 0pt; padding-top: 0pt; padding-bottom: 0pt; margin-top: 0pt; margin-bottom: 0pt; padding-right: 0pt }
+        ﻿body { color: black; background-color: #FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif }
+        #content li { padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt }
+        tr,td,th { margin-left: 0pt; padding-left: 0pt; margin-right: 0pt; padding-top: 0pt; padding-bottom: 0pt; margin-top: 0pt; margin-bottom: 0pt; padding-right: 0pt }
+        a:link { color: blue }
+        ol { padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt }
+        ul { padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt }
+        a:visited { color: purple }
+        tbody { margin-left: 0pt; padding-left: 0pt; margin-right: 0pt; padding-top: 0pt; padding-bottom: 0pt; margin-top: 0pt; margin-bottom: 0pt; padding-right: 0pt }
+        blockquote { padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; padding-left: 10px; margin-right: 20px; margin-top: 0pt; margin-bottom: 0pt; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; text-align: left }
+        address { border-top-style: dotted; border-top-width: thin; padding-top: 0; margin-top: 0; border-top-color: border-color }
+        h4 { text-indent: 0px; padding-left: 10px; margin-right: 20px; margin-top: 12pt; margin-bottom: 0pt; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; text-align: left }
+      -->
+    </style>
+    
+  
+    <p style="margin-top: 0pt;">
+      The reduction of X-ray intensity due to absorbtion follows the following 
+      exponential decay:
+    </p>
+    <p style="margin-top: 0pt;">
+      I = I<sub>0</sub> exp(-&#956;t)
+    </p>
+    <p style="margin-top: 0pt;">
+      where I is the incident intensity, I<sub>0</sub> is the transmitted 
+      intensity, &#956; is the absorption coefficient, and t is the thickness of 
+      the matterial. the mass absorption coefficient
+    </p>
+    <p style="margin-top: 0pt;">
+      &#956;<sub>m</sub> = &#956;/&#961;
+    </p>
+    <p style="margin-top: 0pt;">
+      is usually used in place of &#956; and a mass thickness
+    </p>
+    <p style="margin-top: 0pt;">
+      x=&#961;t
+    </p>
+    <p style="margin-top: 0pt;">
+      used in place of the physical thickness of the attenuating material.
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      Over the range of X-ray energies found in a typical diagnostic X-rays, &#956;<sub>m</sub> 
+      is dominated by contributions from the phtoelectric effect (&#964;<sub>m</sub>) 
+      and the Compton effect (&#963;<sub>Cm</sub>):
+    </p>
+    <p style="margin-top: 0pt;">
+      &#956;<sub>m</sub> = &#964;<sub>m</sub>+&#963;<sub>Cm</sub>
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      According to both reference 2 and 3, &#964;<sub>m</sub> is proportional 
+      to the cube of atomic number Z and inversely proportional to the cube of 
+      the X-ray photon energy E. The behavior of &#963;<sub>Cm </sub>is less 
+      well defined. Both reference 2 and 3 note that &#963;<sub>Cm</sub> is 
+      independent of atomic number. Reference 2 only states that &#963;<sub>Cm </sub>decreases 
+      with increasing energy while reference 3 suggests that it is inversely 
+      proportional to photon energy.
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      The simplified model for &#956; used in the applet is given by
+    </p>
+    <p style="margin-top: 0pt;">
+      &#956;<sub>m</sub>=(&#964;<sub>0</sub>(Z/Z<sub>0</sub>)<sup>3</sup>(E<sub>0</sub>/E)<sup>3</sup>+&#963;<sub>0</sub>(E<sub>0</sub>/E))
+    </p>
+    <p style="margin-top: 0pt;">
+      where &#964;<sub>0</sub> and &#963;<sub>0</sub> are the contributions of 
+      the photoelectric effect and the Compton effect at the reference atomic 
+      number Z<sub>0</sub> and reference photon energy E<sub>0</sub>. The 
+      following values are used
+    </p>
+    <table border="0" cellpadding="5" cellspacing="5">
+      <tbody><tr>
+        <td>
+          Z<sub>0</sub>
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          E<sub>0</sub>
+        </td>
+        <td>
+          100 keV
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &#964;<sub>0</sub>
+        </td>
+        <td>
+          0.085 cm<sup>2</sup>/g
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &#963;<sub>0</sub>
+        </td>
+        <td>
+          0.2 cm<sup>2</sup>/g
+        </td>
+      </tr>
+    </tbody></table>
+    <p>
+      This discussion does not take into acount reduced interaction at lower 
+      energies due to insufficient X-ray photon enery to overcome the binding 
+      energy of the electrons (which produce the absorption edge features). As 
+      a result, the simple model used here will over estimate the 
+      photoelectric absorption of X-rays for higher Z materials at low to 
+      intermediate energies. While this model is inadequate for accurate 
+      modeling of X-ray interaction with matter, is is sufficiently accurate 
+      to provide the qualitative behaviour students will be exploring with 
+      this applet.
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      The graph below compares the simple model of &#956;<sub>m</sub> with the 
+      experimental data from reference 1: <img style="width: 584px; height: 332px;" alt="" src="differential_absorbtion_fig2.png">
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      References:
+    </p>
+    <p style="margin-top: 0pt;">
+      
+    </p>
+    <p style="margin-top: 0pt;">
+      (1) X-ray Mass Attentuation Coefficients, J. H. Hubbell and S. M. 
+      Seltzer , http://www.nist.gov/pml/data/xraycoef/
+    </p>
+    <p style="margin-top: 0pt;">
+      (2) Radiation oncology physics : a handbook for teachers and students
+    </p>
+    <p style="margin-top: 0pt;">
+      (3) Radiologic Science for Technologists, Stewart C. Bushong
+    </p>
+  </body></html>

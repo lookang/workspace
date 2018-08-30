@@ -1,0 +1,1411 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.3.4" password="">
+<Osejs.Information>
+<Title><![CDATA[Magnet passing through a stationary solenoid]]></Title>
+<Author><![CDATA[Maria Jose Cano, Jose Miguel Zamarro, Ernesto Mart’n, and Francisco Esquembre - Universidad Murcia]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<ExecPassword><![CDATA[]]></ExecPassword>
+<CaptureTools>true</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>true</LanguageTools>
+<EmersionSupport>false</EmersionSupport>
+<AppletColSupport>false</AppletColSupport>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+<Import><![CDATA[org.opensourcephysics.numerics.Matrix3DTransformation]]></Import>
+</ImportStatements>
+<DetectedFiles><![CDATA[./amperimeter2.jpg;./capture.jpg;]]></DetectedFiles>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Magnet through a stationary solenoid</Name>
+<Active>true</Active>
+<Content>
+<OneHTMLPage>
+  <Locale>_default_</Locale>
+  <Title>Magnet through a stationary solenoid</Title>
+  <External>false</External>
+  <![CDATA[
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        a:visited { color: purple }
+        body { font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        address { padding-top: 0; border-top: thin dotted; margin-top: 0 }
+        a:link { color: blue }
+        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h2>
+      Magnet passing through a Stationary Solenoid
+    </h2>
+    <p style="margin-top: 0">
+      This simulation shows how a magnet passing through a solenoid induces an 
+      electrical current. The current is measured by the amperimeter at the 
+      right bottom of the frame.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The magnet moves with constant velocity from right to left. When it 
+      reaches the leftmost side, it stops and reverses its direction. You need 
+      to click the 'play' button again for the simulation to continue.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <div width="50%" align="center" height="50%">
+      <img alt="image" src="./capture.jpg">
+    </div>
+  </body>
+</html>
+
+]]>
+</OneHTMLPage>
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>10</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Common</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[maximum]]></Name>
+<Value><![CDATA[0.3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[minimum]]></Name>
+<Value><![CDATA[-0.3]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[center]]></Name>
+<Value><![CDATA[(minimum+maximum)/2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[space]]></Name>
+<Value><![CDATA[maximum-minimum]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[mu0]]></Name>
+<Value><![CDATA[4e-7*Math.PI]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[permeability of free space N/A^2]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[time]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[aux1]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[aux2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[A second auxiliary variable]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[stopMagnet]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Magnet</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[magnetLength]]></Name>
+<Value><![CDATA[0.0186]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magnetWidth]]></Name>
+<Value><![CDATA[magnetLength/2.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magnetMu]]></Name>
+<Value><![CDATA[1.2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[magnetic dipole moment of the magnet (A m^2)]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[initialPosition]]></Name>
+<Value><![CDATA[maximum/2.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magnetZ]]></Name>
+<Value><![CDATA[initialPosition]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magnetVz]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[speed]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[accelerationZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magnetOrient]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Coils</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[nCoils]]></Name>
+<Value><![CDATA[21]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coilSigma]]></Name>
+<Value><![CDATA[5.88e7]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[conductivity of copper ohm^-1 m^-1]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coilDiameter]]></Name>
+<Value><![CDATA[0.025]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[average radius of the tube (m) ]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coilZ]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nCoils]]]></Dimension>
+<Comment><![CDATA[coil position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[solenoidVoltage]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[solenoidCurrent]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[solenoidResistance]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coilSection]]></Name>
+<Value><![CDATA[1.0e-6]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[coilResistance]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Loop</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[length]]></Name>
+<Value><![CDATA[0.1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nPerCoil]]></Name>
+<Value><![CDATA[90]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[n]]></Name>
+<Value><![CDATA[nCoils*nPerCoil]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[polygon]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[n][3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega]]></Name>
+<Value><![CDATA[2*Math.PI/nPerCoil]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[radius]]></Name>
+<Value><![CDATA[coilDiameter/2.]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[k]]></Name>
+<Value><![CDATA[length/n]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Electrons</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[electronSize]]></Name>
+<Value><![CDATA[0.003]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electronsPerCoil]]></Name>
+<Value><![CDATA[10]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[numElectrons]]></Name>
+<Value><![CDATA[electronsPerCoil*nCoils]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[rotateElectrons]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nCoils]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electrons]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[numElectrons][3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Electrons2</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[electronSize2]]></Name>
+<Value><![CDATA[electronSize]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electronsOnTheLeftWire]]></Name>
+<Value><![CDATA[3]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electronsOnTheBotLeftWire]]></Name>
+<Value><![CDATA[4]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electronsOnTheBotRightWire]]></Name>
+<Value><![CDATA[4]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electronsOnTheRightWire]]></Name>
+<Value><![CDATA[3]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[numElectrons2]]></Name>
+<Value><![CDATA[electronsOnTheLeftWire+electronsOnTheBotLeftWire+electronsOnTheBotRightWire+electronsOnTheRightWire]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electrons2]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[numElectrons2][3]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[electrons2Pos]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[numElectrons2]]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[wireSize]]></Name>
+<Value><![CDATA[0.04]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[wireLength]]></Name>
+<Value><![CDATA[wireSize*4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Lines</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[D]]></Name>
+<Value><![CDATA[.15]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showLines]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[r]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[numLines]]></Name>
+<Value><![CDATA[4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Amperimeter</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[alpha]]></Name>
+<Value><![CDATA[1.57*1.47]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[frameSize]]></Name>
+<Value><![CDATA[265]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[wiresColor]]></Name>
+<Value><![CDATA[new java.awt.Color(55,188,97)]]></Value>
+<Type><![CDATA[Object]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+computeCoilData();
+
+// Computation used frequently
+aux1 = 9*mu0*mu0*magnetMu*magnetMu*coilSigma/
+(8.*Math.PI)*radius*radius*radius;
+aux2 = 3*mu0*magnetMu*radius*radius/2;
+coilResistance = Math.PI*coilDiameter/coilSigma/coilSection;
+solenoidResistance = nCoils*coilResistance;
+
+
+// Initial conditions
+time = 0;
+magnetZ =  initialPosition;
+magnetVz = -speed;
+int sign = -1;
+double delta = space/nCoils/8;
+for (int coil=0; coil<nCoils; coil++,sign=-sign) {
+  // coilZ[coil] = center-(coil+0.1)*sign*delta;
+  rotateElectrons[coil] = 0;
+}
+
+for(int i=0;i<numElectrons2;i++) electrons2Pos[i]=(i+1)*wireLength/numElectrons2;
+stopMagnet = false;
+_view.resetTraces();
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<PreliminaryCode>
+<Comment><![CDATA[Code to be executed before rate equations are evaluated]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</PreliminaryCode>
+<ErrorHandling>
+<EquationEditor.ErrorEditor.Page>
+<Type>ERROR_EDITOR</Type>
+<Name>Error handling code</Name>
+<Active>true</Active>
+<ErrorHandlingContent>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+<ErrorType>ANY_ERROR</ErrorType>
+</ErrorHandlingContent>
+</EquationEditor.ErrorEditor.Page>
+</ErrorHandling>
+<DelayInitialCondition>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+]]></Code>
+</DelayInitialCondition>
+<Events>
+<Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Event</Name>
+<Active>true</Active>
+<EventContent>
+<EventType>CROSSING_EVENT</EventType>
+<Method>BISECTION</Method>
+<Iterations>100</Iterations>
+<Tolerance><![CDATA[1.0e-5]]></Tolerance>
+<StopAtEvent>true</StopAtEvent>
+<ZeroCondition><![CDATA[
+return Math.abs(magnetZ)-initialPosition;
+
+]]></ZeroCondition>
+<Action><![CDATA[
+_pause();
+magnetVz = -1*magnetVz;
+
+
+]]></Action>
+<Comment><![CDATA[]]></Comment>
+</EventContent>
+</Event.Page>
+</Events>
+<IndependentVariable>time</IndependentVariable>
+<Increment>0.0002</Increment>
+<Rate state="magnetZ">magnetVz</Rate>
+<Rate state="magnetVz">accelerationZ</Rate>
+<Rate state="rotateElectrons[i]">-intensity(i,magnetZ,magnetVz)*10</Rate>
+<Method>RungeKuttaFehlberg</Method>
+<Tolerance></Tolerance>
+<InternalStep></InternalStep>
+<MemoryLength></MemoryLength>
+<MaximumStep></MaximumStep>
+<MaximumNumberOfSteps>10000</MaximumNumberOfSteps>
+<AbsoluteTolerance>0.00001</AbsoluteTolerance>
+<RelativeTolerance></RelativeTolerance>
+<EstimateFirstStep>false</EstimateFirstStep>
+<AccelerationIndependentOfVelocity>false</AccelerationIndependentOfVelocity>
+<ForceSynchronization>false</ForceSynchronization>
+<UseBestInterpolation>false</UseBestInterpolation>
+<EventMaximumStep></EventMaximumStep>
+<DelayList><![CDATA[]]></DelayList>
+<DelayAddDiscont><![CDATA[]]></DelayAddDiscont>
+<DirectIncidenceMatrix><![CDATA[]]></DirectIncidenceMatrix>
+<Comment><![CDATA[]]></Comment>
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+if (magnetMu<0) magnetOrient = "x:180d";
+else magnetOrient = "x:0d";
+double radius = coilDiameter/2;
+
+
+ double k2 = length/numElectrons;
+
+  for (int i=0; i<numElectrons; i++)  {
+    int inWhichCoil= i/nCoils;
+    double angle = i*2*Math.PI/electronsPerCoil + solenoidCurrent;//rotateElectrons[i] + i*2*Math.PI/numElectronsPerCoil;
+   
+    electrons[i][0] = radius*Math.cos(angle);
+    electrons[i][2] = radius*Math.sin(angle);
+    electrons[i][1] = k2*i - length/2.;
+  }
+    electrons[0][0] = electrons[1][0];
+    electrons[0][1] = electrons[1][1];
+    electrons[0][2] = electrons[1][2];
+
+//electrons on the wire
+double mov = solenoidCurrent/2.*0.05;
+
+
+for(int i=0; i<numElectrons2;i++){
+  electrons2Pos[i] = (electrons2Pos[i]-mov*.05+wireLength)%wireLength;//0.05 speed coefficient
+  
+  if(0<electrons2Pos[i] && electrons2Pos[i]<wireSize ){
+  electrons2[i][0] = polygon[0][0];//0.012;
+  electrons2[i][1] = polygon[0][1];//-0.05;
+  electrons2[i][2] = polygon[0][2]-electrons2Pos[i];
+  }
+  else if(wireSize<electrons2Pos[i] && electrons2Pos[i]<wireSize*2){
+  electrons2[i][0] = polygon[0][0];//0.012;
+  electrons2[i][1] = polygon[0][1]+electrons2Pos[i]-wireSize;
+  electrons2[i][2] = polygon[0][2]-wireSize;
+  }
+  else if(wireSize*2<electrons2Pos[i] && electrons2Pos[i]<wireSize*3){
+  electrons2[i][0] = polygon[0][0];//0.012;
+  electrons2[i][1] = polygon[0][1] +electrons2Pos[i]- wireSize + 0.02;
+  electrons2[i][2] = polygon[0][2]-wireSize;//-0.04;
+  }
+  else{
+  electrons2[i][0] = polygon[n-1][0];//0.012;
+  electrons2[i][1] = polygon[n-1][1];//0.05;
+  electrons2[i][2] = polygon[0][2]+electrons2Pos[i]-4*wireSize;
+  }
+ 
+ //if(i!=5){electrons2[i][0] =0;electrons2[i][1] =0;electrons2[i][2] =0;}
+}
+
+
+
+
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Compute current</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+solenoidVoltage = 0.0;
+double average=0;
+
+for (int coil=0; coil<nCoils; coil++) {
+  double difz = (magnetZ-electrons[coil*electronsPerCoil][1]);//coilZ[coil]);
+  double difz2 = difz*difz;
+  double denom = (Math.pow(coilDiameter*coilDiameter/4 + difz2,2.5));
+  double coilVoltage = -aux2*difz*magnetVz/denom;
+  double coilCurrent=coilVoltage/coilResistance;
+  solenoidVoltage += coilVoltage;
+  //to do the average intensity (REVIEW, PLEASE)
+   average += coilCurrent;
+}
+average = average/nCoils;
+alpha = 1.57*1.47 - average*78.0/12.0;
+alpha = (alpha-2.3)/40. + 2.3;
+alpha = Math.max(alpha, 1.5);
+alpha = Math.min(alpha, 3.1);
+
+
+solenoidCurrent=solenoidVoltage/solenoidResistance;
+]]></Code>
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Intensity</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public double intensity (int coil, double z, double vz) {
+  double difz = (z-electrons[coil*electronsPerCoil][1]);//coilZ[coil]);
+  double difz2 = difz*difz;
+  double denom = (Math.pow(coilDiameter*coilDiameter/4 + difz2,2.5));
+  return -aux2*difz*vz/denom/coilResistance;
+}
+
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>coilData</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void computeCoilData () {
+  radius = coilDiameter/2.;
+  for(int i=0;i<n;i++) {
+    polygon[i][0]=radius*Math.cos(omega*i);
+    polygon[i][1]=k*i - k*n/2.;
+    polygon[i][2]=radius*Math.sin(omega*i);
+  }
+}
+]]></Code>
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+<Osejs.Model.Elements>
+</Osejs.Model.Elements>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Magnet passing through a solenoid"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["0,22"]]></Property>
+<Property name="size"><![CDATA["645,607"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">centerPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">drawingPanel3D</Property>
+<Property name="parent">centerPanel</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[minimum]]></Property>
+<Property name="maximumX"><![CDATA[maximum]]></Property>
+<Property name="minimumY"><![CDATA[minimum]]></Property>
+<Property name="maximumY"><![CDATA[maximum]]></Property>
+<Property name="minimumZ"><![CDATA[minimum*1.5]]></Property>
+<Property name="maximumZ"><![CDATA[maximum]]></Property>
+<Property name="cameraAzimuth"><![CDATA[0.2099999999999989]]></Property>
+<Property name="cameraAltitude"><![CDATA[-0.12906870689362746]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[27.232500000000282]]></Property>
+<Property name="menuName"><![CDATA["3D drawing panel"]]></Property>
+<Property name="implementation"><![CDATA[SIMPLE3D]]></Property>
+<Property name="decorationType"><![CDATA[CUBE]]></Property>
+<Property name="allowQuickRedraw"><![CDATA[false]]></Property>
+<Property name="useColorDepth"><![CDATA[false]]></Property>
+<Property name="squareAspect"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Group3D</Type>
+<Property name="name">magnetGroup</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[magnetZ]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[magnetWidth]]></Property>
+<Property name="sizeY"><![CDATA[magnetWidth]]></Property>
+<Property name="sizeZ"><![CDATA[magnetLength]]></Property>
+<Property name="transformation"><![CDATA["magnetOrient"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">blueCylinder3D</Property>
+<Property name="parent">magnetGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0.5]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[0.5]]></Property>
+<Property name="sizeZ"><![CDATA[1]]></Property>
+<Property name="transformation"><![CDATA["x:90d"]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="fillColor"><![CDATA[BLUE]]></Property>
+<Property name="drawingLines"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["20,20,20"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Cylinder3D</Type>
+<Property name="name">redCylinder3D</Property>
+<Property name="parent">magnetGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-0.5]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[1]]></Property>
+<Property name="sizeY"><![CDATA[0.5]]></Property>
+<Property name="sizeZ"><![CDATA[1]]></Property>
+<Property name="transformation"><![CDATA["x:90d"]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+<Property name="drawingLines"><![CDATA[false]]></Property>
+<Property name="resolution"><![CDATA["20,20,20"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CircleSet3D</Type>
+<Property name="name">electrons</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="position">electrons</Property>
+<Property name="position"><![CDATA[electrons]]></Property>
+<Property name="sizeX"><![CDATA[electronSize]]></Property>
+<Property name="sizeY"><![CDATA[electronSize]]></Property>
+<Property name="sizeZ"><![CDATA[electronSize]]></Property>
+<Property name="menuName"><![CDATA[null]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Polygon3D</Type>
+<Property name="name">solenoidPolygon</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="data"><![CDATA[polygon]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="closed"><![CDATA[false]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="lineWidth"><![CDATA[2.5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve3D</Type>
+<Property name="name">fieldLines</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="points"><![CDATA[100]]></Property>
+<Property name="min"><![CDATA[0]]></Property>
+<Property name="max"><![CDATA[2*Math.PI]]></Property>
+<Property name="variable"><![CDATA["theta"]]></Property>
+<Property name="functionx"><![CDATA["0.04*sin(theta)*sin(theta)*sin(theta)*sin(phi*3.14/5.)"]]></Property>
+<Property name="functiony"><![CDATA["magnetZ + .04*sin(theta)*sin(theta)*cos(theta)"]]></Property>
+<Property name="functionz"><![CDATA[".04*sin(theta)*sin(theta)*sin(theta)*cos(phi*3.14/5.)"]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="visible"><![CDATA[showLines]]></Property>
+<Property name="lineColor"><![CDATA[0,128,128]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve3D</Type>
+<Property name="name">fieldLines2</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="points"><![CDATA[100]]></Property>
+<Property name="min"><![CDATA[0]]></Property>
+<Property name="max"><![CDATA[2*Math.PI]]></Property>
+<Property name="variable"><![CDATA["theta"]]></Property>
+<Property name="functionx"><![CDATA["0.08*sin(theta)*sin(theta)*sin(theta)*sin(phi*3.14/5.)"]]></Property>
+<Property name="functiony"><![CDATA["magnetZ + .08*sin(theta)*sin(theta)*cos(theta)"]]></Property>
+<Property name="functionz"><![CDATA[".08*sin(theta)*sin(theta)*sin(theta)*cos(phi*3.14/5.)"]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="visible"><![CDATA[showLines &&( Math.abs(magnetMu)>25)]]></Property>
+<Property name="lineColor"><![CDATA[0,192,128]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.AnalyticCurve3D</Type>
+<Property name="name">fieldLines3</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="points"><![CDATA[100]]></Property>
+<Property name="min"><![CDATA[0]]></Property>
+<Property name="max"><![CDATA[2*Math.PI]]></Property>
+<Property name="variable"><![CDATA["theta"]]></Property>
+<Property name="functionx"><![CDATA[".12*sin(theta)*sin(theta)*sin(theta)*sin(phi*3.14/5.)"]]></Property>
+<Property name="functiony"><![CDATA["magnetZ + .12*sin(theta)*sin(theta)*cos(theta)"]]></Property>
+<Property name="functionz"><![CDATA[".12*sin(theta)*sin(theta)*sin(theta)*cos(phi*3.14/5.)"]]></Property>
+<Property name="javaSyntax"><![CDATA[false]]></Property>
+<Property name="visible"><![CDATA[showLines &&( Math.abs(magnetMu)>50)]]></Property>
+<Property name="lineColor"><![CDATA[green]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Box3D</Type>
+<Property name="name">clip1</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[0][0]]]></Property>
+<Property name="y"><![CDATA[polygon[0][1]]]></Property>
+<Property name="z"><![CDATA[polygon[0][2]]]></Property>
+<Property name="sizeX"><![CDATA[0.002]]></Property>
+<Property name="sizeY"><![CDATA[0.002]]></Property>
+<Property name="sizeZ"><![CDATA[0.002]]></Property>
+<Property name="fillColor"><![CDATA[wiresColor]]></Property>
+<Property name="resolution"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Box3D</Type>
+<Property name="name">clip2</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[n-1][0]]]></Property>
+<Property name="y"><![CDATA[polygon[n-1][1]]]></Property>
+<Property name="z"><![CDATA[polygon[n-1][2]]]></Property>
+<Property name="sizeX"><![CDATA[0.002]]></Property>
+<Property name="sizeY"><![CDATA[0.002]]></Property>
+<Property name="sizeZ"><![CDATA[0.002]]></Property>
+<Property name="fillColor"><![CDATA[wiresColor]]></Property>
+<Property name="resolution"><![CDATA[10]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">wire12</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[0][0]]]></Property>
+<Property name="y"><![CDATA[polygon[0][1]]]></Property>
+<Property name="z"><![CDATA[polygon[0][2]]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[-wireSize]]></Property>
+<Property name="lineColor"><![CDATA[wiresColor]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">wire1bis</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[0][0]]]></Property>
+<Property name="y"><![CDATA[polygon[0][1]]]></Property>
+<Property name="z"><![CDATA[polygon[0][2] - wireSize]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[wireSize]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[wiresColor]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">wire23</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[n-1][0]]]></Property>
+<Property name="y"><![CDATA[polygon[n-1][1]]]></Property>
+<Property name="z"><![CDATA[polygon[n-1][2]]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[-wireSize]]></Property>
+<Property name="lineColor"><![CDATA[wiresColor]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment3D</Type>
+<Property name="name">wire2bis</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[n-1][0]]]></Property>
+<Property name="y"><![CDATA[polygon[n-1][1]]]></Property>
+<Property name="z"><![CDATA[polygon[n-1][2] -0.04]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[-wireSize]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+<Property name="lineColor"><![CDATA[wiresColor]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Box3D</Type>
+<Property name="name">amperimeterBox</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[polygon[0][0]]]></Property>
+<Property name="y"><![CDATA[polygon[0][1]+0.05]]></Property>
+<Property name="z"><![CDATA[polygon[0][2]-0.04]]></Property>
+<Property name="sizeX"><![CDATA[0.01]]></Property>
+<Property name="sizeY"><![CDATA[0.02]]></Property>
+<Property name="sizeZ"><![CDATA[0.02]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CircleSet3D</Type>
+<Property name="name">electrons2</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="position">electrons2</Property>
+<Property name="position"><![CDATA[electrons2]]></Property>
+<Property name="sizeX"><![CDATA[electronSize2]]></Property>
+<Property name="sizeY"><![CDATA[electronSize2]]></Property>
+<Property name="sizeZ"><![CDATA[electronSize2]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">centerDownPanel</Property>
+<Property name="parent">centerPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["10,250"]]></Property>
+<Property name="borderType"><![CDATA[RAISED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">currentPlottingPanel</Property>
+<Property name="parent">centerDownPanel</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="minimumY"><![CDATA[-4.7]]></Property>
+<Property name="maximumY"><![CDATA[4.7]]></Property>
+<Property name="menuName"><![CDATA["Current panel"]]></Property>
+<Property name="title"><![CDATA["Current (A) vs Position (m)"]]></Property>
+<Property name="titleX"><![CDATA["m"]]></Property>
+<Property name="titleY"><![CDATA["A"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">currentTrail</Property>
+<Property name="parent">currentPlottingPanel</Property>
+<Property name="inputX"><![CDATA[magnetZ]]></Property>
+<Property name="inputY"><![CDATA[solenoidCurrent]]></Property>
+<Property name="menuName"><![CDATA["Current"]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bottomPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">bottomLeftPanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">botomLeftCenterPanel</Property>
+<Property name="parent">bottomLeftPanel</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[BORDER:0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">leftColumPanel</Property>
+<Property name="parent">botomLeftCenterPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[GRID:0,2,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">muLabel</Property>
+<Property name="parent">leftColumPanel</Property>
+<Property name="text"><![CDATA["Magnet $\mu$="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">muField</Property>
+<Property name="parent">leftColumPanel</Property>
+<Property name="variable"><![CDATA[magnetMu]]></Property>
+<Property name="action"><![CDATA[if(magnetMu > 100) {
+ _alert("magnetMu", "Warning","The dipole magnetic momentum is too height");
+ magnetMu = 100;
+ }
+ if(magnetMu < -100) {
+ _alert("magnetMu", "Warning","The dipole magnetic momentum is too height");
+ magnetMu = -100;
+ }
+
+_initialize();]]></Property>
+<Property name="columns"><![CDATA[6]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">speedLabel</Property>
+<Property name="parent">leftColumPanel</Property>
+<Property name="text"><![CDATA["Magnet speed (m/s)="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">speedField</Property>
+<Property name="parent">leftColumPanel</Property>
+<Property name="variable"><![CDATA[speed]]></Property>
+<Property name="columns"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">diameterLabel</Property>
+<Property name="parent">leftColumPanel</Property>
+<Property name="text"><![CDATA["Coil $\Phi$ (m)="]]></Property>
+<Property name="alignment"><![CDATA[RIGHT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">diameterField</Property>
+<Property name="parent">leftColumPanel</Property>
+<Property name="variable"><![CDATA[coilDiameter]]></Property>
+<Property name="value"><![CDATA[0.025]]></Property>
+<Property name="columns"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">rightColumnPanel</Property>
+<Property name="parent">botomLeftCenterPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[GRID:0,1,0,0]]></Property>
+<Property name="size"><![CDATA["200,20"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Panel</Type>
+<Property name="name">emptyPanel</Property>
+<Property name="parent">rightColumnPanel</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">speedSlider</Property>
+<Property name="parent">rightColumnPanel</Property>
+<Property name="variable"><![CDATA[speed]]></Property>
+<Property name="minimum"><![CDATA[0.5]]></Property>
+<Property name="maximum"><![CDATA[10.0]]></Property>
+<Property name="enabled"><![CDATA[_isPaused()]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="size"><![CDATA["150,25"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">diameterSlider</Property>
+<Property name="parent">rightColumnPanel</Property>
+<Property name="variable"><![CDATA[coilDiameter]]></Property>
+<Property name="minimum"><![CDATA[0.01]]></Property>
+<Property name="maximum"><![CDATA[0.075]]></Property>
+<Property name="enabled"><![CDATA[_isPaused()]]></Property>
+<Property name="dragaction"><![CDATA[computeCoilData ()]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+<Property name="size"><![CDATA["150,25"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">bottomLeftPanel</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">playPauseButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="imageOn"><![CDATA[/org/opensourcephysics/resources/controls/images/play.gif]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="imageOff"><![CDATA[/org/opensourcephysics/resources/controls/images/pause.gif]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA[/org/opensourcephysics/resources/controls/images/reset.gif]]></Property>
+<Property name="action"><![CDATA[_initialize()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">stepButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/stepforward.gif"]]></Property>
+<Property name="action"><![CDATA[_step()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">timePanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[FLOW:right,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">timeLabel</Property>
+<Property name="parent">timePanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA[" Time="]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">timeField</Property>
+<Property name="parent">timePanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[time]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="columns"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.CheckBox</Type>
+<Property name="name">showFieldCheckbox</Property>
+<Property name="parent">timePanel</Property>
+<Property name="variable"><![CDATA[showLines]]></Property>
+<Property name="text"><![CDATA["Show field lines"]]></Property>
+<Property name="actionon"><![CDATA[showLines=true]]></Property>
+<Property name="actionoff"><![CDATA[showLines=false]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">amperimeterPanel</Property>
+<Property name="parent">bottomPanel</Property>
+<Property name="position">east</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="menuName"><![CDATA[null]]></Property>
+<Property name="size"><![CDATA["175,175"]]></Property>
+<Property name="background"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">image</Property>
+<Property name="parent">amperimeterPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[frameSize-10]]></Property>
+<Property name="sizeY"><![CDATA[frameSize-10]]></Property>
+<Property name="imageFile"><![CDATA["./amperimeter2.jpg"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrow</Property>
+<Property name="parent">amperimeterPanel</Property>
+<Property name="x"><![CDATA[49.]]></Property>
+<Property name="y"><![CDATA[-49.19]]></Property>
+<Property name="sizeX"><![CDATA[120]]></Property>
+<Property name="sizeY"><![CDATA[0.1]]></Property>
+<Property name="transformation"><![CDATA[alpha]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+<Property name="extraColor"><![CDATA[DARKGRAY]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">wire21</Property>
+<Property name="parent">amperimeterPanel</Property>
+<Property name="x"><![CDATA[frameSize/2.-10]]></Property>
+<Property name="sizeX"><![CDATA[20]]></Property>
+<Property name="lineColor"><![CDATA[wiresColor]]></Property>
+<Property name="lineWidth"><![CDATA[5]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Segment2D</Type>
+<Property name="name">wire22</Property>
+<Property name="parent">amperimeterPanel</Property>
+<Property name="x"><![CDATA[-frameSize/2.-10]]></Property>
+<Property name="sizeX"><![CDATA[20]]></Property>
+<Property name="lineColor"><![CDATA[wiresColor]]></Property>
+<Property name="lineWidth"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

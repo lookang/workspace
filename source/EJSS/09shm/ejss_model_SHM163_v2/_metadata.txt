@@ -1,0 +1,28 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170624. Visit http://www.um.es/fem/Ejs
+title: vertical spring mass model y = 2 
+logo-image: SHMverticalsensor/verticalSHMsensoron2014-03-03_1624small.png
+author: weelookang@gmail.com
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto5050.png
+source: SHM163_v2.ejss
+main-script: 
+main-simulation: SHM163_v2_Simulation.xhtml
+available-languages: 
+html-contents: SHM163_v2_Contents.xhtml
+html-main: SHM163_v2.xhtml
+page-title: SHM16
+page-index: SHM06.xhtml
+page-title: vertical spring mass model y = 2
+page-index: SHM163_v2_Simulation.xhtml
+resource: 1authorlookangphoto5050.png
+resource: SHM06.xhtml
+resource: SHMverticalsensor/2015-02-24_1423.png
+resource: SHMverticalsensor/verticalSHMsensoron2014-03-03_1624small.png
+resource: SHMverticalsensor/2014-12-15_1344.png
+resource: SHMverticalsensor/2015-02-24_1421.png
+resource: SHMverticalsensor/2016-01-22_1538s.png
+resource: SHMverticalsensor/EF70-300MM_F45-56_side_om.jpg
+resource: SHMverticalsensor/sensor2014-03-04_0918small.png
+resource: SHMverticalsensor/vSHM_2014-02-18_1336small.png

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="FreeParticleWavepacket"
+author="Wolfgang Christian"
+description=""
+screenshot="./FreeParticleWavepacket/FreeParticle.png"
+thumbnail="./FreeParticleWavepacket/FreeParticle.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="FreeParticleWavepacket_Simulation.xhtml"/>
+</Module>

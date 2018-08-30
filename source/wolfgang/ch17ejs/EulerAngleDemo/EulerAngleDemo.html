@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+    <style type="text/css">
+.style1 {
+	font-family: Verdana;
+}
+</style>
+  </head>
+  <body>
+    <h1 align="left">
+      <font size="5">An Introduction to Computer Simulation Methods:<br>
+      Chapter 17 Examples</font></h1>
+    <p align="center"><img src="rotated_box.jpg"></p>
+    <p align="center"><font size="2">A sequence of three rotations orients a body in space.</font></p>
+    <h1>
+      Euler Angle Demo</h1>
+    <p align="left">The Euler Angle Demonstration shows how to specify the orientation of a three-dimensional object using a a sequence of rotations about three pre-chosen 
+    axes. The rotation angles are known as <a href="http://en.wikipedia.org/wiki/Euler_angle">Euler angles</a> and all possible orientations of an object can be represented 
+    using these angles.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">The simulation starts with the body frame 123-axis coordinate system aligned with the world&#39;s xyz-Cartesian coordinate system. The first rotation is about 
+    the body frame&#39;s z axis by an angle <span class="style1">&#966;.</span>&nbsp; This angle is called the angle of precession. The second rotation is about the new x axis through 
+    an angle <span class="style1">&#952;.</span>&nbsp; This angle is called the angle of nutation.&nbsp; The final rotation is about the new z axis through an angle
+    <span class="style1">&#968;</span>.&nbsp; This angle is called the spin angle. This notation is typically used in physics textbooks because it is convenient for the description 
+    of spinning tops but other definitions of Euler angles are possible.&nbsp; Multiplying the three rotation matrices gives the final transformation matrix in terms of Euler 
+    angles.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img src="euler_rotation_eqn.gif"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">To use Euler angles as differential equation state variables in Euler&#39;s equations of motion, we must calculate their rate as a function of the angular 
+    velocity vector <span class="style1"><strong>&#969;</strong>=(&#969;<sub>1</sub>, &#969;<sub>2</sub>, &#969;<sub>3</sub>).</span>&nbsp; We use &#966;, &#952;, and &#968; to keep track of the principal axes fixed 
+    to a body and express the angular angular velocity components in terms of these angles.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img src="angular_eqn.gif"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">This matrix is singular when sin(<span class="style1">&#952;)</span> is zero so obtaining numerical solutions for arbitrary initial conditions is difficult and analytical 
+    solutions are known only for limiting cases, such as large spin.</p>
+    <h2>Related Models</h2>
+    <p>The following EJS models are described in <a href="http://www.compadre.org/OSP/items/detail.cfm?ID=10680">Chapter 17</a> of the EJS adaptation of <em>An Introduction to Computer Simulation Methods </em>available in the ComPADRE digital 
+    library.</p>
+    <p>&nbsp;</p>
+    <ul>
+        <li>
+        Affine Transformation in 2D: Shows how homogeneous coordinates are used in two dimensions. </li>
+        <li>
+        Affine Transformation in 3D: Shows how homogeneous coordinates are used in three dimensions.</li>
+        <li>
+        Euler Angle Demo:&nbsp; Displays the orientation of a rigid body subject to three Euler angle rotations.</li>
+        <li>
+        Quaternion Demo:&nbsp; Displays the orientation of a rigid body subject to a quaternion rotation.</li>
+        <li>
+        Rotation About a Fixed Axis: Computes the angular momentum of a box attached to an axle.</li>
+        <li>
+        Feynman Plate: Computes the wobble of a spinning plate using a simple quaternion rate equation.</li>
+        <li>
+        Free Rotation: Computes and displays the trajectory of a rigid body rotating about its center of mass in the absence of external torque.</li>
+        <li>
+        Gyroscope:&nbsp; Computes and displays the dynamics of a gyroscope under the influence of a gravitational torque.</li>
+    </ul>
+
+    <h2>Credits</h2>
+    <p>The Euler Angle Demonstration was developed by Wolfgang Christian using the Easy Java Simulations (EJS) modeling tool version 4.3.&nbsp; You can examine and modify 
+    the model for this simulation if you have EJS installed by right-clicking within the program and selecting &quot;Open Ejs Model&quot; from the pop-up menu.&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>Information about EJS is available at: &lt;<b><a href="http://www.um.es/fem/Ejs/">http://www.um.es/fem/Ejs/</a></b>&gt; and in the OSP ComPADRE collection &lt;<b><a href="http://www.compadre.org/OSP/">http://www.compadre.org/OSP/</a></b>&gt;.</p>
+
+  </body>
+</html>

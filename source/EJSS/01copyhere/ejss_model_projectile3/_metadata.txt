@@ -1,0 +1,23 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 171013. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: projectile3.ejss
+main-script: 
+main-simulation: projectile3_Simulation.xhtml
+available-languages: 
+html-description: projectile3_Intro_2.html
+html-description: projectile3_Intro_1.html
+html-contents: projectile3_Contents.xhtml
+html-main: projectile3.xhtml
+page-title: Introduction
+page-index: projectile3_Intro_1.html
+page-title: Activity
+page-index: projectile3_Intro_2.html
+page-title: Simulation
+page-index: projectile3_Simulation.xhtml
+resource: cannon.png

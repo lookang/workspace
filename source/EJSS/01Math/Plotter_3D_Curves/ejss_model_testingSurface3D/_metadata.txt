@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.3, build 250218. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: testingSurface3D.ejss
+main-script: 
+main-simulation: testingSurface3D_Simulation.xhtml
+available-languages: 
+html-contents: testingSurface3D_Contents.xhtml
+html-main: testingSurface3D.xhtml
+page-title: Simulación
+page-index: testingSurface3D_Simulation.xhtml

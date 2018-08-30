@@ -1,0 +1,24 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 161123. Visit http://www.um.es/fem/Ejs
+title: 
+logo-image: 
+author: Author name
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: fonts_example.ejss
+main-script: 
+main-simulation: fonts_example_Simulation.xhtml
+available-languages: 
+html-contents: fonts_example_Contents.xhtml
+html-main: fonts_example.xhtml
+page-title: Simulation
+page-index: fonts_example_Simulation.xhtml
+resource: digital-7/digital-7 (italic).ttf
+resource: digital-7/digital-7 (mono italic).ttf
+resource: digital-7/digital-7 (mono).ttf
+resource: digital-7/digital-7.ttf
+resource: digital-7/readme.txt
+resource: IndieFlower.woff
+resource: text.xhtml
+resource: ttf_fonts.css

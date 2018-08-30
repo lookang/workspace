@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+title: One-Dimensional Kinematics Problems
+logo-image: DavidsonPhysletProblems.png
+author: Wolfgang Chrsitian; Mario Belloni
+copyright: Wolfgang Christian
+author-image: usersjs/dav/pp/ch02/wc_icon.png;usersjs/dav/pp/ch02/mjb_icon.png
+html-contents: prob03_info_Contents.xhtml
+html-main: prob03_info.xhtml
+page-title: Two-Dimensional Kinematics Problems
+page-index: prob03_info.xhtml
+main-script: 
+main-simulation: prob03_info.xhtml
+resource: davidson.gif
+resource: DavidsonPhysletProblems.png
+resource: ejss.css
+resource: ill2.1.png
+resource: prob03_info.ejss
+resource: prob03_info.xhtml
+resource: prob3.10.png
+resource: usersjs/dav/pp/ch02/mjb_icon.png
+resource: usersjs/dav/pp/ch02/wc_icon.png

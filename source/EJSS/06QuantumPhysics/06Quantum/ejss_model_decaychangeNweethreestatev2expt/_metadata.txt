@@ -1,0 +1,25 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170503. Visit http://www.um.es/fem/Ejs
+title: Radioactive Decay Model
+logo-image: 
+author: Fu-Kwun Hwang - Dept. of Physics, National Taiwan Normal Univ.; lookang
+copyright: CC-BY-SA
+preferred-width: 800
+preferred-height: 600
+author-image: 01authorfu-kwun.hwang.png;./01authorlookang50x50.png
+source: decaychangeNweethreestatev2expt.ejss
+main-script: 
+main-simulation: decaychangeNweethreestatev2expt_Simulation.xhtml
+available-languages: 
+html-description: decaychangeNweethreestatev2expt_Intro_1.html
+html-contents: decaychangeNweethreestatev2expt_Contents.xhtml
+html-main: decaychangeNweethreestatev2expt.xhtml
+page-title: Intro Page
+page-index: decaychangeNweethreestatev2expt_Intro_1.html
+page-title: Radioactive Decay Model
+page-index: decaychangeNweethreestatev2expt_Simulation.xhtml
+resource: decaychangethreestate/1click_0,5s.mp3
+resource: 01authorfu-kwun.hwang.png
+resource: 01authorlookang50x50.png
+resource: full_screen.png
+resource: decaychangethreestate/2015-12-07_1426s.png
+resource: decaychangethreestate/2017-06-20_1426s.png

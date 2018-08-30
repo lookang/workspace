@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="T01_Introduction"
+author="W. Christian; Kyle Forinash"
+description=""
+screenshot="./T01_Introduction/Beats.png"
+thumbnail="./T01_Introduction/Beats.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="T01_Introduction_Simulation.xhtml"/>
+</Module>

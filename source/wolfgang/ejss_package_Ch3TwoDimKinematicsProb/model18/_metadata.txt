@@ -1,0 +1,20 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170119. Visit http://www.um.es/fem/Ejs
+title: Prob 3.17: Uniform Circular Motion of a Wheel
+logo-image: prob03_17/prob03_17.png
+author: Andreu Glasmann; Wolfgang Christian; Mario Belloni
+copyright: W. Christian
+preferred-width: 600
+preferred-height: 600
+author-image: ag.png;./wc_icon.png;./mjb_icon.png
+main-script: prob03_17_Simulation.js
+main-simulation: prob03_17_Simulation.xhtml
+available-languages: 
+html-contents: prob03_17_Contents.xhtml
+html-main: prob03_17.xhtml
+page-title: Prob 3.17: Uniform Circular Motion of a Wheel
+page-index: prob03_17_Simulation.xhtml
+resource: wc_icon.png
+resource: ag.png
+resource: prob03_17/prob03_17.png
+resource: prob03_17/ejss_html_prob03_17.html
+resource: mjb_icon.png

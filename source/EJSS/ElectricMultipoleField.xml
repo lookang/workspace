@@ -1,0 +1,827 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.2" password="">
+<Osejs.Information>
+<Title><![CDATA[Electric Multipole Field]]></Title>
+<Author><![CDATA[Francisco Esquembre, Wolfgang Christian, Anne J Cox]]></Author>
+<Keywords><![CDATA[electric field, potential, dipole moment, dipole, quadrupole]]></Keywords>
+<Password><![CDATA[]]></Password>
+<Level><![CDATA[introductory, upper-level]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[e-mail: fem@um.es]]></Abstract>
+<CaptureTools>false</CaptureTools>
+<DataTools>true</DataTools>
+<LanguageTools>false</LanguageTools>
+<UseInterpreter>true</UseInterpreter>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[./ElectricMultipoleField/;]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[./ElectricMultipoleField/ElectricMultipoleField.html;./ElectricMultipoleField/circle.gif;]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>HTML_EXTERNAL_EDITOR</Type>
+<Name>Electric Multipole</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+./ElectricMultipoleField/ElectricMultipoleField.html
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>true</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Field Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[q]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[charge]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[size]]></Name>
+<Value><![CDATA[1.0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[size of viewing region]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmin]]></Name>
+<Value><![CDATA[-size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xmax]]></Name>
+<Value><![CDATA[size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymin]]></Name>
+<Value><![CDATA[-size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ymax]]></Name>
+<Value><![CDATA[size]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[nx]]></Name>
+<Value><![CDATA[20]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of field vectors]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ny]]></Name>
+<Value><![CDATA[20]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[number of field vectors]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[electric field x-component]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[electric field y-component]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[elecField]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[electric field magnitude]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[potential]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[nx][ny]]]></Dimension>
+<Comment><![CDATA[scalar potential]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Display Vars</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[fieldValue]]></Name>
+<Value><![CDATA["0"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[magnitude of field reported by detector]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[potentialValue]]></Name>
+<Value><![CDATA["0"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[potential reported by detector]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xDetector]]></Name>
+<Value><![CDATA[0.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[detector position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[yDetector]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[detector position]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[xSizeArrow]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[x component of detector arrow]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[ySizeArrow]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[y component of detector arrow]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[showPotential]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[whether to show potential or vector fields]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[collectData]]></Name>
+<Value><![CDATA[false]]></Value>
+<Type><![CDATA[boolean]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[recording detector data]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[magRow]]></Name>
+<Value><![CDATA[]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[[3]]]></Dimension>
+<Comment><![CDATA[table data]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[pole]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[int]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[pole configuration: monopole=0; dipole=1; quad=2]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tableLabel]]></Name>
+<Value><![CDATA["E"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[label for last column of data table]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[plotTitle]]></Name>
+<Value><![CDATA["Field Vectors"]]></Value>
+<Type><![CDATA[String]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[title of plot]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+<Osejs.Model.Initialization.Page>
+<Type>CODE_EDITOR</Type>
+<Name>Init Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+computeField();
+
+  
+  
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Initialization.Page>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+double[] e = getE(xDetector,yDetector);
+xSizeArrow =(e[2]>0)?e[0]/e[2]:0;
+ySizeArrow =(e[2]>0)?e[1]/e[2]:0;
+fieldValue=" E="+_view.format(getE(xDetector,yDetector)[2],"0.00");
+potentialValue=" V="+_view.format(getE(xDetector,yDetector)[3],"0.00");
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Compute Field</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void computeField () {
+  for (int i=0; i<nx; i++) {
+    double x=_view.vectorField2D.indexToX(i);
+    for (int j=0; j<ny; j++) {
+      double y=_view.vectorField2D.indexToY(j);
+      double[] e=getE(x,y);//  Gets the components and magnitude
+      xField[i][j] = e[0];
+      yField[i][j] = e[1];
+      elecField[i][j]=e[2];
+      potential[i][j]=e[3];
+    }
+  }
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>Get E value</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+// computes electric field
+public double[] getE(double x, double y) {
+  double[] e=new double[4];
+  int jmax = (pole>0)? 2:1; //pole=0 is monopole; pole=1, dipole;
+  int kmax =(pole>1)? 2:1; //pole =2, quadrupole
+  for (int k=0;k<kmax; k++) {
+    double dx= (kmax==1)? x: x+(-.05+k*.1);
+    for (int j=0; j<jmax ; j++) {
+      double dy =(jmax==1)?y: y+(-.05+j*.1);
+      double dq=3*q*Math.pow(-1,j+k);
+      double r2=dx*dx+dy*dy;
+      double r=Math.sqrt(r2);
+      double r3=r2*r;
+      if(r2==0) {
+        e[0]=0;
+        e[1]=0;
+        e[3]=0;
+      } else {
+        e[0]+=dq*dx/r3;  // x compondent
+        e[1]+=dq*dy/r3;  // y component
+        e[3]+=dq/r; //potential
+      }
+    }
+  }
+  e[2]=Math.sqrt(e[0]*e[0]+e[1]*e[1]);  // magnitude
+  return e;
+}
+
+/*
+Electric field
+Ex=k*q*x/r^3
+Ey=k*q*y/r^3
+*/
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+<Osejs.Model.Library.Page>
+<Type>LIBRARY_EDITOR</Type>
+<Name>collect Data</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+public void recordData () {
+  //recording data in table
+  collectData = false;
+  magRow[0]=xDetector;
+  magRow[1]=yDetector;
+  if (showPotential) {
+    magRow[2]= getE(xDetector,yDetector)[3];
+  }
+  else {
+    magRow[2]= getE(xDetector,yDetector)[2];
+  }
+  //adding points to a trail to be accessed by dataTool
+  _view.xytrail.addPoint(xDetector, yDetector);
+  _view.Etrail.addPoint(xDetector,getE(xDetector,yDetector)[2]);
+  _view.Vtrail.addPoint(xDetector,getE(xDetector,yDetector)[3]);
+  collectData = true;
+}
+]]></Code>
+
+</Content>
+</Osejs.Model.Library.Page>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">mainFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Electrostatic Multipole"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["5,0"]]></Property>
+<Property name="size"><![CDATA["472,533"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">multipolePlottingPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-size]]></Property>
+<Property name="maximumX"><![CDATA[size]]></Property>
+<Property name="minimumY"><![CDATA[-size]]></Property>
+<Property name="maximumY"><![CDATA[size]]></Property>
+<Property name="square"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA[%plotTitle%]]></Property>
+<Property name="majorTicksX"><![CDATA[false]]></Property>
+<Property name="majorTicksY"><![CDATA[false]]></Property>
+<Property name="fixedGutters"><![CDATA[false]]></Property>
+<Property name="interiorBackground"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">fieldVectorsGroup</Property>
+<Property name="parent">multipolePlottingPanel</Property>
+<Property name="visible"><![CDATA[!showPotential]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.SimpleVectorField2D</Type>
+<Property name="name">vectorField2D</Property>
+<Property name="parent">fieldVectorsGroup</Property>
+<Property name="minimumX"><![CDATA[xmin]]></Property>
+<Property name="maximumX"><![CDATA[xmax]]></Property>
+<Property name="minimumY"><![CDATA[ymin]]></Property>
+<Property name="maximumY"><![CDATA[ymax]]></Property>
+<Property name="xcomponent"><![CDATA[xField]]></Property>
+<Property name="ycomponent"><![CDATA[yField]]></Property>
+<Property name="length"><![CDATA[0.07]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+<Property name="colormode"><![CDATA[SPECTRUM]]></Property>
+<Property name="magnitude"><![CDATA[elecField]]></Property>
+<Property name="autoscale"><![CDATA[false]]></Property>
+<Property name="minimum"><![CDATA[0]]></Property>
+<Property name="maximum"><![CDATA[4]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">detectorGroup</Property>
+<Property name="parent">fieldVectorsGroup</Property>
+<Property name="x"><![CDATA[xDetector]]></Property>
+<Property name="y"><![CDATA[yDetector]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">backGroundShape</Property>
+<Property name="parent">detectorGroup</Property>
+<Property name="sizeX"><![CDATA[0.35]]></Property>
+<Property name="sizeY"><![CDATA[0.35]]></Property>
+<Property name="fillColor"><![CDATA[LIGHTGRAY]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Image2D</Type>
+<Property name="name">imageCircle</Property>
+<Property name="parent">detectorGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="trueSize"><![CDATA[false]]></Property>
+<Property name="sizeX"><![CDATA[0.4]]></Property>
+<Property name="sizeY"><![CDATA[0.4]]></Property>
+<Property name="imageFile"><![CDATA["./ElectricMultipoleField/circle.gif"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow2D</Type>
+<Property name="name">arrow</Property>
+<Property name="parent">detectorGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[xSizeArrow]]></Property>
+<Property name="sizeY"><![CDATA[ySizeArrow]]></Property>
+<Property name="scalex"><![CDATA[0.20]]></Property>
+<Property name="scaley"><![CDATA[0.20]]></Property>
+<Property name="style"><![CDATA[ARROW]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+<Property name="lineColor"><![CDATA[RED]]></Property>
+<Property name="fillColor"><![CDATA[RED]]></Property>
+<Property name="lineWidth"><![CDATA[4]]></Property>
+<Property name="drawingFill"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">dragShape</Property>
+<Property name="parent">detectorGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.028]]></Property>
+<Property name="sizeY"><![CDATA[0.028]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[15]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">textBoxShape</Property>
+<Property name="parent">detectorGroup</Property>
+<Property name="y"><![CDATA[-.21]]></Property>
+<Property name="sizeX"><![CDATA[0.25]]></Property>
+<Property name="sizeY"><![CDATA[0.08]]></Property>
+<Property name="style"><![CDATA[ROUND_RECTANGLE]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">fieldText</Property>
+<Property name="parent">detectorGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-0.22]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[%fieldValue%]]></Property>
+<Property name="elementposition"><![CDATA[CENTERED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ScalarField2D</Type>
+<Property name="name">scalarField</Property>
+<Property name="parent">multipolePlottingPanel</Property>
+<Property name="z"><![CDATA[potential]]></Property>
+<Property name="autoscaleZ"><![CDATA[false]]></Property>
+<Property name="minimumZ"><![CDATA[-100]]></Property>
+<Property name="maximumZ"><![CDATA[200]]></Property>
+<Property name="expandedZ"><![CDATA[30]]></Property>
+<Property name="minimumX"><![CDATA[xmin]]></Property>
+<Property name="maximumX"><![CDATA[xmax]]></Property>
+<Property name="minimumY"><![CDATA[ymin]]></Property>
+<Property name="maximumY"><![CDATA[ymax]]></Property>
+<Property name="plotType"><![CDATA[CONTOUR]]></Property>
+<Property name="visible"><![CDATA[showPotential]]></Property>
+<Property name="levels"><![CDATA[30]]></Property>
+<Property name="colormode"><![CDATA[DUALSHADE]]></Property>
+<Property name="ceilingcolor"><![CDATA[RED]]></Property>
+<Property name="showgrid"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Group2D</Type>
+<Property name="name">voltmeterGroup</Property>
+<Property name="parent">multipolePlottingPanel</Property>
+<Property name="x"><![CDATA[xDetector]]></Property>
+<Property name="y"><![CDATA[yDetector]]></Property>
+<Property name="visible"><![CDATA[showPotential]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">backGroundShape2</Property>
+<Property name="parent">voltmeterGroup</Property>
+<Property name="y"><![CDATA[.04]]></Property>
+<Property name="sizeX"><![CDATA[0.35]]></Property>
+<Property name="sizeY"><![CDATA[0.15]]></Property>
+<Property name="style"><![CDATA[ROUND_RECTANGLE]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[LIGHTGRAY]]></Property>
+<Property name="lineWidth"><![CDATA[3]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">dragShape2</Property>
+<Property name="parent">voltmeterGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0.028]]></Property>
+<Property name="sizeY"><![CDATA[0.028]]></Property>
+<Property name="enabledPosition"><![CDATA[true]]></Property>
+<Property name="movesGroup"><![CDATA[true]]></Property>
+<Property name="sensitivity"><![CDATA[15]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[BLACK]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Shape2D</Type>
+<Property name="name">textBoxShape2</Property>
+<Property name="parent">voltmeterGroup</Property>
+<Property name="y"><![CDATA[.06]]></Property>
+<Property name="sizeX"><![CDATA[0.3]]></Property>
+<Property name="sizeY"><![CDATA[0.08]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="style"><![CDATA[ROUND_RECTANGLE]]></Property>
+<Property name="fillColor"><![CDATA[YELLOW]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Text2D</Type>
+<Property name="name">fieldText2</Property>
+<Property name="parent">voltmeterGroup</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[.05]]></Property>
+<Property name="pixelSize"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA[%potentialValue%]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">controlPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">chargeControlPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">center</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Label</Type>
+<Property name="name">chargeSliderLabel</Property>
+<Property name="parent">chargeControlPanel</Property>
+<Property name="position">west</Property>
+<Property name="text"><![CDATA["  q = "]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">chargeSlider</Property>
+<Property name="parent">chargeControlPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[q]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[5.0]]></Property>
+<Property name="dragaction"><![CDATA[computeField ()]]></Property>
+<Property name="tooltip"><![CDATA["Charge"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">chargeField</Property>
+<Property name="parent">chargeControlPanel</Property>
+<Property name="position">east</Property>
+<Property name="variable"><![CDATA[q]]></Property>
+<Property name="format"><![CDATA["0.00"]]></Property>
+<Property name="editable"><![CDATA[false]]></Property>
+<Property name="action"><![CDATA[q=Math.max(q,0);
+computeField ();]]></Property>
+<Property name="columns"><![CDATA[3]]></Property>
+<Property name="tooltip"><![CDATA["Charge."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">fieldPotentialPanel</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">east</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">fieldPotentialButton</Property>
+<Property name="parent">fieldPotentialPanel</Property>
+<Property name="position">center</Property>
+<Property name="variable"><![CDATA[showPotential]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA["100,0"]]></Property>
+<Property name="tooltip"><![CDATA["Show Field/Potential"]]></Property>
+<Property name="textOn"><![CDATA["Field"]]></Property>
+<Property name="actionOn"><![CDATA[_view.clearData();
+plotTitle="Field Vectors";
+tableLabel="E";]]></Property>
+<Property name="textOff"><![CDATA["Potential"]]></Property>
+<Property name="actionOff"><![CDATA[_view.clearData();
+plotTitle="Scalar Potential";
+tableLabel="V";]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel2</Property>
+<Property name="parent">controlPanel</Property>
+<Property name="position">west</Property>
+<Property name="layout"><![CDATA[border]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonPanel2</Property>
+<Property name="position">west</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/reset.gif"]]></Property>
+<Property name="action"><![CDATA[_reset();]]></Property>
+<Property name="size"><![CDATA["30,20"]]></Property>
+<Property name="tooltip"><![CDATA["Reset."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">pdfButton</Property>
+<Property name="parent">buttonPanel2</Property>
+<Property name="position">center</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/value.gif"]]></Property>
+<Property name="action"><![CDATA[_view.showDocument("./ElectricMultipoleField/ElectricMultipoleStudentWorksheet.pdf")]]></Property>
+<Property name="size"><![CDATA["30,20"]]></Property>
+<Property name="tooltip"><![CDATA["Worksheet (pdf)."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">upperPanel</Property>
+<Property name="parent">mainFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+<Property name="size"><![CDATA["0,30"]]></Property>
+<Property name="borderType"><![CDATA[LOWERED_ETCHED]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">monopoleButton</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">west</Property>
+<Property name="selected"><![CDATA[true]]></Property>
+<Property name="text"><![CDATA["monopole"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[pole=0;
+_view.clearData();
+computeField ();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">dipoleButton</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">center</Property>
+<Property name="text"><![CDATA["dipole"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[pole=1;
+_view.clearData();
+computeField ();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.RadioButton</Type>
+<Property name="name">quadrupoleButton</Property>
+<Property name="parent">upperPanel</Property>
+<Property name="position">east</Property>
+<Property name="text"><![CDATA["quadrupole"]]></Property>
+<Property name="noUnselect"><![CDATA[true]]></Property>
+<Property name="actionon"><![CDATA[pole=2;
+_view.clearData();
+computeField();]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">recordDataFrame</Property>
+<Property name="title"><![CDATA["Data Table"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["482,1"]]></Property>
+<Property name="size"><![CDATA["240,280"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.DataTable</Type>
+<Property name="name">dataTable</Property>
+<Property name="parent">recordDataFrame</Property>
+<Property name="position">center</Property>
+<Property name="input"><![CDATA[magRow]]></Property>
+<Property name="active"><![CDATA[collectData]]></Property>
+<Property name="norepeat"><![CDATA[false]]></Property>
+<Property name="showRowNumber"><![CDATA[false]]></Property>
+<Property name="columnNames"><![CDATA[new String[] {"#","x","y",tableLabel}]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonPanel</Property>
+<Property name="parent">recordDataFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[FLOW:center,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">recordDataButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">west</Property>
+<Property name="variable"><![CDATA[collectData]]></Property>
+<Property name="tooltip"><![CDATA["Record data"]]></Property>
+<Property name="textOff"><![CDATA["Record Data"]]></Property>
+<Property name="actionOff"><![CDATA[recordData ()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">dataToolButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="position">east</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/wrench_monkey.gif"]]></Property>
+<Property name="action"><![CDATA[_tools.showDataTool(_view.xytrail,_view.Etrail,_view.Vtrail)]]></Property>
+<Property name="tooltip"><![CDATA["Data Analysis Tool"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">clearButton</Property>
+<Property name="parent">buttonPanel</Property>
+<Property name="image"><![CDATA["/org/opensourcephysics/resources/controls/images/erase.gif"]]></Property>
+<Property name="action"><![CDATA[_view.clearData()]]></Property>
+<Property name="tooltip"><![CDATA["Clear data."]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">hiddenFrame</Property>
+<Property name="title"><![CDATA["hiddenFrame"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[false]]></Property>
+<Property name="size"><![CDATA["300,300"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">hiddenFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["plottingPanel"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">xytrail</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="xLabel"><![CDATA["x"]]></Property>
+<Property name="yLabel"><![CDATA["y"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">Etrail</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="xLabel"><![CDATA["x"]]></Property>
+<Property name="yLabel"><![CDATA["E"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trail2D</Type>
+<Property name="name">Vtrail</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="xLabel"><![CDATA["x"]]></Property>
+<Property name="yLabel"><![CDATA["V"]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

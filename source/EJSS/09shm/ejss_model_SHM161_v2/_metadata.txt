@@ -1,0 +1,25 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170624. Visit http://www.um.es/fem/Ejs
+title: vertical spring mass model
+logo-image: SHMvertical/2016-01-22_1430s.png
+author: weelookang@gmail.com
+copyright: Creative Commons Attribution
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto5050.png
+source: SHM161_v2.ejss
+main-script: 
+main-simulation: SHM161_v2_Simulation.xhtml
+available-languages: 
+html-contents: SHM161_v2_Contents.xhtml
+html-main: SHM161_v2.xhtml
+page-title: SHM14
+page-index: SHM02.xhtml
+page-title: vertical spring mass model
+page-index: SHM161_v2_Simulation.xhtml
+resource: SHM02/verticalspring.gif
+resource: 1authorlookangphoto5050.png
+resource: SHMvertical/2015-02-24_1330.png
+resource: SHM02.xhtml
+resource: SHMvertical/2016-01-22_1430s.png
+resource: SHMvertical/PendulumSHM.png
+resource: SHMvertical/vSHM_2014-02-18_1336small.png

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+  <head>
+    <link href="../../../_ejs_library/css/ejsPage.css" rel="stylesheet" title="ejs_css" type="text/css">
+    <link href="../../_css/ejsPage.css" rel="stylesheet" title="server_css" type="text/css">
+    <title>Physics Modeling Example</title>
+    <style type="text/css">
+.style1 {
+  font-family: Verdana;
+}
+</style>
+    </head>
+  <body>
+    <p align="center"><img src="gyroscope.jpg"></p>
+    <p align="center"><font size="2">The gyroscope path shows precession and nutation.</font></p>
+    <h1 align="left">
+      Rigid Body Dynamics</h1>
+    <p align="left">&nbsp;</p>
+    <p style="margin-top: 0">The behavior of a rigid body rotating about a fixed point is determined by </p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p style="margin-top: 0"><img src="momerntum_rate_eqn.gif"></p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p style="margin-top: 0">where the angular momentum <strong>L</strong> and torque <strong>N</strong> are vectors. For a constrained body, such as gyroscope, the fixed 
+    point is usually taken as the point of support.&nbsp; The angular momentum <strong>L</strong> is expressed in terms of the angular velocity <span class="style1">
+    <strong>&#969;</strong></span> and the moment of inertia tensor I as <strong>L</strong>=I<span class="style1"><strong>&#969;</strong></span> where <span class="style1"><strong>&#969;</strong> is a vector.&nbsp; 
+    Substituting the angular momentum expression into the rate expression gives the rotational equivalent of Newton's second law.</span></p>
+    <p style="margin-top: 0">&nbsp;</p>
+    <p><img src="torque_eqn.gif"></p>
+    
+    <p>&nbsp;</p>
+    <p>The difficulty in solving this equation is that the moment of inertia tensor I is not constant in the inertial reference frame (space frame).&nbsp; This computational difficulty is overcome by 
+    transforming the rate equation into a non-inertial rotating coordinate system that is aligned with the principal axes of the rotating gyroscope.&nbsp; Although the 
+    moment of inertia is constant and diagonal in this reference frame, the transformation introduces an additional term into the rate equation.</p>
+    <p>&nbsp;</p>
+    <p><img src="torque_body_frame.gif"></p>
+    <p>The transformed rate equation is Euler's equation for rigid body motion and is usually written in component form to highlight the importance of the diagonal inertia matrix elements I<sub>1</sub>, I<sub>2</sub>, and I<sub>3</sub>.</p>
+    <p>&nbsp;</p>
+    <p><img src="Euler_eqn.gif"></p>
+    <p>&nbsp;</p>
+    
+    <p>We label the vector components in the rotating system as the 123-axis components in order to avoid confusion with the fixed (spatial) xyz-axis components.</p>
+    <p>&nbsp;</p>
+    <p>The solution of Euler's equation is not easy because the orientation of the gyroscope must be tracked and because the gravitational torque must be constantly 
+    transformed from the space frame to the body frame as the solution advances.&nbsp; Analytical solutions exist only for special conditions.&nbsp; Fortunately, EJS 
+    provide the tools needed for an accurate numerical solution.&nbsp; In this model, the gyroscope orientation is expressed using a quaternion as described in the 
+    references and the quaternion rate equation is solved using an adaptive ODE solver.&nbsp; This quaternion is used to transform the gravitational force into the 
+    gyroscope body frame and to orient the view elements, such as the gyroscope body, after every time step but the algebra needed to perform these transformations is 
+    built into the EJS Elements and hidden from the user.</p>
+    
+  </body>
+</html>

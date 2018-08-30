@@ -1,0 +1,20 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 160911. Visit http://www.um.es/fem/Ejs
+title: Vertical Mass and Spring with Accelerometer
+logo-image: SHOVerticalWithAccelerometer/VerticalSHO.png
+author: Wolfgang Christian
+copyright: Wolfgang Christian
+preferred-width: 800
+preferred-height: 600
+author-image: images/WC_logo.png
+source: SHOVerticalWithAccelerometer.ejss
+main-script: SHOVerticalWithAccelerometer_Simulation.js
+main-simulation: SHOVerticalWithAccelerometer_Simulation.xhtml
+available-languages: 
+html-contents: SHOVerticalWithAccelerometer_Contents.xhtml
+html-main: SHOVerticalWithAccelerometer.xhtml
+page-title: Vertical Mass and Spring with Accelerometer
+page-index: SHOVerticalWithAccelerometer_Simulation.xhtml
+resource: SHOVerticalWithAccelerometer/VerticalSHO.png
+resource: images/WC_logo.png
+resource: SHOVerticalWithAccelerometer/SHOVerticalWithAccelerometer.xhtml
+resource: ejss.css

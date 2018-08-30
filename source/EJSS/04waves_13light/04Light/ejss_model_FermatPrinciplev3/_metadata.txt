@@ -1,0 +1,22 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170429. Visit http://www.um.es/fem/Ejs
+title:  Fermat Principle Model Refraction Example
+logo-image: fermatprinciple/2015-07-27_0911s.png
+author: Fu-Kwun Hwang; lookang; tina
+copyright: CC-BY
+preferred-width: 800
+preferred-height: 600
+author-image: 01authorfu-kwun.hwang.png;./01authorlookang50x50.png;
+source: FermatPrinciplev3.ejss
+main-script: 
+main-simulation: FermatPrinciplev3_Simulation.xhtml
+available-languages: 
+html-description: FermatPrinciplev3_Intro_1.html
+html-contents: FermatPrinciplev3_Contents.xhtml
+html-main: FermatPrinciplev3.xhtml
+page-title: About
+page-index: FermatPrinciplev3_Intro_1.html
+page-title: Fermat Principle Model Refraction Example
+page-index: FermatPrinciplev3_Simulation.xhtml
+resource: fermatprinciple/2015-07-27_0911s.png
+resource: 01authorfu-kwun.hwang.png
+resource: 01authorlookang50x50.png

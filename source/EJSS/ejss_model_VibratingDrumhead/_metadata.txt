@@ -1,0 +1,27 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 160911. Visit http://www.um.es/fem/Ejs
+title: Vibrating Drumhead
+logo-image: VibratingDrumhead/mode34.png
+author: Wolfgang Christian
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: wc_icon.png
+source: VibratingDrumhead.ejss
+main-script: VibratingDrumhead_Simulation.js
+main-simulation: VibratingDrumhead_Simulation.xhtml
+available-languages: 
+html-contents: VibratingDrumhead_Contents.xhtml
+html-main: VibratingDrumhead.xhtml
+page-title: Vibrating Drumhead
+page-index: VibratingDrumhead_Simulation.xhtml
+resource: jsdrawing/OSPCanvas.js
+resource: resources/ejss.css
+resource: VibratingDrumhead/mode_equ.jpg
+resource: VibratingDrumhead/mode34.png
+resource: wc_icon.png
+resource: jsdrawing/OSPImageField.js
+resource: jsnumerics/Bessel.js
+resource: VibratingDrumhead/VibratingDrumhead.xhtml
+resource: jsdrawing/OSPShape.js
+resource: jsdrawing/OSPUtil.js
+resource: VibratingDrumhead/circular_eignestate.gif

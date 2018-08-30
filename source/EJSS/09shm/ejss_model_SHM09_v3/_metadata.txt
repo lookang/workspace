@@ -1,0 +1,26 @@
+generated-with: Easy Java/Javascript Simulations, version 5.2, build 170624. Visit http://www.um.es/fem/Ejs
+title: horizonatl spring mass model v vs x
+logo-image: SHM09/2016-01-22_1026s.png
+author: weelookang@gmail.com
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 1authorlookangphoto5050.png
+source: SHM09_v3.ejss
+main-script: 
+main-simulation: SHM09_v3_Simulation.xhtml
+available-languages: 
+html-contents: SHM09_v3_Contents.xhtml
+html-main: SHM09_v3.xhtml
+page-title: SHM06
+page-index: SHM09.xhtml
+page-title: horizonatl spring mass model v vs x
+page-index: SHM09_v3_Simulation.xhtml
+resource: 1authorlookangphoto5050.png
+resource: SHM09.xhtml
+resource: SHM09/2015-02-16_1218.png
+resource: SHM09/2015-02-16_1224.png
+resource: SHM09/2016-01-22_1026s.png
+resource: SHM09/2014-12-17_0948.png
+resource: SHM09/2014-12-17_0948_001.png
+resource: SHM09/SHMvvsx.gif
