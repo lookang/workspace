@@ -26462,6 +26462,86 @@ var _stringProperties = {};
     _model.setStepsPerDisplay(1);
   });
 
+  function changeOrientation() {  // > CustomCode.Lib Page:1
+     // > CustomCode.Lib Page:2
+  var k =0.8 ; // k control height 1 is for full screen, 0.9 shorten etc  // > CustomCode.Lib Page:3
+  var kepub =0.8 ;  // > CustomCode.Lib Page:4
+  // check platform for Apps  // > CustomCode.Lib Page:5
+  try {  // > CustomCode.Lib Page:6
+    var iOSapp =  (typeof parent.device != 'undefined' && parent.device.platform == "iOS");  // > CustomCode.Lib Page:7
+    var Androidapp = (typeof parent.device != 'undefined' && parent.device.platform == "Android");  // > CustomCode.Lib Page:8
+  } catch(e) {  // > CustomCode.Lib Page:9
+    var iOSapp = false;  // > CustomCode.Lib Page:10
+    var Androidapp = false;  // > CustomCode.Lib Page:11
+  }  // > CustomCode.Lib Page:12
+  // check platform for web browsers  // > CustomCode.Lib Page:13
+  var iOS =/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  // > CustomCode.Lib Page:14
+  var iPad =/iPad/.test(navigator.userAgent) && !window.MSStream;  // > CustomCode.Lib Page:15
+  var iPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  // > CustomCode.Lib Page:16
+  var Android= /Android|android/i.test(navigator.userAgent);  // > CustomCode.Lib Page:17
+  //navigator  // > CustomCode.Lib Page:18
+  var Firefox = navigator.userAgent.indexOf("Firefox") != -1;  // > CustomCode.Lib Page:19
+     // > CustomCode.Lib Page:20
+  switch (window.orientation) {  // > CustomCode.Lib Page:21
+    case 0:  // > CustomCode.Lib Page:22
+    case 180:  // > CustomCode.Lib Page:23
+      this.screenOrientation = 'portrait';  // > CustomCode.Lib Page:24
+      if (iOSapp){ // does not seems to work  // > CustomCode.Lib Page:25
+          // > CustomCode.Lib Page:26
+        return window.screen.height*k;  //0.1 for app and 0.1 for nonfullscreenapp    // > CustomCode.Lib Page:27
+        // > CustomCode.Lib Page:28
+      }  // > CustomCode.Lib Page:29
+      else if (_isEPub){ // does not seems to work  // > CustomCode.Lib Page:30
+        //   return Math.max(window.screen.width,window.screen.height)*0.9;  // > CustomCode.Lib Page:31
+        return window.innerHeight*kepub;  //0.1 for app and 0.1 for nonfullscreenapp    // > CustomCode.Lib Page:32
+        // return window.screen.height;  // > CustomCode.Lib Page:33
+        //  return window.innerHeight;  // > CustomCode.Lib Page:34
+        // return document.documentElement.clientHeight;  // > CustomCode.Lib Page:35
+      }  // > CustomCode.Lib Page:36
+       // > CustomCode.Lib Page:37
+      else {  // > CustomCode.Lib Page:38
+         // > CustomCode.Lib Page:39
+        return 100*k+"vh";  // > CustomCode.Lib Page:40
+      }  // > CustomCode.Lib Page:41
+      break;  // > CustomCode.Lib Page:42
+    case 90:  // > CustomCode.Lib Page:43
+    case -90:  // > CustomCode.Lib Page:44
+      this.screenOrientation = 'landscape';  // > CustomCode.Lib Page:45
+     // > CustomCode.Lib Page:46
+      if (iOSapp){ // App  // > CustomCode.Lib Page:47
+        return window.screen.width*k;    // > CustomCode.Lib Page:48
+        // return window.screen.height;  // > CustomCode.Lib Page:49
+        //  return window.innerHeight;  // > CustomCode.Lib Page:50
+        //  return document.documentElement.clientHeight;  // > CustomCode.Lib Page:51
+      }  // > CustomCode.Lib Page:52
+      else if (_isEPub){ // does not seems to work  // > CustomCode.Lib Page:53
+        //   return Math.max(window.screen.width,window.screen.height)*0.9;  // > CustomCode.Lib Page:54
+        return window.innerHeight*kepub;  //0.1 for app and 0.1 for nonfullscreenapp    // > CustomCode.Lib Page:55
+        // return window.screen.height;  // > CustomCode.Lib Page:56
+        //  return window.innerHeight;  // > CustomCode.Lib Page:57
+        // return document.documentElement.clientHeight;  // > CustomCode.Lib Page:58
+      }  // > CustomCode.Lib Page:59
+       // > CustomCode.Lib Page:60
+      else {  // > CustomCode.Lib Page:61
+        return 100*k+"vh";  // > CustomCode.Lib Page:62
+        }  // > CustomCode.Lib Page:63
+      break;  // > CustomCode.Lib Page:64
+    default:  // > CustomCode.Lib Page:65
+      this.screenOrientation = 'unknown';  // > CustomCode.Lib Page:66
+      //       return (iPad)?""+(window.screen.width+window.screen.height)*0.4:((iPhone)?""+window.screen.width:_view._format(window.innerHeight*0.9,"0"));  // > CustomCode.Lib Page:67
+       if (Firefox){  // > CustomCode.Lib Page:68
+        return window.innerHeight*k;// number  // > CustomCode.Lib Page:69
+        }  // > CustomCode.Lib Page:70
+          // > CustomCode.Lib Page:71
+        else {  // > CustomCode.Lib Page:72
+          return 100*k+"vh"; // string  // > CustomCode.Lib Page:73
+          //console.log('hello');  // > CustomCode.Lib Page:74
+  }  // > CustomCode.Lib Page:75
+  }  // > CustomCode.Lib Page:76
+     // > CustomCode.Lib Page:77
+  }  // > CustomCode.Lib Page:78
+     // > CustomCode.Lib Page:79
+
   _model.addToInitialization(function() {
     if (!__pagesEnabled["Página Inicio"]) return;
     t=0;  // > Initialization.Página Inicio:1
@@ -26813,7 +26893,7 @@ var _stringProperties = {};
           _view.stepButton.setAction("OnClick", _step); // HtmlView Page setting action 'OnClick' for element 'stepButton'
           _view.initButton.setAction("OnClick", _initialize); // HtmlView Page setting action 'OnClick' for element 'initButton'
           _view.resetButton.setAction("OnClick", _reset); // HtmlView Page setting action 'OnClick' for element 'resetButton'
-          _view.drawingPanel3D.linkProperty("Height",  function() { return ""+window.innerHeight*0.85; } ); // HtmlView Page linking property 'Height' for element 'drawingPanel3D'
+          _view.drawingPanel3D.linkProperty("Height",  function() { return changeOrientation(); }, function(_v) { changeOrientation() = _v; } ); // HtmlView Page linking property 'Height' for element 'drawingPanel3D'
           _view.s3D_example1.linkProperty("MaxValue2",  function() { return 2*Math.PI; } ); // HtmlView Page linking property 'MaxValue2' for element 's3D_example1'
           _view.s3D_example1.linkProperty("MaxValue1",  function() { return 2*Math.PI; } ); // HtmlView Page linking property 'MaxValue1' for element 's3D_example1'
           _view.s3D_example2.linkProperty("MaxValue1",  function() { return 2*Math.PI; } ); // HtmlView Page linking property 'MaxValue1' for element 's3D_example2'

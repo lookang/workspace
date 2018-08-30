@@ -1354,65 +1354,12 @@ var _stringProperties = {};
           // > CustomCode.changeorientation:71
         else {  // > CustomCode.changeorientation:72
           return 100*k+"vh";  // > CustomCode.changeorientation:73
-  }  // > CustomCode.changeorientation:74
+          //console.log('hello');  // > CustomCode.changeorientation:74
   }  // > CustomCode.changeorientation:75
-     // > CustomCode.changeorientation:76
-  }  // > CustomCode.changeorientation:77
-     // > CustomCode.changeorientation:78
-
-  function OnOrientationChange() {  // > CustomCode.OnOrientationChange:1
-  //if(typeof parent.device != 'undefined')  // > CustomCode.OnOrientationChange:2
-  //  _view.mytext.setText(parent.device.platform)  // > CustomCode.OnOrientationChange:3
-  //else  // > CustomCode.OnOrientationChange:4
-  //  _view.mytext.setText("nada:");  // > CustomCode.OnOrientationChange:5
-  // check platform for Apps  // > CustomCode.OnOrientationChange:6
-  var iOSapp =  (typeof parent.device != 'undefined' && parent.device.platform == "iOS");  // > CustomCode.OnOrientationChange:7
-  var Androidapp = (typeof parent.device != 'undefined' && parent.device.platform == "Android");  // > CustomCode.OnOrientationChange:8
-  // check platform for web browsers  // > CustomCode.OnOrientationChange:9
-  var iOS =/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  // > CustomCode.OnOrientationChange:10
-  var iPad =/iPad/.test(navigator.userAgent) && !window.MSStream;  // > CustomCode.OnOrientationChange:11
-  var iPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  // > CustomCode.OnOrientationChange:12
-  var Android= /Android|android/i.test(navigator.userAgent);  // > CustomCode.OnOrientationChange:13
-  //_view.mytext.setText(_view.mytext.getText() + "-orient:" + window.orientation + "-" + iOSapp + "-" + Androidapp);  // > CustomCode.OnOrientationChange:14
-  switch (window.orientation) {  // > CustomCode.OnOrientationChange:15
-    case 0:  // > CustomCode.OnOrientationChange:16
-    case 180:  // > CustomCode.OnOrientationChange:17
-      this.screenOrientation = 'portrait';  // > CustomCode.OnOrientationChange:18
-    //  if (iOSapp){ // does not seems to work  // > CustomCode.OnOrientationChange:19
-        //   return Math.max(window.screen.width,window.screen.height)*0.9;  // > CustomCode.OnOrientationChange:20
-     //   return window.screen.height*0.7;  //0.1 for app and 0.1 for nonfullscreenapp    // > CustomCode.OnOrientationChange:21
-        // return window.screen.height;  // > CustomCode.OnOrientationChange:22
-        //  return window.innerHeight;  // > CustomCode.OnOrientationChange:23
-        // return document.documentElement.clientHeight;  // > CustomCode.OnOrientationChange:24
-     // }  // > CustomCode.OnOrientationChange:25
-        // > CustomCode.OnOrientationChange:26
-     // else {  // > CustomCode.OnOrientationChange:27
-        // return Math.max(window.innerWidth,window.innerHeight)*0.9;  // > CustomCode.OnOrientationChange:28
-        return window.innerHeight*0.9;  // > CustomCode.OnOrientationChange:29
-     // }  // > CustomCode.OnOrientationChange:30
-      break;  // > CustomCode.OnOrientationChange:31
-    case 90:  // > CustomCode.OnOrientationChange:32
-    case -90:  // > CustomCode.OnOrientationChange:33
-      this.screenOrientation = 'landscape';  // > CustomCode.OnOrientationChange:34
-     // if (iOSapp){ // App  // > CustomCode.OnOrientationChange:35
-     //   return window.screen.width*0.7;    // > CustomCode.OnOrientationChange:36
-        // return window.screen.height;  // > CustomCode.OnOrientationChange:37
-        //  return window.innerHeight;  // > CustomCode.OnOrientationChange:38
-        //  return document.documentElement.clientHeight;  // > CustomCode.OnOrientationChange:39
-     // }  // > CustomCode.OnOrientationChange:40
-        // > CustomCode.OnOrientationChange:41
-    //  else { // browser Android and PC  // > CustomCode.OnOrientationChange:42
-        // return Math.min(window.innerWidth,window.innerHeight)*0.9;  // > CustomCode.OnOrientationChange:43
-        // alert("browser Android and PC");  // > CustomCode.OnOrientationChange:44
-        return window.innerHeight*0.9;  // > CustomCode.OnOrientationChange:45
-    //  }  // > CustomCode.OnOrientationChange:46
-      break;  // > CustomCode.OnOrientationChange:47
-    default:  // > CustomCode.OnOrientationChange:48
-      this.screenOrientation = 'unknown';  // > CustomCode.OnOrientationChange:49
-      //       return (iPad)?""+(window.screen.width+window.screen.height)*0.4:((iPhone)?""+window.screen.width:_view._format(window.innerHeight*0.9,"0"));  // > CustomCode.OnOrientationChange:50
-      return window.innerHeight*0.9;  // > CustomCode.OnOrientationChange:51
-  }  // > CustomCode.OnOrientationChange:52
-  }  // > CustomCode.OnOrientationChange:53
+  }  // > CustomCode.changeorientation:76
+     // > CustomCode.changeorientation:77
+  }  // > CustomCode.changeorientation:78
+     // > CustomCode.changeorientation:79
 
   //https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript  // > CustomCode.arraysEqual:1
   //sample usage  // > CustomCode.arraysEqual:2
