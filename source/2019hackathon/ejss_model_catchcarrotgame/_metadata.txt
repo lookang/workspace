@@ -1,0 +1,25 @@
+generated-with: Easy Java/Javascript Simulations, version 5.3, build 190422. Visit http://www.um.es/fem/Ejs
+title: Addition
+logo-image: 
+author: MarinahToh
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: catchapplegametemplatev05.ejss
+main-script: 
+main-simulation: catchapplegametemplatev05_Simulation.xhtml
+available-languages: 
+html-contents: catchapplegametemplatev05_Contents.xhtml
+html-main: catchapplegametemplatev05.xhtml
+page-title: Addition
+page-index: catchapplegametemplatev05_Simulation.xhtml
+resource: Unnamed/apple.jpg
+resource: Unnamed/basket.png
+resource: Unnamed/Bite-Sound effect.mp3
+resource: Unnamed/carrot.png
+resource: Unnamed/Ding Sound Effect.m4a
+resource: Unnamed/garden.png
+resource: Unnamed/Hoppi.png
+resource: Unnamed/Single_apple.png
+resource: Unnamed/SMALL_CROWD_APPLAUSE-Yannick_Lemieux-1268806408.mp3

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="Unnamed5v2"
+author="Author name; Marinah Toh"
+description=""
+screenshot=""
+thumbnail="">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="Unnamed5v2_Simulation.xhtml"/>
+</Module>

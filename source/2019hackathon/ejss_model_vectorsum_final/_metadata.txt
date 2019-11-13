@@ -1,0 +1,16 @@
+generated-with: Easy Java/Javascript Simulations, version 5.3, build 180211. Visit http://www.um.es/fem/Ejs
+title: Vector Addition
+logo-image: 
+author: -
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: 
+source: vectorsum05v31.ejss
+main-script: 
+main-simulation: vectorsum05v31_Simulation.xhtml
+available-languages: 
+html-contents: vectorsum05v31_Contents.xhtml
+html-main: vectorsum05v31.xhtml
+page-title: Vector Addition
+page-index: index.html

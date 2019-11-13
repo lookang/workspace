@@ -1,0 +1,21 @@
+generated-with: Easy Java/Javascript Simulations, version 5.3, build 190422. Visit http://www.um.es/fem/Ejs
+title: Subtraction
+logo-image: 
+author: Author name; Marinah Toh
+copyright: 
+preferred-width: 800
+preferred-height: 600
+author-image: ;
+source: Unnamed5v2.ejss
+main-script: 
+main-simulation: Unnamed5v2_Simulation.xhtml
+available-languages: 
+html-contents: Unnamed5v2_Contents.xhtml
+html-main: Unnamed5v2.xhtml
+page-title: Subtraction
+page-index: Unnamed5v2_Simulation.xhtml
+resource: Unnamed5/hopp.png
+resource: Unnamed5/background-scene-with-tree-white-fence-garden_1639-2581.jpg
+resource: Unnamed5/background-scene-with-tree.jpg
+resource: Unnamed5/basket.png
+resource: Unnamed5/Single_apple.png
