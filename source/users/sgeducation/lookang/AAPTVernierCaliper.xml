@@ -1,9 +1,9 @@
-<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- This XML file has been created by Easy Java(script) Simulations (EjsS). Visit http://www.um.es/fem/Ejs. -->
 <!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
-<Osejs version="5.0 beta" password="">
+<Osejs version="5.3" password="">
 <Osejs.Information>
 <Title><![CDATA[Vernier calipers]]></Title>
-<Author><![CDATA[Fu-Kwun Hwang original, remix by lookang weelookang@gmail.com]]></Author>
+<Copyright><![CDATA[]]></Copyright>
 <Keywords><![CDATA[Vernier calipers measurement physics]]></Keywords>
 <Password><![CDATA[]]></Password>
 <Level><![CDATA[secondary pre university]]></Level>
@@ -17,18 +17,32 @@ http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=684.msg2452#msg2452]]></Abst
 <LanguageTools>false</LanguageTools>
 <AppletColSupport>false</AppletColSupport>
 <UseMacMenuBar>false</UseMacMenuBar>
+<FixedNavigationBar>false</FixedNavigationBar>
 <RunInBrowserFirst>false</RunInBrowserFirst>
+<RunAlways>true</RunAlways>
 <UseInterpreter>true</UseInterpreter>
+<UseDeltaForODE>false</UseDeltaForODE>
 <ModelTab></ModelTab>
-<MenuPosition>0</MenuPosition>
-<CSSFolder></CSSFolder>
+<ModelTabTitle><![CDATA[]]></ModelTabTitle>
+<ModelName><![CDATA[]]></ModelName>
+<CSSFile></CSSFile>
+<StaticImages>
+</StaticImages>
+<HTMLHead><![CDATA[]]></HTMLHead>
 <Logo>./VernierCaliper/VernierCaliper.PNG</Logo>
-<AuthorLogo>./VernierCaliper/VernierCaliper.PNG;./VernierCaliper/lookangphoto.png</AuthorLogo>
+<Author><![CDATA[Fu-Kwun Hwang original, remix by lookang weelookang@gmail.com]]></Author>
+<AuthorLogo>./VernierCaliper/VernierCaliper.PNG</AuthorLogo>
 <AdditionalLibraries>
 </AdditionalLibraries>
 <ImportStatements>
 </ImportStatements>
-<DetectedFiles><![CDATA[./VernierCaliper/VernierCaliper.html;]]></DetectedFiles>
+<ClassesRequired>
+</ClassesRequired>
+<ManifestLines><![CDATA[Permissions: sandbox
+Codebase: *
+Caller-Allowable-Codebase: *
+]]></ManifestLines>
+<DetectedFiles><![CDATA[./VernierCaliper/VernierCaliper.PNG;./VernierCaliper/VernierCaliper.html;]]></DetectedFiles>
 <AuxiliaryFiles><![CDATA[./VernierCaliper/;]]></AuxiliaryFiles>
 </Osejs.Information>
 <Osejs.Description>
@@ -36,6 +50,7 @@ http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=684.msg2452#msg2452]]></Abst
 <Type>DESCRIPTION_EDITOR</Type>
 <Name>Intro Page</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <OneHTMLPage>
   <Locale>_default_</Locale>
@@ -46,20 +61,44 @@ http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=684.msg2452#msg2452]]></Abst
   <head>
     <style type="text/css">
       <!--
-        a:visited { color: purple }
-        body { background-color: #C8DFD0; color: purple; font-family: Georgia, Times New Roman, Times, serif }
-        address { border-top-width: thin; border-top-color: border-color; border-top-style: dotted; padding-top: 0; margin-top: 0 }
+        body { margin-top: 1%; margin-right: 1%; margin-bottom: 1%; margin-left: 1%; text-align: justify; font-size: medium; font-family: Georgia, Times New Roman, Times, serif; background-color: #C8DFD0; color: purple }
+        h1 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #0000C8; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 135% !important }
+        h2 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: #000777; font-size: 120% !important }
+        h3 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; color: navy; font-size: 110% !important }
+        h4 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h5 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        h6 { text-indent: 0px; text-align: left; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        li { text-align: left; margin-top: 0; margin-bottom: 0 }
+        p { line-height: 1.5em; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; text-align: justify }
         a:link { color: blue }
-        h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+        a:visited { color: purple }
+        address { margin-top: 0; padding-top: 0; border-top-color: border-color; border-top-style: dotted; border-top-width: thin }
+        button { font-family: Georgia, Times New Roman, Times, serif; font-size: 1em; color: black }
+        input { font-size: 0.70em; background-repeat: repeat; background-attachment: scroll; color: black }
+        div.experiment p { display: inline }
+        .ArrayPanel { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .DataTable { border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; display: table; width: 100% }
+        .ArrayPanel thead { float: left; width: 100%; background-repeat: repeat; background-attachment: scroll }
+        .ArrayPanel tbody { float: left; width: 100% }
+        .ArrayPanel tr { width: 100%; display: table }
+        .DataPanel tr { width: 100%; display: table }
+        .ArrayPanel th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .DataTable th { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: center }
+        .ArrayPanel td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable td { width: 1%; border-top-color: black; border-top-style: solid; border-top-width: 1px; border-right-color: black; border-right-style: solid; border-right-width: 1px; border-bottom-color: black; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: black; border-left-style: solid; border-left-width: 1px; text-align: right }
+        .DataTable thead { background-repeat: repeat; background-attachment: scroll }
+        .BoxPanel { background-color: red; background-repeat: repeat; background-attachment: scroll }
+        ._TabbedPanel.span { display: table; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0 }
+        ._TabbedPanel.ul { list-style-type: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        ._TabbedPanel.li { float: left; text-align: center; margin-top: 0; margin-bottom: 0; border-top-color: #ccc; border-top-style: solid; border-top-width: 1px; border-right-color: #ccc; border-right-style: solid; border-right-width: 1px; border-bottom-color: #ccc; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #ccc; border-left-style: solid; border-left-width: 1px }
+        ._TabbedPanel.a { display: inline-block; color: black; text-align: center; padding-top: 7px; padding-bottom: 7px; padding-right: 8px; padding-left: 8px; text-decoration: none; font-size: 14px }
       -->
     </style>
     
   </head>
   <body>
     <a href="http://weelookang.blogspot.sg/2010/06/ejs-open-source-vernier-calipers-java.html">http://weelookang.blogspot.sg/2010/06/ejs-open-source-vernier-calipers-java.html</a> 
-    
-
-Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=567.msg2364#msg2364">http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=567.msg2364#msg2364</a> 
+    Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=567.msg2364#msg2364">http://www.phy.ntnu.edu.tw/ntnujava/index.php?topic=567.msg2364#msg2364</a> 
     Derived work by Wee Loo Kang under creative commons <a href="http://creativecommons.org/licenses/by/2.5/tw/deed.en" cr="true">http://creativecommons.org/licenses/by/2.5/tw/deed.en</a>
 
     <div align="left" id="deed-rights" dir="">
@@ -96,7 +135,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
             <span class="accessibar-span-text"><strong>Attribute this work:</strong></span><br>
           </p>
           <div id="attribution_help_panel_c" class="yui-panel-container shadow">
-            <div id="attribution_help_panel" style="width: 400px" class="yui-module yui-overlay yui-panel">
+            <div id="attribution_help_panel" class="yui-module yui-overlay yui-panel" style="width: 400px">
               <div class="hd">
                 <span class="accessibar-span-text">What does &quot;Attribute this 
                 work&quot; mean? </span>
@@ -139,6 +178,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>DESCRIPTION_EDITOR</Type>
 <Name>VernierCaliper</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <OneHTMLPage>
   <Locale>_default_</Locale>
@@ -161,6 +201,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>coordinate</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -168,6 +209,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[200]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[range]]></Comment>
 </Variable>
 <Variable>
@@ -175,6 +217,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[-range]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x minimum]]></Comment>
 </Variable>
 <Variable>
@@ -182,6 +225,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[range]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x maximum]]></Comment>
 </Variable>
 <Variable>
@@ -189,6 +233,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[-range/2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y minimum]]></Comment>
 </Variable>
 <Variable>
@@ -196,6 +241,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[range/2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y maximum]]></Comment>
 </Variable>
 <Variable>
@@ -203,6 +249,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[time]]></Comment>
 </Variable>
 <Variable>
@@ -210,6 +257,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[1]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[time step]]></Comment>
 </Variable>
 <Variable>
@@ -217,6 +265,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[range/20]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[particle size]]></Comment>
 </Variable>
 <Variable>
@@ -224,6 +273,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[size/2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[size divide by 2]]></Comment>
 </Variable>
 <Variable>
@@ -231,6 +281,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[1]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[stroke line thickness]]></Comment>
 </Variable>
 <Variable>
@@ -238,6 +289,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[autoscale]]></Comment>
 </Variable>
 <Variable>
@@ -245,6 +297,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[1]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -252,6 +305,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -260,6 +314,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>MainScale</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -267,6 +322,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.9*xmin]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x1 coordinate of leftmost position of main scale]]></Comment>
 </Variable>
 <Variable>
@@ -274,6 +330,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[x1-0.1*xmin]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x2 coordinate of left position of main scale]]></Comment>
 </Variable>
 <Variable>
@@ -281,6 +338,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[ymax*0.7]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[used in the markings top scale position]]></Comment>
 </Variable>
 <Variable>
@@ -288,6 +346,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y2  position of main scale]]></Comment>
 </Variable>
 <Variable>
@@ -295,6 +354,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[-y1]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y3 lowest position of main scale]]></Comment>
 </Variable>
 <Variable>
@@ -302,6 +362,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[11]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[points of drawing for main scale]]></Comment>
 </Variable>
 <Variable>
@@ -309,6 +370,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{xmax,x2+size*1.5,x2+size/2,x2,x2,x2+size/2,x2+size/2,x2,x1,x1,x2-size,x2,x2,x2-size/2,x2-size/2,x2,xmax}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[points]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[grey part starting coordinates top right going anticlockwise ends at bottom right corner]]></Comment>
 </Variable>
 <Variable>
@@ -316,6 +378,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{y1,y1,y1+5*size2,y1+6*size2,y1+size/2,y1+size/2,y1,y1,y1,y3/2,y3+size/2,y3,y2-size,y2-size,y2,y2,y2}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[points]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[grey part appears to be a way to draw top base  y7 ={y1,y1,y3/2,y3+size2,y3,y2,y2} and {y1,y1,y1,y1+size2,y1+2*size2,y1+3*size2,y1,y3/2,y3+size2,y3,y2,y2}]]></Comment>
 </Variable>
 <Variable>
@@ -323,6 +386,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -331,6 +395,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>RulerMainScaleMarking</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -338,6 +403,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[70]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number of marking of top scale]]></Comment>
 </Variable>
 <Variable>
@@ -345,6 +411,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[nm/10]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number of marking text]]></Comment>
 </Variable>
 <Variable>
@@ -352,6 +419,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[nm]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[Array xm[nm] store the coordinates for all the upper marker (vertical lines) and the separation between lines is dxm.]]></Comment>
 </Variable>
 <Variable>
@@ -359,6 +427,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[nm]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y coordinate of markings]]></Comment>
 </Variable>
 <Variable>
@@ -366,6 +435,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[nm]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[height of the markings on top scale]]></Comment>
 </Variable>
 <Variable>
@@ -373,6 +443,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[nmt]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x coordinate of text]]></Comment>
 </Variable>
 <Variable>
@@ -380,6 +451,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[[nmt]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[text marking ]]></Comment>
 </Variable>
 <Variable>
@@ -387,6 +459,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[size/2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[zero x position]]></Comment>
 </Variable>
 <Variable>
@@ -394,6 +467,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[(xmax-x2)/nm]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[separation between the lower marker (vertical lines) lines]]></Comment>
 </Variable>
 <Variable>
@@ -401,6 +475,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -408,6 +483,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[zerox]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[zero x marking]]></Comment>
 </Variable>
 <Variable>
@@ -415,6 +491,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[51]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number of points]]></Comment>
 </Variable>
 <Variable>
@@ -422,6 +499,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[11]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number of text 01234567890=11]]></Comment>
 </Variable>
 <Variable>
@@ -429,6 +507,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[n2]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number of ticker for the lower scale ?]]></Comment>
 </Variable>
 <Variable>
@@ -436,6 +515,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[10]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number mode]]></Comment>
 </Variable>
 <Variable>
@@ -443,6 +523,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[n2]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x marking 2]]></Comment>
 </Variable>
 <Variable>
@@ -450,6 +531,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[n2]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y marking 2]]></Comment>
 </Variable>
 <Variable>
@@ -457,6 +539,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[n2]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[delta y 2 ]]></Comment>
 </Variable>
 <Variable>
@@ -464,6 +547,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[n2t]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x marking 2 text]]></Comment>
 </Variable>
 <Variable>
@@ -471,6 +555,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[""]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[[n2t]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[text marking text]]></Comment>
 </Variable>
 <Variable>
@@ -478,6 +563,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[49*dxm/50]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[delta x 2 ]]></Comment>
 </Variable>
 <Variable>
@@ -485,6 +571,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[1.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[delta y cst]]></Comment>
 </Variable>
 <Variable>
@@ -492,6 +579,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[true]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[delta y check]]></Comment>
 </Variable>
 <Variable>
@@ -499,6 +587,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -507,6 +596,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>VernierScale</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -514,6 +604,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[50*dxm+size]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[length]]></Comment>
 </Variable>
 <Variable>
@@ -521,6 +612,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{x2,x2,x2+size,x2+3*size,x2+L,x2+L}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[6]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[start from top left corner anticlockwise]]></Comment>
 </Variable>
 <Variable>
@@ -528,6 +620,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{y2,y3,y3+size2,y3/1.7,y3/1.7,y2}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[6]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y coordinates start from top left corner anticlockwise]]></Comment>
 </Variable>
 <Variable>
@@ -535,6 +628,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -542,6 +636,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -549,6 +644,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -557,6 +653,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>basic</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -564,6 +661,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.6603773584905639]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x coordinate of the measurement]]></Comment>
 </Variable>
 <Variable>
@@ -571,6 +669,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[unused]]></Comment>
 </Variable>
 <Variable>
@@ -578,6 +677,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[unused]]></Comment>
 </Variable>
 <Variable>
@@ -585,6 +685,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[unused]]></Comment>
 </Variable>
 <Variable>
@@ -592,6 +693,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[-10]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[mouse x coordinate]]></Comment>
 </Variable>
 <Variable>
@@ -599,6 +701,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[mouse y coordinate]]></Comment>
 </Variable>
 <Variable>
@@ -606,6 +709,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[mx stored]]></Comment>
 </Variable>
 <Variable>
@@ -613,6 +717,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x stored]]></Comment>
 </Variable>
 <Variable>
@@ -620,6 +725,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["0.05 mm version 1"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[mode]]></Comment>
 </Variable>
 <Variable>
@@ -627,6 +733,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[unit]]></Comment>
 </Variable>
 <Variable>
@@ -634,6 +741,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[position of red line botttom x coordinate]]></Comment>
 </Variable>
 <Variable>
@@ -641,6 +749,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[introduce by wee to make top scale pointer]]></Comment>
 </Variable>
 <Variable>
@@ -648,6 +757,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0.0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[appears to be the integer value measurement in mm 16.76 = 16]]></Comment>
 </Variable>
 <Variable>
@@ -655,6 +765,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[the interval of the lower scale wee]]></Comment>
 </Variable>
 <Variable>
@@ -662,6 +773,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[the interval of the lower scale wee identity]]></Comment>
 </Variable>
 <Variable>
@@ -669,6 +781,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -676,6 +789,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -683,6 +797,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[introduce by wee to draw top pointer out is the same as my vss, it is the top number]]></Comment>
 </Variable>
 <Variable>
@@ -690,6 +805,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -697,6 +813,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[error]]></Comment>
 </Variable>
 <Variable>
@@ -704,6 +821,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -712,6 +830,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>language</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[unused]]></PageComment>
 <Variable>
@@ -719,6 +838,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["play"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -726,6 +846,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["pause"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -733,6 +854,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["reset"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -740,6 +862,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["initialize"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -747,6 +870,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["play"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -754,6 +878,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA["step"]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -761,6 +886,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[""]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -768,6 +894,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[""]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[the smallest unit label]]></Comment>
 </Variable>
 <Variable>
@@ -775,6 +902,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[show answer checkbox]]></Comment>
 </Variable>
 <Variable>
@@ -782,6 +910,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[""]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[label of x]]></Comment>
 </Variable>
 <Variable>
@@ -789,6 +918,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[show hint check box]]></Comment>
 </Variable>
 <Variable>
@@ -796,6 +926,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -804,6 +935,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>numbers</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -811,6 +943,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[text 2 red hint]]></Comment>
 </Variable>
 <Variable>
@@ -818,6 +951,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[text 1 magenta text]]></Comment>
 </Variable>
 <Variable>
@@ -825,6 +959,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -833,6 +968,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>topjaw</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -840,6 +976,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[7]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[top jaw points]]></Comment>
 </Variable>
 <Variable>
@@ -847,6 +984,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{x2-size/2,x2-size/2,x2,x2,x2-size/2,x2-size*1.5,x2}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[topjawpoints]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x coordinates start bottom left]]></Comment>
 </Variable>
 <Variable>
@@ -854,6 +992,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{y1,y1+size/2,y1+size/2,y1+6*size2,y1+5*size2,y1,y1}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[topjawpoints]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y coordinates]]></Comment>
 </Variable>
 <Variable>
@@ -861,6 +1000,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -869,6 +1009,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>object</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -876,6 +1017,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[100*Math.random()]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[width of object]]></Comment>
 </Variable>
 <Variable>
@@ -883,6 +1025,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[x2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[oxmin is by guess -135 - width /2 but debug to by x2 corner of lower jaw]]></Comment>
 </Variable>
 <Variable>
@@ -890,6 +1033,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[oxmin+x]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -897,6 +1041,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[size*2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[height of object]]></Comment>
 </Variable>
 <Variable>
@@ -904,6 +1049,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[y3-h*1.5]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y initial of blue object]]></Comment>
 </Variable>
 <Variable>
@@ -911,6 +1057,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[oxmin+w/2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[object x coordinate]]></Comment>
 </Variable>
 <Variable>
@@ -918,6 +1065,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[y0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[object y coordinate]]></Comment>
 </Variable>
 <Variable>
@@ -925,6 +1073,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[topone is the top jaws used]]></Comment>
 </Variable>
 <Variable>
@@ -932,6 +1081,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[bottom jaws use]]></Comment>
 </Variable>
 <Variable>
@@ -939,6 +1089,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[(x2-x1)/60]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[ratio may be unused]]></Comment>
 </Variable>
 <Variable>
@@ -946,6 +1097,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[(x-x1)/ratio-0.05]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[value may be unused]]></Comment>
 </Variable>
 <Variable>
@@ -953,6 +1105,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[x1-oxmin+0.65]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[unused by wee]]></Comment>
 </Variable>
 <Variable>
@@ -960,6 +1113,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[y2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[debug to be y2 bottom of jaw]]></Comment>
 </Variable>
 <Variable>
@@ -967,6 +1121,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[y3]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[oymin is for the internal jaws lowest point for clearance]]></Comment>
 </Variable>
 <Variable>
@@ -974,6 +1129,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[ox+d+w/2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x distance minimum]]></Comment>
 </Variable>
 <Variable>
@@ -981,6 +1137,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[size*30*Math.random()]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[is the internal diameter of the green object]]></Comment>
 </Variable>
 <Variable>
@@ -988,6 +1145,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[size]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[x thickness of the green object]]></Comment>
 </Variable>
 <Variable>
@@ -995,6 +1153,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[8]]></Value>
 <Type><![CDATA[int]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[number of vertices to draw green object px py]]></Comment>
 </Variable>
 <Variable>
@@ -1002,6 +1161,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[x2-a]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[coordinate of start of the green object top left corner start]]></Comment>
 </Variable>
 <Variable>
@@ -1009,6 +1169,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[ymax+size*2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y coordinate ]]></Comment>
 </Variable>
 <Variable>
@@ -1016,6 +1177,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[ya-4*size]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[y coordinate of green object]]></Comment>
 </Variable>
 <Variable>
@@ -1023,6 +1185,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{x0,x0+2.*a+b,x0+2*a+b,x0+a+b,x0+a+b,x0+a,x0+a,x0}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[n8]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[top object start from top left corner anticlockwise]]></Comment>
 </Variable>
 <Variable>
@@ -1030,6 +1193,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{ya,ya,yb,yb,ya-a,ya-a,yb,yb}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[n8]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[top object start from top left corner anticlockwise]]></Comment>
 </Variable>
 <Variable>
@@ -1037,6 +1201,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1044,6 +1209,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1051,6 +1217,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -1059,6 +1226,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>Tail</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -1066,6 +1234,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[increment]]></Comment>
 </Variable>
 <Variable>
@@ -1073,6 +1242,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1080,6 +1250,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1087,6 +1258,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{xmax,xmax,xmax-size*2,xmax-size*2,-size*16,-size*16}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[6]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[start bottom right corner and go anticlockwise]]></Comment>
 </Variable>
 <Variable>
@@ -1094,6 +1266,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{0,size/2,size/2,size,size,0}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[6]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1101,6 +1274,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[xmax/1.5-size]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1108,6 +1282,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[-4*size]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1115,6 +1290,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[xmax/2*Math.random()]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1122,6 +1298,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[td+size]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1129,6 +1306,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[size*1.2]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1136,6 +1314,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{xmax,xmax,xmax+td,xmax+td,xmax,xmax,xmax+td+size,xmax+td+size}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[8]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[start bottom left  corner and go clockwise]]></Comment>
 </Variable>
 <Variable>
@@ -1143,6 +1322,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[{y1/2-h2*2,y1/2-h2,y1/2-h2,y1/2+h2,y1/2+h2,y1/2+h2*2,y1/2+h2*2,y1/2-h2*2}]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[[8]]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1150,6 +1330,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1157,6 +1338,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1164,6 +1346,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1171,6 +1354,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -1179,6 +1363,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>check</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -1186,6 +1371,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1193,6 +1379,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1200,6 +1387,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1207,6 +1395,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1214,6 +1403,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1221,6 +1411,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1228,6 +1419,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[String]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1235,6 +1427,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[Object]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1242,6 +1435,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[Object]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1249,6 +1443,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -1257,6 +1452,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>VARIABLE_EDITOR</Type>
 <Name>magnify</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <PageComment><![CDATA[]]></PageComment>
 <Variable>
@@ -1264,6 +1460,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[boolean]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1271,6 +1468,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[-10]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1278,6 +1476,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[0]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1285,6 +1484,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[1]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1292,6 +1492,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[120]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1299,6 +1500,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[wmagnify/factor]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 <Variable>
@@ -1306,6 +1508,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Value><![CDATA[]]></Value>
 <Type><![CDATA[double]]></Type>
 <Dimension><![CDATA[]]></Dimension>
+<Domain><![CDATA[public]]></Domain>
 <Comment><![CDATA[]]></Comment>
 </Variable>
 </Content>
@@ -1316,6 +1519,7 @@ Original Source code by Fu-Kwun Hwang <a href="http://www.phy.ntnu.edu.tw/ntnuja
 <Type>CODE_EDITOR</Type>
 <Name>drawingthelowernumbers</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1336,6 +1540,7 @@ zeroxm=zerox+error*unit*dxm; // for zero error scale to move when there is zero 
 <Type>CODE_EDITOR</Type>
 <Name>Init Page</Name>
 <Active>false</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1413,6 +1618,7 @@ zeroxm=zerox+error*unit*dxm;
 <Type>CODE_EDITOR</Type>
 <Name>drawingupperscale</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1432,6 +1638,7 @@ for(int i=0;i<nm;i++){
 <Type>CODE_EDITOR</Type>
 <Name>Modebywee</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1579,6 +1786,7 @@ x6[4]=x6[5]=x2+L;
 <Type>CODE_EDITOR</Type>
 <Name>smallestunitshow</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1598,6 +1806,7 @@ text1 =""+dvalue((int)(x/dxm),unit);
 <Type>CODE_EDITOR</Type>
 <Name>object</Name>
 <Active>false</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1677,6 +1886,7 @@ if(x>=b){
 <Type>CODE_EDITOR</Type>
 <Name>objectnewdesign</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1743,6 +1953,7 @@ if(tail){
 <Type>CODE_EDITOR</Type>
 <Name>objectnewdesignFKH</Name>
 <Active>false</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1831,6 +2042,7 @@ if(x>=b){
 <Type>CODE_EDITOR</Type>
 <Name>answer</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -1959,6 +2171,7 @@ else if ( vs*unit+(-error*unit) >= 1&&error*unit<0 ){ // check case zeroerror = 
 <Type>CODE_EDITOR</Type>
 <Name>draw pointer for top scale</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2024,6 +2237,7 @@ text1 =""+ dvalue((int)(x/dxm-1+2.e-2),unit);
 <Type>CODE_EDITOR</Type>
 <Name>numberonlowerscale</Name>
 <Active>false</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2079,6 +2293,7 @@ else {
 <Type>CODE_EDITOR</Type>
 <Name>check</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2128,6 +2343,7 @@ showAnswerFlag=false; // set back to false
 <Type>CODE_EDITOR</Type>
 <Name>blinker</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2152,6 +2368,7 @@ background = new java.awt.Color(255,255,255);
 <Type>CODE_EDITOR</Type>
 <Name>magnify</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2178,15 +2395,16 @@ if (ymagnify <xmin)ymagnify = xmin/2;
 <Type>LIBRARY_EDITOR</Type>
 <Name>chinese</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
 public void zh_tw () {
- l_play="¼½©ñ";
- l_init="ªì©l¤Æ";
- l_reset="­«³]";
- l_pause="¼È°±";
- l_step="«e¶i¤@®æ";
+ l_play="ï¿½ï¿½ï¿½ï¿½";
+ l_init="ï¿½ï¿½lï¿½ï¿½";
+ l_reset="ï¿½ï¿½ï¿½]";
+ l_pause="ï¿½È°ï¿½";
+ l_step="ï¿½eï¿½iï¿½@ï¿½ï¿½";
  label=l_play;
 }
 public void locale(String type){
@@ -2200,6 +2418,7 @@ public void locale(String type){
 <Type>LIBRARY_EDITOR</Type>
 <Name>playpause</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2219,6 +2438,7 @@ public void playpause () {
 <Type>LIBRARY_EDITOR</Type>
 <Name>dvalue</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2243,6 +2463,7 @@ public String dvalue (double v,double unit) {
 <Type>LIBRARY_EDITOR</Type>
 <Name>check</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2267,6 +2488,7 @@ public Double ddvalue (double v,double unit) {
 <Type>LIBRARY_EDITOR</Type>
 <Name>display</Name>
 <Active>true</Active>
+<Internal>false</Internal>
 <Content>
 <Comment><![CDATA[]]></Comment>
 <Code><![CDATA[
@@ -2296,7 +2518,7 @@ public String double2String(double v,double divider){
 <Property name="title"><![CDATA["Vernier Calipers Model"]]></Property>
 <Property name="layout"><![CDATA[border]]></Property>
 <Property name="visible"><![CDATA[true]]></Property>
-<Property name="location"><![CDATA["16,103"]]></Property>
+<Property name="location"><![CDATA["-103,218"]]></Property>
 <Property name="size"><![CDATA["750,520"]]></Property>
 </Osejs.View.Creation.Element>
 <Osejs.View.Creation.Element>
@@ -2853,7 +3075,7 @@ if ((ox-w/2-oxmin)*(ox+w/2-oxmax)<=5000 &&oy+h/2 - oymin>=0&&outobject==false){ 
 <Property name="layout"><![CDATA[HBOX]]></Property>
 </Osejs.View.Creation.Element>
 <Osejs.View.Creation.Element>
-<Expanded>false</Expanded>
+<Expanded>true</Expanded>
 <Type>Elements.Panel</Type>
 <Property name="name">internalblue</Property>
 <Property name="parent">Sliders</Property>
@@ -2884,7 +3106,7 @@ topone=false;]]></Property>
 <Property name="tooltip"><![CDATA["to use internal jaws"]]></Property>
 </Osejs.View.Creation.Element>
 <Osejs.View.Creation.Element>
-<Expanded>false</Expanded>
+<Expanded>true</Expanded>
 <Type>Elements.Panel</Type>
 <Property name="name">externalgreen</Property>
 <Property name="parent">Sliders</Property>
@@ -2917,7 +3139,7 @@ tail=false;]]></Property>
 <Property name="tooltip"><![CDATA["to use external jaws"]]></Property>
 </Osejs.View.Creation.Element>
 <Osejs.View.Creation.Element>
-<Expanded>false</Expanded>
+<Expanded>true</Expanded>
 <Type>Elements.Panel</Type>
 <Property name="name">tail</Property>
 <Property name="parent">Sliders</Property>
@@ -2929,7 +3151,6 @@ tail=false;]]></Property>
 <Property name="name">sliderwidthobjectblue2</Property>
 <Property name="parent">tail</Property>
 <Property name="variable"><![CDATA[td]]></Property>
-<Property name="value"><![CDATA[250]]></Property>
 <Property name="minimum"><![CDATA[xmax]]></Property>
 <Property name="maximum"><![CDATA[xmax+xmax]]></Property>
 <Property name="enabled"><![CDATA[tail]]></Property>
@@ -3067,7 +3288,6 @@ enterK1f= Double.parseDouble(l_enterK1f);]]></Property>
 <Property name="name">Slider2zeroerror2</Property>
 <Property name="parent">error</Property>
 <Property name="variable"><![CDATA[error]]></Property>
-<Property name="value"><![CDATA[0.0]]></Property>
 <Property name="minimum"><![CDATA[-5]]></Property>
 <Property name="maximum"><![CDATA[5]]></Property>
 <Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
@@ -3081,7 +3301,6 @@ enterK1f= Double.parseDouble(l_enterK1f);]]></Property>
 <Property name="name">Slider</Property>
 <Property name="parent">Control</Property>
 <Property name="variable"><![CDATA[x]]></Property>
-<Property name="value"><![CDATA[0.0]]></Property>
 <Property name="minimum"><![CDATA[0.00000]]></Property>
 <Property name="maximum"><![CDATA[xmax-x2-1]]></Property>
 <Property name="orientation"><![CDATA[HORIZONTAL]]></Property>
